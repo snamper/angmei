@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="renderer" content="webkit"/>
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	    <meta name="format-detection" content="telephone=no" />
+	    <meta name="apple-mobile-web-app-capable" content="yes" />
+	    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0 user-scalable=no"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<meta name="keywords" content="米鼠,燃油泵">
+		<meta name="robots" content="all">
+		<meta name="description" content="米鼠燃油泵">
+		<title>JINJiA</title>
+        <link rel="stylesheet" type="text/css" href="../../css/base.css"/>
+         <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css"/>
+        <link rel="stylesheet" type="text/css" href="../particulars/css/particulars.css"/>
+        <link rel="stylesheet" type="text/css" href="css/detail.css?v=20181203"/>
+        <link rel="icon" href=" ../../img/ico.ico" /> 
+	</head>
+	<style type="text/css">
+		[v-cloak]{
+            display:none;
+         }
+	</style>
+	<body>
+		<!--头部-->
+		<!--<div class="header">
+			<div class="logowrap">
+				<img src="../../img/logo.png"/>
+			</div>
+		</div>-->
+		<!--主体部分-->
+		<div class="contentwrap" id="app">
+			<div class="container content clearfix">
+				<div class="right">
+					<div  class="logowrap"><img src="../../img/logo2.png"/></div>
+					<div class="number" style="position: relative;">
+                        <p style="margin-bottom: 0;" v-text='"编号："+oe'></p>
+                        <!--纠错-->
+                        <button style="top: 7px;" class="error" @click="errorClick()">纠错</button>
+                    </div>
+					<div class="titlewrap clearfix">
+						<div class="box1">JINJIA</div>
+						<div class="box2">OEM</div>
+						<div class="box3">车型</div>
+					</div>
+					<!--产品-->
+					<div class="product clearfix">
+						<div class="jinjiawrap">
+							<div class="top clearfix">
+								<div class="jleft" v-text='id'></div>
+								<div class="jright" v-text='name'></div>
+							</div>
+							<div class="bottom">
+								<img :src="src" onerror="javascript:this.src='../../img/blank.jpg'"/>
+							</div>
+						</div>
+						<div class="oemwrap">
+							<p v-text='oe'></p>
+							<p class="p1" v-for="(item,index) in arrs" v-text='item.parameter_cn+"："+item.describe'></p>
+						</div>
+						<div class="carwrap">
+							<p  v-if='!foreign' v-for="(item,index) in arrl" v-text='item.Manufacture_CN+item.Vehicle_Name_CN'></p>
+							<p  v-if='foreign' v-for="(item,index) in arrl" v-text='item.Manufacture_EN+item.Vehicle_Name_EN'></p>
+						</div>
+					</div>
+					<div class="cpxjwrap">
+						<p class="p">文章信息</p>
+						<p class="p1" v-for="(item,index) in arri" v-text='item.parameter_cn+" ："+item.describe'></p>
+						<div class="btn" onclick="JavaScript:window.print()">打印</div>
+					</div>
+					<div class="tablewrap">
+						<table border="0" cellspacing="0" cellpadding="0">
+							<thead v-cloak>
+								<tr class="tr1" v-if='!foreign'>
+									<th>主机厂</th>
+									<th>车型</th>
+									<th>年款</th>
+									<th>排量</th>
+									<th>发动机型号</th>
+									<th>燃油类型</th>
+								</tr>
+								<tr class="tr1" v-if='foreign'>
+									<th>主机厂</th>
+									<th>车型</th>
+									<th>年份[从]</th>
+									<th>年份[至]</th>
+									<th>排量</th>
+									<th>发动机型号</th>
+								</tr>
+							</thead>
+							<tbody v-if='!foreign'>
+								<tr v-for='(item,index) in datalist'>
+									<td v-text='item.Manufacture_CN'></td>
+									<td v-text='item.Vehicle_Name_CN'></td>
+									<td v-text='item.Year_of_production'></td>
+									<td v-text='item.Capacity+item.Air_intake_form'></td>
+									<td v-text='item.Engine_Code'></td>
+									<td v-text='item.Fuel_Type'></td>
+								</tr>
+							</tbody>
+							<tbody v-if='foreign'>
+								<tr v-for='(item,index) in datalist'>
+									<td v-text='item.Manufacture_EN'></td>
+									<td v-text='item.Vehicle_Name_EN'></td>
+									<td v-text='item.Launch_year'></td>
+									<td v-text='item.EOP_Year'></td>
+									<td v-text='item.Capacity'></td>
+									<td v-text='item.Engine_Code'></td>
+								</tr>
+							</tbody>
+						</table>
+						
+					</div>
+				</div>
+				<p class="bp">本目录中的原始设备编号和图片仅供参考</p>
+			</div>
+            <!--纠错-->
+            <div class="meng" v-cloak v-if="errorShow">
+                <div class="tableWrap">
+                    <p>产品纠错</p>
+                    <table>
+                        <tr>
+                            <td>产品编码：</td>
+                            <td><input type="text" placeholder="产品编码" v-model="product_id"></td>
+                        </tr>
+                        <tr>
+                            <td>您认为的错误是：</td>
+                            <td>
+                                <!--<input type="text" placeholder="您认为的错误是" v-model="new_product_id">-->
+                                <textarea  placeholder="您认为的错误是" v-model="new_product_id"></textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>您的电话号码：</td>
+                            <td><input type="text" placeholder="您的电话号码" v-model="phone"></td>
+                        </tr>
+                        <tr>
+                            <td>您的姓名：</td>
+                            <td><input type="text" placeholder="您的姓名" v-model="name"></td>
+                        </tr>
+                    </table>
+                    <div>
+                        <button class="btn btnNone" @click.stop="btnNone()">取消</button>
+                        <button class="btn btnYes" @click="btnYes()">提交</button>
+                    </div>
+                </div>
+            </div>
+		</div>
+		
+	</body>
+	<script type="text/javascript" src="../../js/jquery.min.js"></script>
+	<script type="text/javascript" src="../../js/vue.min.js"></script>
+	<script type="text/javascript" src="js/detail.js?v=20181203"></script>
+</html>

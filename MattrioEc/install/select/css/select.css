@@ -1,0 +1,123 @@
+.runtmksl{ 
+	position:fixed; 
+	top:0;
+	left:0;
+	width:100%; 
+	z-index: 10;
+}
+.runtmksltil{ 
+	height:44px; 
+	line-height:40px; 
+	background:#E7161A ; 
+	color:#fff; 
+	text-align:center; 
+	font-weight:400; 
+	border-bottom:5px solid #FCD900;
+	margin:0;
+}
+.runtmksltil span.runtasclor{
+	position:absolute; 
+	left:10px; 
+	font-size:12px; 
+	color:#666;
+}
+.runtmksltil span.runtasclfh{ 
+	position:absolute; 
+	left:0px; 
+	font-size:12px; 
+	color:#666; 
+	display:none;
+}
+.content{
+	position:absolute;
+	top:60px;
+	left:0px;
+	width:100%;
+}
+.contenttop{
+	font-size: 14px;
+	background: #fff;
+	line-height: 50px;
+	text-align: center;
+}
+.contenttop img{
+	width:300px;
+}
+
+
+/**/
+.sort_box{
+	overflow: hidden;
+}
+.sort_list{
+  position: relative;
+  padding-left:10px;
+  height: 30px;
+  line-height: 30px;
+  /*border-bottom:1px solid #ddd;*/
+}
+.sort_list .num_name{
+  color: #000;
+}
+.num_name:hover{
+  cursor: pointer;
+}
+.sort_letter{
+  height: 30px;
+  line-height: 30px;
+  padding-left: 20px;
+  color:#787878;
+  font-size: 14px;
+  border-bottom:1px solid #ddd;
+}
+.initials{
+  position: fixed;
+  top: 47px;
+  right: 0px;
+  height: 100%;
+  width: 15px;
+  padding-right: 10px;
+  text-align: center;
+  font-size: 12px;
+  z-index: 99;
+  background: rgba(145,145,145,0);
+}
+
+
+.yearheader,.provinceheader,.cityheader{
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	background: #f5f5f5;
+}
+.yearnav{
+	width:100%;
+	padding:0;
+	background: #E7161A;
+	border-bottom:5px solid #FCD900;
+}
+.yearnav h3{
+	margin:0;
+	padding:0;
+}
+.yeartmk{
+	text-align: center;
+	line-height: 44px;
+	color:#fff;
+}
+.yeartmk span{
+	position: absolute;
+	left:5px;
+	top:5px;
+	height:40px;
+}
+.yearheader li,.provinceheader li,.cityheader li{
+	padding-left: 10px;
+	line-height: 45px;
+	border-bottom: 1px solid #ccc;
+}
+#loading{
+	z-index: 10000;
+}

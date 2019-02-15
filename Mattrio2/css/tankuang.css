@@ -1,0 +1,212 @@
+html,body{
+	width: 100%;
+	height: 100%;
+}
+.tkmeng{
+	position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.8);
+    z-index: 100000;
+    display: none;
+}
+.tkmeng .tkcontent{
+	background: url(../image/tk.png);
+	background-size:100% 100%;
+	width: 525px;
+	height: 358px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin:-199px 0 0 -293px ;
+	font-family: "萍方";
+}
+.tkmeng .tkcontent .hint{
+	position: absolute;
+	width: 100%;
+	text-align: center;
+	font-size: 22px;
+	top: 120px;
+	line-height: 36px;
+}
+.tkmeng .tkcontent .confirm{
+	width: 279px;
+	height: 72px;
+	background: url(../image/confirm.png);
+	background-size:100% ;
+	position: absolute;
+	left: 50%;
+	margin-left: -140px;
+	bottom: 26px;	
+	cursor: pointer;
+}
+.loginwrap{
+    width: 740px;
+    height: 460px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -230px 0 0 -370px;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    /*-webkit-animation-duration: 1s !important;*/
+    /*animation-duration: 1s !important;*/
+    /*-webkit-animation-fill-mode: both;*/
+    /*animation-fill-mode: both;*/
+}
+.loginImg,.loginContent{
+    float: left;
+    height: 100%;
+}.loginImg{
+	position: relative;
+	width: 281px;
+	overflow: hidden;
+}
+.loginImg img{
+	height: 460px;
+	width: auto;
+	position: absolute;
+}
+.loginImg p:first-of-type{
+	margin-top: 35px;
+}
+.loginImg p{
+	position: relative;
+	color: #fff;
+	padding-left: 25px;
+	margin-top: 13px;
+	box-sizing: border-box;
+}
+.loginImg p span{
+	color: #a0a7af;
+}
+.loginContent{
+    padding-top: 30px;
+    width: calc(100% - 281px);
+    text-align: center;
+    box-sizing: border-box;
+    position: relative;
+}
+.loginContent .logo{
+    width: 90px;
+    margin-bottom: 10px;
+}
+.loginContent hr{
+    width: 75%;
+    margin-top: 10px;
+}
+.loginContent .span{
+    display: inline-block;
+    -webkit-transform: translateY(-95%);
+    -moz-transform: translateY(-95%);
+    -ms-transform: translateY(-95%);
+    -o-transform: translateY(-95%);
+    transform: translateY(-95%);
+    background-color: #fff;
+    padding: 0 15px;
+    color: #777;
+}
+.methods{
+	margin-top: 15px;
+}
+.QQlogin,.WXlogin{
+    border-radius: 5px;
+    width: 33%;
+    margin-left: 11.3%;
+    float: left;
+    height: 195px;
+    position: relative;
+    text-align: center;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+}
+.QQlogin a,.WXlogin a{
+    padding-top: 50px;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+.WXlogin a{
+    padding-top: 55px;
+}
+.QQlogin p,.WXlogin p{
+    position: absolute;
+    bottom: 15px;
+    width: 100%;
+    text-align: center;
+    color: #9a9a9a;
+}
+.QQlogin .QQ2Img,.WXlogin .WX2Img{
+    display: none;
+}
+.QQlogin img,.WXlogin img{
+    width: 60px;
+}
+.QQlogin{
+    border: 1px solid #92ceea;
+}
+.QQlogin:hover{
+    background: #92ceea;
+}
+.QQlogin:hover .QQImg{
+    display: none;
+}
+.QQlogin:hover .QQ2Img{
+    display: inline;
+}
+.WXlogin{
+    border: 1px solid #7edc7c;
+}
+.WXlogin:hover{
+    background: #7edc7c;
+}
+.WXlogin:hover p,.QQlogin:hover p{
+    color: #fff;
+}
+.WXlogin:hover .WXImg{
+    display: none;
+}
+.WXlogin:hover .WX2Img{
+    display: inline;
+}
+
+.loginBottom{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    background: #f6f7fb;
+}
+.loginBottom .lbleft,.loginBottom .lbright{
+    float: left;
+    width: 50%;
+    color: #1a3055;
+    font-size: 12px;
+    box-sizing: border-box;
+}
+.loginBottom .lbright{
+    text-align: right;
+    padding-right: 40px;
+}
+.loginBottom .lbleft a,.loginBottom .lbright a{
+    color: #912e29;
+}
+.loginwrap .none{
+	position: absolute;
+	right: 15px;
+	top: 5px;
+	font-size: 28px;
+	z-index: 100;
+	cursor: pointer;
+}
+.loginwrap .none:hover{
+	color: red;
+}

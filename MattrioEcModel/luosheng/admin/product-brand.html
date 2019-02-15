@@ -1,0 +1,134 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<!--[if lt IE 9]>
+<script type="text/javascript" src="static/html5shiv.js"></script>
+<script type="text/javascript" src="static/respond.min.js"></script>
+<![endif]-->
+<link rel="stylesheet" type="text/css" href="static/h-ui/css/H-ui.min.css" />
+<link rel="stylesheet" type="text/css" href="static/h-ui.admin/css/H-ui.admin.css?v=20181012" />
+<link rel="stylesheet" type="text/css" href="static/Hui-iconfont/1.0.8/iconfont.css" />
+<link rel="stylesheet" type="text/css" href="static/h-ui.admin/skin/default/skin.css?v=20181012" id="skin" />
+<link rel="stylesheet" type="text/css" href="static/h-ui.admin/css/style.css" />
+<link rel="stylesheet" type="text/css" href="./css/zxf_page.css">
+<link rel="stylesheet" type="text/css" href="css/sweetalert.css"/>
+<link rel="stylesheet" type="text/css" href="./css/index.css?v=20181017">
+<!--[if IE 6]>
+<script type="text/javascript" src="static/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script>DD_belatedPNG.fix('*');</script>
+<![endif]-->
+<title>品牌管理</title>
+
+</head>
+<body>
+<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <i class="Hui-iconfont">&#xe6d7;</i> 产品管理 <i class="Hui-iconfont">&#xe6d7;</i> 产品列表 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+	<div class="contentbody">
+		<div class="contentyear clearfix">
+			<div id="s1">请选择年款</div>
+			<div id="box">
+				<label for="arrcity"></label>
+				<input type="text" name="arrcity" id="arrcity" placeholder="中文/拼音"/>
+				<div id='suggest' class="ac_results">
+				</div>
+			</div>
+			<div id="s3">请选择车型</div>
+			<div id="s4">请选择销售名称</div>
+			<button class="btnyear">搜 索</button>
+		
+			<div class="conts1 active"></div>
+
+			<div class="conts3 active"></div>
+			
+			<div class="conts4 active"></div>
+
+		</div>
+
+	</div>
+		
+
+
+<div class="page-container">
+
+	
+	
+	<div class="text-c clearfix">
+		<select class="selectname0">
+			<option>请选择一级分组</option>
+		</select>
+		<select class="selectname1">
+			<option>请选择二级分组</option>
+		</select>
+		<div class="inpwrap">
+			<input type="text" name="" id="inpsubmit" placeholder="请输入产品编码或OE号码" style="width:268px"  class="input-text">
+			<div class="listwrap active"></div>		
+		</div>
+			<button name="" id="btnsubmit" class="btn btn-success" type="submit"><i class="Hui-iconfont">&#xe665;</i> 搜索</button>
+	</div>
+	<div class="cl pd-5 bg-1 bk-gray mt-20"> <span class="l"><a href="javascript:;" onclick="datadel()" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a></span><span class="r">共有数据[&nbsp;&nbsp;<strong class="alltotal" style="color: #c92327;">0</strong>&nbsp;&nbsp;]条</span></div>
+	<div class="mt-20">
+		<table class="table table-border table-bordered table-bg table-sort">
+			<thead>
+				<tr class="text-c">
+					<th width=""><input type="checkbox" name="" value=""></th>
+					<th width="">ID</th>
+					<!--<th width="">OE号码</th>-->
+					<th>编号</th>
+					<th width="">产品分类</th>
+					<th width="">主机厂</th>
+					<th width="">车型</th>
+					<th>年份</th>
+					<th>销售版本</th>
+					<th>底盘号</th>
+					<th>发动机型号</th>
+					<th>上市月份</th>
+					<!--<th width="">上市时间</th>
+					<th width="">停产年份</th>-->
+					<th width="" colspan="2">操作</th>
+				</tr>
+			</thead>
+			<tbody>
+				
+			</tbody>
+		</table>
+		<div class="warting active" style="height:380px;text-align: center;line-height: 100px;font-size: 20px;">
+			正在加载中。。。。。。
+		</div>
+		<div class="wartno active" style="height:380px;text-align: center;line-height: 100px;font-size: 20px;">
+			没有查询到数据
+		</div>
+		<div class="ajaxerror active" style="height:380px;text-align: center;line-height: 100px;font-size: 20px;">
+			请求失败
+		</div>
+	</div>
+	<br>
+<div class="zxf_pagediv"></div>	
+</div>
+<!--_footer 作为公共模版分离出去-->
+<script type="text/javascript" src="static/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="static/layer/2.4/layer.js"></script>
+<script type="text/javascript" src="static/h-ui/js/H-ui.min.js"></script>
+<script type="text/javascript" src="static/h-ui.admin/js/H-ui.admin.js"></script>
+<!--/_footer 作为公共模版分离出去-->
+
+<!--请在下方写此页面业务相关的脚本-->
+<script type="text/javascript" src="./js/zxf_page.js"></script>
+<script type="text/javascript" src="./js/product-brand.js?v=20181224"></script>
+<script type="text/javascript" src="js/aircity.js"></script>
+<script type="text/javascript" src="js/j.dimensions.js"></script>
+<script type="text/javascript" src="js/j.suggest.js"></script>
+<script type="text/javascript" src="js/sweetalert.min.js"></script>
+<script>
+	$(function(){
+		$("#arrcity").suggest(citys,{hot_list:commoncitys,dataContainer:'#arrcity_3word', attachObject:'#suggest'});
+		$("#city2").suggest(citys,{hot_list:commoncitys,attachObject:"#suggest2"});
+	});
+</script>
+
+
+</body>
+</html>

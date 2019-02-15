@@ -1,0 +1,199 @@
+<!DOCTYPE HTML>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="renderer" content="webkit|ie-comp|ie-stand">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+		<meta http-equiv="Cache-Control" content="no-siteapp" />
+		<link rel="Bookmark" href="/favicon.ico">
+		<!-- <link rel="Shortcut Icon" href="/favicon.ico" /> -->
+		<!--[if lt IE 9]>
+			<script type="text/javascript" src="lib/html5shiv.js"></script>
+			<script type="text/javascript" src="lib/respond.min.js"></script>
+		<![endif]-->
+		<link rel="stylesheet" type="text/css" href="../../static/h-ui/css/H-ui.min.css" />
+		<link rel="stylesheet" type="text/css" href="../../static/h-ui.admin/css/H-ui.admin.css" />
+		<link rel="stylesheet" type="text/css" href="../../lib/Hui-iconfont/1.0.8/iconfont.css" />
+		<link rel="stylesheet" type="text/css" href="../../static/h-ui.admin/skin/default/skin.css" id="skin" />
+		<link rel="stylesheet" type="text/css" href="../../static/h-ui.admin/css/style.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/index.css">
+		<!--[if IE 6]>
+		<script type="text/javascript" src="lib/DD_belatedPNG_0.0.8a-min.js" ></script>
+		<script>DD_belatedPNG.fix('*');</script>
+		<![endif]-->
+		<title>纠错显示</title>
+	</head>
+	<style type="text/css">
+		ul {
+			list-style-type: none;
+		}
+		
+		li {
+			display: inline-block;
+		}
+		li {
+			margin: 10px 0;
+		}
+		
+		input.labelauty+label {
+			font: 12px "Microsoft Yahei";
+		}
+		.endior:hover{
+			cursor: pointer;
+			color: red;
+		}
+		.table th, .table td{
+			padding:8px 3px;
+		}
+		.disabled{
+			background: #ccc;
+		}
+	</style>
+
+	<body>
+		<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 数据纠错 <span class="c-gray en">&gt;</span> 纠错列表
+			<a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新"><i class="Hui-iconfont">&#xe68f;</i></a>
+		</nav>
+		
+
+		<div style="width:98%;margin:0 auto;">
+		 <div class="cl pd-5 bg-1 bk-gray mt-20"><button class="btn btn-primary radius" id="btnExport">纠错列表导出Excel</button></div> 
+		<br>
+		<!--<button type="button" id="btnExport">导出Excel</button>-->
+			<table class="table table-border table-bordered table-bg" id="result">
+				<thead>
+					<tr class="text-c">
+						<th>编号</th>
+						<th>用户名</th>
+						<th>用户ID</th>
+						<th>mikey</th>
+						<th>品牌</th>
+						<th>名称</th>
+						<th>旧</th>
+						<th>新</th>
+						<th>类型</th>
+						<th>修改时间</th>
+						<th>是否解决</th>
+					</tr>
+				</thead>
+				<tbody id="tbody">
+	
+				</tbody>
+			</table>
+		</div>
+	</body>
+	<!--_footer 作为公共模版分离出去-->
+	<script type="text/javascript" src="../../lib/jquery/1.9.1/jquery.min.js"></script>
+	<!--/_footer 作为公共模版分离出去-->
+	<script type="text/javascript" src="../../js/aircity.js"></script>
+	<script type="text/javascript" src="../../js/j.suggest.js"></script>
+	<script type="text/javascript" src="../../AftermarketBrand/layer/layer.js"></script>
+	<script type="text/javascript" language="javascript" src="../../AftermarketBrand/datatables/1.10.0/jquery.dataTables.min.js"></script>
+	<script type="text/javascript" src="../../js/jquery.table2excel.js"></script>
+	<script type="text/javascript">
+		var network = localStorage.getItem("network");
+		layer.load(2);
+		initData();
+		var tab=$('<table>')
+		function initData() {
+			$("#btnExport").attr('disabled',true)
+			$("#btnExport").addClass('disabled')
+			$.ajax({
+				type: "post",
+				url:network + "/MattrioManager/FeedbackListController/getFeedbackList",
+				dataType: "json",
+				cache: false,
+				crossDomain: true == !(document.all),
+				success: function(data) {
+					$('#tbody').html("");
+					$('#layui-layer-shade1').hide()
+					$('#layui-layer1').hide()
+					data.list.sort(fun)
+					function fun(a,b){
+					 	return	b.time.time-a.time.time
+					}
+					tab.append('<tr class="text-c"><th>编号</th><th>用户名</th><th>用户ID</th><th>mikey</th><th>品牌</th><th>名称</th><th>旧</th><th>新</th><th>类型</th><th>修改时间</th><th>是否解决</th></tr>')
+					$.each(data.list, function(key, value) {
+						$('#tbody').append("<tr><td style='text-align: center;'>"+value.postion+"</td><td style='text-align: center;'>"+value.user_name+"</td><td style='text-align: center;' title='"+value.user_id+"'>"+value.user_id+"</td><td style='text-align: center;'>"+value.mikey+"</td><td style='text-align: center;'>"+value.brand_name+"</td><td style='text-align: center;'>"+value.category_name+"</td><td style='text-align: center;'>"+value.part_number+"</td><td style='text-align: center;'>"+value.new_part_number+"</td><td style='text-align: center;'>"+value.type+"</td><td style='text-align: center;' class='zxx_text_overflow' title='"+format(value.time.time)+"'>"+format(value.time.time)+"</td><td style='text-align: center;' class='endior'>"+value.state+"</td></tr>");
+						/*导出表格的*/				
+						tab.append("<tr><td style='text-align: center;'>"+value.postion+"</td><td style='text-align: center;'>"+value.user_name+"</td><td style='text-align: center;' title='"+value.user_id+"'>"+value.user_id+"</td><td style='text-align: center;'>"+value.mikey+"</td><td style='text-align: center;'>"+value.brand_name+"</td><td style='text-align: center;'>"+value.category_name+"</td><td style='text-align: center;'>"+value.part_number+"</td><td style='text-align: center;'>"+value.new_part_number+"</td><td style='text-align: center;'>"+value.type+"</td><td style='text-align: center;' class='zxx_text_overflow' title='"+format(value.time.time)+"'>"+format(value.time.time)+"</td><td style='text-align: center;' class='endior'>"+value.state+"</td></tr>");
+					});
+					$(document).ready(function() {
+					    $('#result').DataTable( {
+					        "order": [[ 9, "desc" ]]
+					    } );
+					} );
+					$("#btnExport").attr('disabled',false)
+					$("#btnExport").removeClass('disabled')
+					$(document).ready(function(){
+						$(".id_text_overflow").each(function(){
+							var maxwidth=20;
+							if($(this).text().length>maxwidth){
+								$(this).text($(this).text().substring(0,maxwidth));
+								$(this).html($(this).html()+'...');
+							}
+						});
+					});
+				},
+			})
+		}
+		$(document).ready(function() {
+    $('#example').DataTable( {
+        "order": [[ 3, "desc" ]]
+    } );
+} );
+		function format(shijianchuo){
+			var time = new Date(shijianchuo);
+			var y = time.getFullYear();
+			var m = time.getMonth()+1;
+			var d = time.getDate();
+			var h = time.getHours();
+			var mm = time.getMinutes();
+			var s = time.getSeconds();
+			return y+'-'+m+'-'+d+' '+h+':'+mm+':'+s;
+		};
+
+		$(document).on("click",".endior", function(){
+			var postion = $(this).parents("tr").find('td:eq(0)').text();
+			console.log(postion)
+			if($(this).html() == "已解决"){
+				alert("已标记为已解决");
+				return false;
+			}
+			if(confirm("是否标记已解决")){
+				$.ajax({
+					url:network+"/MattrioManager/FeedbackListController/updateFeedbackState",
+					type:"post",
+					data:{
+						"postion":postion
+					},
+					dataType:"json",
+					cache: false,
+					crossDomain: true == !(document.all),
+					success:function(data){
+						alert(data.msg);
+						window.location.reload();
+					}
+				})
+			}
+		})
+	var tab=$('<table>')
+/*点击导出表格*/
+	   $(document).ready(function () {
+	      $("#btnExport").click(function () {
+	       tab.table2excel({
+	          exclude : ".noExl", //过滤位置的 css 类名
+	          filename : "纠错列表.xls", //文件名称
+	          name: "Excel Document Name.xlsx",
+	          exclude_img: true,
+	          exclude_links: true,
+	          exclude_inputs: true
+	        });
+	      });
+	    });
+
+	</script>
+
+</html>

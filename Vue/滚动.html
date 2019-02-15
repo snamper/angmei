@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		*{
+			margin: 0;
+			border: 0;
+		}
+		div{
+			height: 21px;
+			overflow: hidden;
+		}
+	</style>
+	<body>
+		<div>
+			<ul>
+			<li>现昂美数据为增强用户体验，完善数据查询51macc.com平台，</li>
+						<li>面向广大用户收集,指定数据纠错和对51macc.com功能迭代的建议。</li>
+						<li>一经采用，以现金方式进行奖励。</li>
+						<li>1、指定数据纠错，一经核实，以1元/条现金奖励。</li>
+						<li>2、51macc.com系统功能迭代建议，一经采用，奖励现金100元。</li>
+						<li>本活动最终解释权归昂美数据所有。</li>
+					</ul>
+		</div>
+	</body>
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript">
+		setInterval(function(){
+			$("ul").animate({
+				'margin-top':'-20px'
+			},2000,function(){
+				var a=$("ul").find('li').eq(0).clone()
+				$("ul").find('li').eq(0).remove()
+				a.appendTo('ul')
+				$('ul').css('margin-top','0')
+			})
+		},2000)
+		var a = {'n':1};
+		var b = a;
+		a.x = a = {'n':2};
+		console.log(a.x);
+		console.log(b.x);
+	</script>
+</html>

@@ -1,0 +1,301 @@
+/*头部*/
+.nav{
+	width:100%;
+	height: 60px;
+	margin:0 auto;
+	background-color: #fff;
+	border-bottom:1px solid #E7161A;
+}
+.nav .nav_left{
+	float:left;
+	margin-top: 10px;
+	margin-left: 50px;
+}
+.nav .nav_left a{
+	padding-left: 10px;
+}
+.nav_left img{
+	width:150px;
+}
+.nav .nav_right{
+	float:right;
+}
+.nav .nav_right a{
+	padding-left: 10px;
+}
+.nav .nav_right div{
+	padding:5px;
+	margin-right:20px;
+}
+.nav .nav_right div a{
+	color:#b20822;
+	line-height: 50px;
+	font-size: 14px;
+}
+.nav .nav_right .navrightd{
+	margin-right: 100px;
+}
+.nleft a{
+	color:#b20822;
+	line-height: 40px;
+	font-size: 14px;
+}
+.wxcont{
+	position: relative;
+}
+.wxtop{
+	position:absolute;
+	top:40px;
+	left:30px;
+	display: none;
+}
+.wxfa{
+	display: inline-block;
+}
+.wxfa:hover .wxtop{
+	display: block;
+}
+input{
+	border: 1px solid #ccc;
+}
+/*导入表格*/
+.wrap{
+	width: 1028px;
+	margin: 0 auto;
+	padding-top:20px ;
+}
+button{
+	border: 0px;
+}
+.import,.export,.clear{
+	color: #fff;
+    background-color: #da534f;
+    border: 0;
+    cursor: pointer;
+    font-weight: 400;
+    white-space: nowrap;
+    width: 110px;
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+}
+.clear{
+	width:70px;
+	float: right;
+	background: #5eb95e;
+}
+.import:hover{
+	background-color: #bb0c07;
+}
+.file,input[type=file]{
+	display: none;
+}
+.numlist{
+	border: 1px solid #ccc;
+	height: 160px;
+	/*overflow: auto;*/
+	margin-top: 10px;
+	border-radius:5px ;
+	background: #fff;
+}
+.numlist div{
+	float: left;
+	margin: 10px 0 0 10px;
+	color: #464646;
+}
+.numlist div:hover{
+	color: #000;
+}
+.getdata{
+	width: 80px;
+	background: #28608f;
+	color: #fff;
+	height: 30px;
+	border-radius: 5px;
+	float: left;
+}
+/*进度条*/
+.jinduwrap{
+	margin-top: 10px;
+	height: 30px;
+}
+.progress{
+	border-radius: 20px;
+	width: 85%;
+	float: left;
+	margin: 5px 10px 0 10px;
+}
+.stop{
+	float: left;
+	height: 100%;
+	cursor: pointer;
+}
+.stop img{
+	margin-top: 3px;
+}
+.actionimg{
+	display: none;
+}
+.progress-bar.active{
+    animation: reverse progress-bar-stripes 0.40s linear infinite, animate-positive 2s;
+}
+@-webkit-keyframes animate-positive{
+     0% { width: 0; }
+}
+@keyframes animate-positive{
+      0% { width: 0; }
+}
+.progress-bar{
+	width: 0%;
+	border-radius: 20px;
+}
+/*表格*/
+.tablewrap{
+	border: 1px solid #da534f;
+	margin-top: 20px;
+	margin-bottom: 30px;
+	min-height:400px ;
+	border-radius: 5px;
+	overflow: hidden;
+}
+.tabwrap{
+	background: #da534f;
+	padding: 5px 0;
+	margin-bottom: 10px;
+}
+.tabwrap .tab{
+	background: #ca4944;
+	color: #fff;
+	border-radius: 30px;
+	float: left;
+	margin-left: 15px;
+	padding: 5px 15px;
+	cursor: pointer;
+}
+#example_wrapper{
+	width: 95%;
+	margin: 5px auto 0;
+}
+.tabwrap .tabbg{
+	background: #fff;
+	color: #da534f;
+}
+.tabwrap .export{
+	float: right;
+	margin-right: 20px;
+}
+.export:hover{
+	background: #ca4944;
+}
+.bottomwrap{
+	height: 360px;
+	overflow: auto;
+}
+table{
+	width: 100%;
+	border-top: 1px solid #111;
+	display: none;
+}
+table th{
+	text-align: center;
+	line-height: 24px;
+}
+table td{
+	line-height: 20px;
+	text-align: center;
+}
+table td  img{
+	width: auto;
+	height: 40px;
+}
+table tbody tr:nth-child(2n-1){
+	background: #f0f3f6;
+}
+table tbody tr{
+	line-height: 30px;
+	height: 30px;
+}
+table tbody tr:hover{
+	background: #fea1a4;
+	color: #fff;
+}
+.oetable{
+	display: table;
+}
+.oecont span:hover,.socont span:hover{
+	color: red;
+	cursor: pointer;
+}
+.format{
+	height: 30px;
+	width: auto;
+	cursor: pointer;
+	transition: all 0.5s;
+	border: 1px solid #ccc;
+	position: absolute;
+}
+.format:hover{
+	height: 500px;
+	transition: all 0.5s;
+}
+.meng{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	display: none;
+	background: rgba(0,0,0,0.4);
+	cursor: pointer;
+}
+.cou{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	height: auto;
+	width: 625px;
+	display: none;
+}
+textarea{
+	border: 0;
+	width: 100%;
+	height: 100%;
+	border-radius: 5px;
+	padding: 10px;
+}
+.inpbox,input[type=checkbox]{
+    width: 14px;
+    height: 14px;
+    margin: 0 5px 0 0;
+    vertical-align: middle;
+}
+
+/*===============*/
+.footer{
+	width:100%;
+	background-color: #4b4b4b;
+	text-align: center;
+	padding-top: 20px;
+	padding-bottom: 10px;
+}
+.footer p{
+	line-height: 20px;
+	color:#eee;
+	font-size: 12px;
+	margin:0;
+}
+.footer p span{
+	padding-left:10px;
+	padding-right:10px;
+}
+img{
+	vertical-align: middle;
+}
+.course{
+	color: #da534f;
+	cursor: pointer;
+	margin-left: 35px;
+	font-weight: bold;
+}

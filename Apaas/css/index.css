@@ -1,0 +1,355 @@
+p{
+	margin-bottom: 0;
+}
+.BMap_Marker img{
+	width: 36px;
+	height:auto ;
+}
+body{
+	background: #efefef;
+	font-family: PingFangSC-Semibold, sans-serif;
+}
+a{
+	font-family: PingFangSC-Semibold, sans-serif;
+}
+nav{
+	 background: #0247ac;	     
+	 box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4)
+}
+.nav-link{
+	width: 80px;
+	border-bottom: 2px solid #0247ac;
+	float: right;
+}
+.container-fluid{
+	overflow: hidden;
+}
+#section4{
+	overflow: visible;
+}
+.nav-link.active{
+	border-bottom: 2px solid #faad13;
+}
+.logo{
+	width:auto;
+	height:46px;
+	margin-left: 20px;
+}
+.logoText{
+	font-size: 14px;
+	margin-left: 10px;
+	width: 120px;
+}
+.logoText p{
+    text-align-last: justify;
+}
+.banner{
+	margin-top: 56px;
+	position: relative;
+}
+.bannerText{
+	position: absolute;
+	top: 20%;
+	right: 10%;
+	color: #fff;
+}
+.bannerText h1{
+	text-shadow: 3px 3px 3px #4394ef;
+}
+.bannerText h5{
+	text-align-last: justify;
+	-webkit-animation-delay: 0.2s !important;
+	animation-delay: 0.2s !important;
+}
+#section1{
+	margin-top: -9%;
+	z-index:1000;
+	position: relative;
+}
+.list{
+	background: #fff;
+	box-shadow: 0px 0px 3px #ccc;
+}
+.sectionTitle{
+	width: auto;
+	height: 50px;
+}
+/*公司介绍*/
+.list1{
+	padding-top:35px;
+	background:url(../img/car.png) no-repeat #fff right bottom;
+	padding-bottom: 120px;
+	/*overflow: hidden;*/
+}
+.sectionContent{
+	padding-left: 15px;
+	color: #565656;
+	font-size: 14px;
+}
+.pTitle{
+	color: #1c8bf7;
+	font-weight: bold;
+	padding-top: 10px;
+	font-size: 18px;
+}
+.pTitle .box1{
+	background: #78a2ca;
+	width: 6px;
+	height: 6px;
+	display: inline-block;
+	margin-bottom: 3px;
+	margin-left: 3px;
+}
+.pTitle .box2{
+	background: #417cbe;
+	width: 10px;
+	height: 10px;
+	display: inline-block;
+	margin-bottom: 1px;
+	margin-left: 3px;
+}
+.pTitle .box3{
+	background: #1862cd;
+	width: 14px;
+	height: 14px;
+	display: inline-block;
+	margin-left: 3px;
+}
+.sectionContent p{
+	line-height: 24px;
+	margin-top: 10px;	
+	letter-spacing:2px;
+}
+/*公司项目*/
+.list2{
+	padding-top: 25px;
+	padding-bottom: 60px;
+}
+.list2 .sectionContent{
+	padding-left: 0;
+	margin: 0 15px;
+	margin-top: 20px;
+}
+.section2List{
+	padding-top: 25px;	
+	text-align: center;
+	font-size: 14px;
+	padding-bottom:15px;
+	-webkit-transition: all 0.5s;-o-transition: all 0.5s;transition: all 0.5s;
+	top: 0;
+	border-radius: 5px;
+}
+.section2List .border{
+	width: 140px;
+	height: 140px;
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;	
+	-webkit-transition: all 0.5s;-o-transition: all 0.5s;transition: all 0.5s;
+}
+.section2List .img{
+	height: 60px;
+	width: auto;
+}
+.section2List .p{
+	font-weight: bold;
+	font-size: 16px;
+	margin-bottom: 5px;	
+}
+.section2List .line{
+	text-align: left;
+	padding-left: 50px;
+	line-height: 24px;
+	width: 85%;
+	color: #a9a9a9;
+}
+.section2List:nth-child(1) .line,.section2List:nth-child(2) .line{
+	padding-left: 36%;
+}
+.section2List:nth-child(3) .line,.section2List:nth-child(4) .line{
+	padding-left: 15%;
+}
+.section2List .box{
+	width: 10px;
+	height: 10px;
+	display: inline-block;
+	background: #f2ae3f;
+	margin-left: -18px;
+	margin-right: 7px;
+}
+.section2List:hover{
+	box-shadow: 1px 3px 8px #ccc;
+	-webkit-transition: all 0.5s;-o-transition: all 0.5s;transition: all 0.5s;
+	color: #000;
+	cursor: pointer;
+	position: relative;
+	top: -10px;
+}
+.section2List:hover .line{
+	color: #565656;
+}
+.section2List:hover .border{
+	box-shadow: 8px 0 8px #007bff ;	
+	-webkit-transition: all 0.5s;-o-transition: all 0.5s;transition: all 0.5s;
+}
+/*产品展示*/
+.list3{
+	padding: 0;
+}
+.carousel-item img{
+	width: 50%;	
+	height: auto;
+	margin: 0 auto;
+	display: block;
+}
+.bgTop{
+	padding-top: 25px;
+	padding-left: 15px;
+	background: #1c59b4;
+	overflow: hidden;
+}
+.list3 h4{
+	color: #f7b00a;
+	margin-top: 50px;
+	text-align: center;
+}
+.list3 .p{
+	padding: 0 40px;
+	text-align: center;
+	color: #fff;
+	margin-top: 15px;
+	margin-bottom: 150px;
+}
+.carousel-control-prev-icon,.carousel-control-next-icon{
+	background-image:none ;
+}
+.product img{
+	width: 100%;
+	height: auto;
+}
+.product .productImg{
+	border: 1px solid #fff;	
+	border: 1px solid #ffc107;	
+}
+#demo{
+	margin: 0 80px;
+	margin-top: -100px;
+}
+.section3Product{
+	margin: 30px 80px 60px;
+}
+.section3Product .product{
+	text-align: center;
+	padding-bottom: 10px;
+}
+.list3 .text{
+	text-align: right;
+	color: #3c3c3c;
+	padding-right: 20px;
+}
+.section3Content{
+	padding: 0 30px;
+	margin-bottom: 15px;
+}
+.section3Content h5{
+	color: #147bfc;
+	position: relative;
+}
+.section3Content p{
+	color: #838383;
+	font-size: 14px;
+	margin-top: 10px;
+	letter-spacing:2px;
+}
+.section3Content:hover p{
+	color: #000;
+}
+.Taiwan img{
+	width: 50%;	
+}
+.Taiwan,.shengpai{
+	overflow: hidden;
+	padding:7px;
+	border: 1px solid #efefef;
+}
+.TaiwanRight,.shengpaiRight{
+	padding-top:15px ;
+}
+.shengpai,.shengpaiRight{
+	-webkit-animation-delay: 0.2s !important;
+	animation-delay: 0.2s !important;	
+}
+/*公司动态*/
+#section3{
+	position: relative;
+	z-index: 100;
+	margin-bottom: -160px;
+}
+.list4{
+	padding-top: 25px;
+	box-shadow: 0px 2px 3px #ccc;
+}
+/*地图*/
+.mapWrap{
+	position: relative;
+}
+#map{
+	height: 400px;
+}
+.anchorBL img{
+	opacity: 0 !important;
+}
+.BMap_scaleCtrl{
+	left: 5px !important;
+}
+.BMap_cpyCtrl{
+	opacity: 0 !important;
+}
+/*电话*/
+.callWrap{
+	position: absolute;
+	z-index: 100;
+	bottom: 35px;
+	right: 35px;
+	-webkit-transition: all 0.5s;-o-transition: all 0.5s;transition: all 0.5s;
+}
+.callWrap img{
+	width: auto;
+	height: 80px;
+}
+.callWrap:hover{
+	box-shadow: 1px 1px 8px #ccc;
+	-webkit-transform: scale(1.3);-ms-transform: scale(1.3);transform: scale(1.3);
+	-webkit-transition: all 0.5s;-o-transition: all 0.5s;transition: all 0.5s;
+}
+.Top{
+	position: absolute;
+	right: 20px;
+	top: 40px;
+}
+.Top a{
+	text-decoration: none;
+}
+.Top i{
+	font-size: 42px;	
+}
+.tooltip{
+	top: -8px !important;
+}
+/*尾部*/
+footer{
+	background: #69a6dc;
+	color: #fff;
+	text-align: center;
+	font-size: 14px;
+	padding: 10px 0;
+	letter-spacing: 2px;
+}
+
+/*显示隐藏*/
+@media screen and (max-width: 600px){
+	.logoText,.bannerText{
+		display: none;
+	}
+}

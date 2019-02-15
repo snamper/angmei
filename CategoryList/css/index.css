@@ -1,0 +1,57 @@
+.wrap{
+    width: 900px;
+    margin: 70px auto;
+}
+.inpWrap{
+    text-align: center;
+}
+input {
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid #ccc;
+    padding-left: 10px;
+    font-size: 16px;
+}
+#inp{
+    width: 240px;
+}
+.addWrap{
+    margin-top: 15px;
+}
+.addinp{
+    width: 150px;
+}
+.btn {
+    width: 80px;
+    height: 32px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-left: 15px;
+    cursor: pointer;
+    font-size: 16px;
+}
+table {
+    width: 100%;
+    border-color: #ccc;
+    line-height: 30px;
+    margin-top: 6px;
+}
+tbody td{
+    text-align: center;
+}
+#loading {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-left: -100px;
+    margin-top: -100px;
+    display: none;
+}
+.del{
+    color: red;
+    cursor: pointer;
+}
+.youName{
+    padding: 0 8px;
+    font-weight: bold;
+}

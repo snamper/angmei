@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="content-type" content="text/html;charset=utf-8">
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+		<meta name="keywords" content="51macc,mattrio,昂美贸易,原厂编号查询,OE编号查询,VIN查询,VIN码解析,车架号查询适用配件,汽车配件目录">
+		<meta name="robots" content="all">
+		<meta name="baidu-site-verification" content="0sB5WKDfi6" />
+		<meta name="description" content="昂美数据Mattrio致力于为各类零配件制造商及流通企业贸易公司,提供车架号 VIN,原厂编号查询,OE编号查询,VIN查询,VIN码解析,车架号查询适用配件,汽车配件目录等一系列服务.昂美数据为助力汽车后市场,加快数据流通,共建透明化市场。">
+		<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+		<title>昂美数据免费原厂OE编号查询_免费VIN码查询解析_免费车架号查询配件_汽车配件目录</title>
+		<link rel="icon" href="./image/logohead.jpg">
+		<link rel="stylesheet" type="text/css" href="./css/reset.css">
+		<link rel="stylesheet" type="text/css" href="./css/index.css?v=20181122">
+		<link rel="stylesheet" type="text/css" href="./css/ind.css?v=20181109">
+		<link rel="stylesheet" type="text/css" href="./css/vin.css?v=20181030">
+		<link rel="stylesheet" type="text/css" href="./css/loading.css">
+		<link rel="stylesheet" type="text/css" href="./css/suggest.css?v=20180929">
+		<link rel="stylesheet" type="text/css" href="css/tankuang.css?v=20181123"/>
+        <link rel="stylesheet" type="text/css" href="./css/animate.min.css">
+		<script src="js/cnzz.js"></script>
+		<script type="text/javascript">
+			function browserRedirect() { 
+				var sUserAgent = navigator.userAgent.toLowerCase();
+				var bIsIpad = sUserAgent.match(/ipad/i) == "ipad";
+				var bIsIphoneOs = sUserAgent.match(/iphone os/i) == "iphone os";
+				var bIsMidp = sUserAgent.match(/midp/i) == "midp";
+				var bIsUc7 = sUserAgent.match(/rv:1.2.3.4/i) == "rv:1.2.3.4";
+				var bIsUc = sUserAgent.match(/ucweb/i) == "ucweb";
+				var bIsAndroid = sUserAgent.match(/android/i) == "android"; 
+				var bIsCE = sUserAgent.match(/windows ce/i) == "windows ce";
+				var bIsWM = sUserAgent.match(/windows mobile/i) == "windows mobile";
+				 
+				if (bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM) { 
+					// window.location.href= '手机站链接'; 
+					var img_left = document.getElementById("img_left");
+					img_left.className = "cont_active";
+				} else { 
+				// window.location= 'PC站链接'; 
+				} 
+			} 
+			// browserRedirect(); 
+		</script>
+	</head>
+	<style type="text/css">
+		.biemingmeng{
+			position: fixed;
+			width: 100%;
+			height:100%;
+			top: 0;
+			left: 0;
+			background: rgba(0,0,0,0.4);
+			z-index: 10000;
+			display: none;
+		}
+		.biemingwrap{
+			position: absolute;
+			width: 920px;
+			height:500px;
+			top: 50%;
+			left: 50%;
+			margin-left: -460px;
+			margin-top: -250px;
+			background: #fff;
+			box-shadow: 0px 0px 8px #ccc;
+   			border-radius: 10px;
+   			overflow: hidden;
+			display: none;
+		}
+		#close{
+			position: absolute;
+		    right: 0px;
+		    top: 0px;
+		    display: inline-block;
+		    width: 20px;
+		    height: 20px;
+		    font-size: 20px;
+		    line-height: 20px;
+		    text-align: center;
+		    cursor: pointer;
+		    background: #eaeaea;
+		}
+		#close:hover{
+			font-weight: bold;
+			background: red;
+			color: #fff;
+		}
+	</style>
+	<body oncontextmenu=self.event.returnValue=false>
+		<div class="ie" id="ie">
+			<h1>是时候升级你的浏览器了</h1>
+			<p>你正在使用 Internet Explorer 的过期版本（IE6、IE7、IE8 或使用该内核的浏览器）。这意味着在升级浏览器前，你将无法访问此网站。</p>
+			<p>如果你是使用的浏览器是<b style="font-size: 22px;">360浏览器</b>请将地址栏末尾处的兼容模式改成极速模式</p>
+			<div class="line"></div>
+			<h2>请注意：Windows XP 及 IE6、IE7、IE8 的支持已经结束</h2>
+			<p>自 2014 年 4 月 8 日起，Microsoft 不再为 Windows XP 和 Internet Explorer 8 及以下版本提供相应支持和更新。如果你继续使用这些，你将可能受到病毒、间谍软件和其他恶意软件的攻击，无法确保个人信息的安全。请参阅 <a href="http://windows.microsoft.com/zh-cn/windows/end-support-help">Microsoft 关于 Windows XP 支持已经结束的说明</a> 。</p>
+			<div class="line"></div>
+			<h2>更先进的浏览器</h2>
+			<p>推荐使用以下浏览器的最新版本。如果你的电脑已有以下浏览器的最新版本则直接使用该浏览器访问<b id="referrer"></b>即可。</p>
+			<ul class="browser clearfix">
+				<li>
+					<a href="https://www.google.cn/intl/zh-CN/chrome/"><img src="image/chrome.png" alt="谷歌浏览器">谷歌浏览器<span>Google Chrome</span></a>
+				</li>
+				<li>
+					<a href="https://browser.360.cn/ee/"><img src="image/360.jpg" alt="360极速浏览器" style="width: 55px;">360极速浏览器<span>360 极速浏览器</span></a>
+				</li>
+				<li>
+					<a href="https://browser.360.cn/se/"><img src="image/360an.jpg" alt="360安全浏览器" style="width: 55px;">360安全浏览器<span>360 Security Browser</span></a>
+				</li>
+			</ul>
+			<div class="clean"></div>
+			<h2>为什么会出现这个页面？</h2>
+			<p>如果你不知道升级浏览器是什么意思，请请教一些熟练电脑操作的朋友。如果你使用的不是IE6/7/8，而是360浏览器、QQ浏览器、搜狗浏览器等，出现这个页面是因为你使用的不是该浏览器的最新版本，升级至最新即可。</p>
+			<div class="line"></div>
+			<h2>一起抵制IE6、IE7、IE8</h2>
+			<p>为了兼容这个曾经的浏览器霸主，网页设计人员需要做大量的代码工作，而且最终效果也始终不能让人满意。对于普通用户而言，低版本IE更是一个岌岌可危的安全隐患，在Windows历史上几次大的木马病毒事件都是利用IE漏洞进行传播。所以，请和我们一起抵制IE6、IE7、IE8！</p>
+		</div>
+		<script type="text/javascript">
+			if (window.ActiveXObject || "ActiveXObject" in window){
+              document.getElementById("ie").style.display="block"
+			}
+		</script>
+		<div class="nav clearfix">
+			<div class="navleft">
+				<a href="http://www.51macc.com/" title="昂美数据Mattri零配件制造商、流通企业贸易公司">
+					<img src="./image/logo.jpg" alt="昂美数据免费原厂OE编号查询_免费VIN码查询解析_免费车架号查询配件_汽车配件目录">
+				</a>
+			</div>
+			<div class="announcement">
+				<div class="apple">
+					<!-- <span><img src="./image/gonggao.png"></span> -->
+					<span>
+						<img class="biemingimg" src="./image/btn1.png" title="点击上传别名">
+					</span>
+					<span>
+						<img class="bianma" src="./image/btn2.png" title="编码批量查询">
+					</span>
+					<div class="tooltip">
+						<div>点击即可进行编码批量查询并可导出Excel</div>
+						<span></span>
+					</div>
+					<!-- <ul>
+						<li>现昂美数据为增强用户体验，完善数据查询51macc.com平台，</li>
+						<li>面向广大用户收集,指定数据纠错和对51macc.com功能迭代的建议。</li>
+						<li>一经采用，以现金方式进行奖励。</li>
+						<li>1、指定数据纠错，一经核实，以1元/条现金奖励。</li>
+						<li>2、51macc.com系统功能迭代建议，一经采用，奖励现金100元。</li>
+						<li>本活动最终解释权归昂美数据所有。</li>
+					</ul> -->
+				</div>
+				<!-- <p>
+					&nbsp;&nbsp; 现昂美数据为增强用户体验，完善数据查询51macc.com平台，面向广大用户收集,指定数据纠错和对51macc.com功能迭代的建议。一经采用，以现金方式进行奖励。<br>
+					<span>1、指定数据纠错，一经核实，以1元/条现金奖励。</span><br>
+					<span>2、51macc.com系统功能迭代建议，一经采用，奖励现金100元。</span><br> 本活动最终解释权归昂美数据所有。
+				</p> -->
+			</div>
+			<!--别名-->
+			<div class="biemingmeng">
+				<div class="biemingwrap">
+					<iframe src="bieming/index.html" width="100%" height="100%"></iframe>
+					<span id="close">×</span>
+				</div>	
+			</div>
+			
+			<div class="navright clearfix">
+				<div>
+					<a href="javascript:;" rel="nofollow" id="login">登录</a>
+				</div>
+				<div class="navrightd">
+					<a href="./register/register.html" rel="nofollow">注册</a>
+				</div>
+			</div>
+			<div class="navright1 clearfix">
+				<div class="nav_bi">
+					<a href="#">欢迎：<span class="navrighttel"></span></a>
+					<p>昂美数据分析系统</p>
+				</div>
+				<div>
+					<a href="#">剩余次数：<span class="navcenter"></span>次</a>
+				</div>
+				<div class="navrightout">
+					<a href="#" class="tuichu">退出</a>
+				</div>
+				<div class="headerqrcode">
+					<img  src="image/headerzjer.png" alt="" />
+				</div>
+			</div>
+			<div class="erweimawrap">
+				<img src="image/erweima.jpg"/>
+			</div>
+		</div>
+		<div class="content">
+			<script type="text/javascript">browserRedirect();</script>
+			<div class="contentbg">
+				<p id="bg_p1" class='headerimg'></p>
+				<p id="bg_p2"></p>
+				<p id="bg_p3"></p>
+				<img class="righttopimg" src="image/righttop.png" alt="" />
+				<div class="numwrap clearfix">
+					<div>
+						<div class="imgwrap">
+							<img src="image/numimg1.png"/>
+						</div>
+						<p class='p1'>逻辑数据</p>
+						<span class="jumbo" id="myTargetElement"></span>
+						<div class="bor"></div>
+					</div>
+					<div>
+						<div class="imgwrap">
+							<img src="image/numimg2.png"/>
+						</div>
+						<p class='p1'>配件/SKU</p>
+						<span class="jumbo" id="myTargetElement2"></span>
+						<div class="bor"></div>
+					</div>
+					<div>
+						<div class="imgwrap">
+							<img src="image/numimg3.png"/>
+						</div>
+						<p class='p1'>车型</p>
+						<span class="jumbo" id="myTargetElement3"></span>
+						<div class="bor"></div>
+					</div>
+					<div>
+						<div class="imgwrap">
+							<img src="image/numimg4.png"/>
+						</div>
+						<p class='p1'>品牌</p>
+						<span class="jumbo" id="myTargetElement4"></span>
+					</div>
+				</div>
+			</div>
+			<div class="contentcx">
+				<div class="cont_detalis">
+					<div class="clearfix cont_title">
+						<p class="contentcxvin active">VIN</p>
+						<p class="contentcxyear">车 型</p>
+						<!--<p class="contentcxmikey">MIKEY</p>-->
+						<p class="contentcxoe">编码</p>
+						<!--<p class="contentcxsh">售后品牌</p>-->
+						<p class="contentepc images_top_left">Magic-EPC</p>
+					</div>
+					<div>
+						<div class="contentyear clearfix">
+							<div id="s1">选择年份</div>
+							<div id="box">
+								<label for="arrcity"></label><input type="text" name="arrcity" id="arrcity" placeholder="请选择主机厂" />
+								<div id='suggest' class="ac_results"></div>
+							</div>
+							<div id="s3">请选择车型</div>
+							<div id="s4">请选择销售名称</div>
+							<button class="btnyear"><img src="./image/search1.png"></button>
+							<div class="conts1"></div>
+							<div class="conts3"></div>
+							<div class="conts4"></div>
+						</div>
+
+						<div class="cont_vin">
+							<div class="wrapper">
+								<input class="inputbox" type="text" name="search" id="search" autocomplete="off" list="vinlist">
+								<datalist id="vinlist"></datalist>
+								<button class="buttom" id="btn"><img src="./image/search1.png"></button>
+							</div>
+							<p style="text-align: left;color: #fff;padding-left:30px;line-height: 30px;">例如：LE4HG3GB5EL164061</p>
+						</div>
+						<div class="contentoe">
+							<div class="contentoewrap">
+								<input class="numshow" id="oehao" list='oedatalist' type="text" name="" placeholder="输入您要查询的OE号码或售后编码"  autocomplete="off">
+								<datalist id="oedatalist"></datalist>
+								<textarea rows="4"  cols="" spellcheck="false" placeholder="多个OE号码或售后编码用换行分隔"></textarea>
+								<div class="oelistimg"></div>
+							</div>
+							<button class="oebtn"><a target='_blank'><img src="./image/search1.png"></a></button>
+							<div id="oelist"></div>
+						</div>
+					</div>
+				</div>
+
+				<div class="cont_epc cont_active">
+					<div class="cont_epcinp clearfix">
+						<img src="./image/down.png" class="cont_epcinp_down">
+						<span>请选择主机厂</span>
+						<input id="epc_inp" type="text" name=""  placeholder="输入您要查询的17位VIN号码" list="">
+						<datalist id="" class="Epclist">
+						</datalist>
+						<button id="btn_epc"><img src="./image/search1.png"></button>
+					</div>
+					<p class="example" style="text-align: left;color: #fff;padding-left:30px;line-height: 30px;">例如：<span class="name"></span>，VIN：<span class="vin"></span></p>
+					<div class="carname">
+					</div>
+				</div>
+
+				<div class="images">
+					<!--EPC查询-->
+					<div class="images_al">
+						<div class="images_bottom">
+							<span class="images_allcar_close">×</span>
+							<p class="images_allcar_p"><img src="./image/EPCselect.png"></p>
+							<p class="images_allcar_p1"><img src="./image/line2.png" alt=""></p>
+							<ul></ul>
+						</div>
+                        <div class="loginwrap">
+                        	<span class="none">×</span>
+                            <div class="loginImg ">
+								<img src="image/QQWXbg.png"/>
+								<p>51macc数据平台<br /><span>亿万级SKU数据  实时数据发布</span></p>
+								<p>VIN码解析 <br /><span>一码一件解析度高达95%以上</span></p>
+								<p>全车件OE数据 <br /><span>标准命名 模糊搜索 三级分组</span></p>
+								<p>EPC数据<br /><span>整车剖析 单车数千张BOM关系 爆炸图</span></p>
+								<p>Mikey车型库 <br /><span>6.8万条车型数据 120个描述字段</span></p>
+                            </div>
+                            <div class="loginContent">
+                                <img class="logo" src="./image/logo.jpg" alt="logo">
+                                <hr size="1">
+                                <span class="span">3秒登陆&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;快速查询</span>
+                                <div class="methods clearfix">
+                                    <div class="QQlogin">
+                                        <a href="https://www.51macc.com/api/Mattrio/QQController/showQQlogin">
+                                            <img class="QQImg" src="image/QQ1.png" alt="QQ登陆">
+                                            <img class="QQ2Img" src="image/QQ2.png" alt="QQ登陆2">
+                                            <p>QQ登陆</p>
+                                        </a>
+                                    </div>
+                                    <div class="WXlogin">
+                                        <a href="https://open.weixin.qq.com/connect/qrconnect?appid=wxe2b6c778a9d99130&redirect_uri=https%3a%2f%2fwww.51macc.com%2fapi%2fMattrio%2fweixinCore%2fwxRedirect&response_type=code&scope=snsapi_login&state=200#wechat_redirect">
+                                            <img class="WXImg" src="image/WX1.png" alt="微信登陆">
+                                            <img class="WX2Img" src="image/WX2.png" alt="微信登陆2">
+                                            <p>微信登陆</p>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="loginBottom clearfix">
+                                    <div class="lbleft">还没有注册账号？<a href="./register/register.html ">立即注册</a></div>
+                                    <div class="lbright"><a href="./login/login.html">账号密码登陆</a></div>
+                                </div>
+                            </div>
+                        </div>
+						<div class="images_all_con">
+							<div></div>
+						</div>						
+					</div>
+				</div>
+			</div>
+			<div class="click_none">
+				<div class="content_work clearfix">
+					<p class="work_title"><img src="./image/line_left.png">我们为您提供<img src="./image/line_right.png"></p>
+					<div class="work1">
+						<p class="work_p"></p>
+						<p class="work_cont">VIN码解析</p>
+						<div>
+							<img src="./image/offer1.jpg" class="work_cont_vin" alt="VIN码解析">
+						</div>
+						<p class="content_work_p"><img src="./image/jiantou.png"><span>OCR快速识别解析</span></p>
+						<p><img src="./image/jiantou.png"><span>一车一码 解析度高达95%以上</span></p>
+					</div>
+					<div class="work2">
+						<p class="work_p"></p>
+						<p class="work_cont">全车件OE数据</p>
+						<div>
+							<img src="./image/offer2.jpg" class="work_cont_oe" alt="全车件OE数据">
+						</div>
+						<p class="content_work_p"><img src="./image/jiantou.png"><span>标准命名 模糊搜索 三级分组</span></p>
+						<p><img src="./image/jiantou.png"><span>配件价格  反向适配  家族谱互换关联</span></p>
+					</div>
+					<div class="work3">
+						<p class="work_p"></p>
+						<p class="work_cont">EPC数据</p>
+						<div>
+							<img src="./image/offer3.jpg" class="work_cont_epc" alt="EPC数据">
+						</div>
+						<p class="content_work_p"><img src="./image/jiantou.png"><span>精准唯一  配件锁定</span></p>
+						<p><img src="./image/jiantou.png"><span>整车剖析  单车数千张BOM关系   爆炸图</span></p>
+					</div>
+					<div class="work1">
+						<p class="work_p"></p>
+						<p class="work_cont">Mikey 车型库</p>
+						<div>
+							<img src="./image/offer6.jpg"  class="work_cont_mikey" alt="Mikey 车型库">
+						</div>
+						<p class="content_work_p"><img src="./image/jiantou.png"><span>6.8万条车型数据  120个描述字段</span></p>
+						<p><img src="./image/jiantou.png"><span>精细描述  与国内外车型库无缝对接</span></p>
+					</div>
+					<div class="work2">
+						<p class="work_p"></p>
+						<p class="work_cont">51macc 数据平台</p>
+						<div>
+							<img src="./image/offer4.jpg" class="work_cont_platform" alt="51macc 数据平台">
+						</div>
+						<p class="content_work_p"><img src="./image/jiantou.png"><span>免费数据查询  200个售后品牌</span></p>
+						<p><img src="./image/jiantou.png"><span>亿万级SKU数据  实时数据发布</span></p>
+					</div>
+					<div class="work3">
+						<p class="work_p"></p>
+						<p class="work_cont">Macc 决策系统</p>
+						<div>
+							<img src="./image/offer5.jpg" class="work_cont_juece" alt="Macc 决策系统">
+						</div>
+						<p class="content_work_p"><img src="./image/jiantou.png"><span>分析当前市场规模  预测未来发展趋势</span></p>
+						<p><img src="./image/jiantou.png"><span>专业数据分析工具   数据聚合 多维度助力市场营销</span></p>
+					</div>
+				</div>
+				<p class="work_title"><img src="./image/line_left.png">昂美介绍<img src="./image/line_right.png"></p>
+				<p class="work_f">昂美数据Mattrio是一家专业汽车后市场数据服务公司，致力于为各类零配件制造商及流通企业贸易公司提供汽车后市场咨询、数据定制、数据分析、原厂编号查询、OE编号查询、VIN查询、VIN码解析、车架号查询适用配件、车架号VIN、汽车配件目录和产品电子目录等一系列服务。
+昂美数据拥有一支汽车售后从业经验超过十年的专业队伍，拥有超过3000个值得信赖的信息渠道组成我们巨大的数据源。专业的产品经理团队提供专业售后数据解决方案。昂美数据为助力汽车后市场，加快数据流通，共建透明化市场，也在进一步法努力，旨在为工厂，维修业，保险，资本投资等提供数据支持及系统的建模与布局规划提供数据参考及合理化建议。</p>
+			</div>
+		</div>
+		<div class="goodness"><img src="./image/goodness.png" class="goodness_img">
+			<div class="clearfix goodness_cont">
+				<div class="goodness_left"><img src="./image/goodness_left.png"></div>
+				<div class="goodness_right">
+					<p>我们的优势<img src="./image/dian.png" alt=""></p>
+					<ul>
+						<li><img src="./image/pointer.png"> 标准车型库： 车型+零部件OE+尺寸+品牌+价格</li>
+						<li><img src="./image/pointer.png"> 车型信息全覆盖</li>
+						<li><img src="./image/pointer.png"> 精准区域划分 保有量 上牌量数据</li>
+						<li><img src="./image/pointer.png"> 精细粒度数据，维度细化ID编码互通转化、高效唯一</li>
+						<li><img src="./image/pointer.png"> 可定制数据结构和报表</li>
+						<li><img src="./image/pointer.png"> 及时纠错 现金奖励 实时 快速数据更新</li>
+						<li><img src="./image/pointer.png"> 专业产品经理和工程师把控数据质量</li>
+					</ul> 
+				</div>
+			</div>
+		</div>
+			
+		<div id="container">
+			<div id="marquee1">
+				<ul>
+					<li><img src="./static/images/brands/ACdelco.jpg"></li>
+					<li><img src="./static/images/brands/bosch.jpg"></li>
+					<li><img src="./static/images/brands/champion.jpg"></li>
+					<li><img src="./static/images/brands/denso.jpg"></li>
+					<li><img src="./static/images/brands/fram.jpg"></li>
+					<li><img src="./static/images/brands/hengst.jpg"></li>
+					<li><img src="./static/images/brands/J-works.jpg"></li>
+					<li><img src="./static/images/brands/K&N.jpg"></li>
+					<li><img src="./static/images/brands/mahle.jpg"></li>
+					<li><img src="./static/images/brands/mann.jpg"></li>
+					<li><img src="./static/images/brands/nanox.jpg"></li>
+					<li><img src="./static/images/brands/sofima.jpg"></li>
+					<li><img src="./static/images/brands/tora.jpg"></li>
+					<li><img src="./static/images/brands/westers.jpg"></li>
+					<li><img src="./static/images/brands/winhere.jpg"></li>
+					<li><img src="./static/images/brands/ybm.jpg"></li>
+				</ul>
+			</div>
+		</div>
+		<!--浮动面板-->
+		<div id="floatPanel">
+			<div class="ctrolPanel">
+				<a class="arrow arrow1" href="#" rel="nofollow"><img src="./image/up.png"><span>顶部</span></a>
+				<a class="contact" href="javascript:"><img src="./image/fankui.png"><span>反馈</span></a>
+				<a class="qrcode" href="javascript:"><img src="./image/wenx.png"><span>微信二维码</span></a>
+				<a class="zhaojianer" href="javascript:">APP</a>
+				<a class="arrow arrow2" href="#" rel="nofollow"><img src="./image/down.png"><span>底部</span></a>
+			</div>
+			<div class="popPanel">
+				<div class="popPanel-inner">
+					<div class="qrcodePanel"><img src="./image/wximg.jpg"><br><span>扫描二维码关注我为好友</span></div>
+					<div class="arrowPanel">
+						<div class="arrow01"></div>
+						<div class="arrow02"></div>
+					</div>
+				</div>
+			</div>
+			<div class="zje">
+				<div class="zje-inner">
+					<div class="qrcodePanel2"><img src="./image/zjeqrcode.png"><span>扫描二维码下载找件儿APP</span></div>
+					<div class="arrowPanel2">
+						<div class="arrow0111"></div>
+						<div class="arrow0211"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="suggest">
+			<div class="suggestcont" style="">
+				<p>请告诉我们您的意见和建议，我们会参考您的反馈不断优化我们的产品和服务。</p>
+				<table>
+					<tr>
+						<td>建议意见：</td>
+						<td>
+							<textarea></textarea>
+							<br><span>请详细填写您遇到的问题，我们一定会认真阅读。</span>
+						</td>
+					</tr>
+					<tr>
+						<td>联系人：</td>
+						<td><input type="text" name="" class="user_name"></td>
+					</tr>
+					<tr>
+						<td>联系电话：</td>
+						<td><input type="text" name="" class="user_phone"></td>
+					</tr>
+					<tr style="text-align:center;">
+						<td colspan="2">
+							<button class="offbtn">提交</button>
+							<button class="onbtn">取消</button>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+
+		<div id="loading">
+			<p>
+				<img src="./image/timg.gif">
+			</p>
+		</div>
+		<div class="b_phone">
+			<div class="binding">
+				<p class="bingtit">绑定手机号<span>×</span></p>
+				<div class="bingdiv bingdivtop">
+					<span>手机号码：</span><input type="number" class="form-control" id="inputtext" placeholder="请填写您的手机号码">
+					<p class="span1 col-sm-offset-4"></p>
+				</div>
+				<div class="bingdiv bingdivbottom" style="margin-top:20px;">
+					<span>短信激活码：</span><input class="input-text size-L form-control " type="text" placeholder="验证码" id="security" value="" name="verifyCode">
+					<div class="col-sm-4 code" id="code">
+						获取短信激活码
+					</div>
+					<div class="col-sm-4 codenone">
+					</div>
+				</div>
+				<p class="span2 col-sm-offset-4"></p>
+				<div style="margin-top:20px;text-align: center;">
+					<button class="btn btn-primary checkform ">绑定手机号</button>
+				</div>
+			</div>
+		</div>
+		<div class="contout">
+			<div class="contepc">
+				<span>×</span>
+				车型级别:
+				<select class="select1" style="width:60%;height: 30px;font-size: 16px;margin: 20px 0px 0px 0px;">
+				</select><br>
+				配 置:
+				<select class="select2" style="width:60%;height: 30px;font-size: 16px;margin: 20px 0px;">
+				</select>
+				<br>
+				<button class="contbtn">提交</button>w
+				<button class="removebtn">取消</button>
+			</div>
+		</div>
+		<div class="footer">
+			<p>车架号 VIN、配件目录、车架号查询适用配件、汽车配件目录、原厂编号查询、OE编号查询、VIN码解析、VIN查询</p>
+			<p><span>电话：021-5221 2966</span>|<span>传真：021-5221 2911</span>|<span>备案号：沪ICP备15027426号-2</span></p>
+			<p><span>地址：上海市闵行区沪光东路89号福克斯大厦2号楼103B</span></p>
+			<p style="display:none;">昂美数据Mattrio所提供的服务：数据定制、数据分析、原厂编号查询、OE编号查询、VIN查询、VIN码解析、车架号查询适用配件、汽车配件目录和产品电子目录等一系列服务。</p>
+			<p><span>版权所有：昂美数据</span>
+				<!--cnzz统计图标以及网址-->
+				<a href="http://www.cnzz.com/stat/website.php?web_id=1262355392" target="_blank" title="站长统计"><img src="image/cnzz.gif" border="0" hspace="0" vspace="0"/></a>
+				<!--cnzz统计代码-->
+				<div style='display: none;'>
+					<script type="text/javascript">
+						var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+						document.write(unescape("%3Cspan id='cnzz_stat_icon_1262355392'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s13.cnzz.com/z_stat.php%3Fid%3D1262355392%26show%3Dpic2' type='text/javascript'%3E%3C/script%3E"));
+					</script>
+				</div>
+			</p>
+		</div>
+		<!--提示框-->
+	<div class="tkmeng">
+		<div class="tkcontent">
+		   <div class="hint">
+<!--			   <p>您的次数已用完</p>-->
+			   <p>该EPC暂未开放如需获取，请拨打以下联系方式</p>
+		   </div>
+		   <div class="confirm"></div>
+		</div>
+	</div>	
+	</body>
+	<script src="js/jquery.js"></script>
+	<!--数字加载-->
+	<script type="text/javascript" src="js/jquery.waypoints.min.js"></script>
+	<script type="text/javascript" src="js/jquery.countup.min.js?v=20180919"></script>	
+	<script type="text/javascript">
+		$(document).ready(function() {
+		    var b_name = navigator.appName; 
+		    var b_version = navigator.appVersion; 
+		    var version = b_version.split(";"); 
+		    var trim_version = String(version[1]).replace(/\s/g, ""); 
+		    if (b_name == "Microsoft Internet Explorer") {
+		        /*如果是IE6或者IE7*/ 
+		        if (trim_version == "MSIE 7.0" || trim_version == "MSIE 6.0") { 
+		        	alert("您使用的浏览器版本过低，可能有安全风险，建议您更换浏览器或升级浏览器");
+		        	window.open('','_self');window.close();
+		        }
+		    }
+		}); 
+		if(localStorage){
+	         localStorage.setItem("network","https://www.51macc.com/api");
+	         // localStorage.setItem("network","https://192.168.125.117:88/api");
+	    }else{
+	         $.cookie("network","https://www.51macc.com/api",{path: "/"});
+	         // $.cookie("network","https://192.168.125.117:88/api",{path: "/"});
+	    }
+		var options = {
+		  useEasing : true, 
+		  useGrouping : false, /*是否带逗号*/
+		  separator : ',', 
+		  decimal : '.', 
+		  prefix : '', 
+		  suffix : '' 
+		};
+		new CountUp("myTargetElement",0,176824510,0,2.5,options).start();
+		new CountUp("myTargetElement2",0,32146888,0,2.5,options).start();
+		new CountUp("myTargetElement3",0,86624, 0,2.5,options).start();
+		new CountUp("myTargetElement4",0,70, 0,2.5,options).start();
+	</script>
+	<script type="text/javascript" src="js/jquery.cookie.js"></script>
+	<script type="text/javascript" src="js/lunbo.js?v=20180919"></script>
+	<script type="text/javascript" src="js/wxlogin.js"></script>
+	<script type="text/javascript" src="js/aircity.js"></script>
+	<script type="text/javascript" src="js/frequency.js?v=20181013"></script>
+	<script type="text/javascript" src="js/inde.js?v=20190115"></script>
+	<script type="text/javascript" src="js/vin.js?v=20190115"></script>
+	<script type="text/javascript" src="js/j.dimensions.js"></script>
+	<script type="text/javascript" src="js/placeholderTypewriter.js"></script>
+	<script type="text/javascript" src="js/jquery.kxbdMarquee.js"></script>
+	<script type="text/javascript" src="js/j.suggest.js?v=20180926"></script>
+	<script>
+		$(function() {				
+			$("#arrcity").suggest(citys, {
+				hot_list: commoncitys,
+				dataContainer: '#arrcity_3word',
+				attachObject: '#suggest'
+			});
+			$("#city2").suggest(citys, {
+				hot_list: commoncitys,
+				attachObject: "#suggest2"
+			});
+		});
+        var network;
+		if(localStorage) {
+			network = localStorage.getItem("network");
+		} else {
+			network = $.cookie("network");
+		}
+		var userid = $.cookie("user_id");
+	</script>
+	<script src="js/suggest.js?v=2018516"></script>
+	<script>
+		$('#search').placeholderTypewriter({
+			text: ["VIN是17位车架号", "车架号尽量大写", "涵盖最新车型"]
+		});
+		(function() {
+			$("#marquee1").kxbdMarquee({
+				direction: "right"
+			});
+		})();
+
+		function autoScroll(obj) {
+			$(obj).find("ul").animate({
+				marginTop: "-56px"
+			}, 1000, 'linear', function() {
+				$(this).css({
+					marginTop: "0px"
+				}).find("li:first").appendTo(this);
+			})
+		}
+		$(function() {
+			setInterval('autoScroll(".apple")',5000);
+			initDataList('vinlist');
+//			initDataList('mikeylist');
+			initDataList('oedatalist');
+//			initDataList('productlist');
+		})
+		$('.erweimawrap').slideDown()
+		setTimeout(function(){
+			$('.erweimawrap').slideUp()
+		},4000)
+		$(".headerqrcode").hover(function(){
+			$('.erweimawrap').slideDown()
+		},function(){
+			$('.erweimawrap').slideUp()
+		})
+
+		$(".announcement").mouseout(function() {
+			$(".announcement p").hide();
+		}).mouseover(function() {
+			$(".announcement p").show();
+		})
+		function initDataList(id) {
+			if(localStorage.getItem(id)) {
+				var list = localStorage.getItem(id);
+				list = list.substring(0, list.length - 1);
+				var data = list.split(',');
+				if(data.length >= 10) {
+					for(var i = data.length - 1; i >= data.length - 9; i--) {
+						$('#' + id).append('<option>' + data[i] + '</option>');
+					}
+				} else {
+					for(var i = data.length - 1; i >= 0; i--) {
+						$('#' + id).append('<option>' + data[i] + '</option>');
+					}
+				}
+			}
+		}
+		//进入数据分析系统
+		$(".nav_bi p").click(function(){
+			var userid = $.cookie("user_id");
+			if (userid == undefined || userid == "undefined" || userid ==null || userid == "null") {
+		        $.cookie("username", null, { path: '/' });
+		        window.location.href = "./login/login.html";
+		        return false;
+		    }
+			$.ajax({
+				type: "post",
+				url: network + "/MattrioManager/ReportUserController/getReportUser",
+				data: {
+					"user_id":userid
+				},
+				dataType: "json",
+				cache: false,
+				crossDomain: true == !(document.all),
+				success: function(data) {
+                    if(data.list.length == 0 || data.list == []){
+                        window.location.href = "analysis/index.html";
+                        return false;
+                    }
+                    var fr_username = data.list[0].fr_username;
+                    var fr_password = data.list[0].fr_password;
+                    window.location.href='analysis/index.html?login=true'
+                    sessionStorage.setItem('fr_username',fr_username)
+                    sessionStorage.setItem('fr_password',fr_password)
+				},
+				error: function() {
+					alert("登录失败"); // 登录失败（超时或服务器其他错误）
+				}
+			})
+		})
+	</script>
+	<script src="./js/edition.js"></script>
+</html>

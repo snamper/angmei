@@ -1,0 +1,140 @@
+#box,#box1 {
+    width: 180px;
+    height: 30px;
+    text-align: left;
+    /*overflow: hidden;*/
+    padding: 0;
+    background: #fff;
+    font-size: 16px;
+    color: #999;
+    border: 1px solid #5eb95e;
+}
+#box1{
+    position: relative;
+}
+#suggest2{
+    top:30px !important;
+    left: 0px !important;
+}
+#box input,#box1 input{
+    width: 180px;
+    border: 0;
+    text-align: center;
+    padding: 0;
+}
+
+#suggest,#suggest2 {
+    width: 180px;
+    max-height: 300px;
+    overflow: auto;
+    padding-left: 5px;
+}
+
+.gray {
+    color: gray;
+    font-size: 13px;
+}
+.ac_results {
+    background: #fff;
+    border: 1px solid #5eb95e;
+    z-index: 1000;
+    display: none;
+    position: absolute;
+}
+
+.ac_results ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 13px;
+}
+
+.ac_results li a {
+    white-space: nowrap;
+    text-decoration: none;
+    display: block;
+    color: #000;
+}
+
+.ac_results li {
+    border: 1px solid #fff;
+}
+
+.ac_results li a:hover {
+    background: #5eb95e;
+    color: #fff;
+}
+
+.ac_results li a span {
+    float: right;
+    display: none;
+}
+
+#arrcity {
+    border: 0;
+    font-size: 14px;
+    height: 28px;
+}
+#city2{
+	border: 0;
+    font-size: 14px;
+    height: 27px;
+}
+
+#id_table td{
+	min-width:60px;
+	padding:2px;
+}
+.select_div,.select_div1{
+	position: relative;
+}
+.select_div div,.select_div1 div{
+	line-height: 30px;
+	height:30px;
+	border:1px solid #5eb95e;
+	padding-left: 5px;
+	font-size: 14px;
+	overflow: hidden;
+}
+.select_div ul ,.select_div1 ul{
+	min-width:150px;
+	position: absolute;
+	top:32px;
+	left: 0px;
+	border: 1px solid #5eb95e;
+	display: none;
+	font-size: 14px;
+	background: #fff;
+	max-height:200px;
+	overflow: auto;
+}
+.select_div ul li,.select_div1 ul li{
+	margin-top: 3px;
+	margin-bottom: 3px;
+}
+.select_div ul li:hover ,.select_div1 ul li:hover{
+	color: #fff;
+	background: #5eb95e;
+	cursor:default;
+}
+
+select {
+    height: 31px;
+    border: 1px solid #5eb95e;
+    font-size: 14px;
+}
+.selectname1 span {
+    display: none;
+}
+
+.active {
+    display: none;
+}
+
+#inpsubmit {
+    margin-bottom: 4px;
+}
+
+#btnsubmit {
+    margin-bottom: 4px;
+}

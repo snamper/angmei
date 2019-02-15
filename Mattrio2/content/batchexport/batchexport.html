@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="content-type" content="text/html;charset=utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<meta name="renderer" content="webkit"> 
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+		<meta name="keywords" content="汽车,数据查询">
+		<meta name="robots" content="all">
+		<meta name="description" content="汽车零配件数据查询">
+		<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+		<title>MACC-编码批量查询</title>
+		<link rel="icon" href="../../image/logohead.jpg">
+		<link rel="stylesheet" type="text/css" href="../../css/reset.css">
+		<link rel="stylesheet" type="text/css" href="../../css/loading.css">
+		<link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="css/batchexport.css?v=20181218"/>
+	</head>
+	<body>
+		<!------头部------>
+		<div id="header"></div>
+
+		<div class="wrap">
+			<div>
+				<button class="import">导入Excel</button>   <span>（表格格式：将编码放在表格第一列并且无表头）   如：</span> <img class="format" title="点击放大查看Excel格式" src="../../image/numlist.png" alt="Excel" />
+				<!--<button class="clear">清空</button>-->
+				<!--兄弟亲自教你怎么用这个玩野-->				
+				<span class="course" title="点击查看教程">点击查看教程</span>
+			</div>
+			<div class="meng">
+				<!--<img class="pos" title="点击消失" src="../../image/numlist.png" alt="Excel" />-->
+				<img class="cou"  title="点击消失" src="../../image/course.gif" alt="教程" />
+			</div>
+			<input class="file" type="file" onchange="xlsx(this)" id="xlsxinput" accept=" application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"  multiple="multiple"/>
+			<div class="numlist">
+				<textarea name="" rows="" cols="" placeholder="请导入表格或输入您想查询的OE号码/售后编码，用换行隔开，然后点击获取即可。"></textarea>				
+			</div>
+			<!--进度条-->
+			<div class="jinduwrap">
+				<button class="getdata">获取</button>
+				<div class="progress">
+				 	<div class="progress-bar progress-bar-info progress-bar-striped active">
+			            <div class="progress-value">0%</div>
+			        </div>			         
+				 </div>
+				 <div class="stop">
+				 	<img class="stopimg" src="../../image/stop.png"/>
+				 	<img class="actionimg" src="../../image/action.png"/>
+				 </div>
+			</div>
+			<div class="tablewrap">
+				<div class="tabwrap clearfix">
+					<div class="tab tabbg">OE信息</div>
+					<div class="tab"><input class="inpbox" type="checkbox" title="勾选是否获取适配车型">OE适配车型</div>
+					<div class="tab">售后品牌</div>
+					<div class="tab">无结果</div>
+					<button class="export">导出</button>
+				</div>
+				<div class="bottomwrap ">
+					<table class="tab oetable" id="oetable">
+						<thead>
+							<tr>
+								<th>OE号码</th>
+								<th>配件名称</th>
+								<th>分类</th>
+								<th>4S店价格</th>
+							</tr>
+						</thead>
+						<tbody>
+							
+						</tbody>
+					</table>
+					<table class="tab oecartable" id="oecartable">
+						<thead>
+							<tr>
+								<th>OE号码</th>
+								<th>Mikey</th>
+								<th>主机厂</th>
+								<th>车型</th>
+								<th>年份</th>
+								<th>销售版本</th>
+							</tr>
+						</thead>
+						<tbody>
+							
+						</tbody>
+					</table>
+					<table class="tab shtable" id="shtable">
+						<thead>
+							<tr>
+								<th>售后编码</th>
+								<th>名称</th>
+								<th>图片</th>
+								<th>品牌</th>
+								<th>分类图片</th>
+							</tr>
+						</thead>
+						<tbody>
+							
+						</tbody>
+					</table>
+					<table class="tab nonetable" id="nonetable">
+						<thead>
+							<tr>
+								<th>编码</th>
+							</tr>
+						</thead>
+						<tbody>
+													
+						</tbody>
+					</table>
+				</div>
+			</div>	
+		</div>
+		<div id="loading">
+			<p>
+				<img src="../../image/timg.gif">
+			</p>
+		</div>
+	</body>
+	<!-- 页脚 -->
+	<div class="footer">
+		<p><span>电话：021-5221 2966</span>|<span>传真：021-5221 2911</span>|<span>备案号：沪ICP备15027426号-2</span>|</p>
+		<p><span>地址：上海市闵行区沪光东路89号福克斯大厦2号楼103B</span></p>
+		<p>
+			<span>版权所有：昂美数据</span>
+			<script type="text/javascript">
+					var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+					document.write(unescape("%3Cspan id='cnzz_stat_icon_1262355392'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s13.cnzz.com/z_stat.php%3Fid%3D1262355392%26show%3Dpic2' type='text/javascript'%3E%3C/script%3E"));
+				</script>
+		</p>
+	</div>
+	<script src="../../js/jquery.js"></script>
+	<script src="../../js/jquery.cookie.js"></script>
+	<script src="../../js/frequency.js?v=20181015"></script>
+	<script type="text/javascript" src="js/xlsx.full.js"></script>
+	<script type="text/javascript" src="js/jquery.table2excel.js?v=20190125"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js?v=20180919"></script>
+    <!--<script type="text/javascript" src="js/tableExport.jquery.plugin.js"></script>-->
+	<script type="text/javascript">
+		$(function(){
+			$('#header').load('../../header/header.html?v=20181012');
+		})
+	</script>
+	<script type="text/javascript" src="js/Excel.js"></script>
+	<script type="text/javascript" src="js/batchexport.js?v=20190125"></script>
+</html>

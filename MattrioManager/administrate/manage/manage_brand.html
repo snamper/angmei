@@ -1,0 +1,122 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<!--[if lt IE 9]>
+<script type="text/javascript" src="static/html5shiv.js"></script>
+<script type="text/javascript" src="static/respond.min.js"></script>
+<![endif]-->
+<link rel="stylesheet" type="text/css" href="../../static/h-ui/css/H-ui.min.css" />
+<link rel="stylesheet" type="text/css" href="../../static/h-ui.admin/css/H-ui.admin.css" />
+<link rel="stylesheet" type="text/css" href="../../lib/Hui-iconfont/1.0.8/iconfont.css" />
+<link rel="stylesheet" type="text/css" href="../../static/h-ui.admin/skin/default/skin.css" id="skin" />
+<link rel="stylesheet" type="text/css" href="../../static/h-ui.admin/css/style.css" />
+<link rel="stylesheet" type="text/css" href="../../css/zxf_page.css">
+
+<!--[if IE 6]>
+<script type="text/javascript" src="static/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script>DD_belatedPNG.fix('*');</script>
+<![endif]-->
+<title>品牌管理</title>
+<style >
+	select{
+	width:150px;
+	height:31px;
+	border:1px solid #ccc;
+	font-size: 14px;
+}
+.selectname1 span{
+	display: none;
+}
+
+.active{
+	display: none;
+}
+#inpsubmit{
+	margin-bottom: 4px;
+}
+#btnsubmit{
+	margin-bottom: 4px;
+}
+</style>
+</head>
+<body>
+<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 用户管理 <span class="c-gray en">&gt;</span> 接口查询 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+
+
+
+
+<div class="page-container">
+	<div class="text-c">
+		<input type="text" name="" id="inpsubmit" placeholder="按条件搜索" style="width:420px"  class="input-text">
+		<button name="" id="btnsubmit" class="btn btn-success" type="submit"><i class="Hui-iconfont">&#xe665;</i> 搜索</button>
+	</div>
+	<div class="cl pd-5 bg-1 bk-gray mt-20"> <a class="btn btn-primary radius" onclick="picture_add()" href="javascript:;"><i class="Hui-iconfont">&#xe645;</i> 添加数据</a></span> <a class="btn btn-warning radius" onclick="picture_rem()" href="javascript:;"><i class="Hui-iconfont">&#xe68f;</i> 一键重置</a></span> </span> <span class="r">共有数据：<strong class="alltotal"></strong> 条</span> </div>
+	<div class="mt-20" style="width:100%;overflow: auto;">
+		<table class="table table-border table-bordered table-bg table-sort" style="width:2000px;">
+			<thead>
+				<tr class='text-c'>
+					
+					<th>ID</th>
+					<th>用户ID</th>
+					<th>公司名称</th>
+					<th>申请人</th>
+					<th>电话</th>
+					<th>接口名称</th>
+					<th>查询类型</th>
+					<th>每天次数</th>
+					<th>总次数</th>
+					<th>剩余次数</th>
+					<th>开始时间</th>
+					<th>结束时间</th>
+					<th>状态</th>
+					<th>备注</th>
+					<th>品牌</th>
+					<th>操作</th>
+				</tr>
+			</thead>
+			<tbody>
+				
+			</tbody>
+		</table>
+	</div>
+	<div class="warting active" style="height:380px;text-align: center;line-height: 100px;font-size: 20px;">
+		正在加载中。。。。。。
+	</div>
+	<div class="wartno active" style="height:380px;text-align: center;line-height: 100px;font-size: 20px;">
+		没有查询到数据
+	</div>
+	<br>
+<div class="zxf_pagediv"></div>	
+</div>
+<!--_footer 作为公共模版分离出去-->
+<script type="text/javascript" src="../../lib/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="../../lib/layer/2.4/layer.js"></script>
+<script type="text/javascript" src="../../static/h-ui/js/H-ui.min.js"></script>
+<script type="text/javascript" src="../../static/h-ui.admin/js/H-ui.admin.js"></script>
+<!--/_footer 作为公共模版分离出去-->
+
+<!--请在下方写此页面业务相关的脚本-->
+<script type="text/javascript" src="./js/manage_brand.js"></script>
+<script type="text/javascript" src="../../js/aircity.js"></script>
+<script type="text/javascript" src="../../js/j.dimensions.js"></script>
+<script type="text/javascript" src="../../js/j.suggest.js"></script>
+<script type="text/javascript" src="../../js/zxf_page.js"></script>
+<script>
+
+
+	function picture_add(){
+		window.location.href = "manage_add.html";
+	}
+
+	
+
+</script>
+
+
+</body>
+</html>

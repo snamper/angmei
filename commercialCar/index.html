@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="UTF-8">
+    <title>商用车</title>
+</head>
+<link rel="icon" href="./image/logohead.jpg">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/index.css">
+<body>
+    <div class="searchdiv">
+       <div class="inpWrap">
+           <input type="text" class="vininput" autocomplete="off" placeholder="请输入vin号后8位" value="AL035605">
+           <button class="searchbtn">查询</button>
+       </div>
+        <div class="headerdiv none">
+            <div>品牌：</div>
+            <div class="brand box"></div>
+            <div>型号：</div>
+            <div class="number box"></div>
+            <div>系列：</div>
+            <div class="series box"></div>
+            <div>Vin：</div>
+            <div class="Vin box"></div>
+            <button class="back">返回</button>
+            <div class="remarkdiv">
+                <div>备注：</div>
+                <div class="remark box"></div>
+            </div>
+        </div>
+    </div>
+    <div class="tableWrap">
+        <div class="filterdiv none">
+            <div>筛选条件：</div>
+            <div><input class="filter" type="text" placeholder="请输入您要检索的内容"></div>
+        </div>
+        <div>
+            <table border="0" cellpadding="0" cellspacing="0">
+                <thead class="thead1">
+                    <tr>
+                        <th width="60px">品牌</th>
+                        <th width="192px">型号</th>
+                        <th width="180px">系列</th>
+                        <th width="188px">备注</th>
+                        <th width="188px">Vin</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <thead class="thead2 none">
+                    <tr>
+                        <th width="130px">OE编号</th>
+                        <th width="225px">配件名称</th>
+                        <th width="180px">标准名称</th>
+                        <th>分类</th>
+                        <th width="80px">原厂价</th>
+                        <th width="80px">代理价</th>
+                        <th width="80px">零售价</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+        <div class="nonedata" style="width: 998px;"><span>暂无数据</span></div>
+        <div id="loading">
+            <svg viewBox="25 25 50 50" class="circular">
+                <circle cx="50" cy="50" r="20" fill="none" class="path"></circle>
+            </svg>
+        </div>
+    </div>
+
+
+</body>
+<script src="js/jquery.js"></script>
+<script src="js/index.js?v=20190213"></script>
+</html>

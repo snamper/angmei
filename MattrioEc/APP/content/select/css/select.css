@@ -1,0 +1,68 @@
+.runtmksl{ 
+	position:fixed; 
+	top:0;
+	left:0;
+	width:100%; 
+	z-index: 10;
+}
+.runtmksltil{ 
+	height:44px; 
+	line-height:40px; 
+	background:#184fef ; 
+	color:#fff; 
+	text-align:center; 
+	font-weight:400; 
+	border-bottom:5px solid #FCD900;
+	margin:0;
+}
+.runtmksltil span.runtasclor{
+	position:absolute; 
+	left:10px; 
+	font-size:12px; 
+	color:#666;
+}
+.runtmksltil span.runtasclfh{ 
+	position:absolute; 
+	left:0px; 
+	font-size:12px; 
+	color:#666; 
+	display:none;
+}
+.content{
+	position:absolute;
+	top:60px;
+	left:0px;
+	width:100%;
+}
+.contenttop{
+	font-size: 14px;
+	background: #fff;
+	line-height: 50px;
+	text-align: center;
+}
+.contenttop img{
+	width:300px;
+	height: 200px;
+}
+.contentcenter{
+	text-align: center;
+	margin-top: 30px;
+}
+.contentcenter button{
+	width:45%;
+	height:36px;
+	margin-top: 20px;
+	border:0;
+	background: #184fef;
+	border-radius: 5px;
+	color:#fff;
+	font:18px "微软雅黑";
+}
+.contentcenter p{
+	text-align: left;
+	padding-left: 10px;
+}
+
+.contentcenter .cyclebtn{
+	width:91%;
+}

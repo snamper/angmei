@@ -1,0 +1,90 @@
+
+.runtmksl{ 
+	position:fixed; 
+	top:0;
+	left:0;
+	width:100%; 
+	z-index: 10;
+}
+.runtmksltil{ 
+	height:44px; 
+	line-height:40px; 
+	background:#E7161A ; 
+	color:#fff; 
+	text-align:center; 
+	font-weight:400; 
+	border-bottom:5px solid #FCD900;
+	margin:0;
+	font-size: 20px;
+}
+.runtmksltil span.runtasclor{
+	position:absolute; 
+	left:10px; 
+	color:#666;
+}
+.runtmksltil span.runtasclfh{ 
+	position:absolute; 
+	left:0px; 
+	color:#666; 
+	display:none;
+}
+.content{
+	position:absolute;
+	top:60px;
+	left:0px;
+	width:100%;
+}
+.contentoe{
+	width:100%;
+	margin-bottom: 10px;
+}
+.contentoe table{
+	width:100%;
+	border-collapse:collapse;
+	line-height: 24px;
+	text-align: center;
+}
+.contentoe th{
+	background: #E7161A;
+	color:#fff;
+}
+.contentoe td{
+	background: #fafafa;
+	border:1px solid #ccc;
+	font-size: 14px;
+}
+
+li{
+	border-bottom:1px solid #ccc;
+	padding-bottom: 10px;
+	background: #fff;
+}
+.listimg{
+	float: left;
+	width:30%;
+	height:100px;
+}
+.listimg img{
+	width:100%;
+	margin-top: 28px;
+}
+.listtle{
+	width:67%;
+	line-height: 45px;
+	font-size: 14px;
+	padding-left:31%;
+}
+.listtex{
+	padding-left:155px;
+	color:#999;
+	font-size: 12px;
+	line-height:30px;
+}
+.listtex button{
+	width:50%;
+	height:30px;
+	border:0;
+	font-size: 16px;
+	background: #E7161A;
+	color:#fff;
+}

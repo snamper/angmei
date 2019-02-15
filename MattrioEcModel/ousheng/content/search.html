@@ -1,0 +1,192 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title id="pageTitle">车灯大师-搜索系统</title>
+	<meta name="renderer" content="webkit"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0 user-scalable=no"/>
+	<meta id="description" name="Description" content="查询"/>
+	<meta id="key" name="Keywords" content="查询"/>
+	<link type="text/css" rel="stylesheet" href="../css/base.css">
+	<link type="text/css" rel="stylesheet" href="./css/search.css">
+	<style>
+		ul{
+			width:95%;
+			margin:0 auto;
+			margin-top: 0.8rem;
+		}
+		ul li {
+			padding: 15px 0px 15px 10px ;
+			margin-top:3px;
+			border: 1px solid #ddd;
+			border-top: none;
+			background: #fff;
+			font-size: 14px;
+		}
+		li span{
+			padding-left:5px;
+		}
+	</style>
+
+
+</head>
+<body style="background:#e8e9eb;">
+	<div class="proli">
+		<div class=" runprcvin">
+	    		<div  class="runprckint clearfix"  id="findlike" >
+	    			<span class="no"><a href="javascript:history.back(-1);">取消</a></span>
+	    			<div class="clearfix" style="position: relative;width: 80%; float: left;">
+	    				<img src="image/sousuo.png"  class="sousuo"/>
+	    				<input class="runprckipt"  id="condition"  name="condition" placeholder="例如输入:奥迪   A4" type="text" autofocus=""><span class="runprckbtn"><a class="runprckclk search_mh" href="javascript:;" onclick="findlike()" >查询</a></span>
+	    				
+	    			</div>
+	    			
+	    		</div>
+	        <div class="runprcom"><span class="runprcomti"></span></div>
+	    </div>
+
+	</div>
+
+	<ul>
+		
+	</ul>
+
+<!-- <div class="footer">
+    <p>版权所有：昂美数据 &nbsp;&nbsp; 备案号：沪ICP备15027426号-2</p>
+    <p>电话：021-5221 2966 &nbsp;&nbsp; 传真：021-5221 2911</p>
+    <p>地址：上海市闵行区沪光东路89号福克斯大厦2号楼103B &nbsp;&nbsp; </p>
+</div> -->
+
+
+<!-- 代码部分end -->
+</body>
+<script language="javascript" src="./js/jquery.js"></script>
+<script>
+	var network = localStorage.getItem("networkmodel");
+	var username_id = localStorage.getItem("username_id"); 
+var fenlei;
+$.ajax({
+	type:"post",
+	url:network+"/MattrioEcModel/SelectCarIntface/getBrandCategory",
+	dataType:"json",
+	data:{
+		"brand_id":username_id
+	},
+	cache: false,
+	async: false,
+	crossDomain: true == !(document.all),
+	success:function(data){
+
+		$(".depgenre ul").html("");
+		$.each(data.list,function(key,value){
+			$(".depgenre ul").append("<li>"+value.category_name+"</li>");
+			fenlei+= "\'"+value.category_id +"\'" + ",";
+		})
+	}
+})
+var genrem_num = fenlei.split("fined")[1].substring(0,fenlei.split("fined")[1].length-1);
+
+
+	function findlike(){
+		var $span1;
+		var $span2;
+		var $span3;
+		var $span4;
+		var condition=$("#condition").val().replace(/\s+/g,"%");
+		if(condition == ""){
+			alert("搜索内容不能为空");
+			return false;
+		}
+//		$("#loading").show();
+		$("ul").html("");
+		$.ajax({
+			type:"post",
+			url:network+"/MattrioEcModel/LikeQueryIntface/LikeQueryCars",
+            data:{
+            	"brand_id":username_id,
+                "query_str":condition
+            },
+            dataType:"json",
+            success:function(data){
+//          	$("#loading").hide();
+            	if(data.list == null || data.list.length == 0){
+            		$("ul").html("没有搜索到您要查询的内容");
+            		return false;
+            	}
+            	$.each(data.list,function(key,value){
+            		var $li = $("<li>");
+            		 $span1 = $("<span class='span1'>").html(value.Manufacture_CN);
+            		 $span2 = $("<span class='span2'>").html(value.Vehicle_Name_CN);
+            		 $span3 = $("<span class='span3'>").html(value.LaunchEOPYear);
+            		 $span4 = $("<span class='span4'>").html(value.Capacity+value.Air_intake_form);
+
+            		
+            		$span1.appendTo($li);
+            		$span2.appendTo($li);
+            		$span3.appendTo($li);
+            		$span4.appendTo($li);
+            		$li.appendTo($("ul"));
+            	})
+            	$("li").click(function(){
+					var num = $(this).index();
+					$.ajax({
+						type:"post",
+						url:network+"/MattrioEcModel/SelectCarIntface/getProducts",
+						data:{
+							"brand_id":username_id,
+							"Year":data.list[num].LaunchEOPYear,
+							"Manufacture":data.list[num].Manufacture_CN,
+							"Vehicle_Name":data.list[num].Vehicle_Name_CN,
+							"category_id": "'HD','QZD','ZJWZD'",
+							"Capacity":data.list[num].Capacity
+						},
+						dataType:"json",
+						cache: false,
+						crossDomain: true == !(document.all),
+						success:function(data){
+							if(data.list.length == 0 || data.list == []){
+				        		alert("没有查询到结果");
+				        		return false;
+				        	}
+//							$("#loading").hide();
+                            if(data.list!=''){
+                            	sessionStorage.particulars =JSON.stringify(data.list);
+                            	window.location.href = "../index.html?hand="+true+"&car="+$(".span1").eq(num).text()+"&type="+$(".span2").eq(num).text()+"&year="+$(".span3").eq(num).text()+"&output="+$(".span4").eq(num).text();
+                            }else{
+                            	alert("暂无数据")
+                            }
+
+						},
+						error:function(data){
+//							$("#loading").hide();
+							//console.log(data);
+						}
+					})
+				})
+            },
+            error:function(data){
+            	//console.log(1);
+            }
+		})
+	}
+	        fn();
+	    	window.onresize=function(){
+	    		fn();
+	    	}
+	        function fn(){
+	        var owidth=document.documentElement;
+			var ohtml=owidth.clientWidth;
+			owidth.style.fontSize=ohtml/(640/100)+'px';
+	        }
+
+	
+	
+	
+</script>
+
+</html>

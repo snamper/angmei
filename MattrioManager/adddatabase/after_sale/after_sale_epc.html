@@ -1,0 +1,384 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<!--[if lt IE 9]>
+<script type="text/javascript" src="static/html5shiv.js"></script>
+<script type="text/javascript" src="static/respond.min.js"></script>
+<![endif]-->
+<link rel="stylesheet" type="text/css" href="../../static/h-ui/css/H-ui.min.css" />
+<link rel="stylesheet" type="text/css" href="../../static/h-ui.admin/css/H-ui.admin.css" />
+<link rel="stylesheet" type="text/css" href="../../lib/Hui-iconfont/1.0.8/iconfont.css" />
+<link rel="stylesheet" type="text/css" href="../../static/h-ui.admin/skin/default/skin.css" id="skin" />
+<link rel="stylesheet" type="text/css" href="../../static/h-ui.admin/css/style.css" />
+<link rel="stylesheet" type="text/css" href="../../css/zxf_page.css">
+<link rel="stylesheet" type="text/css" href="./css/after_sale_brand.css">
+<link rel="stylesheet" type="text/css" href="./css/after_sale_epc.css?v=20181126">
+<!--[if IE 6]>
+<script type="text/javascript" src="static/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script>DD_belatedPNG.fix('*');</script>
+<![endif]-->
+<title>EPC别名匹配</title>
+
+</head>
+<body>
+<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 数据匹配 <span class="c-gray en">&gt;</span> EPC别名匹配 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+
+<div class="page-container">	
+	<div class="tabwrap clearfix">
+		<span class="l tab"><a href="javascript:;" class="btn radius">用户匹配别名</a></span>
+		<span class="l"><a href="javascript:;" class="btn radius">已匹配别名</a></span>	
+		<div class="text-c selectType">选择主机厂：
+			<select class="select select1" style="width:100px;line-height: 20px;height:34px;vertical-align: middle;">
+				<option value="宝马">宝马</option>
+				<option value="奔驰">奔驰</option>
+                <option value="本田">本田</option>
+                <option value="现代">现代</option>
+                <option value="日产">日产</option>
+                <option value="丰田">丰田</option>
+                <option value="通用">通用</option>
+			</select>
+			<button style="vertical-align: middle;" class='btn btn-success' id="btn">确定</button>
+		</div>
+		<div class="text-c inp">
+            <select class="select select2" style="width:100px;line-height: 20px;height:34px;vertical-align: middle;">
+                <option value="宝马">宝马</option>
+                <option value="奔驰">奔驰</option>
+                <option value="本田">本田</option>
+                <option value="现代">现代</option>
+                <option value="日产">日产</option>
+                <option value="丰田">丰田</option>
+                <option value="通用">通用</option>
+
+            </select>
+			<input type="text" name="" id="inpsubmit" placeholder="请输入您要查询的别名或号码" style="width:220px" class="input-text">
+			<button name="" id="btnsubmit" class="btn btn-success" type="submit"><i class="Hui-iconfont"></i> 搜索</button>
+		</div>
+	</div>
+	<div class="cl pd-5 bg-1 bk-gray mt-20">
+		<span class="l mr-10"><a href="javascript:;" onclick="passList()" class="btn btn-primary radius"> 批量审核</a> </span>  
+		<span class="l"><a href="javascript:;" onclick="datadel()" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a> </span>  
+		<span class="r">共有数据：<strong class="alltotal"></strong> 条</span> </div>
+	<table class="table table-border table-bordered table-bg" id="result">
+				<thead>
+					<tr class="text-c">
+						<th><input id="inpAll" type='checkbox' name='' value=''></th>
+						<th>位置</th>
+						<th>用户名</th>
+						<th>手机号</th>
+                        <th>主机厂</th>
+                        <th>分类ID</th>
+                        <th>标准命名</th>
+                        <th>原厂名称</th>
+						<th>OE号码</th>
+						<th>修改时间</th>
+						<th width="70">操作</th>
+					</tr>
+				</thead>
+				<tbody id="tbody">
+				</tbody>
+			</table>
+			<table class="table table-border table-bordered table-bg" id="result2">
+				<thead>
+					<tr class="text-c">
+						<th><input id="inp2All" type='checkbox' name='' value=''></th>
+						<th>位置</th>
+                        <th>主机厂</th>
+                        <th>分类ID</th>
+                        <th>标准命名</th>
+						<th>原厂名称</th>
+						<th>操作</th>
+					</tr>
+				</thead>
+				<tbody id="tbody2">
+				</tbody>
+			</table>
+			
+	 <div class="warting active" style="height:380px;text-align: center;line-height: 100px;font-size: 20px;">
+			正在加载中。。。。。。
+		</div>
+		<div class="wartno active" style="height:380px;text-align: center;line-height: 100px;font-size: 20px;">
+			没有查询到数据
+		</div>
+	<br> 
+	
+<div class="zxf_pagediv"></div>	
+</div>
+<!--_footer 作为公共模版分离出去-->
+<script type="text/javascript" src="../../lib/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="../../lib/layer/2.4/layer.js"></script>
+<script type="text/javascript" src="../../static/h-ui/js/H-ui.min.js"></script>
+<script type="text/javascript" src="../../static/h-ui.admin/js/H-ui.admin.js"></script>
+<!--/_footer 作为公共模版分离出去-->
+
+<!--请在下方写此页面业务相关的脚本-->
+<!--<script type="text/javascript" src="./js/vehicle_type_brand.js"></script>-->
+<script type="text/javascript" src="../../js/aircity.js"></script>
+<script type="text/javascript" src="../../js/j.dimensions.js"></script>
+<script type="text/javascript" src="../../js/j.suggest.js"></script>
+<script type="text/javascript" src="../../js/zxf_page.js"></script>
+<script type="text/javascript" language="javascript" src="../../AftermarketBrand/datatables/1.10.0/jquery.dataTables.min.js"></script>
+<script type="text/javascript">
+	var network = localStorage.getItem("network");
+	$("#result2").hide();
+	if( sessionStorage.getItem('selectValue')){
+        $('.select1').val(sessionStorage.getItem('selectValue'))
+    }else{
+        sessionStorage.setItem('selectValue',$('.select1').val())
+    }
+    resultAjax($('.select1').val(),true)
+    $(".tabwrap .l").click(function(){
+    	$(this).addClass('tab').siblings('.l').removeClass('tab')
+		if($(this).text()=='用户匹配别名'){
+			resultAjax('宝马')
+			$("#result").parents('#result_wrapper').show()
+			$("#result2").parents('#result2_wrapper').hide()			
+			$(".selectType").show()
+			$('.inp').hide()
+            $('.select1').val('宝马')
+		}else{
+			$(".alltotal").text($('#tbody2 .tr').length)
+			$('#result2').dataTable();
+		    $("#result").parents('#result_wrapper').hide()
+		    $("#result2").parents('#result2_wrapper').show()
+		    $("#result2").show()
+			$(".selectType").hide()
+			$('.inp').show()
+		}
+   })
+    $("#inpsubmit").on('input',function(){
+    	if($(this).val()==''){
+    		$('#result2').dataTable().fnClearTable();
+    		$(".alltotal").text(0)
+    	}
+    })
+    $('#btnsubmit').click(function(){
+    	if($('#inpsubmit').val()==''||$('#inpsubmit').val().length==0){
+    		$('#inpsubmit').attr('placeholder','要查询的内容不能为空')
+    		return false;
+    	}
+    	$(".warting").removeClass('active')
+    	$.ajax({
+		    	type:"post",
+		    	url:network+"/Mattrio/EpcCategoryInterface/queryEpcCategoryList",
+		    	data:{
+		    		'userid':'',
+		    		'type':$('.select2').val(),
+		    		'category_id':$('#inpsubmit').val(),
+		    		'oe_name':$('#inpsubmit').val()
+		    	},
+		    	success:function(data){
+		    		$('#tbody2').html('')
+		    		$(".warting").addClass('active')
+		    		
+		    		if(data.list==[]||data.list.length==0){
+		    			return false;
+		    		}
+		    		$('#result2').dataTable().fnClearTable();
+					$('#result2').dataTable().fnDestroy();
+		    		if(data.list!=[]||data.list.length!=0){
+		    			$(".alltotal").text(data.list.length)
+			    		$.each(data.list, function(key,value) {
+			    			var tr=$('<tr class="tr">')
+			    			var td=$('<td>').html("<input type='checkbox' name='gay' value=''>")
+			    			var td1=$('<td>').html(value.postion)
+                            var td2=$('<td>').html(value.type)
+                            var td6=$('<td>').html(value.category_id)
+			    			var td3=$('<td>').html(value.oe_name)
+			    			var td4=$('<td>').html(value.category_name)
+	    					var td5=$("<td>").html('<a style="text-decoration:none" class="delthis" href="javascript:;" title="删除"><i class="Hui-iconfont"></i></a>')
+			    			td.appendTo(tr)
+			    			td1.appendTo(tr)
+                            td2.appendTo(tr)
+                            td6.appendTo(tr)
+			    			td4.appendTo(tr)
+                            td3.appendTo(tr)
+			    			td5.appendTo(tr)
+			    			tr.appendTo('#tbody2')   			
+			    		});
+			    		$('#result2').dataTable({
+			    			'pagingType':'full_numbers',
+		    				"destroy":true,
+                            "stateSave": true,
+		    				 "columnDefs": [
+						       { "orderable": false, "targets": 0 }
+						     ]
+			    		});
+		    		}else{
+		    			$(".alltotal").text(0)
+		    		}
+		    	},error:function(){
+		    		
+		    	}
+		    });
+    })
+   $(".select1").change(function(){
+       sessionStorage.setItem('selectValue',$('.select1').val())
+	  resultAjax($(".select1").val())
+   })
+    $('#btn').click(function(){
+        resultAjax($(".select1").val())
+    })
+    function resultAjax(type,yes){
+    	$(".inp").hide()
+    	$(".warting").removeClass('active')
+    	 $.ajax({
+	    	type:"post",
+	    	url:network+"/Mattrio/EpcCategoryInterface/getUserEpcCategoryList",
+	    	data:{
+	    		'userid':'',
+	    		'type':type
+	    	},
+	    	success:function(data){
+	    		$(".warting").addClass('active')
+	    		$('#tbody').html('')
+			    if(data.list!=[]||data.list.length!=0){
+			    	$(".alltotal").text(data.list.length)
+			    	if(!yes){
+			    		$('#result').dataTable().fnClearTable();
+						$('#result').dataTable().fnDestroy();
+			    	}
+		    		$.each(data.list, function(key,value) {
+		    			var tr=$('<tr>')
+		    			var a=new Date(value.time.time)
+		    			var td=$('<td>').html("<input type='checkbox' name='gay' value=''>")
+		    			var td1=$('<td>').html(value.postion)
+		    			var td2=$('<td>').html(value.nick_name)
+		    			var td3=$('<td>').html(value.phone)
+		    			var td4=$('<td>').html(value.type)
+                        var td10=$('<td>').html(value.category_id)
+		    			var td5=$('<td>').html(value.oe_name)
+		    			var td6=$('<td>').html(value.category_name)
+		    			var td7=$('<td>').html(value.oe_number)
+		    			var td8=$('<td>').html(a.toLocaleString())
+		    			var td9=$("<td>").html('<div class="l" style="border-right: 1px solid #ddd;width: calc(50% - 1px);"><a style="text-decoration:none" class="pass" href="javascript:;" title="审核">审核</a></div><div class="l" style="width: 50%;"><a style="text-decoration:none" class="delthis" href="javascript:;" title="删除"><i class="Hui-iconfont"></i></a></div>')
+		    			td.appendTo(tr)
+		    			td1.appendTo(tr)
+		    			td2.appendTo(tr)
+		    			td3.appendTo(tr)
+                        td4.appendTo(tr)
+                        td10.appendTo(tr)
+		    			td6.appendTo(tr)
+                        td5.appendTo(tr)
+		    			td7.appendTo(tr)
+		    			td8.appendTo(tr)
+		    			td9.appendTo(tr)
+		    			tr.appendTo('#tbody')   			
+		    		});
+		    		$('#result').dataTable({
+		    			'pagingType':'full_numbers',
+		    			"destroy":true,
+                        "stateSave": true,
+		    			 "columnDefs": [
+					       { "orderable": false, "targets":0},
+					       { "orderable": false, "targets":10}
+					     ]
+		    		})
+			    }else{
+			    	$(".alltotal").text(0)
+			    }
+	    	},error:function(){
+	    		
+	    	}
+	    });
+        $('#inpAll').attr('checked',false)
+    }
+    
+    /*审核*/
+   $(document).on('click','.pass',function(){
+    	if(confirm("是否审核通过")){
+			pass($(this).parents('tr').find('td:eq(1)').text())
+		}
+    })
+   /*批量审核通过*/
+  function passList(){
+  	var id_array=new Array();  
+		$('input[name="gay"]:checked').each(function(){
+		    id_array.push($(this).parent("td").parent("tr").children().eq(1).html());//向数组中添加元素  
+		});
+	
+		if(id_array.length == 0 || id_array == []){
+			alert("请选择您要审核的数据");
+			return false;
+		}
+		var passstr = id_array.join(",");
+		if(confirm("是否审核通过当前"+id_array.length+'条')){
+			pass(passstr);
+		}
+  }
+   function pass(passstr){
+   	$.ajax({
+    		type:"post",
+    		url:network+'/Mattrio/EpcCategoryInterface/ValidationUserEpcCategory',
+    		data:{
+    			'userid':'',
+    			'postion':passstr
+    		},
+    		success:function(data){
+				if(data.msg=='成功审核'){
+                    window.location.reload()
+                    alert('成功审核')
+				}
+    		}
+    	});
+   }
+    /*删除*/
+    $(document).on('click','.delthis',function(){
+    	if(confirm("是否删除")){
+			del($(this).parents('tr').find('td:eq(1)').text())
+		}
+    })
+    /*批量删除*/
+    function datadel(){
+    	var id_array=new Array();  
+		$('input[name="gay"]:checked').each(function(){
+		    id_array.push($(this).parent("td").parent("tr").children().eq(1).html());//向数组中添加元素  
+		});
+	
+		if(id_array.length == 0 || id_array == []){
+			alert("请选择您要删除的选项");
+			return false;
+		}
+		var postions = id_array.join(",");
+		if(confirm("是否删除当前"+id_array.length+"条")){
+			del(postions);
+			$('#inpAll').attr('checked',false)
+		}
+    }
+    /*删除*/
+    function del(postions){
+    	if($(".tabwrap .tab").text()=='用户匹配别名'){
+    		var urls='/Mattrio/EpcCategoryInterface/deleteUserEpcCategory'
+    		var tab=true
+    	}else{
+    		var urls='/Mattrio/EpcCategoryInterface/deleteEpcCategory'
+    		var tab=false
+    	}
+    	$.ajax({
+    		type:"post",
+    		url:network+urls,
+    		data:{
+    			'userid':'',
+    			'postion':postions
+    		},
+    		success:function(data){
+    			if(data.msg=='删除成功'){
+    				if(tab){
+                        window.location.reload()
+                        $('#inpAll').attr('checked',false)
+    				}else{
+    					$('#btnsubmit').click()
+                        $('#inp2All').attr('checked',false)
+    				}
+                    alert('删除成功')
+                }
+    		}
+    	});
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="robots" content="all">
+    <!--<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">-->
+    <title>Macc数据决策系统</title>
+    <link rel="icon" href="../image/logohead.jpg">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/loading.css">
+</head>
+<style>
+    html,body{
+        height: 100%;
+    }
+    .bg{
+        background: url('./img/bg.jpg') no-repeat;
+        width: 100%;
+        height: 100%;
+        -webkit-background-size: cover;
+        background-size: cover;
+        position: relative;
+        overflow: hidden;
+    }
+    .loginWrap{
+        width: 560px;
+        height: 350px;
+        background: #fff;
+        border-radius: 15px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin: -175px 0 0 -280px;
+        -webkit-box-reflect: below 0 -webkit-gradient(linear, left top, left bottom, from(transparent), to(rgba(250, 250, 250, 0.4)));
+    }
+    .title{
+        text-align: center;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+    .title img{
+        height: 35px;
+    }
+    input{
+        border: 0;
+        margin: 0;
+    }
+    .pasWrap input,.nameWrap input{
+        background: rgba(0,0,0,0);
+        height: 40px;
+        width: 100%;
+        padding-left: 40px;
+        box-sizing: border-box;
+        line-height: 40px;
+    }
+    .pasWrap,.nameWrap{
+        border: 1px solid #ededed;
+        width: 70%;
+        margin-left: 15%;
+        height: 40px;
+        margin-bottom: 15px;
+        position: relative;
+    }
+    .btn{
+        background: #44abf0;
+        width: 70%;
+        color: #fff;
+        height: 40px;
+        line-height: 40px;
+        margin-left: 15%;
+        font-size: 20px;
+        cursor: pointer;
+        margin-top: 25px;
+    }
+    .pasWrap img,.nameWrap img{
+        position: absolute;
+        width: 20px;
+        left: 8px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    .check{
+        float: left;
+        margin-left: 15%;
+        background: url("img/ed.png") no-repeat 0px 2px/16px 16px;
+        padding-left: 25px;
+        cursor: pointer;
+    }
+    .box{
+        background: url("img/box.png") no-repeat 0px 2px/16px 16px;
+    }
+    .check input{
+        vertical-align:middle;
+        margin-right: 4px;
+    }
+    .disable{
+        cursor:not-allowed;
+    }
+</style>
+<body>
+    <div class="bg">
+        <div class="loginWrap clearfix">
+            <div class="content">
+                <p class="title"><img src="img/title.png" alt=""></p>
+                <div class="nameWrap">
+                    <img src="./img/name.png" alt="用户名图片">
+                    <input class="fr_username" type="text" name="fr_username" placeholder="用户名">
+                </div>
+                <div class="pasWrap">
+                    <img src="./img/pas.png" alt="密码图片">
+                    <input class="fr_password" type="password" name="fr_password" placeholder="密码">
+                </div>
+                <p class="check">记住密码</p>
+                <input class="btn" type="submit" value="登陆">
+            </div>
+        </div>
+    </div>
+    <div id="loading">
+        <p>
+            <img src="../image/timg.gif">
+        </p>
+    </div>
+
+</body>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript" src="../js/jquery.cookie.js"></script>
+<script type="text/javascript">
+    var network;
+    if(localStorage) {
+        network = localStorage.getItem("network");
+    } else {
+        network = $.cookie("network");
+    }
+    var userid = $.cookie("user_id");
+    //获取通过url传的参数
+    function getUrlParam(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+        var r = window.location.search.substr(1).match(reg);  //匹配目标参数
+        if (r != null) return decodeURI(r[2]); return null; //返回参数值
+    }
+    if (getUrlParam('login')){
+        $('.fr_username').val(sessionStorage.getItem('fr_username'))
+        $('.fr_password').val(sessionStorage.getItem('fr_password'))
+        loginAjax($('.fr_username').val(),$('.fr_password').val())
+    }
+    $('.check').click(function () {
+        $(this).toggleClass('box')
+    })
+    if($.cookie('fr_username')){
+        $('.fr_username').val($.cookie('fr_username'))
+        $('.fr_password').val($.cookie('fr_password'))
+        $('.check').addClass('box')
+    }
+    $('.btn').click(function(){
+        if (userid == undefined || userid == "undefined" || userid ==null || userid == "null") {
+            $.cookie("username", null, { path: '/' });
+            window.location.href = "../login/login.html";
+            return false;
+        }
+        if($('.fr_username').val()==''){
+            alert('请输入用户名')
+            return false;
+        }
+        if($('.fr_password').val()==''){
+            alert('请输入密码')
+            return false;
+        }
+        loginAjax($('.fr_username').val(),$('.fr_password').val())
+    })
+    $(document).keydown(function(even){
+        if(event.keyCode==13){
+            $('.btn').click();
+        }
+    })
+    function loginAjax(fr_username,fr_password){
+        $('#loading').show()
+        $('.btn').attr('disabled',true)
+        $('.btn').addClass('disable')
+        $.ajax({
+            url: "http://analysis.51macc.com/WebReport/ReportServer?op=fs_load&cmd=sso", //单点登录的报表服务器
+            dataType: "jsonp", //跨域采用jsonp方式
+            data: {
+                "fr_username": fr_username,
+                "fr_password": fr_password
+            },
+            jsonp: "callback",
+            timeout: 5000, //超时时间（单位：毫秒）
+            success: function(data) {
+                $('.btn').attr('disabled',false)
+                $('.btn').removeClass('disable')
+                $('#loading').hide()
+                if(data.status === "success") {
+                    if($('.check').hasClass('box')){
+                        $.cookie('fr_username', $('.fr_username').val(), { expires: 7, path: '/' });
+                        $.cookie('fr_password', $('.fr_password').val(), { expires: 7, path: '/' });
+                    }
+                    window.location.href=data.url;//登录成功
+                } else if(data.status === "fail") {
+                    alert("登录失败");//登录失败（用户名或密码错误）
+                }
+            },
+            error: function() {
+                $('.btn').attr('disabled',false)
+                $('.btn').removeClass('disable')
+                $('#loading').hide()
+                alert("登录失败"); // 登录失败（超时或服务器其他错误）
+            }
+        });
+    }
+    $(document).keydown(function(even){
+        if(event.keyCode==13){
+            $('.btn').click();
+        }
+    })
+
+</script>

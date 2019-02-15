@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="renderer" content="webkit" />
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	    <meta name="format-detection" content="telephone=no" />
+	    <meta name="apple-mobile-web-app-capable" content="yes" />
+	    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0 user-scalable=no"/>
+	    <meta id="description" name="Description" content="润滑油" />
+	    <meta id="key" name="Keywords" content="查询,菲舍尔" />
+	    <link rel="stylesheet" type="text/css" href="../../css/base.css?v=20180724"/>
+	    <link rel="stylesheet" type="text/css" href="css/list.css?v=20180720"/>
+		<title>菲舍尔变速箱养护查询</title>
+	</head>
+	<body>
+		<div class="title"><a href="javascript:history.back();" class="back_btn"></a>菲舍尔变速箱养护查询</div>
+			<div class="listwrap">
+				<div class="imgwrap">
+					<img class="car image" src="../image/car2.jpg"/><img class="logo" src="../../image/logo.png"/>
+					<div class="imgtitle">菲舍尔变速箱油系列</div>
+					<div class="text">
+						<p class="p1">演绎科技魅力，创造全新动力</p>
+					    <p class="p2">Deduct&nbsp;the&nbsp;charm&nbsp;of&nbsp;science&nbsp;and&nbsp;technology,create&nbsp;a&nbsp;new&nbsp;power</p>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="../../js/jquery.js"></script>
+	<script type="text/javascript">
+	var network = localStorage.getItem("networkmodel");
+	var username_id = localStorage.getItem("username_id"); 
+	//获取通过url传的参数
+	 function getUrlParam(name) {
+	    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+	    var r = window.location.search.substr(1).match(reg);  //匹配目标参数
+	    if (r != null) return decodeURI(r[2]); return null; //返回参数值
+	}
+	var title=getUrlParam('title')
+	var vin=getUrlParam('vin')
+	var A=getUrlParam('A')
+	var year=getUrlParam('year')
+	var datalist=JSON.parse(sessionStorage.getItem("data"))
+	var fdjlist=JSON.parse(sessionStorage.getItem("fdj"))
+     console.log(datalist)
+     console.log(fdjlist)
+	if(vin){
+		$.each(fdjlist,function(key,value){
+			var a=''
+			if(datalist.car_info[0].Air_intake_form=='自然吸气'){
+				a='L'
+			}else{
+				a='T'
+			}
+//			console.log(value.product_id.substr(-4))
+			if(value.product_id.substr(-4)==datalist.car_info_long[0].Vehicle_of_year){
+				var ul=$("<ul class='ul1'>")
+				var li=$('<li class="listtitle">').html(value.amt_des)
+				li.appendTo(ul)
+				$.each(datalist.list,function(ke,val){
+					if(value.product_id == val.product_id){
+						var li=$("<li class='list-one' title="+val.product_id+" id="+datalist.car_info_long[0].Vehicle_of_year+">").html(datalist.car_info[0].Manufacture_CN +' '+ datalist.car_info[0].Vehicle_Name_CN +' '+ datalist.car_info[0].Capacity+a+' '+datalist.car_info_long[0].Vehicle_of_year+'年款')
+						li.appendTo(ul)
+					}
+				})
+				ul.appendTo('.listwrap')
+			}
+		})
+	}else{
+		$.each(fdjlist,function(key,value){
+		var ul=$("<ul class='ul1'>")
+		var li=$('<li class="listtitle">').html(value.amt_des)
+		var li1;
+		li.appendTo(ul)
+		$.each(datalist,function(ke,val){
+			if(value.product_id == val.product_id){
+				li1=$("<li class='list-one' title="+val.product_id+" id="+year+">").html(val.Manufacture_CN +' '+ val.Vehicle_Name_CN +' '+ val.Capacity+A+' '+year+'年款')
+				li1.appendTo(ul)
+			}
+		})
+		if(li1!=undefined&&li1!='undefined'){
+			ul.appendTo('.listwrap')
+		}
+	  })
+	}
+	
+	$(".list-one").click(function(){
+		window.location.href='../particulars/particulars.html?fdjlist='+$(this).prop('title')+'&year='+$(this).prop('id')
+	})
+
+	</script>
+</html>

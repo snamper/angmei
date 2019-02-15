@@ -1,0 +1,35 @@
+html,body {
+	background: #f7f7f7;
+	height: 100%;
+}
+.active {
+	display: none;
+}
+.wrap {
+	width: 98%;
+	margin: 0 auto;
+	background: #fff;
+	padding: 0 1%;
+	padding-bottom: 30px;
+	margin-top: 5px;
+	padding-top: 10px;
+	background: #fff;
+	box-sizing: border-box;
+	height: 95%;
+}
+.bg-1 {
+	background: #f8f8f8;
+	border: 0px;
+}
+.alltotal {
+	color: #c92327;
+}
+.table-bg thead th {
+	background: #efefef;
+}
+.table-bordered th {
+	border-left: 0;
+}
+.table-bordered th:first-child {
+	border-left: 1px solid #ddd;
+}

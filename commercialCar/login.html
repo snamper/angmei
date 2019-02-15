@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>登陆</title>
+</head>
+<link rel="icon" href="./image/logohead.jpg">
+<link rel="stylesheet" href="css/base.css">
+<style>
+    .wrap {
+        width: 400px;
+        margin: 200px auto 0;
+    }
+
+    h2 {
+        text-align: center;
+        padding-bottom: 10px;
+    }
+
+    .pass {
+        display: flex;
+        line-height: 40px;
+        margin-top: 10px;
+    }
+
+    .pass .box {
+        color: #606266;
+        font-size: 14px;
+    }
+
+    .box {
+        width: 60px;
+        text-align: center;
+    }
+
+    input {
+        width: 320px;
+        height: 40px;
+        border: 1px solid #dcdfe6;
+        box-sizing: border-box;
+        border-radius: 4px;
+        padding-left: 15px;
+    }
+
+    input:hover {
+        border-color: #c0c4cc;
+    }
+
+    button {
+        background: #66b1ff;
+        color: #fff;
+        width: 200px;
+        padding: 12px 0;
+        border-radius: 4px;
+        margin-top: 35px;
+        cursor: pointer;
+    }
+
+    .focus {
+        border-color: #67c23a;
+    }
+
+    .error {
+        border-color: #f56c6c;
+    }
+</style>
+<body>
+<div class="wrap">
+    <h2>登录</h2>
+    <div class="pass passname">
+        <div class="box">账号</div>
+        <div><input class="nameinp" type="text" placeholder="请输入用户名"></div>
+    </div>
+    <div class="pass password">
+        <div class="box">密码</div>
+        <div><input class="wordinp" type="password" placeholder="请输入密码"></div>
+    </div>
+    <div style="text-align: center">
+        <button>登陆</button>
+    </div>
+</div>
+</body>
+<script src="js/jquery.js"></script>
+<script>
+    $('.nameinp').on('blur', function () {
+        console.log(1)
+        if ($('.nameinp').val().length != 0) {
+            $('.nameinp').addClass('focus')
+            $('.nameinp').removeClass('error')
+        } else {
+            $('.nameinp').addClass('error')
+            $('.nameinp').removeClass('focus')
+        }
+    })
+    $('.wordinp').on('blur', function () {
+        if ($('.wordinp').val().length != 0) {
+            $('.wordinp').addClass('focus')
+            $('.wordinp').removeClass('error')
+        } else {
+            $('.wordinp').addClass('error')
+            $('.wordinp').removeClass('focus')
+        }
+    })
+    $('button').click(function () {
+        var passname = $.trim($('.nameinp').val())
+        var password = $.trim($('.wordinp').val())
+        if (passname != 'mattrio') {
+            alert('用户名错误')
+            return false;
+        }
+        if (password != 'mattrio') {
+            alert('密码用户名错误')
+            return false;
+        }
+        localStorage.setItem("commercialCar", 'mattrio');
+        window.location.href = 'index.html'
+    })
+    $(document).keydown(function (e) {
+        if (e.keyCode == 13) {
+            $('button').click()
+        }
+
+    })
+</script>
+</html>

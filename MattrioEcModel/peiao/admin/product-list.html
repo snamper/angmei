@@ -1,0 +1,180 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<!--[if lt IE 9]>
+<script type="text/javascript" src="static/html5shiv.js"></script>
+<script type="text/javascript" src="static/respond.min.js"></script>
+<![endif]-->
+<link rel="stylesheet" type="text/css" href="static/h-ui/css/H-ui.min.css" />
+<link rel="stylesheet" type="text/css" href="static/h-ui.admin/css/H-ui.admin.css" />
+<link rel="stylesheet" type="text/css" href="static/Hui-iconfont/1.0.8/iconfont.css" />
+<link rel="stylesheet" type="text/css" href="static/h-ui.admin/skin/default/skin.css" id="skin" />
+<link rel="stylesheet" type="text/css" href="static/h-ui.admin/css/style.css" />
+<!--[if IE 6]>
+<script type="text/javascript" src="static/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script>DD_belatedPNG.fix('*');</script>
+<![endif]-->
+<title>纠错</title>
+
+<link rel="stylesheet" type="text/css" href="./css/zxf_page.css">
+</head>
+<body class="pos-r">
+<!-- <div class="pos-a" style="width:200px;left:0;top:0; bottom:0; height:100%; border-right:1px solid #e5e5e5; background-color:#f5f5f5; overflow:auto;">
+	<ul id="treeDemo" class="ztree"></ul>
+</div> -->
+<div>
+	<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 产品管理 <span class="c-gray en">&gt;</span> 产品纠错 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+	<div class="page-container">
+		<div class="text-c">
+			<!-- <input type="text" name="" id="inp" placeholder=" 产品名称" style="width:300px" class="input-text">
+			<button name="" id="btnsubmit" class="btn btn-success" type="submit"><i class="Hui-iconfont">&#xe665;</i> 搜产品</button> -->
+		</div>
+		<div class="cl pd-5 bg-1 bk-gray mt-20"><!--  --> <span class="r">共有数据：[&nbsp;&nbsp;<strong style="color: #c92327;"></strong>&nbsp;&nbsp;] 条</span> </div>
+		<div class="mt-20">
+			<table class="table table-border table-bordered table-bg table-hover table-sort">
+				<thead>
+					<tr class="text-c">
+						
+						<th width="">ID</th>
+                        <th width="">产品编码</th>
+                        <th width="">纠错内容</th>
+						<th width="">电话</th>
+						<th>用户名</th>
+						<th width="">时间</th>
+						<th width="">操作</th>
+					</tr>
+				</thead>
+				<tbody>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<div class="zxf_pagediv"></div>	
+</div>
+
+<!--_footer 作为公共模版分离出去-->
+<script type="text/javascript" src="static/jquery/1.9.1/jquery.min.js"></script> 
+<script type="text/javascript" src="static/layer/2.4/layer.js"></script>
+<script type="text/javascript" src="static/h-ui/js/H-ui.min.js"></script> 
+<script type="text/javascript" src="static/h-ui.admin/js/H-ui.admin.js"></script>
+<!--/_footer 作为公共模版分离出去-->
+
+<!--请在下方写此页面业务相关的脚本-->
+<script type="text/javascript" src="./js/zxf_page.js"></script>
+
+
+
+
+<script type="text/javascript">
+    if(!sessionStorage.getItem("user")){
+        window.location.href = "./login.html";
+    }
+	var network = localStorage.getItem("networkmodel");
+	var username_id = localStorage.getItem("username_id");
+	var cont;
+fn();
+function fn(){
+	$.ajax({
+		type:"post",
+		url:network+"/MattrioEcModel/ProductErrorIntface/getPecList",
+		data:{
+			"brand_id":username_id
+		},
+		dataType:"json",
+		cache: false,
+		crossDomain: true == !(document.all),
+		success:function(data){
+			// console.log(data);
+			cont = data;
+			$("strong").html(data.list.length);
+			function format(shijianchuo){
+				//shijianchuo是整数，否则要parseInt转换
+				var time = new Date(shijianchuo);
+				var y = time.getFullYear();
+				var m = time.getMonth()+1;
+				var d = time.getDate();
+				var h = time.getHours();
+				var mm = time.getMinutes();
+				var s = time.getSeconds();
+				return y+'-'+m+'-'+d+' '+h+':'+mm+':'+s;
+			}
+			$("tbody").html("")
+			$.each(data.list,function(key,value){
+				// var td1 = $("<td>").html('<input name="id" type="checkbox" value="">');
+				var td2 = $("<td>").html(value.postion);
+                var td3 = $("<td>").html(value.product_id);
+                var td8 = $("<td>").html(value.new_product_id);
+				var td4 = $("<td>").html(value.phone);
+				var td5 = $("<td>").html(value.name);
+				var td6 = $("<td>").html(format(value.time.time));
+				var td7 = $("<td>").html('<a style="text-decoration:none;color: #e02a41;" class="ml-5 delthis" href="javascript:;" title="删除"><i class="Hui-iconfont">&#xe6e2;</i></a>');
+				var tr = $("<tr class='text-c'>");
+				// td1.appendTo(tr);
+				td2.appendTo(tr);
+                td3.appendTo(tr);
+                td8.appendTo(tr);
+				td4.appendTo(tr);
+				td5.appendTo(tr);
+				td6.appendTo(tr);
+				td7.appendTo(tr);
+				$(tr).appendTo("tbody");
+			})
+			$(".delthis").click(function(){
+				var postion = $(this).parents("td").parents("tr").children().eq(0).html();
+				del(postion);
+			})
+
+		},
+		error:function(data){
+			// console.log(data);
+		}
+	})
+}
+
+	// $(this).parent("td").parent("tr").index()
+	// function datadel(){
+	// 	console.log(cont)
+	// 	var id_array=new Array();  
+	// 	$('input[name="id"]:checked').each(function(){
+	// 	    id_array.push($(this).parent("td").parent("tr").children().eq(1).html());//向数组中添加元素  
+	// 	});
+	// 	console.log(id_array);
+	// 	del(id_array.join(","))
+
+	// }
+
+
+function del(postion){
+	if(confirm("是否删除")){
+		$.ajax({
+			type:"post",
+			url:network+"/MattrioEcModel/ProductErrorIntface/deletePec",
+			data:{
+				"brand_id":username_id,
+				"postion":postion
+			},
+			dataType:"json",
+			cache: false,
+			crossDomain: true == !(document.all),
+			success:function(data){
+				// console.log(data)
+				fn();
+			},
+			error:function(data){
+				// console.log(data)
+			}
+		})
+	}
+}
+
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/base.css"/>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css?v=20190125"/>
+		<link rel="stylesheet" type="text/css" href="css/index.css?v=20190125"/>
+	</head>
+    <title>51找件儿批量版本</title>
+	<body>
+		<nav><div class="navcontent">51找件儿</div></nav>
+		<div class="wrap">
+			<div class="title">
+				<span class="titletext">车辆信息</span>
+			</div>
+			<!--<div class="brandText">目前支持的品牌：本田</div>-->
+			<div class="vinInput">
+                <div style="display: flex;">
+                    <div style="margin-right: 8px;">
+                        <p>本田示例：LVHGJ6620G6043020</p>
+                        <p>宝马示例：LBV5S1109GSL57385</p>
+                        <p>奔驰示例：LE4HG3GB5EL164061</p>
+                        <p>马自达示例：LVRHDFAL7GN472068</p>
+                        <p>日产示例：LGBF5AE06DR032830</p>
+                        <p>大众示例：LFV2A21K6E4003382</p>
+                        <p>奥迪示例：LFV3B28U9G3033123</p>
+                    </div>
+                    <div style="margin-right: 8px;">
+                        <p>荣威示例：LSJA16E33DG095799</p>
+                        <p>别克示例：LSGPB54U8FD048368</p>
+                        <p>海马示例：LH16CKH049H081939</p>
+                        <p>长城示例：LGWFFEA59CF099507</p>
+                        <p>MINI示例：WMWZG3107CTY44765</p>
+                        <p>SMART示例：WMEEJ3CA3FK813730</p>
+                        <p>现代示例：LBEADADC2GX010031</p>
+                    </div>
+                    <div>
+                        <p>名爵示例：LSJW24H33AS044296</p>
+                        <p>英菲尼迪示例：JNKCY11E9FM672726</p>
+                        <p>哈弗(长城)示例：LGWEF4A55GH074071</p>
+                        <p>丰田示例：JTEGD54M57A002582</p>
+                        <p>凯迪拉克示例：LSGAR5AL0GH118503</p>
+                        <p>雪佛兰示例：LSGVT54Z15Y028499</p>
+                        <p>魏派示例：LGWEF7A78HH250910</p>
+                    </div>
+                </div>
+				<div>
+                    <div>
+                        <span class="i">*</span>
+                        <span class="vin">VIN 码：</span>
+                        <!--<input class="input-vin" type="text" placeholder="请输入17位VIN码" />-->
+                        <textarea class="textarea1" placeholder="请输入您想查询的VIN，可多个Vin查询,用换行隔开。"></textarea>
+                        <!--<div class="carname"></div	>-->
+                    </div>
+                </div>
+			</div>
+            <!--批量查询-->
+           <div>
+                <button class="btn fileBtn">导入Excel</button>
+                <span>（表格格式：将编码放在表格第一列并且无表头）   如：</span>
+                <img class="format" title="放大查看Excel格式" src="./img/numlist.jpg" alt="Excel">
+            </div>
+			<input style="display: none" class="file" type="file" onchange="xlsx(this)" id="xlsxinput" accept=" application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"  multiple="multiple"/>
+			<textarea class="textarea2" placeholder="请导入表格或输入您想查询的名称，用换行隔开，需用标准命名，点击即可查询。"></textarea>
+			<div class="barWrap clearfix">
+				<button class="btn btn2" title="点击进行批量查询名称">获取</button>
+				<div class="progress">
+	               <div class="progress-bar progress-bar-danger progress-bar-striped active">
+	                  <div class="progress-value">0%</div>
+	              </div>
+	            </div>
+				<button class="stop">
+					<img class="stopImg" src="img/stop.png"/>
+					<img class="stopAction" src="img/action.png"/>
+				</button>
+			</div>
+            <button class="export" style="margin-top: 15px;">导出</button>
+			<div class="oewrap">
+				<div class="title">
+					<span class="titletext">录入配件信息</span>
+				</div>
+				<div>
+					<table class="table"  cellspacing="0" cellpadding="0"  style="width: 100%;">
+						<thead>
+							<tr>
+								<th width="130px">VIN</th>
+                                <th width="160px">车型</th>
+                                <th width="90px">配件信息</th>
+                                <th width="45px">ID</th>
+								<th width="180px">标准名称</th>
+								<th>EPC原厂名称</th>
+                                <th>备注</th>
+								<th width="140px">零配件OE信息</th>
+								<th width="90px">4S店价格</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+                                <td>VIN</td>
+                                <th>车型</th>
+								<td>
+									<div class="nameinpwrap">
+										<span class="nameInput">配件名称</span>
+										<img class="tdImg" src="" />
+										<div class="listwrap"></div>
+									</div>
+								</td>
+                                <td>ID</td>
+								<td class="td2"></td>
+                                <td class="td4"></td>
+                                <td class="td5"></td>
+								<td class="oe"></td>
+								<td class="money"></td>
+							</tr>
+							<tr>
+                                <td>VIN</td>
+                                <th>车型</th>
+								<td>
+									<div class="nameinpwrap">
+                                        <span class="nameInput">配件名称</span>
+										<img class="tdImg" src="" />
+										<div class="listwrap"></div>
+									</div>
+								</td>
+                                <td>ID</td>
+								<td class="td2"></td>
+                                <td class="td4"></td>
+                                <td class="td5"></td>
+								<td class="oe"></td>
+								<td class="money"></td>
+							</tr>
+						</tbody>
+					</table>
+                    <table id="export"  cellspacing="0" cellpadding="0" style="display: none">
+                        <thead>
+                            <tr>
+                                <th>VIN</th>
+                                <th>配件信息</th>
+                                <th>ID</th>
+                                <th>标准名称</th>
+                                <th>EPC原厂名称</th>
+                                <th>备注</th>
+                                <th>零配件OE信息</th>
+                                <th>4S店价格</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+				</div>
+			</div>
+            <!--<button class="add">添加</button>-->
+            <button class="backTop" title="点击返回顶部">返回顶部</button>
+		</div>
+		<div class="meng">
+			<div class="imgwrap">
+				<!--车型-->
+				<div class="imgtitle">
+					<span class="name">车型</span>
+					<span class="imgCarname">
+				</div>
+				<!--配件图片-->
+				<div class='magnify'>
+					<div class='large'>
+						<div class="box"></div>
+					</div>
+					<img class='small' src='' />
+				</div>
+				<!--配件名称 位置-->
+				<div class="imgContent clearfix">
+					<div class="imgtitle">
+						<span class="name">名称</span>
+						<span class="oename"></span>
+					</div>
+					<div class="imgtitle">
+						<span class="name">位置</span>
+						<span class="location"></span>
+					</div>
+				</div>
+				<!--<button class="left">
+					<span></span>					
+				</button>
+				<button class="right">
+					<span></span>					
+				</button>-->
+			</div>
+		</div>
+        <div id="loading">
+            <p>
+                <img src="./img/timg.gif">
+            </p>
+        </div>
+	</body>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <!--<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>-->
+	<script type="text/javascript" src="js/xlsx.full.js"></script>
+    <script type="text/javascript" src="js/jquery.table2excel.js"></script>
+	<script type="text/javascript" src="js/index.js?v=20190126"></script>
+</html>

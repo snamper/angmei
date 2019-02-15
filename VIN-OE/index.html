@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="renderer" content="webkit"/>
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	    <meta name="format-detection" content="telephone=no" />
+	    <meta name="apple-mobile-web-app-capable" content="yes" />
+	    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0 user-scalable=no"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<meta name="keywords" content="51macc,mattrio,昂美贸易">
+		<meta name="robots" content="all">
+		<meta name="description" content="汽车零配件数据查询">
+		<title>查询系统</title>
+	</head>
+	<link rel="stylesheet" type="text/css" href="css/base.css"/>
+	<style>
+		.inp{
+			width: 400px;
+			margin: 0 auto;
+			margin-top: 100px;
+			border-radius:8px ;
+			box-sizing: border-box;
+			position: relative;
+			padding-bottom: 70px;
+		}
+		input{	
+            height: 41px;
+            line-height: 40px;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            border-radius:8px; 
+            font-size: 20px;
+            padding-left: 10px;
+            border: 1px solid #ccc;
+            width: 88%;
+            margin-bottom: 5px;
+            float: left;
+		}
+		button{
+			width: 40%;
+            height: 41px;
+            background: red;
+            color: #fff;
+            border-radius:8px;
+            font-size: 18px;
+            cursor: pointer;
+           position: absolute;
+           left: 50%;
+           transform: translateX(-50%);
+           bottom: 15px;
+		}
+		table{
+			margin: 0 auto;
+			font-size: 12px;
+			border-color: #ccc;
+		}
+		table:nth-child(2){
+			margin-top: 40px;
+		}
+		tr:hover{
+			background: rgba(0,0,0,0.1);
+		}
+		th,td{
+		  	padding: 10px;
+		  	text-align: center;
+		} 
+		  #loading {
+		  	position: fixed;
+		  	top: 50%;
+		  	left: 50%;
+		  	margin-left: -100px;
+		  	margin-top: -100px;
+		  }
+		  #loading img{
+		  	width: 200px;
+		  	height: 200px;		  	
+		  }
+		  .table2{
+		  	margin-top: 20px;
+		  	margin-bottom: 30px;
+		  }
+		  .wrap{
+		  	height: 41px;
+    		line-height: 40px;
+    		text-align: center;
+		  	color: #FF0000;
+		  	font-weight: bold;
+		  }
+		  span{
+		  	display: block;
+		  	width: 12%;
+		  	float: left;	
+		  	height: 41px;
+    		line-height: 40px;
+    		font-weight: bold;
+		  }
+		  p{
+		  	font-weight: bold;
+		  	line-height: 24px;
+		  	height: 24px;
+		  	text-align: center;
+		  }
+		  .p{
+		  	margin-bottom:10px;
+		  }
+		  .text{
+		  	width: 200px;
+		  	position: absolute;
+		   	margin-left: -200px;
+		    height: 41px;
+   			line-height: 40px;
+   			text-align: center;
+		  }
+	</style>
+	<body>
+		<div class="inp clearfix"> 
+			<p>此接口功能仅限于保险核保数据测试</p>
+			<p>1.测试该VIN车架号中是否包含以下OE号码</p>
+			<p>2.测试该VIN车架号中 录入中文名称</p>
+			<p class="p">昂美提供数据</p>
+			<div class="clearfix">
+				<div class="text">1.车辆识别号码或车架号码</div>
+				<span>VIN:</span><input type="text" autofocus=""  placeholder="请输入VIN号码" class="vin"/>
+			</div>
+			<div class="clearfix">
+				<div class="text">1.汽车零部件编码</div>
+				<span>OE:</span><input type="text" autofocus=""  placeholder="请输入OE号码" class="oe"/>
+			</div>
+			<div class="wrap"></div>
+			<div class="clearfix">
+				<div class="text">2.汽车零配件名称</div>
+				<span>名称:</span><input type="text" autofocus=""  placeholder="请输入标准命名或者别名" class="name"/>
+			</div>
+			
+			<button>查询</button>
+		</div>
+		<div id="loading">
+			<p>
+				<img src="./image/timg.gif">
+			</p>
+		</div>
+		
+		<table border="1"  cellspacing="0" cellpadding="0">
+			<thead class="thead1">
+				<tr>
+					<th>车型识别码</th>
+					<th>主机厂</th>
+					<th>车型</th>
+					<th>销售名称</th>
+					<th>生产年份</th>
+					<th>排量</th>
+					<th>发动机描述</th>
+					<th>变速器描述</th>
+					<th>发动机型号</th>
+					<th>驱动形式</th>
+				</tr>
+			</thead>
+			<tbody class="tbody1">
+				<tr class="car">
+					<th colspan="3" align="center">零件编号</th>
+					<th colspan="3" align="center">标准名称</th>
+					<th colspan="4" align="center">EPC原厂名称</th>
+					<!--<th colspan="2" align="center">价格</th>-->
+				</tr>
+				
+				
+			</tbody>
+		</table>
+		
+		<table  class='table2' border="1"  cellspacing="0" cellpadding="0">
+			<thead class="thead2">
+				<tr>
+					<th>标准名称</th>
+					<th>分类ID</th>
+					<th>EPC原厂名称</th>
+					<th>主机厂</th>
+				</tr>
+			</thead>
+			<tbody class="tbody2">
+				
+				
+			</tbody>
+		</table>
+		
+	</body>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(' #loading').hide()
+		$("button").click(function(){
+			if($('.vin').val()==''||$('.vin').val().length==0){
+				alert("请输入VIN")
+				return false;
+			}
+			if($('.oe').val()!=''&&$('.name').val()!=''){
+				$('.oe').val('')
+			}
+			var oe=$('.oe').val()
+			$("#loading").show()
+			$(".thead1").html('<tr><th>车型识别码</th><th>主机厂</th><th>车型</th><th>销售名称</th><th>生产年份</th><th>排量</th><th>发动机描述</th><th>变速器描述</th><th>发动机型号</th><th>驱动形式</th></tr>')
+			$('.tbody1').html('<tr class="car"><th colspan="2" align="center">零件编号</th><th colspan="3" align="center">标准名称</th><th colspan="3" align="center">EPC原厂名称</th><th colspan="2" align="center">价格</th></tr>')
+			
+			$('.tbody2').html('')
+			$.ajax({
+				type:"post",
+				url:"https://www.51macc.com/api/Mattrio/VinPartInterface/VinOe",
+				async:true,
+				data:{
+					"userid":"3e36d360-e6dd-4330-8573-7e1008cb1275",
+					'vin':$('.vin').val(),
+					'category_name':$('.name').val(),
+					'category_id':'',
+					'oe_number':oe
+				},
+				success:function(data){
+					if(data.recode=='-4'){
+						alert(data.msg)
+						$(' #loading').hide()
+						return false;
+					}
+					if(data.msg==201){
+						$('.wrap').text('OE匹配失败,用名称匹配')
+					}else if(data.msg==203){
+						$('.wrap').text('该OE属于这个车架号')
+					}else{
+						$('.wrap').text('OE匹配失败,EPC匹配失败,全车件数据匹配成功')
+					}
+					$.each(data.car_info, function(key,value) {
+						var $tr1=$("<tr>")
+						var $td1=$('<td>').html(value.mikey)
+						var $td2=$('<td class="carname">').html(value.Manufacture_CN)
+						var $td3=$('<td>').html(value.Vehicle_Name_CN)
+						var $td4=$('<td>').html(value.Name_of_sales)
+						var $td5=$('<td>').html(value.Year_of_production)
+						var $td6=$('<td>').html(value.Capacity)
+						var $td7=$('<td>').html(value.Engine_description)
+						var $td8=$('<td>').html(value.Transmission_description)
+						var $td9=$('<td>').html(value.Engine_Code)
+						var $td10=$('<td>').html(value.Drive_form)
+						$tr1.append($td1)
+						$tr1.append($td2)
+						$tr1.append($td3)
+						$tr1.append($td4)
+						$tr1.append($td5)
+						$tr1.append($td6)
+						$tr1.append($td7)
+						$tr1.append($td8)
+						$tr1.append($td9)
+						$tr1.append($td10)
+						$('.car').before($tr1)
+					});
+					$.each(data.oelist, function(key,value) {
+						var $tr2=$("<tr>")
+						var $td1=$('<td colspan="2" align="center">').html(value.oe_number)
+						var $td2=$('<td colspan="3" align="center">').html(value.mattrio_category_name)
+						var $td3=$('<td colspan="3" align="center">').html(value.oe_name)
+						var $td4=$('<td colspan="2" align="center">').html(value.price)
+						$tr2.append($td1)
+						$tr2.append($td2)
+						$tr2.append($td3)
+						$tr2.append($td4)
+						$tr2.appendTo(".tbody1")
+					});
+					$.ajax({
+						type:'post',
+						url:'https://www.51macc.com/api/Mattrio/VinPartInterface/queryEpcOeName',
+						data:{
+							'Manufacture_CN':$('.carname').eq(0).text(),
+							'category_name':$('.name').val()
+						},
+						success:function(data){
+							$.each(data.list, function(key,value) {
+								var tr=$("<tr>")
+								var $td1=$("<td>").html(value.category_name)
+								var $td2=$("<td>").html(value.category_id)
+								var $td3=$("<td>").html(value.oe_name)
+								var $td4=$("<td>").html(value.type)
+								tr.append($td1)
+								tr.append($td2)
+								tr.append($td3)
+								tr.append($td4)
+								tr.appendTo('.tbody2')
+							});
+							$(' #loading').hide()
+							
+						},error:function(){
+							
+						}
+					})
+					
+				},
+				error:function(){
+//					$("#loading").hide()
+					alert("查询失败")
+				}
+				
+			});
+		})
+	</script>
+</html>

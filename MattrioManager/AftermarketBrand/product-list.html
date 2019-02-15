@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<link rel="stylesheet" type="text/css" href="../static/h-ui/css/H-ui.min.css" />
+	<!--引入css-->
+
+	<body>
+		<div style="padding: 10px;">
+			<table class="table table-border table-bordered table-bg" id="result">
+				<thead>
+					<tr class="text-c">
+						<th width="40">mikey</th>
+						<th width="40">主机厂</th>
+						<th width="40">车型</th>
+						<th width="40">发动机</th>
+						<th width="40">排量</th>
+						<th width="40">进气形式</th>
+						<th width="40">年款</th>
+						<th width="40">OE</th>
+						<th width="40">产品编号</th>
+						<th width="40">品牌分类</th>
+					</tr>
+				</thead>
+				<tbody id="tbody">
+
+				</tbody>
+			</table>
+		</div>
+	</body>
+	<script type="text/javascript" src="../lib/jquery/1.9.1/jquery.min.js"></script>
+	<script type="text/javascript" src="layer/layer.js"></script>
+	<!--引入JavaScript-->
+	<script type="text/javascript" language="javascript" src="datatables/1.10.0/jquery.dataTables.min.js"></script>
+	<script>
+		var network = localStorage.getItem("network");
+
+		//获取通过url传的参数
+		function getUrlParam(name) {
+			var reg = new RegExp("(^)" + name + "=([^]*)($)"); //构造一个含有目标参数的正则表达式对象
+			var r = window.location.search.substr(1).match(reg); //匹配目标参数
+			if(r != null) return decodeURI(r[2]);
+			return null; //返回参数值
+		}
+		var parmers = getUrlParam('?parmers');
+		layer.load(2);
+		$.ajax({
+			type: "post",
+			url: network + "/MattrioManager/AftermarketBrandController/getCarProducts",
+			data: {
+				"mikeys": localStorage.getItem(parmers)
+			},
+			dataType: "json",
+			cache: false,
+			crossDomain: true == !(document.all),
+			success: function(data) {
+				layer.closeAll('loading');
+				$.each(data.list, function(key, value) {
+					$('#tbody').append('<tr><td style="text-align: center;">' + value.mikey + '</td><td style="text-align: center;">' + value.Manufacture_CN + '</td><td style="text-align: center;">' + value.Vehicle_Name_CN + '</td><td style="text-align: center;">' + value.Engine_Code + '</td><td style="text-align: center;">' + value.Capacity + '</td><td style="text-align: center;">' + value.Air_intake_form + '</td><td style="text-align: center;">' + value.Vehicle_of_year + '</td><td style="text-align: center;">' + value.oe_numbers + '</td><td style="text-align: center;">' + value.product_id + '</td><td style="text-align: center;">' + value.other + '</td></tr>');
+				});
+				$('#result').DataTable();
+
+			},
+		})
+	</script>
+
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="renderer" content="webkit|ie-comp|ie-stand">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+		<meta http-equiv="Cache-Control" content="no-siteapp" />
+		<link rel="Bookmark" href="/favicon.ico" >
+		<link rel="Shortcut Icon" href="/favicon.ico" />
+		<!--[if lt IE 9]>
+		<script type="text/javascript" src="static/html5shiv.js"></script>
+		<script type="text/javascript" src="static/respond.min.js"></script>
+		
+		<![endif]-->
+		<link rel="stylesheet" type="text/css" href="static/h-ui/css/H-ui.min.css" />
+		<link rel="stylesheet" type="text/css" href="static/h-ui.admin/css/H-ui.admin.css" />
+		<link rel="stylesheet" type="text/css" href="static/Hui-iconfont/1.0.8/iconfont.css" />
+		
+		<link rel="stylesheet" type="text/css" href="static/h-ui.admin/skin/default/skin.css" id="skin" />
+		<link rel="stylesheet" type="text/css" href="static/h-ui.admin/css/style.css" />
+		<link rel="stylesheet" type="text/css" href="css/product-admin.css"/>
+		<link rel="stylesheet" type="text/css" href="./css/zxf_page.css">
+		<!--[if IE 6]>
+		<script type="text/javascript" src="static/DD_belatedPNG_0.0.8a-min.js" ></script>
+		<script>DD_belatedPNG.fix('*');</script>
+		<![endif]-->
+		<!--/meta 作为公共模版分离出去-->
+		
+		<!-- <link href="static/webuploader/0.1.5/webuploader.css" rel="stylesheet" type="text/css" /> -->
+	</head>
+	<body>
+		<div class="wrap">	
+			<div class="topselect">
+			<p class="title">产品管理</p>
+			<div class="carselect">
+				<div class="box">
+					<div class="year">选择年份</div>
+					<div class="list yearlist">
+
+					</div>
+				</div>
+				<div class="box">
+					<div class="car"><input id="car" type="text" placeholder="选择主机厂" /></div>
+					<div class="list carlist"></div>
+					<div class="list carlist2"></div>
+				</div>
+				<div class="box">
+					<div class="cartype">选择车型</div>
+					<div class="list cartypelist">
+
+					</div>
+				</div>
+				<div class="box">
+					<div class="carname">选择销售名称</div>
+					<div class="list carnamelist">
+
+					</div>
+				</div>
+				<div class="box">
+					<div class="underpan">选择底盘号</div>
+					<div class="list underpanlist">
+
+					</div>
+				</div>
+				<div class="box">
+					<div class="engine">选择发动机</div>
+					<div class="list enginelist">
+
+					</div>
+				</div>
+				<button class="carbtn">按车型搜索</button>
+			</div>
+			<div class="oeinp">
+				<input type="text" name="" placeholder="请输入您要查询的OE号码" style="width:268px"  class="input-text oeinp">
+				<button name="" id="btnsubmit" class=" oebtn" type="submit">按OE搜索</button>
+			</div>
+		</div>
+		<!--<div class="cl pd-5 bg-1 bk-gray mt-20"> <span class="l"><a href="javascript:;" onclick="datadel()" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a></span><span class="r">共有数据：<strong class="alltotal"></strong> 条</span> </div>-->
+		<div class="mt-20">
+			<table class="table table-border table-bordered table-bg table-sort">
+				<thead>
+					<tr class="text-c">
+						<th width=""><input type="checkbox" name="" value="">全选</th>
+						<th width="">Mikey</th>
+						<th width="">主机厂</th>
+						<th>车型</th>
+						<th width="">排量</th>
+						<th width="">地盘号</th>
+						<th width="">发动机型号</th>					
+						<th>年份</th>
+						<th width="">操作</th>
+					</tr>
+				</thead>
+				<tbody>
+					
+				</tbody>
+			</table>
+			<div class="warting active" style="height:300px;text-align: center;line-height: 100px;font-size: 20px;">
+				正在加载中。。。。。。
+			</div>
+			<div class="wartno active" style="height:300px;text-align: center;line-height: 100px;font-size: 20px;">
+				没有查询到数据
+			</div>
+			<div class="noselect" style="height:300px;text-align: center;line-height: 100px;font-size: 20px;">
+				请选择您要查询的内容
+			</div>
+		</div>
+		<br>
+		<div class="zxf_pagediv"></div>	
+		<div class="twocatalog">
+			<div class="inputwrap">
+				<label for="cataloginp">产品名称</label>
+				<input id='cataloginp' class="input-text"" type="text" placeholder="请输入您的配件名称" />
+			</div>
+			<div class="catalogwrap clearfix">
+				<div class="one"></div>
+				<div class="two"></div>
+			</div>
+			<div class="inputwrap">
+				<label for="cataloginp">产品编码</label>
+				<input id='cataloginp' class="product_id input-text" type="text" placeholder="请输入您的配件名称" />
+				<button class="matching"> <i class="Hui-iconfont">&#xe665;</i> 匹配</button>
+			</div>
+		</div>
+	</div>
+	</body>
+	<!--_footer 作为公共模版分离出去-->
+	<script type="text/javascript" src="static/jquery/1.9.1/jquery.min.js"></script> 
+	<script type="text/javascript" src="static/layer/2.4/layer.js"></script>
+	<script type="text/javascript" src="static/h-ui/js/H-ui.min.js"></script> 
+	<script type="text/javascript" src="static/h-ui.admin/js/H-ui.admin.js"></script>
+	<!--/_footer 作为公共模版分离出去-->
+	<!--请在下方写此页面业务相关的脚本-->
+	<script type="text/javascript" src="./js/zxf_page.js"></script>
+	<script type="text/javascript" src="js/aircity.js"></script>
+	<script type="text/javascript" src="js/j.dimensions.js"></script>
+	<script type="text/javascript" src="js/j.suggest.js"></script>
+	<script type="text/javascript" src="js/pinyin.js"></script>
+	<script type="text/javascript" src="js/jQuery.Hz2Py-min.js"></script>
+	<script type="text/javascript" src="js/product-admin.js"></script>
+	
+</html>

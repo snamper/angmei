@@ -1,0 +1,219 @@
+.searchdiv{
+    text-align: center;
+    margin: 70px auto 20px;
+    width: 1000px;
+}
+.inpWrap{
+    width: 400px;
+    margin: auto;
+    display: flex;
+}
+.vininput{
+    -webkit-appearance: none;
+    background-color: #fff;
+    background-image: none;
+    border-radius: 4px 0 0 4px;
+    border: 1px solid #dcdfe6;
+    box-sizing: border-box;
+    color: #606266;
+    display: inline-block;
+    font-size: inherit;
+    height: 40px;
+    line-height: 40px;
+    outline: 0;
+    padding: 0 15px;
+    transition: border-color .2s cubic-bezier(.645,.045,.355,1);
+    width: 330px;
+    position: relative;
+    margin-right: -1px;
+    z-index: 100;
+}
+.vininput:focus,.filter:focus{
+    border-color: #409eff;
+}
+.searchbtn{
+    background-color: #f5f7fa;
+    color: #909399;
+    vertical-align: middle;
+    display: table-cell;
+    position: relative;
+    border: 1px solid #dcdfe6;
+    border-radius:0 4px 4px 0;
+    padding: 0 20px;
+    white-space: nowrap;
+    cursor: pointer;
+}
+.tableWrap{
+    width: 1000px;
+    margin: 0 auto;
+    position: relative;
+    padding-bottom: 20px;
+}
+table{
+    width: 100%;
+    border-color: #ebeef5;
+    outline: none;
+}
+tbody tr:hover{
+    background-color: #f5f7fa;
+}
+td{
+    padding:12px 10px;
+    font-size: 14px;
+    color: #606266;
+    border: 1px solid #ebeef5;
+    border-top-width:0 ;
+    border-right-width: 0;
+}
+th{
+    color: #909399;
+    line-height: 20px;
+    font-size: 14px;
+    padding: 12px 0;
+    border: 1px solid #ebeef5;
+    border-right-width: 0;
+}
+th:last-child,td:last-child{
+    border-right-width: 1px;
+}
+.details,.back{
+    color: #fff;
+    background: #409eff;
+    padding: 7px 15px;
+    font-size: 12px;
+    border-radius: 3px;
+    float: right;
+    cursor: pointer;
+}
+.headerdiv{
+    display: flex;
+    flex-wrap:wrap;
+    line-height: 40px;
+}
+.headerdiv .box{
+    background-color: #f5f7fa;
+    padding: 0 15px;
+    border-radius: 4px;
+    border: 1px solid #dcdfe6;
+    white-space:nowrap;
+    cursor: not-allowed;
+    height: 40px;
+    margin-right: 7px;
+}
+.brand{
+    width: 100px;
+    box-sizing: border-box;
+}
+.number,.series,.Vin{
+    width: 200px;
+    box-sizing: border-box;
+}
+.back{
+    padding: 0 20px;
+    font-size: 14px;
+}
+.remark{
+    width: 900px;
+}
+.remarkdiv{
+    margin-top: 15px;
+    display: flex;
+}
+.none{
+    display: none  !important;
+}
+.circular {
+    height: 42px;
+    width: 42px;
+    animation: loading-rotate 2s linear infinite;
+}
+.path {
+    animation: loading-dash 1.5s ease-in-out infinite;
+    stroke-dasharray: 90,150;
+    stroke-dashoffset: 0;
+    stroke-width: 2;
+    stroke: #409eff;
+    stroke-linecap: round;
+}
+@-webkit-keyframes loading-rotate {
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg)
+    }
+}
+
+@keyframes loading-rotate {
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg)
+    }
+}
+@-webkit-keyframes loading-dash {
+    0% {
+        stroke-dasharray: 1, 200;
+        stroke-dashoffset: 0
+    }
+    50% {
+        stroke-dasharray: 90, 150;
+        stroke-dashoffset: -40px
+    }
+    100% {
+        stroke-dasharray: 90, 150;
+        stroke-dashoffset: -120px
+    }
+}
+
+@keyframes loading-dash {
+    0% {
+        stroke-dasharray: 1, 200;
+        stroke-dashoffset: 0
+    }
+    50% {
+        stroke-dasharray: 90, 150;
+        stroke-dashoffset: -40px
+    }
+    100% {
+        stroke-dasharray: 90, 150;
+        stroke-dashoffset: -120px
+    }
+}
+#loading{
+    position: absolute;
+    z-index: 2000;
+    background-color: hsla(0,0%,100%,.9);
+    margin: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transition: opacity .3s;
+    text-align: center;
+    display: none;
+}
+.nonedata{
+    min-height: 60px;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-align: center;
+    align-items: center;
+    border: 1px solid #ebeef5;
+    border-top-width: 0;
+    color:#909399;
+}
+.filterdiv{
+    display: flex;
+    line-height: 40px;
+    margin-bottom: 10px;
+}
+.filterdiv input{
+    height: 40px;
+    border-radius: 4px;
+    border: 1px solid #dcdfe6;
+    padding-left: 10px;
+    width: 500px;
+}

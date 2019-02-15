@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" name="arrcity" id="arrcity" value="" />
+		<div id='suggest' >
+	    </div>
+		
+	</body>
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="suggest/aircity.js"></script>
+	<script type="text/javascript" src="suggest/j.dimensions.js"></script>
+	<script type="text/javascript" src="suggest/j.suggest.js"></script>
+	<script type="text/javascript">
+		 $.ajax({
+        type: "post",
+        url:"http://www.51macc.com:8080/Mattrio/SelectCar/Manufacture",
+        data: {
+            "year": "",
+            "userid":'808c1a13-8cb9-1035-9ce5-6abd7619172b'
+        },
+        dataType: "json",
+        cache: false,
+        crossDomain: true == !(document.all),
+        success: function(data) {
+            for (var i = 0; i < data.all.length; i++) {
+                commoncitys[i] = data.all[i];/*遍历每个值*/
+            }
+            for (var i = 0; i < data.all.length; i++) {
+                citys[i] = data.all[i];
+                
+            }
+        },
+        error: function(data) {
+
+        }
+    })
+		$(function() {
+			$("#arrcity").suggest(citys, {
+				hot_list: commoncitys,
+				dataContainer: '#arrcity_3word',
+				attachObject: '#suggest'
+			});
+//			$("#city2").suggest(citys, {
+//				hot_list: commoncitys,
+//				attachObject: "#suggest2"
+//			});
+	});
+	</script>
+</html>

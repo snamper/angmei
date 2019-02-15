@@ -1,0 +1,109 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<!--[if lt IE 9]>
+<script type="text/javascript" src="static/html5shiv.js"></script>
+<script type="text/javascript" src="static/respond.min.js"></script>
+<![endif]-->
+<link rel="stylesheet" type="text/css" href="static/h-ui/css/H-ui.min.css" />
+<link rel="stylesheet" type="text/css" href="static/h-ui.admin/css/H-ui.admin.css?v=20181012" />
+<link rel="stylesheet" type="text/css" href="static/Hui-iconfont/1.0.8/iconfont.css" />
+<link rel="stylesheet" type="text/css" href="static/h-ui.admin/skin/default/skin.css?v=20181012" id="skin" />
+<link rel="stylesheet" type="text/css" href="static/h-ui.admin/css/style.css" />
+<link rel="stylesheet" type="text/css" href="css/zxf_page.css">
+<link rel="stylesheet" type="text/css" href="css/sweetalert.css"/>
+<link rel="stylesheet" type="text/css" href="css/welcome.css?v=20181017"/>
+<!--[if IE 6]>
+<script type="text/javascript" src="static/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script>DD_belatedPNG.fix('*');</script>
+<![endif]-->
+<title>我的桌面</title>
+</head>
+<body>
+	<div class="wrap">
+		<p class="p">未匹配的产品数量 : [ <span class="span1">0</span> ]条&nbsp;&nbsp;&nbsp;未审核的产品数量 : [ <span class="span2">0</span> ]条&nbsp;&nbsp;&nbsp;已审核的产品数量 : [ <span class="span3">0</span> ]条<a class="btn btn-success radius r" style="line-height:1.6em;margin-right:8px;margin-top: -5px;" href="javascript:location.replace(location.href);" title="刷新"><i class="Hui-iconfont"></i></a></p>
+		<div class="all"><div id="all"></div></div>
+		<div class="toptitle clearfix">
+			<div class="title clearfix">
+				<span>产品类型</span>
+				<div class="onewrap">
+					<div class="one">
+						<p class="p1">请选择一级分类</p>
+						<img class="arrow" src="images/triangle.png"/>
+					</div>
+					<div class="list1"></div>
+				</div>
+				<div class="twowrap">
+					<div class="two">
+						<p class="p2">请选择二级分类</p>
+						<img class="arrow" src="images/triangle.png"/>					
+					</div>
+					<div class="list2"></div>
+				</div>
+				<span>主机厂</span>
+				<div class="carwrap">
+					<div class="car"> 
+						<input type="text" class="carinp" value="中文/拼音" placeholder="中文/拼音"/>
+						<img class="arrow" src="images/triangle.png"/>
+					</div>
+					<div class="list3"></div>
+					<div class="list3-2"></div>
+				</div>
+				<button class="btn radius analyze" style="background: #45b3fe;color: #fff;">分析</button>
+			</div>
+		</div>
+		<div class="echarts clearfix">
+			<!--<div class="barwrap"><div id="bar" style="width: 700px;height:450px;"></div></div>-->
+	 		<div class="piewrapall"><div id="pieall"></div></div>	
+	 		<div class="piewrap"><div id="pie"></div></div>
+	 		<div class="year"><div id="year"></div></div>
+	 		<button class="back" title="返回查看车型未覆盖数量"><i class="icon Hui-iconfont">&#xe66b;</i></button>
+		</div>
+		<div class="mt-20">
+			<div class="cl pd-5"> <span class="r">共有数据[&nbsp;&nbsp;<strong class="alltotal" style="color: #c92327;">0</strong>&nbsp;&nbsp;]条</span></div>
+				<table class="table table-border table-bordered table-bg table-sort">
+					<thead>
+						<tr class="text-c">
+							<!--<th>Mikey</th>-->
+							<th>主机厂</th>
+							<th>车型</th>
+							<th>年款</th>
+							<th>销售名称</th>
+							<th>发动机</th>
+							<th>底盘号</th>
+							<th>驱动方式</th>
+						</tr>
+					</thead>
+					<tbody class="tbody1"></tbody>
+				</table>
+				<div class="warting active" style="height:300px;text-align: center;line-height: 100px;font-size: 20px;">
+					正在加载中。。。。。。
+				</div>
+				<div class="wartno active" style="height:300px;text-align: center;line-height: 100px;font-size: 20px;">
+					没有查询到数据
+				</div>
+				<br>
+		 		<div class="zxf_pagediv"></div>	
+			</div>
+	</div>
+<!--
+<footer class="footer mt-20">
+	<div class="container">
+		<p>技术支持：昂美汽车技术服务（上海）有限公司</p>
+	</div>
+</footer>-->
+<script type="text/javascript" src="static/jquery/1.9.1/jquery.min.js"></script> 
+<script type="text/javascript" src="static/h-ui/js/H-ui.min.js"></script> 
+<script type="text/javascript" src="js/pinyin.js"></script>
+	<script type="text/javascript" src="js/jQuery.Hz2Py-min.js"></script>
+<script type="text/javascript" src="js/echarts.common.min.js"></script>
+<script type="text/javascript" src="js/zxf_page.js"></script>
+<script type="text/javascript" src="js/sweetalert.min.js"></script>
+<script type="text/javascript" src="js/welcome.js?v=20181017"></script>
+</body>
+</html>

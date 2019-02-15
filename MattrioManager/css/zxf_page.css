@@ -1,0 +1,62 @@
+div.zxf_pagediv,div.zxf_all,div.zxf_marry,div.zxf_marry_no,div.zxf_page,div.cx_page{
+	text-align: center;
+	color: #999999;
+	margin-top: 5px;
+}
+div.zxf_pagediv a,div.zxf_all a,div.zxf_marry a,div.zxf_marry_no a,div.zxf_page a,div.cx_page a{
+	text-decoration: none;
+	
+}
+div.zxf_pagediv span,div.zxf_pagediv a,div.zxf_all span,div.zxf_all a,div.zxf_marry span,div.zxf_marry a,div.zxf_marry_no span,div.zxf_marry_no a,div.zxf_page span,div.zxf_page a,div.cx_page span,div.cx_page a{
+	display: inline-block;
+	box-sizing: border-box;
+}
+span.disabled{
+	height: 35px;
+	width: 65px;
+	line-height: 35px;
+	background: #f2f2f2;
+	margin: 0 5px;
+}
+.zxfPagenum{
+	color: #999999;
+	background: #FFFFFF;
+	width: 35px;
+	height: 35px;
+	line-height: 35px;
+	border: 1px solid #dfdfdf;
+	margin: 0 5px;
+}
+.nextbtn,.prebtn{
+	color: #999999;
+	background: #FFFFFF;
+	width: 65px;
+	height: 35px;
+	line-height: 35px;
+	border: 1px solid #dfdfdf;
+}
+.zxfinput{
+	width: 35px;
+	height: 35px;
+	text-align: center;
+	box-sizing: border-box;
+	border: 1px solid #dfdfdf;
+	margin: 0 12px;
+}
+.zxfokbtn{
+	width: 45px;
+	height: 35px;
+	line-height: 35px;
+	border: 1px solid #dfdfdf;
+	cursor: pointer;
+}
+.nextpage{
+	color: #d71f1b;
+	margin: 0 5px;
+	border: 1px solid #d71f1b;
+}
+.current{
+	color: #ffffff;
+	background: #d71f1b;
+	border: none;
+}

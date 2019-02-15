@@ -1,0 +1,150 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>后台登录</title>
+<!-- Custom Theme files -->
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all"/>
+<!-- Custom Theme files -->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<meta name="keywords" content="后台登录" />
+<link rel="stylesheet" type="text/css" href="css/sweetalert.css"/>
+<!--Google Fonts-->
+<!--<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+--><!--Google Fonts-->
+</head>
+<body>
+<!--header start here-->
+	<div class="login-form">
+		<div class="top-login">
+			<span><img src="images/logo.png" alt=""/></span>
+		</div>
+		<h1>登录</h1>
+		<div class="login-top">
+			<div class="login-ic">
+				<i ></i>
+				<input type="text"  placeholder="您的用户名" id="name"/>
+				<div class="clear"> </div>
+			</div>
+			<div class="login-ic">
+				<i class="icon"></i>
+				<input type="password" placeholder="您的密码" id="pwd"/>
+				<div class="clear"> </div>
+			</div>
+		
+			<div class="log-bwn">
+				<input type="submit"  value="登录" >
+			</div>
+		</div>
+		<!-- <p class="copy">(c) 2017 xxxxxxxxxxx</p> -->
+	</div>		
+<!--header start here-->
+</body>
+<script type="text/javascript" src="static/jquery/1.9.1/jquery.min.js"></script> 
+<script type="text/javascript" src="js/sweetalert.min.js"></script>
+<script>
+// localStorage.setItem("network",'http://192.168.125.117:8080');
+localStorage.setItem("networkmodel","http://ec.51macc.com");
+localStorage.setItem("username_id","luosheng"); 
+var network = localStorage.getItem("networkmodel");
+var username_id = localStorage.getItem("username_id");  
+	$(".log-bwn").click(function(){
+		if($("#name").val() == ""){
+			swal("用户名不能为空!", "", "error");
+			return false;
+		}
+		if($("#pwd").val() == ""){
+			swal("密码不能为空!", "", "error");
+			return false;
+		}
+		$.ajax({
+			type:"post",
+			url:"http://ec.51macc.com/MattrioEcModel/LoginIntface/adminlogin",
+			data:{
+				"brand_id":username_id,
+				"username":$("#name").val(),
+				"password":$("#pwd").val()
+			},
+			dataType:"json",
+			cache: false,
+			crossDomain: true == !(document.all),
+			success:function(data){
+
+				if(data.msg == "账号或者密码错误"){
+					swal("账号或者密码错误!", "", "error");
+					return false;
+				}
+				sessionStorage.username =JSON.stringify(data);
+				sessionStorage.setItem("user",data.list[0].name);
+				window.location.href="./index.html";				
+			},error:function(data){
+				// console.log(data);
+			}
+		})
+
+		// window.location.href = "./index.html"
+	})
+
+	$(document).keydown(function(even){
+		if(event.keyCode==13){
+			$(".log-bwn").click();
+		}
+	})
+	
+	
+	
+	/*探矿格式*/
+
+//		swal("这是一个信息提示框!");
+//		swal("Good!", "弹出了一个操作成功的提示框", "success");
+//		swal("OMG!", "弹出了一个错误提示框", "error");
+//		 swal({
+//			title: "您确定要删除吗？", 
+//			text: "您确定要删除这条数据？", 
+//			type: "warning",
+//			showCancelButton: true,
+//			closeOnConfirm: false,
+//			confirmButtonText: "是的，我要删除",
+//			confirmButtonColor: "#ec6c62"
+//			}, function() {
+//				$.ajax({
+//					url: "do.php",
+//					type: "DELETE"
+//				}).done(function(data) {
+//					swal("操作成功!", "已成功删除数据！", "success");
+//				}).error(function(data) {
+//					swal("OMG", "删除操作失败了!", "error");
+//				});
+//			});
+//	
+//		swal({   
+//			title: "Good!",   
+//			text: '自定义<span style="color:red">图片</span>、<a href="#">HTML内容</a>。<br/>5秒后自动关闭。',   
+//			imageUrl: "images/thumbs-up.jpg",
+//			html: true,
+//			timer: 5000,   
+//			showConfirmButton: false
+//		});
+//	
+//		swal({   
+//			title: "输入框来了",   
+//			text: "这里可以输入并确认:",   
+//			type: "input",   
+//			showCancelButton: true,   
+//			closeOnConfirm: false,   
+//			animation: "slide-from-top",   
+//			inputPlaceholder: "填点东西到这里面吧" 
+//		}, function(inputValue){   
+//			if (inputValue === false) return false;      
+//			if (inputValue === "") {     
+//				swal.showInputError("请输入!");     
+//				return false   
+//			}      
+//			swal("棒极了!", "您填写的是: " + inputValue, "success"); 
+//		});
+
+</script>
+</html>

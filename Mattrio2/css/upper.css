@@ -1,0 +1,27 @@
+
+.upper_top,.upper_down{
+	position: fixed;
+	right: 50px;
+	bottom: 70px;
+	width:40px;
+	height:40px;
+	line-height: 40px;
+	background:#d4caca;
+	border:1px solid #d4caca;
+	text-align: center;
+	border-radius: 50%;
+}
+.upper_down{
+	bottom: 20px;
+}
+.upper_top:hover,.upper_down:hover{
+	cursor: pointer;
+	background:#ef7b7b;
+}
+.upper_top img,.upper_down img{
+	width:20px;
+	vertical-align: middle;
+}
+.upper_down img{
+	width: 24px;
+}

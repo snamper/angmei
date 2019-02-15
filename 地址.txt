@@ -1,0 +1,46 @@
+
+http://192.168.125.117:8080
+http://www.51macc.com:8080 
+
+808c1a13-8cb9-1035-9ce5-6abd7619172b
+
+macc 昂美官网
+Mattrio旧版本51macc网站
+Mattrio2最新版本51macc网站
+MattrioEc 昂美自己的电子目录
+MattrioEcModel 客户的电子目录
+MattrioManager昂美后台管理系统
+Apaas 昂裕官网
+
+奥迪，大众,MINIepc     content/detail_epc
+奔驰,SMARTepc     benchi_epc
+本田epc     bentian_epc
+宝马epc     bwm_epc
+尼桑,日产，英菲尼迪epc     nisang_epc
+现代epc     xiandai_epc
+荣威，名爵epc     rongwei_epc
+马自达EPC   mazida_epc
+丰田EPC   fengtian_epc
+凯迪拉克，别克，雪佛兰  tongyong_epc
+海马，长城  haima_epc
+
+
+
+oe_name   原厂名称
+oe_name2  标准名称 
+
+
+http://ec.51macc.com:88/JINJIA/index.html   电子目录
+http://ec.51macc.com:88/JINJIA/admin/index.html  电子目录后台
+
+
+
+A  底盘部分
+B  发动机与变速器
+C  车身部分
+D  电器及照明系统
+E  工具
+F  辅料项目
+
+
+

@@ -1,0 +1,23 @@
+
+<div class="nav clearfix">
+			<div class="nav_left nleft wxcont">
+				<a href="/Mattrio/index.html">网站首页</a>&nbsp;&nbsp;
+				<a href="#" class="wxfa">关注微信
+					<img class="wxtop" src="/Mattrio/image/wx.jpg">
+				</a>
+
+			</div>
+			<div class="nav_right nright clearfix">
+				<div>
+					<a href="#" class="divname"><span></span></a>&nbsp;
+					<!--<a href="#" class="divnum">日剩余次数(<span></span>)</a>&nbsp;-->
+					<a href="/Mattrio/content/about/in.html">免责条款</a>&nbsp;
+				</div>
+			</div>
+</div>
+<script type="text/javascript">
+	var username = $.cookie("username");
+	var frequency = $.cookie("frequency");
+	$(".nright .divname span").html(username);
+	$(".nright .divnum span").html(frequency);
+</script>

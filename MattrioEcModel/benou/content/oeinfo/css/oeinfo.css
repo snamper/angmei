@@ -1,0 +1,168 @@
+.runtmksl{ 
+	position:fixed; 
+	top:0;
+	left:0;
+	width:100%; 
+	z-index: 10;
+}
+.runtmksltil{ 
+	height:44px; 
+	line-height:40px; 
+	background:#a3d1f3 ; 
+	color:#fff; 
+	text-align:center; 
+	font-weight:400; 
+	border-bottom:5px solid #FCD900;
+	margin:0;
+}
+.runtmksltil span.runtasclor{
+	position:absolute; 
+	left:10px; 
+	font-size:12px; 
+	color:#666;
+}
+.runtmksltil span.runtasclfh{ 
+	position:absolute; 
+	left:0px; 
+	font-size:12px; 
+	color:#666; 
+	display:none;
+}
+.content{
+	position:absolute;
+	top:60px;
+	left:0px;
+	width:100%;
+}
+.contentimg{
+	padding:20px;
+	background: #fff;
+	text-align: center;
+	border-bottom: 1px solid #ccc;
+}
+.contentimg img{
+	width:256px;
+	height:256px;
+}
+.contentdiv{
+	background: #fff;
+	text-align: center;
+	font-size: 16px;
+	line-height: 32px;
+	padding:10px;
+}
+.contentinfo{
+	margin-top:20px;
+	width:100%;
+	background: #fff;
+	color:#333;
+}
+.procttext{
+	padding:10px;
+	border-bottom: 1px solid #ccc;
+	line-height: 20px;
+	font-size: 14px;
+}
+.procttext .error{
+	display: inline-block;
+	float: right;
+	background: #a3d1f3;
+	color:#fff;
+	border:0;
+	padding:5px 10px;
+}
+.errorcontent{
+	width:95%;
+	height:45%;
+	border:1px solid #ccc;
+	background: #fff;
+	position: fixed;
+	top:30%;
+	left:2%;
+	display: none;
+	background: #fafafa;
+}
+.errordel{
+	display: block;
+	text-align: center;
+	color:#fff;
+	line-height: 20px;
+	font-size: 25px;
+	width:20px;
+	height:20px;
+	background: red;
+	position:absolute;
+	top:0px;
+	right:0px;
+}
+.errorcontent table{
+	margin-top: 30px;
+	width:100%;
+}
+.errorcontent th{
+	padding-left: 5px;
+	width:40%;
+	text-align: left;
+}
+.errorcontent td{
+	line-height: 35px;
+}
+.errorcontent input{
+	border:1px solid #ccc;
+	width:95%;
+	height:25px;
+	font-size: 14px;
+}
+.errorcontent input:focus{
+	border:1px solid #04a53e;
+}
+.errorcontent p{
+	width:100%;
+	text-align: center;
+	margin-top: 20px;
+	
+}
+.errorcontent button{
+	color:#fff;
+	padding:5px 10px;
+	border:0;
+}
+.confirm{
+	background: #4A87EE;
+}
+.clear{
+	background: #43CEE6;
+}
+
+
+
+
+
+
+
+
+.proct{
+	padding:10px;
+}
+.proct p{
+	line-height: 24px;
+	font-size: 14px;
+}
+.contentinfo .proctspan{
+	display: inline-block;
+	width:70px;
+}
+.test{
+	margin-top: 5px;
+	padding-bottom: 20px;
+	background: #fff;
+}
+.test p{
+	line-height: 35px;
+	font-size: 14px;
+	padding-left: 10px;
+	border-bottom: 1px solid #ccc;
+}
+.test p span{
+	padding:5px;
+}

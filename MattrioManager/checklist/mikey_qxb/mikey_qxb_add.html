@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<!--[if lt IE 9]>
+<script type="text/javascript" src="static/html5shiv.js"></script>
+<script type="text/javascript" src="static/respond.min.js"></script>
+<![endif]-->
+<link rel="stylesheet" type="text/css" href="../../static/h-ui/css/H-ui.min.css" />
+<link rel="stylesheet" type="text/css" href="../../static/h-ui.admin/css/H-ui.admin.css" />
+<link rel="stylesheet" type="text/css" href="../../lib/Hui-iconfont/1.0.8/iconfont.css" />
+<link rel="stylesheet" type="text/css" href="../../static/h-ui.admin/skin/default/skin.css" id="skin" />
+<link rel="stylesheet" type="text/css" href="../../static/h-ui.admin/css/style.css" />
+<link rel="stylesheet" type="text/css" href="../../css/zxf_page.css">
+<link rel="stylesheet" type="text/css" href="../../css/index.css">
+<link rel="stylesheet" type="text/css" href="../../css/loading.css">
+<!--[if IE 6]>
+<script type="text/javascript" src="static/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script>DD_belatedPNG.fix('*');</script>
+<![endif]-->
+<title>数据导入</title>
+</head>
+<style>
+	.contenta{
+		display: block;
+		width:150px;
+		height: 40px;
+		font-size: 20px;
+		line-height: 40px;
+		text-align: center;
+		color:#5a98de;
+		margin:30px 50px;
+	}
+	#pageForm{
+		font-size: 14px;
+		margin-left: 50px;
+	}
+	#pageForm input{
+
+	}
+	#upload_btn,#submitbtn{
+		margin-top: 50px;
+	}
+	#upload_btn{
+		margin-left: 100px;
+	}
+	.revise{
+		width:100%;
+		background-color:#f5f5f5;
+		line-height: 39px;
+		padding:0px 20px;
+		border-bottom: 1px solid #e5e5e5;
+		font-size: 14px;
+		color:#333;
+	}
+	.revise span{
+		position: absolute;
+		top:0px;
+		right:10px;
+	}
+	.revise span:hover{
+		cursor:pointer;
+	}
+	.cont{
+		width:96%;
+		margin:0 auto;
+		display: none;
+	}
+</style>
+
+<body>
+<nav class="breadcrumb">
+	数据导入 
+	<a class="btn btn-danger radius r" style="line-height:1.6em;margin-top:3px;margin-left: 5px;" href="javascript:history.back();" title="返回" ><i class="Hui-iconfont">&#xe66b;</i></a>
+	<a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a>
+</nav>
+
+
+
+
+<p style="color:red;padding:10px;">注意：* 为了防止操作不当,请您在导入数据前先下载我们规定表格格式，然后将您的数据复制到规定表格中再导入！</p>
+	<a class="contenta"><i class="Hui-iconfont">&#xe640;</i>下载Excel格式</a>
+	<form  enctype="multipart/form-data" id="pageForm">
+		Excel上传:
+		<input id="file" type="file" size="45" name="file">
+	</form>
+	<button id="upload_btn" class="btn btn-secondary radius" onclick="ajaxFileUpload()">上 传</button>
+	<button id="submitbtn" class="btn btn-success radius">提交</button>
+<div class="cont">
+	<div class="mt-20" style="width:100%;overflow: auto;">
+		<table class="table table-border table-bordered table-bg table-sort" style="width:100%;">
+			<thead>
+				<tr class='text-c'>
+					<th>ID</th>
+					<th>汽修宝ID</th>
+					<th>Mi-Key</th>
+				</tr>
+			</thead>
+			<tbody>
+				
+			</tbody>
+		</table>
+		
+	</div>
+</div>	
+
+	<div id="loading">
+		<img src="../../images/timg.gif">
+	</div>
+</body>
+
+<script src="../../js/jquery.min.js" type="text/javascript"></script>
+<script src="../../js/jquery.form.js" type="text/javascript"></script>
+<script type="text/javascript">
+
+	var network = localStorage.getItem("network");
+	$(".contenta").attr("href","../../excel/model_id_mikey.xlsx");
+
+	var datajson;
+	function ajaxFileUpload() {
+		if($("#file").val() == ""){
+			return false;
+		}
+		if(($("#file").val().split(".")[1] == "xlsx" )|| ($("#file").val().split(".")[1] == "xls")){
+			
+			$("#loading").show();
+			$("#pageForm").ajaxSubmit({
+				type: "POST",
+				url: network+"/MattrioManager/MnumManager/uploadModelidMikeyExcel",
+				dataType: "text",
+				success: function(data) {
+					$(".cont").show();
+					$("tbody").html("");
+					datajson = data;
+					var str = JSON.parse(data);
+					$.each(str,function(key,value){
+						var tr = $("<tr>");
+						$.each(value,function(k,v){
+							var td = $("<td style='text-align:center;'>").html(v);
+							td.appendTo(tr);
+						})
+						tr.appendTo("tbody");
+					})
+					$("#loading").hide();
+				}
+			});
+		}else{
+			alert("上传的格式为xlsx或xls");
+		}
+		
+	}
+
+	$("#submitbtn").click(function(){
+		if(datajson == undefined){
+			alert("请先上传您的文件");
+			return false;
+		}
+		$("#loading").show();
+		console.log(datajson)
+		if(confirm("是否添加")){
+			$.ajax({
+				type:"post",
+				url:network+"/MattrioManager/MnumManager/addModelidMikeyExcel",
+				data:{
+					"datajson":datajson,
+				},
+				dataType:"json",
+				cache: false,
+				crossDomain: true == !(document.all),
+				success:function(data){
+					$("#loading").hide();
+					sessionStorage.setItem("pages",1);
+					alert("上传成功");
+				},
+				error:function(data){
+					console.log(data);
+				}
+			})
+		}else{
+			$("#loading").hide();
+		}
+	})
+
+
+	$(".revise span").click(function(){
+		window.location.href="javascript:history.back()";
+	})
+</script>
+
+</html>

@@ -1,0 +1,25 @@
+#result_wrapper,#result2_wrapper{
+	margin-top: 20px;
+}
+.tabwrap .l{
+	margin-right: 20px;
+}
+.tabwrap .l a{
+	height: 36px;
+	font-size: 16px;
+}
+.tabwrap .l .btn{
+	padding: 7px 35px;
+}
+.tabwrap .tab a{
+	background: #3bb4f2;
+	color: #fff;
+}
+.table tbody td{
+	text-align: center;
+}
+#inpsubmit,#btnsubmit{
+    margin-bottom: 0;
+    height: 34px;
+    line-height: 34px;
+}

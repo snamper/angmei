@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="content-type" content="text/html;charset=utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<meta name="renderer" content="webkit">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+		<meta name="keywords" content="51macc,mattrio,昂美贸易">
+		<meta name="robots" content="all">
+		<meta name="description" content="汽车零配件数据查询">
+		<title>昂美数据</title>
+		<link rel="icon" href="img/logohead.jpg">
+		<link rel="stylesheet" type="text/css" href="css/jquery.fullPage.min.css"/>
+		<link rel="stylesheet" type="text/css" href="css/base.min.css">
+		<link rel="stylesheet" type="text/css" href="css/index.min.css"/>
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/jquery.fullPage.min.js"></script>
+	</head>
+	<style  type="text/css">
+			.announcement img {
+				margin-top: 15px;
+			}
+			.nav_bi{
+				position: relative;
+			}
+			.nav_bi p{
+				position: absolute;
+				top:50px;
+				left: -10px;
+				width:120px;
+				line-height: 30px;
+				border:1px solid #b20822;
+				background: #fff;
+				z-index: 1000;
+				display: none;
+				text-align: center;
+			}
+			.nav_bi p:hover{
+				cursor: pointer;
+			}
+			.nav_bi:hover p{
+				display: block;
+			}
+			.contentbg_list{
+				position: absolute;
+				bottom:15px;
+				width:160px;
+				margin-left: 300px;
+			}
+			.contentbg_list span{
+				display: inline-block;
+				width:20px;
+				cursor: pointer;
+				height:20px;
+				border-radius: 10px;
+				background-color: white;
+				text-align: center;
+				font:16px/20px '微软雅黑';
+			}
+			.contentbg_list span.active{
+				background-color: red;
+				color:white;
+			}
+			.cont_active{
+				display: none;
+			}
+			#oelist,#productlist{
+				position: relative;
+				width: 613px;
+				background: #fff;
+				border-top: 1px solid #ccc;	
+				display: none;
+				padding-left: 10px;
+				padding-right: 10px;
+				box-sizing: border-box;
+			}
+			#oelist p,#productlist p{
+				font-size: 14px;
+				font-weight: bold;
+				line-height: 26px;
+			}
+			#oelist p:hover,#productlist p:hover{
+				background:	#ADD8E6;
+			}
+			#productlist p .pinpai{
+				float: right;
+			}
+			.line {
+			    clear: both;
+			    width: 100%;
+			    height: 1px;
+			    overflow: hidden;
+			    line-height: 1px;
+			    border: 0;
+			    background: #ccc;
+			    margin: 10px 0 30px;
+			}
+			html,body{
+				width: 100%;
+				height: 100%;
+			}
+			.ie{
+				width: 100%;
+				height: 100%;
+				position: fixed;
+				z-index: 1000000000;
+				top: 0;
+				left: 0;
+				background: #fff;
+				padding-left: 20px;
+				display: none;
+			}
+			.ie h1{
+				 font-size: 40px;
+			    line-height: 80px;
+			    font-weight: 200;
+			    margin-bottom: 10px;
+    		}
+    		.ie h2{
+				font-size: 20px;
+			    line-height: 25px;
+			    font-weight: 500;
+			    margin: 10px 0;
+    		}
+			.ie p{
+    			margin-bottom: 10px;
+			}
+			.browser {
+			    padding: 10px 0;
+			}
+			.browser li {
+			    width: 180px;
+			    float: left;
+			    list-style: none;
+			}
+			.browser li a {
+			    text-decoration: none;
+			    color: #0072c6;
+			}
+			.browser li a span {
+			    display: block;
+			    font-size: 12px;
+			    line-height: 12px;
+			}
+			.browser li a img {
+			    width: 34px;
+			    height: 34px;
+			    border: 0;
+			    float: left;
+			    margin-right: 10px;
+			}
+		</style>
+	<body>
+		<div class="ie" id="ie">
+			<h1>是时候升级你的浏览器了</h1>
+			<p>你正在使用 Internet Explorer 的过期版本（IE6、IE7、IE8 或使用该内核的浏览器）。这意味着在升级浏览器前，你将无法访问此网站。</p>
+			<div class="line"></div>
+			<h2>请注意：Windows XP 及 IE6、IE7、IE8 的支持已经结束</h2>
+			<p>自 2014 年 4 月 8 日起，Microsoft 不再为 Windows XP 和 Internet Explorer 8 及以下版本提供相应支持和更新。如果你继续使用这些，你将可能受到病毒、间谍软件和其他恶意软件的攻击，无法确保个人信息的安全。请参阅 <a href="http://windows.microsoft.com/zh-cn/windows/end-support-help">Microsoft 关于 Windows XP 支持已经结束的说明</a> 。</p>
+			<div class="line"></div>
+			<h2>更先进的浏览器</h2>
+			<p>推荐使用以下浏览器的最新版本。如果你的电脑已有以下浏览器的最新版本则直接使用该浏览器访问<b id="referrer"></b>即可。</p>
+			<ul class="browser clearfix">
+				<li>
+					<a href="https://www.google.cn/intl/zh-CN/chrome/"><img src="img/chrome.png" alt="谷歌浏览器">谷歌浏览器<span>Google Chrome</span></a>
+				</li>
+				<li>
+					<a href="https://browser.360.cn/ee/"><img src="img/360.jpg" alt="360极速浏览器" style="width: 55px;">360极速浏览器<span>360 极速浏览器</span></a>
+				</li>
+				<li>
+					<a href="https://browser.360.cn/se/"><img src="img/360an.jpg" alt="360安全浏览器" style="width: 55px;">360安全浏览器<span>360 Security Browser</span></a>
+				</li>
+				<li>
+					<a href="https://browser.qq.com//"><img src="img/qq.png" alt="QQ浏览器" style="width: 55px;">QQ浏览器<span>QQ Browser</span></a>
+				</li>
+			</ul>
+			<div class="clean"></div>
+			<h2>为什么会出现这个页面？</h2>
+			<p>如果你不知道升级浏览器是什么意思，请请教一些熟练电脑操作的朋友。请使用推荐的浏览器打开该网站。</p>
+			<div class="line"></div>
+			<h2>一起抵制IE</h2>
+			<p>为了兼容这个曾经的浏览器霸主，网页设计人员需要做大量的代码工作，而且最终效果也始终不能让人满意。对于普通用户而言，低版本IE更是一个岌岌可危的安全隐患，在Windows历史上几次大的木马病毒事件都是利用IE漏洞进行传播。所以，请和我们一起抵制IE！</p>
+		
+		</div>
+		<script type="text/javascript">
+//			if (window.ActiveXObject || "ActiveXObject" in window){
+//            document.getElementById("ie").style.display="block"
+//			}
+			fn();
+	    	window.onresize=function(){
+	    		fn();
+	    	}
+	        function fn(){
+		        var owidth=document.documentElement;
+				var ohtml=owidth.clientWidth;
+				owidth.style.fontSize=ohtml/(640/100)+'px';
+	        }
+		</script>
+		
+		<!--头部部分-->
+		<div class="header" id="header">
+			<div class="logo">
+				<a href="http://www.51macc.com/">
+					<img src="img/logo.png" />
+				</a>
+			</div>
+			<div class="nav">
+				<ul id="menu">
+					<li><a href="http://www.51macc.com" style="font-weight: bold; color: red;" target="_blank">在线查询</a></li>
+					<li data-menuanchor="page1" class="active"><a href="#page1">昂美数据</a></li>
+					<li data-menuanchor="page2"><a href="#page2">服务项目</a></li>
+					<li data-menuanchor="page3"><a href="#page3">技术实力</a></li>
+					<li data-menuanchor="page4"><a href="#page4">关于昂美</a></li>
+					<li data-menuanchor="page5"><a href="#page5">加入我们</a></li>
+				</ul>
+			</div>
+		</div>
+		<div id="dowebok">
+			<!--1-->
+		    <div class="section ">
+		        <!--banner部分-->
+				<div class="careers-mid" id="careers-mid">
+					<ol class="dots">
+						<li class="current"></li>
+						<li></li>
+						<li></li>
+					</ol>
+					<ul class="banner-ul clearfix" >
+						<li class="banner1">
+	                        <div>
+								<div class="banner1_content">
+									<img class="bimg1" src="img/banner1.1.png"/>
+									<h2>找件儿APP</h2>
+									<h3>智能语音+OCR扫描识别技术 </h3>
+									<h3>轻松查配件！</h3>
+									<img class="zjeimg" src="img/zjeqrcode.png"/>
+								</div>
+							</div>
+						</li>
+						<li style="display:none" class="banner2">
+							<div>
+								<div class="banner2_content">
+									<h2>找件儿小程序</h2>
+									<h3 style="position: relative;">100<span style="position: absolute; top: -9px;">+ </span>&nbsp;&nbsp;&nbsp;立体格子—所圈即所选</h3>
+									<div class="imgwrap"><img src="img/wxxcx.jpg"/></div>
+								</div>
+							</div>
+						</li>
+						<li style="display:none" class="banner3">
+							<div>
+								<div class="banner3_content">
+									<h2>还在花钱查数据？</h2>
+									<p style="height: 20px;"></p>
+									<h3>来51MACC数据查询网站，海量数据免费查！</h3>
+									<p>免费原厂OE编码查询、免费VIN码查询解析、免费车架号查询、汽车配件目录免费查询</p>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<div class="services_menu">
+					<div class="services_menu_mid">
+						<ul class="clearfix">
+							<li class="li1 col-xs-12">
+								<p>
+									<img src="img/data1.png" alt="" />
+								</p>
+								<h4>精准营销</h4>
+								<p>
+									上牌量，保有量，配件市场价格，交易行为数据
+								</p>
+								<p>
+									给您更强的商业决策支持
+								</p>
+							</li>
+							<li class="li2 col-xs-12">
+								<p>
+									<img src="img/data2.png" alt="" />
+								</p>
+								<h4>保险风控</h4>
+								<p>
+									AI智能，优化算法，数据让保险降本
+								</p>
+								<p>
+									核价更快捷，让供应链资金更安全
+								</p>
+							</li>
+							<li class="li3 col-xs-12" style="border:none;">
+								<p>
+									<img src="img/data3.png" alt="" />
+								</p>
+								<h4>提高交易效率</h4>
+								<p>
+									强大的基础数据库，易用的软件和IT解决方案 
+								</p>
+								<p>
+									让交易变得更高效，简单，透明
+								</p>
+							</li>	
+						</ul>
+					</div>
+				</div>
+		    </div>
+		    	    
+		    <!--2-->
+		     <div class="section" style="background: #0a0a0a url(img/data_services_bg.jpg); background-size:100% 100%;">
+		        <div class="data_service" id="data_service">
+					<div class="data_service_mid">
+						<h4>服务项目</h4>
+						<p class="linehead">
+							<img src="img/left_yinhao_grey.png" width="32" height="24" alt="引号" />
+						</p>
+						<p class="linecontent1">
+							昂美数据主要为各类零配件制造商及配件流通企业提供API 标准接口、数据定制、数据分析和订货系统等一系列服务。
+						</p>
+						<p class="linefooter">
+							<img src="img/right_yinhao_grey.png" width="32" height="24" alt="引号" />
+						</p>
+						<div class="projects">
+							<ul>
+								<li class="li_pro_1">
+									<img src="img/qchsczx.png"/>
+									<h4>API 标准接口</h4>
+									<p>标准查询和数据交互接口，更灵活，更易用，更稳定，让您的产品开发无限延伸可能，数据交互实时更新，车架号，零配件标准命名，别名库，EPC图示，适用于电商，ERP SAAS 系统公司以及核价，定损，供应链风控场景。</p>
+								</li>
+								<li class="li_pro_2">
+									<img src="img/sjdz.png"/>
+									<h4>数据定制</h4>
+									<p>强大的数学算法模型，让数据的采集，清洗，处理，展现更高效，让亿万级的SKU高效转换，让数据更有价值。让数据处理更简单，适合于汽车售后市场任何希望打通数据，信息化管理的客户需求。</p>
+								</li>
+								<li class="li_pro_3">
+									<img src="img/sjfx.png"/>
+									<h4>数据分析</h4>
+									<p>数据加工平台，提供数据加工 竞争对手分析（OE/IAM），市场价格分析（OE/IAM）、产品覆盖率分析、产品开发预测/进度、产品线分布分析产品更换频率分析，保有量分析/上牌量分析 平均车龄分析，未来市场容量分析/预测。</p>
+								</li>
+								<li class="li_pro_4">
+									<img src="img/pro_icons.png"/>
+									<h4>订货系统</h4>
+									<p>围绕汽配生产企业，配件流通，以及维修企业全渠道业务流程，以信息流，订单处理为核心，帮助企业快速构建专属全渠道营销订货平台，用于取代电话，传真，微信的精准订货方式，实现供货和配件采购全流程线上渠道交易和管理，基于精准的零配件适配数据，OCR识别 语音识别快速定位配件。</p>
+								</li>
+							</ul>
+						</div>
+					</div>
+			</div>
+		    </div>
+		   		    
+		    <!--3-->
+		    <div class="section">
+			        <div class="wrap">
+						<div class="change_tab">
+							<ul>
+								<li class="on">
+									<a href="javascript:;">项目介绍</a>
+								</li>
+								<li>
+									<a href="javascript:;">合作伙伴</a>
+								</li>
+								<li>
+									<a href="javascript:;">专业服务</a>
+									</li>
+								<li class="javascript:;">
+									<a href="javascript:;">报表多样</a>
+								</li>
+								<li>
+									<a href="javascript:;">查询系统</a>
+								</li>
+							</ul>
+						</div>
+			
+			
+						<div class="wrap_tabl">
+							<div class="tabl_menu clearfix">
+								<!--专家团队部分-->
+								<div class="menu_option">
+									<div class="patent">
+										<img src="img/jsnl.jpg"/>
+	
+									</div>
+								</div>
+								<!--科研合作部分-->
+								<div class="menu_option">
+									<div class="our_parnter">
+										<img  class="hzhb"   src="img/hzhb.jpg"/>
+									</div>
+								</div>
+								<div class="menu_option">
+									<div class="our_team">
+										<ul class="clearfix">
+											<li>
+												<div class="left">
+													<img src="img/fwwx.png"/>
+												</div>
+												<div class="right">
+													<p class="p1">微信端电子目录</p>
+													<p class="check_more" id="jxb" onmouseover="showDetail(this,event)">查看详情</p>
+												</div>
+												
+											</li>
+											<li>
+												<div class="left">
+													<img src="img/fwmacc.png"/>
+												</div>
+												<div class="right">
+													<p class="p1">MACC决策系统</p>
+													<p class="check_more" id="macc" onmouseover="showDetail(this,event)">查看详情</p>
+												</div>
+												
+											</li>
+											<li>
+												<div class="left">
+													<img src="img/fwmikey.png"/>
+												</div>
+												<div class="right">
+													<p class="p1">MIKEY车型库</p>
+													<p class="check_more" id="mikey" onmouseover="showDetail(this,event)">查看详情</p>
+												</div>
+												
+											</li>
+											<li>
+												<div class="left">
+													<img src="img/fwqcar.png"/>
+												</div>
+												<div class="right">
+													<p class="p1">全车件查询</p>
+													<p class="check_more" id="qcar" onmouseover="showDetail(this,event)">查看详情</p>
+												</div>
+												
+											</li>
+											<li>
+												<div class="left">
+													<img src="img/fwmagic.png"/>
+												</div>
+												<div class="right">
+													<p class="p1">Magic-EPC精准查询</p>
+													<p class="check_more" id="magic" onmouseover="showDetail(this,event)">查看详情</p>
+												</div>
+												
+											</li>
+											<li>
+												<div class="left">
+													<img src="img/fwapp.png"/>
+												</div>
+												<div class="right">
+													<p class="p1">找件儿APP</p>
+													<p class="check_more" id="app" onmouseover="showDetail(this,event)">查看详情</p>
+												</div>
+												
+											</li>
+										</ul>
+									</div>
+								</div>
+	
+								<!--资质荣誉部分-->
+								<div class="menu_option">
+									<div class="honor">
+										<img src="img/baobiao.png"/>
+									</div>
+								</div>
+								<div class="menu_option">
+									<a href="http://www.51macc.com/">
+										<img src="img/51macc.jpg" alt="" title="点击进入51Macc查询系统"/>
+									</a>
+								</div>
+								
+							</div>
+						</div>	
+				</div>
+		    </div>   
+		    
+		    <!--4-->
+		    <div class="section" style="background: #0a0a0a url(img/gyamei.jpg); background-size:100% 100%;">
+		       <div class="aboutus_mid">
+					<h4>About Data MATTRIO 关于昂美</h4>
+					<p class="linehead">
+						<img src="img/left_yinhao.png" width="32" height="24" alt="引号" />
+					</p>
+					<p class="linecontent p1">MATTRIO是一家专业汽车后市场数据服务公司，致力于为各类零配件制造商及贸易公司提供数据定制、数据接口服务、订货工具和数据分析等一系列服务。</p>
+					<p class="linecontent" >MATTRIO is a consulting firm specializing in automotive aftermarket consulting, dedicated to various parts manufacturers and trading companies to provide data customization, data interface services, ordering tools and data analysis and a wide range of services.</p>
+					<p class="linecontent p1">我们拥有一支汽车售后从业经验丰富的专业队伍，平均从业资历超过5年。</p>
+					<p class="linecontent" >We owned a professional aftermarket consulting team, each member has over 5years work experience in automotive aftermarket.</p>
+					<p class="linecontent p1">我们拥有超过3000个值得信赖的信息渠道组成我们巨大的数据库,专业的产品经理团队提供专业售后数据解决方案。</p>
+					<p class="linecontent">We have more than 3000 trusted information channels to make up our huge database and a professional team of product managers to provide professional after-sales data solutions.</p>
+					<p class="linecontent p1">昂美数据为助力汽车后市场，加快数据流通，共建透明化市场，进一步努力，旨在为工厂，维修业，保险，资本投资等提供数据支持及系统的建模与布局规划提供数据参考及合理化建议。</p>
+					<p class="linecontent">Mattrio is helping the car market, speed up data flow, build a transparent market, and is also working hard to provide factory, maintenance, insurance, Capital investment provides data support and system modeling and layout planning to provide data reference and rationalization advice.</p>
+					<p class="linefooter">
+						<img src="img/right_yinhao.png" width="32" height="24" alt="引号" />
+					</p>
+					<p style="height:42px;"></p>
+				</div> 
+		    </div>
+		   
+		    <!--5-->
+		     <div class="section"> 	
+		     	<p class="jointitle">Join MATTRIO 加入昂美</p>
+		     	<p class="jobhead">
+		     		<img src="img/left_yinhao.png"/>
+		     	</p>
+		     	<p class="joincontent">我们正在寻找聪明、有才华、富有激情的你，昂美数据诚邀你的加入。</p>
+		     	<p class="jobfooter">
+		     		<img src="img/right_yinhao.png"/>
+		     	</p>
+		     	<div class="jobwrap">                         
+                            <p class="job"><span class="bortop">数据</span>销售</p>
+		     				<p class="job"><span>客服</span>专员</p>
+		     				<p class="job"><span>汽配</span>数据经理</p>
+		     				<p class="job"><span>渠道</span>销售经理</p>
+		     				
+		     			<div class="jobwrap-content">
+		     				<!--销售-->
+		     				<div class="content clearfix block">
+		     					<div class="content-left">
+		     						<p class="jobtitle">岗位职责</p>
+		     						<p>
+										1、负责拓展以及维护汽车行业企业级客户，包括但不限于汽车主机厂、售后工厂、ERP系统公司、汽车行业电商平台等，准确把握客户需求，拥有良好的客户关系，完成销售任务；<br/>
+										2、负责对接客户的需求，跟进管理客户，包括客户接洽、沟通、签约、收款；<br/>
+										3、 与内部、客户团队沟通，确保项目顺利推进及实施；<br/>
+										4、通过对行业、客户的沟通分析，对自身产品及销售规划提出可行建议。<br/>
+										<span class="colorff">4</span><br/>
+		     						</p>
+		     					</div>
+		     					<div class="content-right">
+		     						<p class="jobtitle">职位要求</p>
+		     						<p>
+		     							1、专科及以上学历，市场营销等相关专业，从事过汽车行业者优先；<br/>
+                                        2、1年以上销售行业工作经验，应届毕业生可根据个人能力择优录取；<br/>
+										3、具有较强的商务谈判和独立市场开发的能力能够和公司外部和内部同事有效协调、沟通；<br/>
+										4、优秀的数据分析能力，具有主动发现问题，解决问题的能力；<br/>
+										5、能熟练的应用办公软件（Excel、Word，制作PPT）着优先；<br/>
+										6、.有较强的逻辑思维及学习能力，为人正直，积极主动，责任心强，有较强的执行力。
+		     						</p>
+		     					</div>
+		     				</div>
+		     				<!--客服-->
+		     				<div class="content clearfix">
+		     					<div class="content-left">
+		     						<p class="jobtitle">岗位职责</p>
+		     						<p>
+		     							1、为客户提供售后一对一服务，长期做好客户关系维护；<br/>
+										2、负责客户的日常维护，为客户提供咨询服务；<br/>
+										3、为客户提供工作数据报告等；<br/>
+										4、负责客户的续费及快速响应客户各种紧急问题需求，为客户解决各种问题。<br/>
+										<span class="colorff">4</span>
+		     						</p>
+		     					</div>
+		     					<div class="content-right">
+		     						<p class="jobtitle">职位要求</p>
+		     						<p>
+		     							1、性格活泼开朗；<br/>
+										2、有工作经验优先；<br/>
+										3、善于沟通，具有一定的抗压能力；<br/>
+										4、熟练操作office软件；<br/>
+										5、吃苦耐劳，具有良好的服务意识和团队协作精神。
+		     						</p>
+		     					</div>
+		     				</div>
+		     				
+		     				<!--汽配数据经理-->
+		     				<div class="content clearfix">
+		     					<div class="content-left">
+		     						<p class="jobtitle">岗位职责</p>
+		     						<p>
+		     							1、汽车零配件数据采集、整理、核对；<br/>
+										2、汽车配件数据标准分类处理、对OE数据和车型及品牌商品适配。<br/>
+										<span class="colorff">4</span><br/>
+										<span class="colorff">4</span><br/>
+										<span class="colorff">4</span>
+		     						</p>
+		     					</div>
+		     					<div class="content-right">
+		     						<p class="jobtitle">职位要求</p>
+		     						<p>
+		     							1、汽配行业全车件或横向件电喷，底盘系列店面专业销售经验3年以上店长1年以上优先；<br/>
+										2、熟练运用OFFICE软件（Word Excel常用功能）；<br/>
+										3、了解汽车零部件，熟悉汽车基本构造和常规配件知识；<br/>
+										4、有车型件、横向件工作经验；<br/>
+										5、汽车相关专业优先。<br/>
+		     						</p>
+		     					</div>
+		     				</div>
+
+		     				<!--渠道销售经理-->
+		     				<div class="content clearfix">
+		     					<div class="content-left">
+		     						<p class="jobtitle">岗位职责</p>
+		     						<p>
+										1、负责公司产品的销售及地推业务；<br/>
+										2、根据经理下达营销计划，开发客户资源，寻找潜在客户，完成销售目标；<br/>
+										3、开拓新市场，开发新客户，增加产品销售范围；<br/>
+										4、负责销售区域内销售活动的策划和执行，完成销售任务；<br/>
+										5、管理维护客户关系以及客户间的长期战略合作计划；<br/>
+										6、完成领导交付的其他工作事务。问题需求，为客户解决各种问题。
+		     						</p>
+		     					</div>
+		     					<div class="content-right">
+		     						<p class="jobtitle">职位要求</p>
+		     						<p>
+		     							1、年龄20—35岁，市场营销等相关专业，性别不限；<br/>
+										2、汽配行业优先，有资源者优先；<br/>
+										3、有激情，责任心，具拼搏精神，能承受较大的工作压力；<br/>
+										4、有团队协作精神，善于挑战，<br/>
+										5、提供住宿，能适应出差。<br/>
+										<span class="colorff">4</span>
+		     						</p>
+		     					</div>
+		     				</div>
+		     				</div>
+		     	</div>
+		     	<p class="email">简历通过电子邮箱的方式发送至：<span class="emailred">8003@mattrio.com</span>，请在邮件标明中注明职位名称。</p>		     	
+		     	
+		     <!--底部-->
+				<div class="footer">
+					<p>&copy;2018 昂美数据&nbsp;&nbsp;<img src="img/site.png" alt="" /> 上海市闵行区沪光东路89号福克斯大厦2号楼103B&nbsp;&nbsp;<img src="img/phone.png"/> 021-5221 2966&nbsp;&nbsp;<img src="img/fax.png"/> 021-5221 2911&nbsp;&nbsp;<span class="span">备案号：沪ICP备15027426号-2</span>
+						<!--cnzz统计图标以及网址-->
+						<span class="cnzzspan"><a href="http://new.cnzz.com/v1/login.php?siteid=1274432935" target="_blank" title="站长统计"><img src="img/cnzz.gif" border="0" hspace="0" vspace="0"/></a></span>
+						
+					</p>
+				</div>
+		     </div>
+		</div>
+		
+		<div class="ui-popup" style="display:none;">
+			<div class="ui-popup-mask" style="display:none;"></div>
+			<div class="ui-popup-wrapper content-wapper ui-popup-wrapper2"  style="display:none;">
+
+				<div class="get_more_aboutteam"  style="display:none;" id="jxbDiv">
+					<h3>微信端电子目录</h3>
+					<p>
+						<img src="img/wxdzml.jpg" />
+					</p>
+				</div>
+
+				<div class="get_more_aboutteam" style="display:none;" id="maccDiv">
+					<h3>MACC决策系统</h3>
+					<p>
+						<img src="img/macc.jpg" />
+					</p>
+				</div>
+
+				<div class="get_more_aboutteam" style="display:none;" id="mikeyDiv">
+					<h3>MIKEY车型库</h3>
+					<p>
+						<img src="img/mikey.jpg" />
+					</p>
+				</div>
+				<div class="get_more_aboutteam" style="display:none;" id="qcarDiv">
+					<h3>全车件查询</h3>
+					<p>
+						<img src="img/qcar.jpg" />
+					</p>
+				</div>
+				<div class="get_more_aboutteam" style="display:none;" id="magicDiv">
+					<h3>Magic-EPC精准查询</h3>
+					<p>
+						<img src="img/magic.jpg" />
+					</p>
+				</div>
+				<div class="get_more_aboutteam" style="display:none;" id="appDiv">
+					<h3>找件儿APP</h3>
+					<p>
+						<img src="img/app.jpg" />
+					</p>
+				</div>
+			</div>
+			
+		</div>
+		<!--right微信-->
+		<div class="wx">
+			<div class="51macc-wrap">
+				<a href="http://www.51macc.com/" title="点击进入51Macc查询系统">
+					<img class="wxicon iconfont" src="img/51macc.png"/>
+					<span class="spanshow">查询</span>
+				</a>
+			</div>
+			<div class="wx-wrap">
+				<img class="wxicon iconfont" src="img/wx.png"/>
+				<span class="spanshow">微信</span>
+				<div class="wxqrcode">
+					<img class="qrcodeimg" src="img/wximg.jpg" alt="微信" />
+					<div class="right"></div>
+					<p>扫描二维码获取更多资讯！</p>
+				</div>
+			</div>
+			<div class="contact">
+				<a href="#" class="contact">
+					<img class="wxicon iconfont" src="img/fankui.png" alt="反馈"/>
+					<span class="spanshow">反馈</span>
+				</a>
+			</div>
+		</div>	
+			
+		<!--反馈-->	
+		<div class="suggest">
+			<div class="suggestcont" style="height:260px;">
+				<p>请告诉我们您的意见和建议，我们会参考您的反馈不断优化我们的产品和服务。</p>
+				<table>
+					<tr>
+						<td>建议意见：</td>
+						<td>
+							<textarea></textarea>
+							<br><span>请详细填写您遇到的问题，我们一定会认真阅读。</span>
+						</td>
+					</tr>
+					<tr>
+						<td>联系人：</td>
+						<td><input type="text" name="" class="user_name"></td>
+					</tr>
+					<tr>
+						<td>联系电话：</td>
+						<td><input type="text" name="" class="user_phone"></td>
+					</tr>
+					<tr style="text-align:center;">
+						<td colspan="2">
+							<button class="offbtn">提交</button>
+							<button class="onbtn">取消</button>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<div class="blwrap">
+			<a href="http://www.51macc.com"><img src="img/imgshow.png"/></a>	
+			<span class="none">×</span>
+		</div>
+		
+		<!--cnzz统计-->
+		<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1274432935'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s13.cnzz.com/z_stat.php%3Fid%3D1274432935%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+		<script type="text/javascript" src="js/index.js?v=20180816" ></script>
+	</body>
+</html>

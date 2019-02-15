@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+	<head>	
+		<title>车灯大师</title>
+		<meta charset="UTF-8">
+		<meta name="renderer" content="webkit" />
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	    <meta name="format-detection" content="telephone=no" />
+	    <meta name="apple-mobile-web-app-capable" content="yes" />
+	    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0 user-scalable=no"/>
+	    <meta id="description" name="Description" content="查询" />
+	    <meta id="key" name="Keywords" content="查询" />
+	    <link rel="stylesheet" type="text/css" href="css/base.css"/>
+	    <link rel="stylesheet" type="text/css" href="css/index.css?v=20180706"/>
+	</head>
+	<body>
+		<div class="wrap">
+			<div class="wrap_top">
+				<div class="select_box">
+					<div class="select clearfix">
+						<div class="left">
+							<span class="focus">VIN识别</span>
+						</div>
+						<div class="right">
+							<span>手工选车</span>
+						</div>
+					</div>
+					<div class="select_border">
+						<div class="border"></div>
+					</div>
+				</div>
+			</div>
+			<div class="wrap_vin">
+				<div class="vin_top clearfix">
+					<div class="logo">
+						<img src="image/logo.png"/>
+					</div>
+					<div class="vinma">
+						<div class="search clearfix">
+							<img src="image/sousuo.png" class="fdj"/>
+							<input type="text" placeholder="输入VIN码查询" class="vininput"/>
+							<button class="vinbtn">查询</button>
+						</div>
+						<div class="whatvin clearfix">
+							<span class="wvin">什么是VIN？</span>
+						</div>
+					</div>	
+				</div>
+				
+				<div class="vinshow">
+					<div class="vinshow_top">
+						<div class="border_top"></div>
+						<div class="vinresult clearfix">
+							<img src="image/tleft.png"/>
+							<span>查询结果</span>
+							<img src="image/tright.png"/>
+						</div>
+					</div>
+					<ul class="vinul">
+						<li class="name">
+							<span>车&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp型 : </span>
+							<span class="name-span"></span>
+						</li>
+						<li>
+							<span>车辆名称 : </span>
+							<span class="cn-span"></span>
+						</li>
+						<li>
+							<span>年&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp款 : </span>
+							<span class="year-span"></span>
+						</li>
+					</ul>
+					<ul class="vinul2">
+					</ul>
+				</div>
+				<div class="error clearfix">
+					<span class="errorsp">纠错领红包</span>
+				</div>
+				<!--<div class="btn_car"><a href="car/car1.html">车型查询</a></div>
+				<div class="btn_vin"><a href="">VIN查询</a></div>
+				<div class="btn_what"><a href="#">什么是VIN码?</a></div>-->
+			</div>
+			
+			<div class="wrap_car">
+				<div class="car clearfix">
+					<div class="car_sg clearfix">
+						<div class="logo">
+							<img src="image/logo.png"/>
+						</div>
+						<div class="search clearfix">
+							<img src="image/sousuo.png" class="fdj"/>
+							<input type="text" placeholder="点击进行关键字查询" class="vininput"/>
+							<button class="vinbtn">查询</button>
+						</div>
+						<span class="selectcar"><a href="content/car1.html" style="display: block;">选择车型</a></span>
+					</div>
+					<div class="car_content">
+						<p class="carname"></p>
+						<p class="carname_content"></p>
+						
+					</div>
+				</div>
+				<div class="vinshow">
+					<div class="border_top"></div>
+					<div class="vinshow_top">
+						<div class="vinresult clearfix">
+							<img src="image/tleft.png"/>
+							<span>查询结果</span>
+							<img src="image/tright.png"/>
+						</div>
+					</div>
+					<ul class="shou">
+						<!--<li>
+							<span>远&nbsp&nbsp光&nbsp&nbsp灯</span>
+						</li>
+						<li>
+							<span>远&nbsp&nbsp光&nbsp&nbsp灯</span>
+						</li>
+						<li>
+							<span>远&nbsp&nbsp光&nbsp&nbsp灯</span>
+						</li>-->
+					</ul>
+				</div>
+				<div class="error clearfix">
+					<span class="errorsp">纠错领红包</span>
+				</div>
+				
+			</div>
+			<!--VIN -->
+			<div class="vmeng">
+				<div class="vin">
+					<img src="image/VIN.png"/>
+					<div class="close">关闭</div>
+				</div>
+			</div>
+			
+			<!--二维码 -->
+			<div class="meng">
+				<div class="qrcode">
+					<p>长按&nbsp;下方&nbsp;二维码<span style="color: #fff;">。</span></p>
+					<p>识&nbsp;别&nbsp;关&nbsp;注&nbsp;我&nbsp;们，</p>
+					<p>即&nbsp;可&nbsp;轻&nbsp;松&nbsp;获&nbsp;得<span style="color: #fff;">。</span></p>
+					<p>更&nbsp;多&nbsp;精&nbsp;彩&nbsp;咨&nbsp;询！</p>
+					<img src="image/qrcode.jpg"/>
+				</div>
+			</div>
+			
+			
+			<div class="footer">
+				<img src="image/bottongif.gif"/>
+				<div class="footer_qrcode">
+					<span>
+						点击<br />
+					      了解<br />
+					      更多
+					</span>
+				</div>
+			</div>
+			
+		</div>
+		
+		<div class="errormeng">
+			<div class="jiucuo">
+				<span class="turnoff">×</span>
+				<table border="" cellspacing="20" cellpadding="" class="jiucuotable">
+					<tr>
+						<th>纠错的灯名:</th>
+						<td><input type="text" placeholder="灯名" class="inp1 inp4"/></td>
+					</tr>
+					<tr>
+						<th>您认为的编码:</th>
+						<td><input type="text" placeholder="您认为的编码" class="inp1"/></td>
+					</tr>
+					<tr>
+						<th>您的电话号码:</th>
+						<td><input type="text"  placeholder="您的电话号码" class="inp2"/></td>
+					</tr>
+					<tr>
+						<th>您的姓名:</th>
+						<td><input type="text" placeholder="您的姓名" class="inp3"/></td>
+					</tr>
+				</table>
+				<p class="p1">如被采纳奖励 <span style="color: red">5元</span> 红包</p>
+				<p class="p2">
+					<button class="cancel">取消</button>
+					<button class="submit">提交</button>
+				</p>
+			</div>
+			
+		</div>
+		
+		<!-- <div class="footer">
+		    <p>版权所有：昂美数据 &nbsp;&nbsp; 备案号：沪ICP备15027426号-2</p>
+		    <p>电话：021-5221 2966 &nbsp;&nbsp; 传真：021-5221 2911</p>
+		    <p>地址：上海市闵行区沪光东路89号福克斯大厦2号楼103B &nbsp;&nbsp; </p>
+		</div> -->
+				
+	</body>
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/index.js?v=20180706"></script>
+	<script type="text/javascript">
+        $('html').css('font-size',$(window).width()/(320/65)+'px')
+        $(window).resize(function(){
+            var size;
+            $(window).width()/(320/65)>=100?size=100:size=$(window).width()/(320/65);
+            $('html').css('font-size',size+'px')
+        })
+	</script>
+</html>

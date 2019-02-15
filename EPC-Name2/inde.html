@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EPC-Name</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+<div class="wrap">
+    <div class="titleWrap">
+        <div class="selectWrap">
+            <label for="brand">品牌：</label>
+            <select name="" id="brand">
+                <!--<option value="&#45;&#45;请选择&#45;&#45;" selected="selected">&#45;&#45;请选择&#45;&#45;</option>-->
+                <option value="本田">本田</option>
+                <option value="宝马">宝马</option>
+                <option value="奔驰">奔驰</option>
+                <option value="现代">现代</option>
+                <option value="丰田">丰田</option>
+                <option value="日产">日产</option>
+                <option value="荣威">荣威</option>
+                <option value="马自达">马自达</option>
+                <option value="海马">海马</option>
+                <option value="长城">长城</option>
+                <option value="大众">大众</option>
+                <option value="奥迪">奥迪</option>
+                <option value="斯柯达">斯柯达</option>
+                <option value="通用">通用</option>
+            </select>
+        </div>
+        <div>
+            <label for="inp">关键字：</label>
+            <select name="" id="inpselect">
+                <option value="名称">名称</option>
+                <option value="OE">OE</option>
+            </select>
+            <input type="text" id="inp" placeholder="请输入EPC产品名称">
+        </div>
+        <button class="btn">查询</button>
+    </div>
+    <div class="tableWrap">
+        <p>OE列表（共<span class="num"> </span>行记录）</p>
+        <table border="1" cellspacing="0" cellpadding="0">
+            <thead>
+            <tr>
+                <th width="70">品牌</th>
+                <th>OE编码</th>
+                <th>EPC产品名称</th>
+                <th>EPC英文名称</th>
+                <th>搜索关键字</th>
+                <!--<th>创建日期</th>-->
+                <!--<th>操作人</th>-->
+            </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+</div>
+<div id="loading">
+    <p>
+        <img src="./image/timg.gif">
+    </p>
+</div>
+
+</body>
+<script src="js/jquery.js"></script>
+<script src="js/index.js"></script>
+</html>

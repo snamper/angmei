@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<!--[if lt IE 9]>
+<script type="text/javascript" src="static/html5shiv.js"></script>
+<script type="text/javascript" src="static/respond.min.js"></script>
+<![endif]-->
+<link rel="stylesheet" type="text/css" href="../../static/h-ui/css/H-ui.min.css" />
+<link rel="stylesheet" type="text/css" href="../../static/h-ui.admin/css/H-ui.admin.css" />
+<link rel="stylesheet" type="text/css" href="../../lib/Hui-iconfont/1.0.8/iconfont.css" />
+<link rel="stylesheet" type="text/css" href="../../static/h-ui.admin/skin/default/skin.css" id="skin" />
+<link rel="stylesheet" type="text/css" href="../../static/h-ui.admin/css/style.css" />
+<link rel="stylesheet" type="text/css" href="../../css/zxf_page.css">
+<link rel="stylesheet" type="text/css" href="../../css/index.css">
+<link rel="stylesheet" type="text/css" href="../../css/loading.css">
+<link rel="stylesheet" type="text/css" href="./css/after_sale_brand.css">
+<!--[if IE 6]>
+<script type="text/javascript" src="static/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script>DD_belatedPNG.fix('*');</script>
+<![endif]-->
+<title>添加编码</title>
+</head>
+<style>
+	.cont{
+		width:80%;
+		margin: 0 auto;
+		/*border:3px dashed #ccc;*/
+	}
+</style>
+
+<body>
+<nav class="breadcrumb">
+	添加编码 
+	<a class="btn btn-danger radius r" style="line-height:1.6em;margin-top:3px;margin-left: 5px;" href="javascript:history.back();" title="返回" ><i class="Hui-iconfont">&#xe66b;</i></a>
+	<a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a>
+</nav>
+	<br>
+
+	<div class="text-c cont pl-10 pr-10" id="pag">
+		<div class="row cl mt-20 mb-10">
+	        <label class="col-xs-4 col-sm-3">产品类型：</label>
+	        <div class="col-xs-8 col-sm-8">
+	           <select class="select-box" id="select">
+					<option>全部类型</option>
+                    <option value="空气滤清器,366">空气滤清器</option>
+                    <option value="机油滤清器,1072">机油滤清器</option>
+                    <option value="燃油滤清器,486">燃油滤清器</option>
+                    <option value="空调滤清器,760">空调滤清器</option>
+                    <option value="前刹车盘,474">前刹车盘</option>
+                    <option value="后刹车盘,351">后刹车盘</option>
+                    <option value="前刹车片,648">前刹车片</option>
+                    <option value="后刹车片,650">后刹车片</option>
+                    <option value="火花塞,1208">火花塞</option>
+                    <option value="氧传感器,889">氧传感器</option>
+                    <option value="后雨刮,1770">后雨刮</option>
+                    <option value="水泵,1199">水泵</option>
+                    <option value="驾驶侧雨刮片,770">驾驶侧雨刮片</option>
+                    <option value="副驾驶侧雨刮片,773">副驾驶侧雨刮片</option>
+				</select>
+			</div>
+			<!-- <textarea></textarea> -->
+	    </div>
+	    <div class="row cl mt-10 mb-10">
+	        <label class="col-xs-4 col-sm-3">品牌名称：</label>
+            <span class="col-xs-8 col-sm-8">
+                <select class="select select_name" size="1">
+                  
+                </select>
+            </span>
+	    </div>
+	    <div class="row cl mt-10 mb-10">
+	        <label class="col-xs-4 col-sm-3">产品编码：</label>
+	        <div class="col-xs-8 col-sm-8">
+	            <input type="text" id="code" class="input-text" value="" placeholder="输入产品编码">
+			</div>
+	    </div>
+	    <div class="row cl mt-10 mb-10">
+	        <label class="col-xs-4 col-sm-3">OE号码：</label>
+	        <div class="col-xs-5 col-sm-5">
+	            <input type="text" id="oename" class="input-text" value="" placeholder="输入OE号码(可不填在下方筛选)">
+			</div>
+			<button name="" id="btn_submit" class="btn btn-success mb-5" type="submit"><i class="Hui-iconfont"></i> 关联OE号码</button>
+	    </div>
+	     
+	     <p class="f-12 c-red">注释：可直接填写OE号码进行关联，如果不填写OE号码可在下方搜索并一键关联</p>
+	</div>
+	<br>
+	查看车型
+	<div class="contentbody">
+		 <div class="select_mikey">
+            <table class="table table-border table-bordered table-bg">
+                <thead>
+                    <tr class="text-c">
+                        <th style="width:190px">主机厂</th>
+                        <th>车型</th>
+                        <th>年款</th>
+                        <th>排量</th>
+                        <th style="width:70px">操作</th>
+                    </tr>
+                </thead>
+                <tbody id="car_table">
+                    <tr>
+                        <td>
+                            <div id="box1" class="text-c">
+                                <input type="text" name="city2" id="city2" placeholder="请输入主机厂"/>
+                                <div id='suggest2' class="ac_results"  style="margin-top:4px;margin-left: -1px;">
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="select_div select_Vehicle_Name_CN">
+                                <div>不选择</div>
+                                <ul>
+
+                                </ul>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="select_div select_Vehicle_of_year">
+                                <div>不选择</div>
+                                <ul>
+
+                                </ul>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="select_div select_Capacity">
+                                <div>不选择</div>
+                                <ul>
+
+                                </ul>
+                            </div>
+                        </td>
+                        <td class="add_mikey_td"> 
+                            <a href="javascript:;" class="btn btn-primary radius" id="add_mikey"><i class="Hui-iconfont">&#xe600;</i>搜索</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+	</div>
+	<div class="page-container">
+		<table class="table table-border table-bordered table-bg table-sort">
+			<thead>
+				<tr class='text-c'>
+					<th><input type='checkbox' name='' value=''></th>
+					<th>mikey</th>
+					<th>主机厂</th>
+					<th>车型</th>
+					<th>年款</th>
+					<th>排量</th>
+					<th>销售名称</th>
+				</tr>
+			</thead>
+			<tbody>
+				<!-- <tr class='text-c'>
+					<td><input type='checkbox' name='gay' value=''></td>
+					<td>mieky1</td>
+					<td>凯迪拉克(上汽通用) 赛威SLS 2.0 手自一体变速器(AMT)</td>
+					<td>空气滤清器</td>
+					<td>曼</td>
+					<td>123456</td>
+				</tr> -->
+			</tbody>
+		</table>
+		<br>
+		 <span class="r"><a href="javascript:;" id="btnsubmit" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe60c;</i> 一键关联 </a> </span>
+	</div>
+	<div id="loading">
+		<img src="../../images/timg.gif">
+	</div>
+</body>
+<!--_footer 作为公共模版分离出去-->
+<script type="text/javascript" src="../../lib/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="../../lib/layer/2.4/layer.js"></script>
+<script type="text/javascript" src="../../static/h-ui/js/H-ui.min.js"></script>
+<script type="text/javascript" src="../../static/h-ui.admin/js/H-ui.admin.js"></script>
+<!--/_footer 作为公共模版分离出去-->
+
+<script src="../../js/jquery.form.js" type="text/javascript"></script>
+<script type="text/javascript" src="../../js/aircity.js"></script>
+<script type="text/javascript" src="../../js/j.dimensions.js"></script>
+<script type="text/javascript" src="../../js/j.suggest.js"></script>
+<script type="text/javascript" src="./js/controller.js"></script>
+<!-- <script type="text/javascript" src="../../js/zxf_page.js"></script> -->
+<!-- <script type="text/javascript" src="./js/controller.js"></script> -->
+
+
+<script type="text/javascript">
+
+	var network = localStorage.getItem("network");
+
+
+	var category_id = "";
+	fn(category_id);
+	function fn(category_id){
+	    $(".select_name").html("");
+	    $.ajax({
+	        type: "post",
+	        url:  network+"/MattrioManager/BrandController/getCategoryBrand",
+	        dataType: "json",
+	        data:{
+	            "category_id":category_id
+	        },
+	        cache: false,
+	        crossDomain: true == !(document.all),
+	        success:function(data){
+	            var option = $("<option>全部产品</option>");
+	            option.appendTo(".select_name");
+	            $.each(data.list,function(key,value){
+	                var option1 = $("<option value='"+value.brand_name+","+value.brand_category_id+"'>"+value.brand_name+"</option>");
+	                option1.appendTo(".select_name");
+	            });
+	        }
+	    })
+	}
+
+	$("#select").change(function(){
+	    if($(this).val() == "全部类型"){
+	        var category_id = "";
+	    }else{
+	        var category_id = $(this).val().split(",")[1];
+	    }
+	    fn(category_id);
+	});
+
+
+
+	$("#btn_submit").click(function(){
+		if($("#select").val() == "全部类型"){
+			alert("选择类型");
+			return false;
+		}
+		if($(".select_name").val() == "全部产品"){
+			alert("品牌不能为空");
+			return false;
+		}
+		if($("#code").val() == ""){
+			alert("产品编码不能为空");
+			return false;
+		}
+		if($("#oename").val() == ""){
+			alert("请从下面车型中选取OE");
+			return false;
+		}
+		var jsonArray = new Array();
+		var jsonObj = new Object();
+		jsonObj.product_id = $("#code").val();
+		jsonObj.brand = $("#codename").val();
+		jsonObj.category_id = $("#select").val().split(",")[1];
+		jsonObj.brand_category_id = $(".select_name").val().split(",")[1];
+		jsonObj.oe_number = $("#oename").val();
+		jsonArray.push(jsonObj);
+		var products_json_array = JSON.stringify(jsonArray);
+		$.ajax({
+			type: "post",
+			url:  network+"/MattrioManager/BrandController/addProducts",
+			dataType: "json",
+			data:{
+				products_json_array:products_json_array
+			},
+			cache: false,
+			crossDomain: true == !(document.all),
+			success:function(data){
+				alert(data.msg);
+				$("#code").val("");
+				$("#oename").val("");
+			}
+		})
+	})
+
+
+$("#city2").change(function(){
+	$(".select_Vehicle_Name_CN div").html("不选择");
+	$(".select_Vehicle_of_year div").html("不选择");
+	$(".select_Capacity div").html("不选择");
+})
+
+
+$("#add_mikey").click(function(){
+	if($("#city2").val() == ""){
+		alert("主机厂不能为空");
+		return false;
+	}else{
+		var Manufacture_CN ="Manufacture_CN=" + $("#city2").val();
+	}
+	var str = new Array;
+	$.each($(".select_mikey td .select_div"),function(key,value){
+		str.push($(this).attr('class').split(" ")[1].split("select_")[1])
+	})
+	// 遍历组件_data
+	var parm = "";
+	var parm1 = "";
+	var class_name = "";
+	var class_name1= "";
+	$.each(str,function(k,v){
+		if($(".select_"+v+" div").html() == "不选择"){
+			var class_name = "";
+			var class_name1 = "";
+		}else{
+			var class_name ="&"+v+"=" + $(".select_"+v+" div").html();
+			var class_name1 =","+v;
+		}
+		parm += class_name;
+		parm1 += class_name1;
+	})
+	var _data = Manufacture_CN+parm+"&car_fileds=Manufacture_CN,Vehicle_Name_CN,Emission_standards,Vehicle_of_year,Capacity,Name_of_sales&type=macc&parameters=Manufacture_CN"+parm1;
+	$(".page-container tbody").html("");
+	$.ajax({
+		type: "post",
+		url:  network+"/MattrioManager/CarMatchController/getFilterCars",
+		dataType: "json",
+		data:_data,
+		cache: false,
+		async:false,
+		crossDomain: true == !(document.all),
+		success: function(data) {
+			// console.log(data)
+			$.each(data.list,function(key,value){
+				var tr = $("<tr class='text-c'>");
+	        	tr.html("<td><input type='checkbox' name='gay' value=''></td><td>"+value.mikey+"</td><td>"+value.Manufacture_CN+"</td><td>"+value.Vehicle_Name_CN+"</td><td>"+value.Vehicle_of_year+"</td><td>"+value.Capacity+"</td><td>"+value.Name_of_sales+"</td>");
+	        	tr.appendTo(".page-container tbody");
+			})
+			
+		},
+		error: function(data) {
+			// console.log(data)
+		}
+	})
+})
+$("#btnsubmit").click(function(){
+	if($("#select").val() == "全部类型"){
+		alert("选择类型");
+		return false;
+	}
+	if($("#codename").val() == ""){
+		alert("品牌不能为空");
+		return false;
+	}
+	if($("#code").val() == ""){
+		alert("产品编码不能为空");
+		return false;
+	}
+	// var jsonArray = new Array();
+	if(confirm("一键匹配")){
+		$('input[name="gay"]:checked').each(function() {
+			/*var jsonObj = new Object();
+			jsonObj.product_id = $("#code").val();
+			jsonObj.mikey = $(this).parent("td").next("td").html();
+			jsonObj.brand_category_id = $(".select_name").val().split(",")[1];
+			jsonObj.other = $(".select_name").val().split(",")[0] + $("#select").val().split(",")[0];
+			jsonArray.push(jsonObj);*/
+			$.ajax({
+				type: "post",
+				url:  network+"/MattrioManager/BrandController/addMikeyProduct",
+				dataType: "json",
+				data:{
+					"product_id":$("#code").val(),
+					"mikey":$(this).parent("td").next("td").html(),
+					"brand_category_id":$(".select_name").val().split(",")[1],
+					"other": $(".select_name").val().split(",")[0] + $("#select").val().split(",")[0]
+				},
+				cache: false,
+				async:false,
+				crossDomain: true == !(document.all),
+				success:function(data){
+					console.log(data);
+				}
+			})
+		})
+		// var products_json_array = JSON.stringify(jsonArray);
+		// console.log(products_json_array);
+		alert("添加成功");
+	}
+	
+
+})
+</script>
+
+</html>

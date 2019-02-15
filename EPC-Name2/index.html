@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EPC-Name2</title>
+    <link rel="stylesheet" href="css/base.css?v=20180118">
+    <link rel="stylesheet" href="css/index.css?v=20180123">
+</head>
+<body>
+<div class="wrap">
+    <div class="titleWrap">
+        <div class="selectWrap">
+            <label for="brand">品牌：</label>
+            <select name="" id="brand">
+                <!--<option value="&#45;&#45;请选择&#45;&#45;" selected="selected">&#45;&#45;请选择&#45;&#45;</option>-->
+                <option value="本田">本田</option>
+                <option value="宝马">宝马</option>
+                <option value="奔驰">奔驰</option>
+                <option value="现代">现代</option>
+                <option value="丰田">丰田</option>
+                <option value="日产">日产</option>
+                <option value="荣威">荣威</option>
+                <option value="马自达">马自达</option>
+                <option value="海马">海马</option>
+                <option value="长城">长城</option>
+                <option value="大众">大众</option>
+                <option value="奥迪">奥迪</option>
+                <option value="斯柯达">斯柯达</option>
+                <option value="通用">通用</option>
+            </select>
+        </div>
+        <div>
+            <label for="inp">三级分组名称：</label>
+            <input type="text" id="inp" placeholder="请输入EPC产品名称">
+        </div>
+        <button class="btn btn1">查询</button>
+    </div>
+    <div class="tableWrap">
+        <p class="pauthor" style="margin: 15px 0;">
+            <b class="author"></b>
+            <label for="3name">三级分组名称：</label>
+            <input type="text" id="3name" placeholder="请输入三级分组名称">
+            <label for="OEname">OE名称：</label>
+            <input type="text" id="OEname" placeholder="请输入OE名称">
+            <button class="add">添加</button>
+            <button class="del">删除</button>
+        </p>
+        <p style="margin:0 0 10px -15px">
+            <button class="btn filter">列表去重</button>
+            <button class="btn delAll">批量删除</button>
+        </p>
+        <p>OE列表（共<span class="num"> </span>行记录）</p>
+        <table border="1" cellspacing="0" cellpadding="0">
+            <thead>
+                <tr>
+                    <th class="thcheck" width="30px"><input type="checkbox" id="checkAll"></th>
+                    <th width="70">品牌</th>
+                    <th>三级分组名称</th>
+                    <th>三级分组ID</th>
+                    <th>OE名称</th>
+                    <th>备注</th>
+                    <th>OE编码</th>
+                    <th>姓名</th>
+                    <th>时间</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+</div>
+<div id="loading">
+    <p>
+        <img src="./image/timg.gif">
+    </p>
+</div>
+
+</body>
+<script src="js/jquery.js"></script>
+<script src="js/index.js?v=20190123"></script>
+</html>

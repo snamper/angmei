@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>js Blod 保存文件</title>
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="tableExport.jquery.plugin.js"></script>
+</head>
+<body>
+
+<div id="app">
+    <p>===========================================js Blod 保存文件========================================</p>
+    <input type="button" id="savetext" value="Save" onclick="Save()"/>
+
+    <p>====================================tableExport.jquery.plugin.js====================================</br></p>
+    <input type="button" id="savetext" value="tableSave" onclick="Save1()"/>
+    <table id="tableID2" class="table">
+        <tr>
+            <td>44</td>
+            <td>44</td>
+            <td>44</td>
+            <td>44</td>
+            <td>44</td>
+            <td>44</td>
+        </tr>
+        <tr>
+            <td>44</td>
+            <td>44</td>
+            <td>44</td>
+            <td>44</td>
+            <td>44</td>
+            <td>44</td>
+        </tr>
+    </table>
+    <table id="tableID3" class="table">
+        <tr>
+            <td>44</td>
+            <td>44</td>
+            <td>44</td>
+            <td>44</td>
+            <td>44</td>
+            <td>44</td>
+        </tr>
+        <tr>
+            <td>44</td>
+            <td>44</td>
+            <td>44</td>
+            <td>44</td>
+            <td>44</td>
+            <td>44</td>
+        </tr>
+    </table>
+    <table id="tableID" class="table">
+        <thead>
+        <tr align="left">
+            <td>编号</td>
+            <td>名单</td>
+            <td>组ID</td>
+            <td>组名</td>
+            <td>类型</td>
+            <td>更新时间</td>
+            <td>更新者</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr align="left" >
+            <td style="vnd.ms-excel.numberformat:@">编号1</td>
+            <td style="vnd.ms-excel.numberformat:@">白名单1</td>
+            <td style="vnd.ms-excel.numberformat:@">组ID1</td>
+            <td style="vnd.ms-excel.numberformat:@">组名1</td>
+            <td style="vnd.ms-excel.numberformat:@">类型1</td>
+            <td style="vnd.ms-excel.numberformat:@">更新时间1</td>
+            <td style="vnd.ms-excel.numberformat:@">更新者1</td>
+        </tr>
+        <tr align="left" >
+            <td style="vnd.ms-excel.numberformat:@">编号2</td>
+            <td style="vnd.ms-excel.numberformat:@">名单2</td>
+            <td style="vnd.ms-excel.numberformat:@">组ID2</td>
+            <td style="vnd.ms-excel.numberformat:@">组名2</td>
+            <td style="vnd.ms-excel.numberformat:@">类型2</td>
+            <td style="vnd.ms-excel.numberformat:@">更新时间2</td>
+            <td style="vnd.ms-excel.numberformat:@">更新者2</td>
+        </tr>
+        <tr align="left" >
+            <td style="vnd.ms-excel.numberformat:@">编号2</td>
+            <td style="vnd.ms-excel.numberformat:@">名单2</td>
+            <td style="vnd.ms-excel.numberformat:@">组ID2</td>
+            <td style="vnd.ms-excel.numberformat:@">组名2</td>
+            <td style="vnd.ms-excel.numberformat:@">类型2</td>
+            <td style="vnd.ms-excel.numberformat:@">更新时间2</td>
+            <td style="vnd.ms-excel.numberformat:@">更新者2</td>
+        </tr><tr align="left" >
+            <td style="vnd.ms-excel.numberformat:@">编号2</td>
+            <td style="vnd.ms-excel.numberformat:@">名单2</td>
+            <td style="vnd.ms-excel.numberformat:@">组ID2</td>
+            <td style="vnd.ms-excel.numberformat:@">组名2</td>
+            <td style="vnd.ms-excel.numberformat:@">类型2</td>
+            <td style="vnd.ms-excel.numberformat:@">更新时间2</td>
+            <td style="vnd.ms-excel.numberformat:@">更新者2</td>
+        </tr><tr align="left" >
+            <td style="vnd.ms-excel.numberformat:@">编号2</td>
+            <td style="vnd.ms-excel.numberformat:@">名单2</td>
+            <td style="vnd.ms-excel.numberformat:@">组ID2</td>
+            <td style="vnd.ms-excel.numberformat:@">组名2</td>
+            <td style="vnd.ms-excel.numberformat:@">类型2</td>
+            <td style="vnd.ms-excel.numberformat:@">更新时间2</td>
+            <td style="vnd.ms-excel.numberformat:@">更新者2</td>
+        </tr><tr align="left" >
+            <td style="vnd.ms-excel.numberformat:@">编号2</td>
+            <td style="vnd.ms-excel.numberformat:@">名单2</td>
+            <td style="vnd.ms-excel.numberformat:@">组ID2</td>
+            <td style="vnd.ms-excel.numberformat:@">组名2</td>
+            <td style="vnd.ms-excel.numberformat:@">类型2</td>
+            <td style="vnd.ms-excel.numberformat:@">更新时间2</td>
+            <td style="vnd.ms-excel.numberformat:@">更新者2</td>
+        </tr><tr align="left" >
+            <td style="vnd.ms-excel.numberformat:@">编号2</td>
+            <td style="vnd.ms-excel.numberformat:@">名单2</td>
+            <td style="vnd.ms-excel.numberformat:@">组ID2</td>
+            <td style="vnd.ms-excel.numberformat:@">组名2</td>
+            <td style="vnd.ms-excel.numberformat:@">类型2</td>
+            <td style="vnd.ms-excel.numberformat:@">更新时间2</td>
+            <td style="vnd.ms-excel.numberformat:@">更新者2</td>
+        </tr><tr align="left" >
+            <td style="vnd.ms-excel.numberformat:@">编号2</td>
+            <td style="vnd.ms-excel.numberformat:@">名单2</td>
+            <td style="vnd.ms-excel.numberformat:@">组ID2</td>
+            <td style="vnd.ms-excel.numberformat:@">组名2</td>
+            <td style="vnd.ms-excel.numberformat:@">类型2</td>
+            <td style="vnd.ms-excel.numberformat:@">更新时间2</td>
+            <td style="vnd.ms-excel.numberformat:@">更新者2</td>
+        </tr><tr align="left" >
+            <td style="vnd.ms-excel.numberformat:@">编号2</td>
+            <td style="vnd.ms-excel.numberformat:@">名单2</td>
+            <td style="vnd.ms-excel.numberformat:@">组ID2</td>
+            <td style="vnd.ms-excel.numberformat:@">组名2</td>
+            <td style="vnd.ms-excel.numberformat:@">类型2</td>
+            <td style="vnd.ms-excel.numberformat:@">更新时间2</td>
+            <td style="vnd.ms-excel.numberformat:@">更新者2</td>
+        </tr><tr align="left" >
+            <td style="vnd.ms-excel.numberformat:@">编号2</td>
+            <td style="vnd.ms-excel.numberformat:@">名单2</td>
+            <td style="vnd.ms-excel.numberformat:@">组ID2</td>
+            <td style="vnd.ms-excel.numberformat:@">组名2</td>
+            <td style="vnd.ms-excel.numberformat:@">类型2</td>
+            <td style="vnd.ms-excel.numberformat:@">更新时间2</td>
+            <td style="vnd.ms-excel.numberformat:@">更新者2</td>
+        </tr><tr align="left" >
+            <td style="vnd.ms-excel.numberformat:@">编号2</td>
+            <td style="vnd.ms-excel.numberformat:@">名单2</td>
+            <td style="vnd.ms-excel.numberformat:@">组ID2</td>
+            <td style="vnd.ms-excel.numberformat:@">组名2</td>
+            <td style="vnd.ms-excel.numberformat:@">类型2</td>
+            <td style="vnd.ms-excel.numberformat:@">更新时间2</td>
+            <td style="vnd.ms-excel.numberformat:@">更新者2</td>
+        </tr><tr align="left" >
+            <td style="vnd.ms-excel.numberformat:@">编号2</td>
+            <td style="vnd.ms-excel.numberformat:@">名单2</td>
+            <td style="vnd.ms-excel.numberformat:@">组ID2</td>
+            <td style="vnd.ms-excel.numberformat:@">组名2</td>
+            <td style="vnd.ms-excel.numberformat:@">类型2</td>
+            <td style="vnd.ms-excel.numberformat:@">更新时间2</td>
+            <td style="vnd.ms-excel.numberformat:@">更新者2</td>
+        </tr><tr align="left" >
+            <td style="vnd.ms-excel.numberformat:@">编号2</td>
+            <td style="vnd.ms-excel.numberformat:@">名单2</td>
+            <td style="vnd.ms-excel.numberformat:@">组ID2</td>
+            <td style="vnd.ms-excel.numberformat:@">组名2</td>
+            <td style="vnd.ms-excel.numberformat:@">类型2</td>
+            <td style="vnd.ms-excel.numberformat:@">更新时间2</td>
+            <td style="vnd.ms-excel.numberformat:@">更新者2</td>
+        </tr><tr align="left" >
+            <td style="vnd.ms-excel.numberformat:@">编号2</td>
+            <td style="vnd.ms-excel.numberformat:@">名单2</td>
+            <td style="vnd.ms-excel.numberformat:@">组ID2</td>
+            <td style="vnd.ms-excel.numberformat:@">组名2</td>
+            <td style="vnd.ms-excel.numberformat:@">类型2</td>
+            <td style="vnd.ms-excel.numberformat:@">更新时间2</td>
+            <td style="vnd.ms-excel.numberformat:@">更新者2</td>
+        </tr><tr align="left" >
+            <td style="vnd.ms-excel.numberformat:@">编号2</td>
+            <td style="vnd.ms-excel.numberformat:@">名单2</td>
+            <td style="vnd.ms-excel.numberformat:@">组ID2</td>
+            <td style="vnd.ms-excel.numberformat:@">组名2</td>
+            <td style="vnd.ms-excel.numberformat:@">类型2</td>
+            <td style="vnd.ms-excel.numberformat:@">更新时间2</td>
+            <td style="vnd.ms-excel.numberformat:@">更新者2</td>
+        </tr><tr align="left" >
+            <td style="vnd.ms-excel.numberformat:@">编号2</td>
+            <td style="vnd.ms-excel.numberformat:@">名单2</td>
+            <td style="vnd.ms-excel.numberformat:@">组ID2</td>
+            <td style="vnd.ms-excel.numberformat:@">组名2</td>
+            <td style="vnd.ms-excel.numberformat:@">类型2</td>
+            <td style="vnd.ms-excel.numberformat:@">更新时间2</td>
+            <td style="vnd.ms-excel.numberformat:@">更新者2</td>
+        </tr><tr align="left" >
+            <td style="vnd.ms-excel.numberformat:@">编号2</td>
+            <td style="vnd.ms-excel.numberformat:@">名单2</td>
+            <td style="vnd.ms-excel.numberformat:@">组ID2</td>
+            <td style="vnd.ms-excel.numberformat:@">组名2</td>
+            <td style="vnd.ms-excel.numberformat:@">类型2</td>
+            <td style="vnd.ms-excel.numberformat:@">更新时间2</td>
+            <td style="vnd.ms-excel.numberformat:@">更新者2</td>
+        </tr><tr align="left" >
+            <td style="vnd.ms-excel.numberformat:@">编号2</td>
+            <td style="vnd.ms-excel.numberformat:@">名单2</td>
+            <td style="vnd.ms-excel.numberformat:@">组ID2</td>
+            <td style="vnd.ms-excel.numberformat:@">组名2</td>
+            <td style="vnd.ms-excel.numberformat:@">类型2</td>
+            <td style="vnd.ms-excel.numberformat:@">更新时间2</td>
+            <td style="vnd.ms-excel.numberformat:@">更新者2</td>
+        </tr><tr align="left" >
+            <td style="vnd.ms-excel.numberformat:@">编号2</td>
+            <td style="vnd.ms-excel.numberformat:@">名单2</td>
+            <td style="vnd.ms-excel.numberformat:@">组ID2</td>
+            <td style="vnd.ms-excel.numberformat:@">组名2</td>
+            <td style="vnd.ms-excel.numberformat:@">类型2</td>
+            <td style="vnd.ms-excel.numberformat:@">更新时间2</td>
+            <td style="vnd.ms-excel.numberformat:@">更新者2</td>
+        </tr><tr align="left" >
+            <td style="vnd.ms-excel.numberformat:@">编号2</td>
+            <td style="vnd.ms-excel.numberformat:@">名单2</td>
+            <td style="vnd.ms-excel.numberformat:@">组ID2</td>
+            <td style="vnd.ms-excel.numberformat:@">组名2</td>
+            <td style="vnd.ms-excel.numberformat:@">类型2</td>
+            <td style="vnd.ms-excel.numberformat:@">更新时间2</td>
+            <td style="vnd.ms-excel.numberformat:@">更新者2</td>
+        </tr><tr align="left" >
+            <td style="vnd.ms-excel.numberformat:@">编号2</td>
+            <td style="vnd.ms-excel.numberformat:@">名单2</td>
+            <td style="vnd.ms-excel.numberformat:@">组ID2</td>
+            <td style="vnd.ms-excel.numberformat:@">组名2</td>
+            <td style="vnd.ms-excel.numberformat:@">类型2</td>
+            <td style="vnd.ms-excel.numberformat:@">更新时间2</td>
+            <td style="vnd.ms-excel.numberformat:@">更新者2</td>
+        </tr><tr align="left" >
+            <td style="vnd.ms-excel.numberformat:@">编号2</td>
+            <td style="vnd.ms-excel.numberformat:@">名单2</td>
+            <td style="vnd.ms-excel.numberformat:@">组ID2</td>
+            <td style="vnd.ms-excel.numberformat:@">组名2</td>
+            <td style="vnd.ms-excel.numberformat:@">类型2</td>
+            <td style="vnd.ms-excel.numberformat:@">更新时间2</td>
+            <td style="vnd.ms-excel.numberformat:@">更新者2</td>
+        </tr><tr align="left" >
+            <td style="vnd.ms-excel.numberformat:@">编号2</td>
+            <td style="vnd.ms-excel.numberformat:@">名单2</td>
+            <td style="vnd.ms-excel.numberformat:@">组ID2</td>
+            <td style="vnd.ms-excel.numberformat:@">组名2</td>
+            <td style="vnd.ms-excel.numberformat:@">类型2</td>
+            <td style="vnd.ms-excel.numberformat:@">更新时间2</td>
+            <td style="vnd.ms-excel.numberformat:@">更新者2</td>
+        </tr><tr align="left" >
+            <td style="vnd.ms-excel.numberformat:@">编号2</td>
+            <td style="vnd.ms-excel.numberformat:@">名单2</td>
+            <td style="vnd.ms-excel.numberformat:@">组ID2</td>
+            <td style="vnd.ms-excel.numberformat:@">组名2</td>
+            <td style="vnd.ms-excel.numberformat:@">类型2</td>
+            <td style="vnd.ms-excel.numberformat:@">更新时间2</td>
+            <td style="vnd.ms-excel.numberformat:@">更新者2</td>
+        </tr><tr align="left" >
+            <td style="vnd.ms-excel.numberformat:@">编号2</td>
+            <td style="vnd.ms-excel.numberformat:@">名单2</td>
+            <td style="vnd.ms-excel.numberformat:@">组ID2</td>
+            <td style="vnd.ms-excel.numberformat:@">组名2</td>
+            <td style="vnd.ms-excel.numberformat:@">类型2</td>
+            <td style="vnd.ms-excel.numberformat:@">更新时间2</td>
+            <td style="vnd.ms-excel.numberformat:@">更新者2</td>
+        </tr><tr align="left" >
+            <td style="vnd.ms-excel.numberformat:@">编号2</td>
+            <td style="vnd.ms-excel.numberformat:@">名单2</td>
+            <td style="vnd.ms-excel.numberformat:@">组ID2</td>
+            <td style="vnd.ms-excel.numberformat:@">组名2</td>
+            <td style="vnd.ms-excel.numberformat:@">类型2</td>
+            <td style="vnd.ms-excel.numberformat:@">更新时间2</td>
+            <td style="vnd.ms-excel.numberformat:@">更新者2</td>
+        </tr><tr align="left" >
+            <td style="vnd.ms-excel.numberformat:@">编号2</td>
+            <td style="vnd.ms-excel.numberformat:@">名单2</td>
+            <td style="vnd.ms-excel.numberformat:@">组ID2</td>
+            <td style="vnd.ms-excel.numberformat:@">组名2</td>
+            <td style="vnd.ms-excel.numberformat:@">类型2</td>
+            <td style="vnd.ms-excel.numberformat:@">更新时间2</td>
+            <td style="vnd.ms-excel.numberformat:@">更新者2</td>
+        </tr><tr align="left" >
+            <td style="vnd.ms-excel.numberformat:@">编号2</td>
+            <td style="vnd.ms-excel.numberformat:@">名单2</td>
+            <td style="vnd.ms-excel.numberformat:@">组ID2</td>
+            <td style="vnd.ms-excel.numberformat:@">组名2</td>
+            <td style="vnd.ms-excel.numberformat:@">类型2</td>
+            <td style="vnd.ms-excel.numberformat:@">更新时间2</td>
+            <td style="vnd.ms-excel.numberformat:@">更新者2</td>
+        </tr>
+
+
+
+
+        </tbody>
+    </table>
+
+
+</div>
+<script type="text/javascript" src=""></script>
+<script type="text/javascript">
+    // $('#tableID ').tableExport({type:"multisheetxls",worksheetName:[ "tableID",'tableID2','tableID3']});
+    //tableExport.jquery.plugin.js
+    // function Save1(){
+        $('#tableID').tableExport({type:'excel'},'车型');
+    // }
+
+    //js Blod 保存文件
+    function doSave(value, type, name) {
+        var blob;
+        if (typeof window.Blob == "function") {
+            blob = new Blob([value], {type: type});
+        } else {
+            var BlobBuilder = window.BlobBuilder || window.MozBlobBuilder || window.WebKitBlobBuilder || window.MSBlobBuilder;
+            var bb = new BlobBuilder();
+            bb.append(value);
+            blob = bb.getBlob(type);
+        }
+        var URL = window.URL || window.webkitURL;
+        var bloburl = URL.createObjectURL(blob);
+        var anchor = document.createElement("a");
+        if ('download' in anchor) {
+            anchor.style.visibility = "hidden";
+            anchor.href = bloburl;
+            anchor.download = name;
+            document.body.appendChild(anchor);
+            var evt = document.createEvent("MouseEvents");
+            evt.initEvent("click", true, true);
+            anchor.dispatchEvent(evt);
+            document.body.removeChild(anchor);
+        } else if (navigator.msSaveBlob) {
+            navigator.msSaveBlob(blob, name);
+        } else {
+            location.href = bloburl;
+        }
+    }
+
+    var a=new Array();
+    for(var i=0;i<10;i++)
+        a.push(i);
+
+    function Save(){
+        doSave(a, "text/latex", "hello.txt");
+    }
+</script>
+</body>
+</html>

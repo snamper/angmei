@@ -1,0 +1,77 @@
+.wrap{
+	width: 95%;
+	margin: 0 auto;
+	box-shadow: 1px 1px 8px #ccc;
+	margin-top: 20px;
+	background: #fff;
+	padding:30px 0 70px 0;
+	position: relative;
+}
+.wrap .red{
+	color: #d44f3e;	
+}
+.wrap p{
+	text-align: center;
+	position: relative;
+	font-size: 20px;
+	font-weight:bold;
+}
+.wrap .bor{
+	background: #d64938;
+	width: 20%;
+	display: inline-block;
+	height: 1px;
+	position: absolute;
+	bottom: -10px;
+	left: 50%;
+	margin-left: -10%;
+}
+ul{
+	margin-top: 40px;
+	padding: 0 10px;
+}
+ul li{
+	min-height: 45px;
+	margin-top: 10px;
+	border-radius: 5px;
+}
+ul li>div{
+	float: left;
+	height: 45px;
+	line-height: 45px;
+}
+ul li .left{
+	text-align: center;
+	width: 30%;
+	color: #4e4c4d;
+	background: #f4f4f4;
+	overflow-x: scroll;
+}
+ul li .left div{
+	width: 240%;
+	text-align: left;
+	padding-left: 30px;
+	box-sizing: border-box;
+}
+ul li .right{
+	width: 70%;
+	background: #f9f9f9;
+	padding-left: 15px;
+	box-sizing: border-box;
+	font-size: 16px;
+	overflow-x: scroll;
+}
+ul li .right div{
+	width: 150%;
+}
+.back{
+	border-top: 2px solid #4e4c4d;
+	border-left: 2px solid #4e4c4d;
+	transform: rotateZ(-45deg);
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	top: 22px;
+	left: 20px;
+	z-index: 100;
+}

@@ -1,0 +1,35 @@
+<component name="libraryTable">
+  <library name="Generated files" type="javaScript">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/Mattrio2/js/e-smart-zoom-jquery.min.min.js" />
+      <root url="file://$PROJECT_DIR$/Mattrio2/js/jqueryui.min.js" />
+      <root url="file://$PROJECT_DIR$/iviewer-master/Gruntfile.min.js" />
+      <root url="file://$PROJECT_DIR$/iviewer-master/jquery.iviewer.min.js" />
+      <root url="file://$PROJECT_DIR$/iviewer-master/jquery.iviewer.min.min.js" />
+      <root url="file://$PROJECT_DIR$/iviewer-master/test/jquery.min.js" />
+      <root url="file://$PROJECT_DIR$/iviewer-master/test/jquery.mousewheel.min.js" />
+      <root url="file://$PROJECT_DIR$/iviewer-master/test/jquery.mousewheel.min.min.js" />
+      <root url="file://$PROJECT_DIR$/iviewer-master/test/jqueryui.min.js" />
+      <root url="file://$PROJECT_DIR$/iviewer-master/test/lightbox-gallery/main.min.js" />
+      <root url="file://$PROJECT_DIR$/iviewer-master/test/lightbox/main.min.js" />
+      <root url="file://$PROJECT_DIR$/iviewer-master/test/ui/jquery.ui.core.min.js" />
+      <root url="file://$PROJECT_DIR$/iviewer-master/test/ui/jquery.ui.mouse.min.js" />
+      <root url="file://$PROJECT_DIR$/iviewer-master/test/ui/jquery.ui.widget.min.js" />
+      <root url="file://$PROJECT_DIR$/Mattrio2/content/detail_epc/contentepc/js/contentepc.min.min.js" />
+      <root url="file://$PROJECT_DIR$/Mattrio2/js/jquery.min.js" />
+      <root url="file://$PROJECT_DIR$/Mattrio2/content/detail_epc/contentepc/js/contentepc.min.js" />
+      <root url="file://$PROJECT_DIR$/Mattrio2/content/detail_epc/js/detail_epc.min.js" />
+      <root url="file://$PROJECT_DIR$/Mattrio2/content/maintain/js/maintain.min.js" />
+      <root url="file://$PROJECT_DIR$/Mattrio2/epcjs/jquery.min.js" />
+      <root url="file://$PROJECT_DIR$/Mattrio2/epcjs/jqueryui.min.js" />
+      <root url="file://$PROJECT_DIR$/MattrioEcModel/songzheng/admin/js/upload-matching.min.js" />
+      <root url="file://$PROJECT_DIR$/MattrioEcModel/songzheng/admin/matching/js/matching.min.js" />
+      <root url="file://$PROJECT_DIR$/MattrioEcModel/suodesi/admin/js/upload-matching.min.js" />
+      <root url="file://$PROJECT_DIR$/jquery-fd20151103/jquery.iviewer.min.js" />
+      <root url="file://$PROJECT_DIR$/jquery-fd20151103/jquery.min.js" />
+      <root url="file://$PROJECT_DIR$/jquery-fd20151103/jquery.mousewheel.min.min.js" />
+      <root url="file://$PROJECT_DIR$/jquery-fd20151103/jqueryui.min.js" />
+    </CLASSES>
+    <SOURCES />
+  </library>
+</component>

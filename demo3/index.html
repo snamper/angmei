@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/base.css"/>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+		<link rel="stylesheet" type="text/css" href="css/index.css?v=20181123"/>
+	</head>
+	<body>
+		<nav><div class="navcontent">51找件儿</div></nav>
+		<div class="wrap">
+			<div class="title">
+				<span class="titletext">车辆信息</span>
+			</div>
+			<!--<div class="brandText">目前支持的品牌：本田</div>-->
+			<div class="vinInput">
+                <div style="display: flex">
+                    <div>
+                        <span class="i">*</span>
+                        <span class="vin">VIN 码：</span>
+                        <input class="input-vin" type="text" placeholder="请输入17位VIN码" />
+                        <div class="carname"></div	>
+                    </div>
+                    <div style="margin-left: 50px">
+                        &nbsp;&nbsp本田示例：LVHGJ6620G6043020<br/>&nbsp;&nbsp宝马示例：LBV5S1109GSL57385<br/>&nbsp;&nbsp奔驰示例：LE4HG3GB5EL164061
+                    </div>
+                </div>
+			</div>
+            <!--批量查询-->
+           <!--<div>-->
+                <!--<button class="btn fileBtn">导入Excel</button>-->
+                <!--<span>（表格格式：将编码放在表格第一列并且无表头）   如：</span>-->
+                <!--<img class="format" title="放大查看Excel格式" src="./img/numlist.jpg" alt="Excel">-->
+            <!--</div>-->
+			<!--<input style="display: none" class="file" type="file" onchange="xlsx(this)" id="xlsxinput" accept=" application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"  multiple="multiple"/>-->
+			<!--<textarea name="" rows="" cols="" placeholder="请导入表格或输入您想查询的名称，用换行隔开，需用标准命名，点击即可查询。"></textarea>-->
+			<!--<div class="barWrap clearfix">-->
+				<!--<button class="btn btn2">点击</button>-->
+				<!--<div class="progress">-->
+	               <!--<div class="progress-bar progress-bar-danger progress-bar-striped active">-->
+	                  <!--<div class="progress-value">0%</div>-->
+	              <!--</div>-->
+	            <!--</div>-->
+				<!--<button class="stop">-->
+					<!--<img class="stopImg" src="img/stop.png"/>-->
+					<!--<img class="stopAction" src="img/action.png"/>-->
+				<!--</button>-->
+			<!--</div>-->
+
+			<div class="oewrap">
+				<div class="title">
+					<span class="titletext">录入配件信息</span>
+				</div>
+				<div class="table">
+					<table  cellspacing="0" cellpadding="0"  style="width: 100%;">
+						<thead>
+							<tr>
+								<!--<th>序号</th>-->
+								<th>配件信息</th>
+								<th width="200px">标准名称</th>
+								<th>EPC原厂名称</th>
+								<th width="200px">备注</th>
+								<th>零配件OE信息</th>
+								<th>4S店价格</th>
+								<!--<th>图片</th>-->
+								<th>操作</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<!--<td>1</td>-->
+								<td>
+									<div class="nameinpwrap">
+										<input type="text" class="nameInput" placeholder="配件名称，配件编号(支持通用名称查询，如：龙门架)" />
+										<img class="tdImg" src="" />
+										<div class="listwrap"></div>
+									</div>
+								</td>
+								<td class="td2"></td>
+								<!--<td class="td3"></td>-->
+                                <td class="td4"></td>
+                                <td class="td5"></td>
+								<td class="oe"></td>
+								<td class="money"></td>
+								<!--<td class="tdimg">-->
+									<!--<p class="p">暂无图片</p>-->
+									<!--<div class="imgbox">-->
+									<!--</div>-->
+								<!--</td>-->
+								<td class="tddel"><p class="del">删除</p></td>
+							</tr>
+							<tr>
+								<!--<td>1</td>-->
+								<td>
+									<div class="nameinpwrap">
+										<input type="text" class="nameInput" placeholder="配件名称，配件编号(支持通用名称查询，如：龙门架)" />
+										<img class="tdImg" src="" />
+										<div class="listwrap"></div>
+									</div>
+								</td>
+								<td class="td2"></td>
+								<!--<td class="td3"></td>-->
+								<td class="td4"></td>
+                                <td class="td5"></td>
+								<td class="oe"></td>
+								<td class="money"></td>
+								<!--<td class="tdimg">-->
+									<!--<p class="p">暂无图片</p>-->
+									<!--<div class="imgbox">-->
+									<!--</div>-->
+								<!--</td>-->
+								<td class="tddel"><p class="del">删除</p></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<button class="add">添加</button>
+		</div>
+		<div class="meng">
+			<div class="imgwrap">
+				<!--车型-->
+				<div class="imgtitle">
+					<span class="name">车型</span>
+					<span class="imgCarname"></span>
+				</div>
+				<!--配件图片-->
+				<div class='magnify'>
+					<div class='large'>
+						<div class="box"></div>
+					</div>
+					<img class='small' src='' />
+				</div>
+				<!--配件名称 位置-->
+				<div class="imgContent clearfix">
+					<div class="imgtitle">
+						<span class="name">名称</span>
+						<span class="oename"></span>
+					</div>
+					<div class="imgtitle">
+						<span class="name">位置</span>
+						<span class="location"></span>
+					</div>
+				</div>
+				<!--<button class="left">
+					<span></span>					
+				</button>
+				<button class="right">
+					<span></span>					
+				</button>-->
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/xlsx.full.js"></script>
+	<!--<script type="text/javascript" src="js/excel.js"></script>-->
+	<script type="text/javascript" src="js/index.js?v=20190107"></script>
+</html>

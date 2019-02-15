@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="content-type" content="text/html;charset=utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="renderer" content="webkit"> 
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+	<meta name="keywords" content="汽车,数据查询">
+	<meta name="robots" content="all">
+	<meta name="description" content="汽车零配件数据查询">
+	<title>MACC-售后信息</title>
+	<link rel="icon" href="../../../image/logohead.jpg">
+	<link rel="stylesheet" type="text/css" href="../../../css/reset.css">
+	<link rel="stylesheet" type="text/css" href="../../../css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../../../css/loading.css">
+    <link rel="stylesheet" type="text/css" href="css/afterdsf.css?v=20180522">
+	<!--[if lt IE 9]>
+		<script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+		<script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+	<![endif]-->
+
+</head>
+<body>
+	<!------头部------>
+	<div id="header"></div>
+
+	<div class="wrapper">
+		<input class="inputbox" type="text" name="search" id="search"  list="productlist" placeholder="请输入您要查询的售后品牌号码">
+		<button  class="buttom" id="btn">搜 索</button>
+		<div id="oelist">
+		</div>
+	</div>
+
+	<div id="loading" style="display: none;">
+		<p>
+			<img src="../../../image/timg.gif">
+		</p>
+	</div>
+	<!------内容------>
+	
+	<div class="conttopleft">
+		<span class="cont_bg">售后品牌</span>
+		<div class="block">
+			<a href="../../../index.html">首页</a>	
+			<a href="javascript:history.back(-1);">返回上一页</a>
+		</div>
+	</div>
+	
+	<div class="nocontent">
+		暂无数据
+	</div>
+	<!------内容------>
+	<div class="content">
+		<ul class="clearfix">
+			
+		</ul>
+		<div class="contenttop clearfix">
+			<table>
+				<tr>
+					<th>配件名称：</th>
+					<td class="td2"></td>
+				</tr>
+				<tr>
+					<th>分类：</th>
+					<td class="td1"></td>
+				</tr>
+				<tr>
+					<th>售后编码：</th>
+					<td class="td3"></td>
+				</tr>
+				<tr>
+					<th>4S店价格：</th>
+					<td class="td4"></td>
+				</tr>
+			</table>
+			<div class="canshu">
+				<p>参数</p>
+				<div class="canshucontent clearfix">
+
+				</div>
+				
+			</div>
+		</div>
+		
+		<div class="contentbottom clearfix">
+			<div class="contentbottom1">
+				<p  class="contentbottomp">发动机</p>
+				<div class="contentbottom2lg1">
+					<table>
+						
+					</table>
+				</div>
+
+			</div>
+			<div class="contentbottom2">
+				<p  class="contentbottomp">适用车型</p>
+				<div class="contentbottom2lg">
+					
+				</div>
+			</div>
+		</div>
+			
+		
+		<div class="clearfix">
+			<p class="contentp">纠错</p>
+			<!-- <p class="contentp_other">别名</p> -->
+		</div>
+		
+		<!--<div class="contentbottom clearfix">
+			<div class="contentbottom1">
+				<p class="contentbottomp">配件图片</p>
+				<div class="contimg">
+					<button id="image">点击获取图片</button>
+					<div class="cont_img">
+						
+					</div>
+					<div class="cont_i">
+						
+					</div>
+				</div>
+
+			</div>
+			<div class="contentbottom2">
+				<p  class="contentbottomp">适用车型</p>
+				<div class="contentbottom2lg">
+					
+				</div>
+			</div>
+		</div>-->
+		
+		
+	</div>
+	
+	<div class="contentbrand conttopleft clearfix thoe">
+		<span class="cont_bg">替换OE号</span>
+		<br>
+		<div class="tableoe1">
+			<table>
+				<thead>
+					<tr>
+						<th>品牌</th>
+						<th>OE号码</th>
+					</tr>
+				</thead>
+				<tbody>
+
+				</tbody>
+				
+			</table>
+			
+		</div>
+		<div class="tableoe2">
+			<table>
+				<thead>
+					<tr>
+						<th>品牌</th>
+						<th>OE号码</th>
+					</tr>
+				</thead>
+				<tbody>
+
+				</tbody>
+				
+			</table>
+			
+		</div>
+	</div>
+	
+	<div class="contentbrand conttopleft clearfix shpp">
+		<span class="cont_bg">售后品牌</span>
+		<br>
+		<div class="table1">
+			<table>
+				<thead>
+					<tr>
+						<th>品牌</th>
+						<th>产品编码</th>
+					</tr>
+				</thead>
+				<tbody>
+
+				</tbody>
+				
+			</table>
+			
+		</div>
+		<div class="table2">
+			<table>
+				<thead>
+					<tr>
+						<th>品牌</th>
+						<th>产品编码</th>
+					</tr>
+				</thead>
+				<tbody>
+
+				</tbody>
+				
+			</table>
+		</div>
+	</div>
+	<div class="top">
+		<span>返回顶部</span>
+	</div>
+	
+	
+	
+	<!------纠错------>
+	<div class="error">
+		<div class="errorcont">
+			<h3>产品纠错</h3>
+			<table>
+				<tr>
+					<td>产品编号：</td>
+					<td><input type="text" name="" disabled="disabled" class="oenum"></td>
+				</tr>
+				<tr>
+					<td>产品分类：</td>
+					<td><input type="text" name="" disabled="disabled" class="category_name"></td>
+				</tr>
+				<tr>
+					<td>品类名称：</td>
+					<td><input type="text" name="" disabled="disabled" class="brand_name"></td>
+				</tr>
+				<tr>
+					<td>您认为的产品编号：</td>
+					<td><input type="text" name="" class="new_oenum"></td>
+				</tr>
+				<tr style="text-align: center;">
+					<td colspan="2">
+						<button class="offbtn">提交</button>
+						<button class="onbtn">取消</button>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	<!-- 页脚 -->
+	<div class="footer">
+		<p><span>电话：021-5221 2966</span>|<span>传真：021-5221 2911</span>|<span>备案号：沪ICP备15027426号-2</span>|</p>
+		<p><span>地址：上海市闵行区沪光东路89号福克斯大厦2号楼103B</span></p>
+		<p><span>版权所有：昂美数据</span></p>
+	</div>
+</body>
+<script src="../../../js/jquery.js"></script>
+<script src="../../../js/jquery.cookie.js"></script>
+<script src="../../../js/frequency.js?v=20181015"></script>
+<script src="js/afterdsf.js?v=20181015"></script>
+<script type="text/javascript">
+	function autoScroll(obj) {
+		$(obj).find("ul").animate({
+			marginTop: "-56px"
+		}, 1000, 'linear', function() {
+			$(this).css({
+				marginTop: "0px"
+			}).find("li:first").appendTo(this);
+		})
+	}
+	$(function() {
+		setInterval('autoScroll(".apple")', 5000);
+		initDataList('productlist');
+	})
+
+	function initDataList(id) {
+		if(localStorage.getItem(id)) {
+			var list = localStorage.getItem(id);
+			list = list.substring(0, list.length - 1);
+			var data = list.split(',');
+			// console.log(data.length);
+			if(data.length >= 10) {
+				for(var i = data.length - 1; i >= data.length - 9; i--) {
+					$('#' + id).append('<p>' + data[i] + '</p>');
+				}
+			} else {
+				for(var i = data.length - 1; i >= 0; i--) {
+					$('#' + id).append('<p>' + data[i] + '</p>');
+				}
+			}
+
+		}
+	}
+	$(function(){
+			$('#header').load('../../../header/header.html?v=20181012');
+	})
+</script>
+<script src="../../../js/edition.js"></script>
+</html>

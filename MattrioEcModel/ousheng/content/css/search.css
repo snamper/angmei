@@ -1,0 +1,72 @@
+html{
+	font-size: 100px;
+}
+body{
+	font-size:16px;
+}
+
+.sousuo{
+	float: left;
+	max-width: 25px;
+    max-height: 25px;
+    position: absolute;
+    top: 50%;
+    margin-top: -12.5px;
+    left: 12px;
+}
+.runprcvin{
+	display:flex;
+    width: 100%;
+    border-bottom: solid 1px #d9d9d9;
+    position: fixed;
+    z-index: 500;
+    top: 0;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 8px 0;
+    background: #fff;
+}
+.runprckipt{
+    width: 80%;
+    border-radius: 0.4rem 0 0 0.4rem;
+    padding-left: 0.6rem;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border: 1px solid #e8e9eb;
+    line-height: 36px;
+    font-size: 0.18rem;
+    height: 36px;
+}
+.runprckbtn{
+	width: 20%;
+    border-radius: 0.4rem;
+    background: #27bdef;
+    margin-left: -5%;
+    color: #FFFDEF;
+    line-height: 36px;
+    font-size: 0.18rem;
+    text-align: center;
+}
+.runprckbtn a{
+	color: #fff;
+}
+.runprckint{
+	width: 5rem;
+	display: table;
+	margin: 0 auto;
+}
+.runprckint span,input{
+	float: left;
+}
+.runprckint .no{
+	padding: 0 0.1rem;
+	line-height: 36px;
+}
+.runprckint .no a{
+	color: #27bdef;	
+}
+

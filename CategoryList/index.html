@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>别名管理</title>
+</head>
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/index.css">
+<body>
+<div class="wrap">
+    <div class="inpWrap">
+        <input type="text" id="inp" placeholder="请输入别名">
+        <button class="btn" id="search">查询</button>
+    </div>
+    <div class="addWrap">
+        <span class="youName"></span>
+        <input type="text" class="addinp addname1" placeholder="请输入别名">
+        <input type="text" class="addinp addid1" placeholder="请输入别名ID">
+        <input type="text" class="addinp addname2" placeholder="请输入三级分组名称">
+        <input type="text" class="addinp addid2" placeholder="请输入三级分组ID">
+        <button class="btn" id="addBtn">添加别名</button>
+    </div>
+    <div class="tableWrap">
+        <table border="1" cellspacing="0" cellpadding="0">
+            <thead>
+                 <tr>
+                     <th>姓名</th>
+                     <th>别名</th>
+                     <th>别名ID</th>
+                     <th>三级分组名称</th>
+                     <th>三级分组ID</th>
+                     <th>时间</th>
+                     <th>操作</th>
+                 </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+</div>
+<div id="loading">
+    <p>
+        <img src="./image/timg.gif">
+    </p>
+</div>
+
+</body>
+<script src="js/jquery.js"></script>
+<script src="js/index.js"></script>
+
+</html>

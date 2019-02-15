@@ -1,0 +1,225 @@
+html{
+	font-size: 100px;
+}
+body{
+	font-size:16px;
+}
+.back_top{
+	text-align: center;
+    background: #fff;
+    line-height: 50px;
+    border-bottom: 1px solid #cfcfcf;
+    font-size: .2rem;
+    color: #626262;
+    position: relative;
+}
+.back_top p{
+	display: none;
+	background: #393939;
+	color: #fff;
+	font-size: 0.26rem;
+}
+.back_top .p1{
+	display: block;
+}
+.back_btn{
+	border-bottom: 2px solid #fff;
+    border-right: 2px solid #fff;
+    content: "";
+    height: 12px;
+    left: 14px;
+    position: absolute;
+    top: 20px;
+    -ms-transform: rotate(135deg);
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+    width: 12px;
+}
+
+.search{
+	width: 85%;
+	margin: .2rem auto;
+	position: relative;
+	line-height: 34px;
+}
+.search .fdj{
+	max-width: 25px;
+	max-height: 25px;
+	position: absolute;
+	top: 50%;
+	margin-top: -12px;
+	left: 20px;
+}
+.search .vininput{
+	background: #e8e9eb;
+	width: 83%;
+	border-radius: 0.4rem 0 0 0.4rem;
+	float: left;
+	padding-left: 0.8rem;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	color: #b7b8ba;
+	font-size: 0.26rem;
+	height: 34px;
+	
+}
+.search .vinbtn{
+	width: 22%;
+	border-radius:0.4rem;
+	background: #27bdef;
+	float: left;
+	margin-left: -5%;
+	color: #FFFDEF;
+	font-size: 0.26rem;
+	height: 34px;
+}
+
+
+.sort_box{
+    line-height: 30px;
+    font-size: 14px;
+    border-bottom: 1px solid #ddd;
+    position: relative;
+}
+.right_car{
+	background: #efefef;
+	height: 8rem;
+	min-height: 75%;
+	width: 70%;
+	position: fixed;
+	right: -70%;
+	top: 20%;
+	-webkit-transition: all 1s;
+	-o-transition: all 1s;
+	transition: all 1s; 
+	overflow-y: scroll;
+}
+.fixright{
+	right: 0;
+}
+
+.pos_title{
+	position: relative;
+	border-bottom: 1px solid #ddd;
+}
+.car_name{
+    padding: 5px 0;
+    padding-left: 10px;
+    background: #d7d7d7;
+    color: #7b8292;
+}
+.car_name_children{
+    padding: 0 0 0 10px;
+    cursor: pointer;
+    background: #fff;
+    line-height: 0.8rem;
+    margin-bottom: 5px;
+    position: relative;
+    color: #688597; 
+}
+.car_name_children .right{
+	right: 10px;
+}
+.sort_letter {
+    height: 30px;
+    line-height: 30px;
+    padding-left: 20px;
+    color: #787878;
+    font-size: 14px;
+    background: #f9f9f9;
+    margin-top: -1px;
+}
+.sort_list {
+	border-bottom: 1px solid #ddd; 
+	padding: 5px 0; 
+	cursor: pointer;
+	margin-left: 10px;
+	font-size: 16px;
+}
+.sort_list img{
+	width: 0.6rem;
+	height: 0.6rem;
+	float: left;
+}
+.sort_list .num_name,.wrap_car .type_car,.wrap_type .car_year{
+    color: #000;
+    padding-left: 10px;
+    line-height: 0.6rem;
+    font-size: 0.24rem;
+}
+.wrap_output .car_output{
+	font-size: 0.25rem;
+}
+.initials {
+    position: fixed;
+    top: 47px;
+    right: 0px;
+    height: 100%;
+    width: 15px;
+    padding-right: 10px;
+    text-align: center;
+    font-size: 12px;
+    z-index: 99;
+    background: rgba(145, 145, 145, 0);
+    cursor: pointer;
+ }
+ 
+.wrap_car,.wrap_type,.wrap_output{
+	padding-right:10px;
+}
+.none{
+	display: none;
+}
+.wrap_car .type_car,.wrap_type .car_year{
+	padding-left: 20px;
+	border-bottom: 1px solid #ddd;
+	position: relative;
+	cursor: pointer;
+}
+.car_output{
+	font-size: 18px;
+}
+.right{
+	width: 16px;
+	height: 16px;
+	position: absolute;
+	top: 50%;
+	margin-top: -8px;
+	right: 20px;
+}
+
+/*年份*/
+
+.year{
+	margin-bottom: 5px;
+}
+.car_year{
+	border-bottom: 1px solid #ddd;
+    padding: 5px 0 5px 10px;
+    cursor: pointer;
+    font-size: 18px;
+    color: #7e8693;
+    line-height: 45px;
+    position: relative;
+    background: #f9f9f9;
+}
+/*排量*/
+.car_output{
+	border-bottom: 1px solid #ddd;
+    padding: 5px 0 5px 20px;
+	cursor: pointer;
+	line-height: 35px;
+	margin: 0 20px;
+	background: #fff;
+	color: #000;
+}
+
+
+.rotate{
+	-webkit-transform: rotateZ(90deg);
+	-ms-transform: rotate(90deg);
+	transform: rotateZ(90deg);
+	-webkit-transition: all 0.2s;
+	-o-transition: all 0.2s;
+	transition: all 0.2s;
+}

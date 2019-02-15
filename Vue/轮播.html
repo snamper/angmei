@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    .box1{
+        -webkit-transition: 2s all;
+        -moz-transition: 2s all;
+        -ms-transition: 2s all;
+        -o-transition: 2s all;
+        transition: 2s all;
+    }
+</style>
+<body>
+    <div style="width: 800px;height: 400px;overflow: hidden;margin: 0 auto;">
+        <div class="box box1" style="width: 2400px;display: flex;">
+            <div style="width: 800px;height: 400px;background: pink;"></div>
+            <div style="width: 800px;height: 400px;background: red;"></div>
+            <div style="width: 800px;height: 400px;background: black;"></div>
+        </div>
+    </div>
+</body>
+<script src="js/jquery.js"></script>
+<script>
+    /*方法1*/
+    var box=document.getElementsByClassName('box')[0];
+     setInterval(function () {
+         box.style.marginLeft='-800px';
+         box.classList.add('box1');
+         setTimeout(function () {
+             box.classList.remove('box1');
+             var a=box.children[0].cloneNode(true);
+             box.removeChild(box.children[0]);
+             box.appendChild(a)
+             box.style.marginLeft='0px';
+         },2000)
+     },3000)
+    /*方法2*/
+    // setInterval(function () {
+    //      $('.box').animate({
+    //          'marginLeft':'-800px'
+    //      },2000,function(){
+    //          var a=$('.box div').eq(0).clone()
+    //          $('.box div').eq(0).remove()
+    //          a.appendTo('.box')
+    //          $('.box').css('marginLeft','0')
+    //      })
+    // },3000)
+</script>
+</html>

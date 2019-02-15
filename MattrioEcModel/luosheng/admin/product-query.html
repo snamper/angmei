@@ -1,0 +1,473 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<!--[if lt IE 9]>
+<script type="text/javascript" src="static/html5shiv.js"></script>
+<script type="text/javascript" src="static/respond.min.js"></script>
+<![endif]-->
+<link rel="stylesheet" type="text/css" href="static/h-ui/css/H-ui.min.css" />
+<link rel="stylesheet" type="text/css" href="static/h-ui.admin/css/H-ui.admin.css?v=20181012" />
+<link rel="stylesheet" type="text/css" href="static/Hui-iconfont/1.0.8/iconfont.css" />
+<link rel="stylesheet" type="text/css" href="static/h-ui.admin/skin/default/skin.css?v=20181012" id="skin" />
+<link rel="stylesheet" type="text/css" href="static/h-ui.admin/css/style.css" />
+<link rel="stylesheet" type="text/css" href="css/zxf_page.css">
+<link rel="stylesheet" type="text/css" href="css/sweetalert.css"/>
+<link rel="stylesheet" type="text/css" href="css/index.css?v=20181017">
+<!-- <link rel="stylesheet" type="text/css" href="./css/demo.css"> -->
+<!--[if IE 6]>
+<script type="text/javascript" src="static/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script>DD_belatedPNG.fix('*');</script>
+<![endif]-->
+<title>主车型库</title>
+<style>
+	p{
+		margin-bottom: 0;
+	}
+	.tbody2 td{
+		position: relative;
+		text-align: center;
+	}
+	.back_ground{
+		background:#eaeaea;
+	}
+	.tankuang{
+		position: absolute;
+	    background: #fff;
+	    border-radius: 3px;
+	    width: 94%;
+	    top: 50%;
+	    left: 50%;
+	    transform: translate(-50%,-50%);
+	    padding: 10px;
+	    box-sizing: border-box;
+	    padding-top:30px ;
+	}
+	.meng{
+		position: fixed;
+	    background: rgba(0,0,0,0.4);
+	    width: 100%;
+	    height: 100%;
+	    left: 0;
+	    top: 0;
+	    display: none;
+	}
+	.sel{
+		position: relative;
+		cursor: pointer;
+		border: 1px solid #ccc;
+		min-width: 50px;
+	}
+	.list{
+		border: 1px solid #ccc;	
+		display: none;
+		position: absolute;
+		top: 33px;
+		left: 8px;
+		width: calc(100% - 18px);
+		background: #fff;
+		z-index: 100;
+		max-height: 240px;
+		overflow: auto;
+	}
+	.list p{
+		cursor: pointer;
+		text-align: center;
+	}
+	.list p:hover{
+		background: #2888f9;
+	    color: #fff;
+	}
+	.triangle{
+		width: 9px;
+		height: 8px;
+		margin-left: 8px;
+	}
+	.inp{
+		width: 100%;
+		height: 25px;
+		line-height: 25px;
+		padding-left: 5px;
+		box-sizing: border-box;
+		background: #fff;
+		border: 1px solid #45b3fe;
+	}
+	.match{
+		border-radius: 3px;
+		color: #fff;
+		background: #45b3fe;
+	}
+	.shut{
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 20px;
+		height: 20px;
+		text-align: center;
+		line-height: 20px;
+		font-size: 20px;
+		cursor: pointer;
+	}
+	.shut:hover{
+		background:red;
+		color: #fff;
+	}
+</style>
+</head>
+<body>
+<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <i class="Hui-iconfont">&#xe6d7;</i> 车型库 <i class="Hui-iconfont">&#xe6d7;</i> 车型查询 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+<br>
+	<div class="contentbody">
+		<div class="contentyear clearfix">
+			<div id="box">
+				<label for="arrcity"></label>
+				<input type="text" name="arrcity" id="arrcity" placeholder="可搜索：主机厂"/>
+				<div id='suggest' class="ac_results" style="left: 0px !important;">
+				</div>
+			</div>
+			<div id="s3">请选择车型</div>
+			<div id="s4">请选择销售名称</div>
+			<div id="s1">请选择年款</div>
+			<button class="btnyear">搜 索</button>
+		
+			<div class="conts1 active" style="left:459px;"></div>
+
+			<div class="conts3 active" style="left: 167px;"></div>
+			
+			<div class="conts4 active" style="left: 318px;"></div>
+
+		</div>
+
+	</div>
+
+
+
+<div class="page-container">
+	<div class="text-c">
+		<select class="selectname2">
+			<option>按条件搜索</option>
+			<option>Mi-Key</option>
+			<option>发动机型号</option>
+		</select>
+
+		<input type="text" name="" id="inpsubmit" placeholder="按条件搜索" style="width:420px"  class="input-text">
+			<button name="" id="btnsubmit" class="btn btn-success" type="submit"><i class="Hui-iconfont">&#xe665;</i> 搜索</button>
+	</div>
+	<div class="cl pd-5 bg-1 bk-gray mt-20"> <span class="r">共有数据：[&nbsp;&nbsp;<strong class="alltotal" style="color: #c92327;">0</strong>&nbsp;&nbsp;]条</span> </div>
+	<div class="mt-20" style="width:100%;overflow: auto;">
+		<table class="table table-border table-bordered table-bg table-sort">
+			<thead>
+				<tr class='text-c'>
+					<!--<th><input type='checkbox' name='' value=''></th>
+					<th>ID</th>-->
+					<th>Mi-key</th>
+					<th>主机厂</th>
+					<th>车系</th>
+					<th>车型</th>
+					<th>销售名称</th>
+					<th>销售版本</th>
+					<th>年款</th>
+					<!--<th>排放标准</th>
+					<th>车辆类型</th>
+					<th>车辆级别</th>
+					<th>指导价格(万元)</th>
+					<th>上市年份</th>
+					<th>上市月份</th>-->
+					<th>生产年份</th>
+					<!--<th>停产年份</th>
+					<th>生产状态</th>
+					<th>销售状态</th>
+					<th>国别</th>
+					<th>国产合资进口</th>
+					<th>发动机型号</th>
+					<th>气缸容积</th>-->
+					<th>排量(升)</th>
+					<th>进气形式</th>
+					<!--<th>燃油类型</th>
+					<th>燃油标号</th>
+					<th>最大马力(Ps)</th>
+					<th>最大功率(kW)</th>
+					<th>最大功率转速(rpm)</th>
+					<th>最大扭矩(N·m)</th>
+					<th>最大扭矩转速(rpm)</th>
+					<th>气缸排列形式</th>
+					<th>气缸数(个)</th>
+					<th>每缸气门数(个)</th>
+					<th>压缩比</th>
+					<th>供油方式</th>
+					<th>工信部综合油耗(L)</th>
+					<th>市区工况油耗</th>
+					<th>市郊工况油耗</th>
+					<th>加速时间（0-100km/h)</th>
+					<th>最高车速(km/h)</th>
+					<th>发动机特有技术</th>
+					<th>三元催化器</th>
+					<th>冷却方式</th>
+					<th>缸径</th>
+					<th>冲程</th>
+					<th>发动机描述</th>
+					<th>变速箱类型</th>-->
+					<th>变速器描述</th>
+					<!--<th>档位数</th>
+					<th>前制动器类型</th>
+					<th>后制动器类型</th>
+					<th>前悬挂类型</th>
+					<th>后悬挂类型</th>
+					<th>转向机形式</th>
+					<th>助力类型</th>
+					<th>最小离地间隙(mm)</th>
+					<th>最小转弯半径</th>
+					<th>离去角</th>
+					<th>接近角</th>
+					<th>发动机位置</th>
+					<th>驱动方式</th>
+					<th>驱动形式</th>
+					<th>车身型式</th>
+					<th>长(mm)</th>
+					<th>宽(mm)</th>
+					<th>高(mm)</th>
+					<th>轴距(mm)</th>
+					<th>前轮距(mm)</th>
+					<th>后轮距(mm)</th>
+					<th>整备质量(Kg)</th>
+					<th>最大载重质量(kg)</th>
+					<th>油箱容积(L)</th>
+					<th>行李厢容积(L)</th>
+					<th>车顶型式</th>
+					<th>车篷型式</th>
+					<th>车门数</th>
+					<th>座位数(个)</th>
+					<th>前轮胎规格</th>
+					<th>后轮胎规格</th>
+					<th>前轮毂规格</th>
+					<th>后轮毂规格</th>
+					<th>轮毂材料</th>
+					<th>备胎规格</th>
+					<th>电动天窗</th>
+					<th>全景天窗</th>
+					<th>氙气大灯</th>
+					<th>前雾灯</th>
+					<th>后雨刷</th>
+					<th>空调</th>
+					<th>自动空调</th>
+					<th>变速箱品牌</th>
+					<th>波箱型号</th>
+					<th>建议使用油品</th>
+					<th>原厂初装用量</th>
+					<th>重力更换推荐用量</th>
+					<th>机器循环清洗更换推荐用量</th>-->
+					<th>操作</th>
+				</tr>
+			</thead>
+			<tbody class="tbody1">
+				
+			</tbody>
+		</table>
+		
+	</div>
+	<div class="warting active" style="height:380px;text-align: center;line-height: 100px;font-size: 20px;">
+			正在加载中。。。。。。
+		</div>
+		<div class="wartno active" style="height:380px;text-align: center;line-height: 100px;font-size: 20px;">
+			没有查询到数据
+		</div>
+	<br>
+	<div class="zxf_pagediv"></div>	
+	<div class="meng">
+		<div class="tankuang">
+			<span class="shut">×</span>
+			<table class="table table-border table-bordered table-bg table-sort">
+				<thead >
+					<tr class='text-c'>
+						<th>Mi-key</th>
+						<th>主机厂</th>
+						<!--<th>车系</th>-->
+						<th>车型</th>
+						<th>销售名称</th>
+						<!--<th>销售版本</th>-->
+						<th>年款</th>
+						<!--<th>生产年份</th>-->
+						<!--<th>排量(升)</th>-->
+						<th>进气形式</th>
+						<th>变速器描述</th>
+						<th colspan="2">产品类型</th>
+						<th>产品编码</th>
+						<th>操作</th>
+					</tr>
+				</thead>
+				<tbody class="tbody2">
+					
+				</tbody>
+			</table>
+		</div>	
+	</div>
+</div>
+<!--_footer 作为公共模版分离出去-->
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="static/layer/2.4/layer.js"></script>
+<script type="text/javascript" src="static/h-ui/js/H-ui.min.js"></script>
+<script type="text/javascript" src="static/h-ui.admin/js/H-ui.admin.js"></script>
+<!--/_footer 作为公共模版分离出去-->
+
+<!--请在下方写此页面业务相关的脚本-->
+<script type="text/javascript" src="js/product-query.js?v=20181031"></script>
+<script type="text/javascript" src="js/aircity.js"></script>
+<!--<script type="text/javascript" src="css/demo.js"></script>-->
+<script type="text/javascript" src="js/j.dimensions.js"></script>
+<script type="text/javascript" src="js/j.suggest.js?v=20181031"></script>
+<script type="text/javascript" src="js/zxf_page.js"></script>
+<script type="text/javascript" src="js/sweetalert.min.js"></script>
+
+<script>
+	$(function(){
+		$("#arrcity").suggest(citys,{hot_list:commoncitys,dataContainer:'#arrcity_3word', attachObject:'#suggest'});
+		$("#city2").suggest(citys,{hot_list:commoncitys,attachObject:"#suggest2"});
+	});
+
+	function picture_add(){
+		window.location.href = "product_add.html";
+	}
+</script>
+<script>
+//(function( $ ) {
+//  $.widget( "custom.combobox", {
+//    _create: function() {
+//      this.wrapper = $( "<span>" )
+//        .addClass( "custom-combobox" )
+//        .insertAfter( this.element );
+// 
+//      this.element.hide();
+//      this._createAutocomplete();
+//      this._createShowAllButton();
+//    },
+// 
+//    _createAutocomplete: function() {
+//      var selected = this.element.children( ":selected" ),
+//        value = selected.val() ? selected.text() : "";
+// 
+//      this.input = $( "<input>" )
+//        .appendTo( this.wrapper )
+//        .val( value )
+//        .attr( "title", "" )
+//        .addClass( "custom-combobox-input ui-widget ui-widget-content ui-state-default ui-corner-left" )
+//        .autocomplete({
+//          delay: 0,
+//          minLength: 0,
+//          source: $.proxy( this, "_source" )
+//        })
+//        .tooltip({
+//          tooltipClass: "ui-state-highlight"
+//        });
+// 
+//      this._on( this.input, {
+//        autocompleteselect: function( event, ui ) {
+//          ui.item.option.selected = true;
+//          this._trigger( "select", event, {
+//            item: ui.item.option
+//          });
+//        },
+// 
+//        autocompletechange: "_removeIfInvalid"
+//      });
+//    },
+// 
+//    _createShowAllButton: function() {
+//      var input = this.input,
+//        wasOpen = false;
+// 
+//      $( "<a>" )
+//        .attr( "tabIndex", -1 )
+//        .tooltip()
+//        .appendTo( this.wrapper )
+//        .button({
+//          icons: {
+//            primary: "ui-icon-triangle-1-s"
+//          },
+//          text: false
+//        })
+//        .removeClass( "ui-corner-all" )
+//        .addClass( "custom-combobox-toggle ui-corner-right" )
+//        .mousedown(function() {
+//          wasOpen = input.autocomplete( "widget" ).is( ":visible" );
+//        })
+//        .click(function() {
+//          input.focus();
+// 
+//          // 如果已经可见则关闭
+//          if ( wasOpen ) {
+//            return;
+//          }
+// 
+//          // 传递空字符串作为搜索的值，显示所有的结果
+//          input.autocomplete( "search", "" );
+//        });
+//    },
+// 
+//    _source: function( request, response ) {
+//      var matcher = new RegExp( $.ui.autocomplete.escapeRegex(request.term), "i" );
+//      response( this.element.children( "option" ).map(function() {
+//        var text = $( this ).text();
+//        if ( this.value && ( !request.term || matcher.test(text) ) )
+//          return {
+//            label: text,
+//            value: text,
+//            option: this
+//          };
+//      }) );
+//    },
+// 
+//    _removeIfInvalid: function( event, ui ) {
+// 
+//      // 选择一项，不执行其他动作
+//      if ( ui.item ) {
+//        return;
+//      }
+// 
+//      // 搜索一个匹配（不区分大小写）
+//      var value = this.input.val(),
+//        valueLowerCase = value.toLowerCase(),
+//        valid = false;
+//      this.element.children( "option" ).each(function() {
+//        if ( $( this ).text().toLowerCase() === valueLowerCase ) {
+//          this.selected = valid = true;
+//          return false;
+//        }
+//      });
+// 
+//      // 找到一个匹配，不执行其他动作
+//      if ( valid ) {
+//        return;
+//      }
+// 
+//      // 移除无效的值
+//      this.input
+//        .val( "" )
+//        .tooltip( "open" );
+//      this.element.val( "" );
+//      this._delay(function() {
+//        this.input.tooltip( "close" ).attr( "title", "" );
+//      }, 2500 );
+//      this.input.data( "ui-autocomplete" ).term = "";
+//    },
+// 
+//    _destroy: function() {
+//      this.wrapper.remove();
+//      this.element.show();
+//    }
+//  });
+//})( jQuery );
+ 
+  $(function() {
+//  $( "#combobox" ).combobox();
+    $( "#toggle" ).click(function() {
+      $( "#combobox" ).toggle();
+    });
+  });
+</script>
+
+</body>
+</html>

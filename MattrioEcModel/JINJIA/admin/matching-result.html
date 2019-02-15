@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="renderer" content="webkit|ie-comp|ie-stand">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+		<meta http-equiv="Cache-Control" content="no-siteapp" />
+		<link rel="Bookmark" href="/favicon.ico" >
+		<link rel="Shortcut Icon" href="/favicon.ico" />
+		<!--[if lt IE 9]>
+		<script type="text/javascript" src="static/html5shiv.js"></script>
+		<script type="text/javascript" src="static/respond.min.js"></script>
+		
+		<![endif]-->
+		<link rel="stylesheet" type="text/css" href="static/h-ui/css/H-ui.min.css" />
+		<link rel="stylesheet" type="text/css" href="static/h-ui.admin/css/H-ui.admin.css?v=20181012" />
+		<link rel="stylesheet" type="text/css" href="static/Hui-iconfont/1.0.8/iconfont.css" />
+		
+		<!--<link rel="stylesheet" type="text/css" href="static/h-ui.admin/skin/default/skin.css?v=20181011" id="skin" />-->
+		<link rel="stylesheet" type="text/css" href="static/h-ui.admin/css/style.css" />
+		<link rel="stylesheet" type="text/css" href="./css/zxf_page.css">
+		<link rel="stylesheet" type="text/css" href="css/sweetalert.css"/>
+		
+		<!--[if IE 6]>
+		<script type="text/javascript" src="static/DD_belatedPNG_0.0.8a-min.js" ></script>
+		<script>DD_belatedPNG.fix('*');</script>
+		<![endif]-->
+	</head>
+	<style type="text/css">
+		html,body{
+			background: #f7f7f7;
+		}
+		.active {
+		    display: none;
+		}
+		.wrap{
+		    background: #fff;
+		    padding: 5px 25px 30px 25px;
+		    padding-bottom: 30px;
+		    background: #fff;
+		    box-sizing: border-box;
+		}
+		/*button{
+			border-radius: 3px;
+		    margin-right: 15px;
+		    cursor: pointer;
+		    width: 140px;
+		    height: 30px;
+		    font-size: 14px;
+		    border: 0;	
+		    line-height: 30px;		
+		}*/
+		.this{
+			background: #45b3fe;
+			color: #fff;
+		}
+		.r{
+			line-height: 30px;
+		}
+		.table td{
+			text-align: center;
+		}
+		.tbody2{
+			display: none;
+		}		
+		.delthis:hover{
+			color: #74777b;
+		}
+		.pass{
+			margin-left: 5px;
+			margin-right:20px ;
+			background: #3889c1;
+			color: #fff;
+		}
+		.bg-1{
+			background: #f8f8f8;
+			border: 0px;
+		}
+		.alltotal{
+			color: #c92327;
+		}
+		.table-bg thead th{
+			background: #efefef;
+		}
+		.table-bordered th{
+			border-left: 0;
+		}
+		.table-bordered th:first-child{
+			border-left: 1px solid #ddd;
+		}
+		/*a:hover,a:focus{
+			color: #fff;
+		}*/
+		.mt-20{
+			margin-top: 10px;
+		}
+	</style>
+	<body>
+		<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <i class="Hui-iconfont">&#xe6d7;</i> 产品匹配 <i class="Hui-iconfont">&#xe6d7;</i> 未审核列表 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+		<div class="wrap">
+			<!--<button class="tab this">未审核的数据</button>-->
+			<!--<button class='tab'>已审核的数据</button>
+			<button class='tab'>昨日匹配的数据</button>-->
+			<div class="cl pd-5 bg-1 bk-gray mt-20"> 
+				<span class="l"><a href="javascript:;" onclick="passall()" class="btn  radius pass">全部审核通过</a></span>
+				<span class="l"><a href="javascript:;" onclick="del()" class="btn btn-danger radius"><i class="Hui-iconfont"></i> 全部删除</a></span>
+				<span class="r">共有数据[&nbsp;&nbsp;<strong class="alltotal">0</strong>&nbsp;&nbsp;]条</span> 
+			</div>
+			<div class="mt-20">
+				<table class="table table-border table-bordered table-bg table-sort">
+					<thead>
+						<tr class="text-c">
+							<!--<th class="th"><input type="checkbox" name="" value="">全选</th>-->
+							<th>ID</th>
+							<th>Mikey</th>
+							<th>主机厂</th>
+							<th>车型</th>
+							<th>销售名称</th>
+							<th>年份</th>
+							<th>底盘号</th>
+							<th>发动机</th>
+							<th>产品名称</th>
+							<th>产品编号</th>
+							<th class="th active">时间</th>
+							<th class="th th2 active" colspan="2">操作</th>
+						</tr>
+					</thead>
+					<tbody class="tbody1"></tbody>
+					<!--<tbody class="tbody2"></tbody>
+					<tbody class="tbody3"></tbody>-->
+				</table>
+				<div class="warting active" style="height:300px;text-align: center;line-height: 100px;font-size: 20px;">
+					正在加载中。。。。。。
+				</div>
+				<div class="wartno active" style="height:300px;text-align: center;line-height: 100px;font-size: 20px;">
+					没有查询到数据
+				</div>
+				<br>
+		 		<div class="zxf_pagediv"></div>	
+			</div>
+
+		</div>
+	</body>
+	<!--_footer 作为公共模版分离出去-->
+	<script type="text/javascript" src="static/jquery/1.9.1/jquery.min.js"></script> 
+	<script type="text/javascript" src="static/layer/2.4/layer.js"></script>
+	<script type="text/javascript" src="static/h-ui/js/H-ui.min.js"></script> 
+	<script type="text/javascript" src="static/h-ui.admin/js/H-ui.admin.js"></script>
+	<!--/_footer 作为公共模版分离出去-->
+	<!--请在下方写此页面业务相关的脚本-->
+	<script type="text/javascript" src="./js/zxf_page.js"></script>
+	<script type="text/javascript" src="js/sweetalert.min.js"></script>
+	<script type="text/javascript">
+		if(!sessionStorage.getItem("user")){
+			window.location.href = "./login.html";
+		}
+		var network = m("network");
+		var username_id = localStorage.getItem("username_id");
+		$(".warting").removeClass('active')
+		tbody('/MattrioEcModel/original_oe/selectcar','.tbody1','.tbody2,.tbody3',1)	
+		$('.tab').click(function(){
+			$(this).addClass('this').siblings('.tab').removeClass('this')
+			if($(this).text()=='未审核的数据'){				
+				tbody('/MattrioEcModel/original_oe/selectcar','.tbody1','.tbody2,.tbody3',1)				
+			}else if($(this).text()=='已审核的数据'){
+				tbody('/MattrioEcModel/updatematch/selectlongoemikey','.tbody2','.tbody1,.tbody3',1)
+			}else{
+				tbody('/MattrioEcModel/original_oe/Thedaybeforemikey2','.tbody3','.tbody1,.tbody2',1)
+			}
+		})
+		/*获取匹配的数据*/
+		function tbody(url,show,hide,page){
+			$(hide).hide()
+			$(".warting").removeClass('active')
+			$.ajax({
+				type:"post",
+				url:network+url,
+				data:{
+					'brand_id':username_id,
+					'pageindex':page
+				},
+				cache: false,
+				crossDomain: true == !(document.all),
+				success:function(data){
+					$(".warting").addClass('active')
+					$(".alltotal").text(data.listsize)
+					$(show).html('')
+					if(data.list==[]||data.list.length==0){
+						$(".zxf_pagediv").addClass("active");
+						$(".wartno").removeClass('active')
+						return false;
+					}
+					$(show).show()
+					$(".wartno").addClass('active')
+					$.each(data.list,function(key,value){
+						var a=new Date(value.time.time)
+						var td13=$("<td>").html(value.postion)
+						var td1=$("<td>").html(value.mikey)
+						var td2=$("<td>").html(value.Manufacture_CN)
+						var td3=$("<td>").html(value.Vehicle_Name_CN)
+						var td4=$("<td>").html(value.Name_of_sales)
+						var td5=$("<td>").html(value.ChassisNumber)
+						var td6=$("<td class="+value.category_id+">").html(value.category_name)
+						var td11=$("<td>").html(value.Engine_Code)
+						var td12=$("<td>").html(value.Year_of_production)
+						var td7=$("<td>").html(value.product_id)
+						var tr=$("<tr class='text-c'>")
+						td13.appendTo(tr)
+						td1.appendTo(tr)
+						td2.appendTo(tr)
+						td3.appendTo(tr)
+						td4.appendTo(tr)
+						td12.appendTo(tr)
+						td5.appendTo(tr)						
+						td11.appendTo(tr)
+						td6.appendTo(tr)
+						td7.appendTo(tr)
+						$('.th').addClass("active")
+						$('.pass').parent('span').addClass('active')			
+						$('.btn-danger').addClass('active')
+						if(show=='.tbody1'){
+							$('.pass').parent('span').removeClass('active')
+							$('.btn-danger').removeClass('active')
+							$('.th').removeClass("active")							
+//							var td0 = $("<td>").html('<input name="id" type="checkbox" value="">');
+							var td8=$("<td>").html(a.toLocaleString())
+							var td9=$("<td>").html('<a style="text-decoration:none;color:#3dadf5;" onclick="pass(this)" href="javascript:;" title="审核">审核</a>')
+							var td10 = $("<td>").html('<a style="text-decoration:none;color:#e02a41;" class="ml-5 delthis" href="javascript:;" title="删除"><i class="Hui-iconfont">&#xe6e2;</i></a>');
+//							td0.prependTo(tr)
+							td8.appendTo(tr)
+							td9.appendTo(tr)
+							td10.appendTo(tr)
+						}
+						tr.appendTo(show)
+					})	
+					$(".zxf_pagediv").removeClass("active");
+					$(".zxf_pagediv").createPage({
+				        pageNum: Math.ceil(data.listsize/10),//总页码
+				        current: parseInt(page),//当前页
+				        backfun: function(e) {
+//				        	console.log(e)
+				        	var pageindex = e.current;
+				        	$.ajax({
+				        		type:"post",
+				        		url:network+url,
+				        		data:{
+									'brand_id':username_id,
+									'pageindex':pageindex
+								},
+								cache: false,
+								crossDomain: true == !(document.all),
+								success:function(dat){
+									$(show).html('')
+									$(show).show()
+									$(".alltotal").text(data.listsize)
+									$('th').find('input').prop('checked',false)
+									$.each(dat.list,function(key,value){
+										var a=new Date(value.time.time)
+//										var td0 = $("<td>").html('<input name="id" type="checkbox" value="">');
+										var td13 = $("<td>").html(value.postion);
+										var td1=$("<td>").html(value.mikey)
+										var td2=$("<td>").html(value.Manufacture_CN)
+										var td3=$("<td>").html(value.Vehicle_Name_CN)
+										var td4=$("<td>").html(value.Name_of_sales)
+										var td5=$("<td>").html(value.ChassisNumber)
+										var td6=$("<td class="+value.category_id+">").html(value.category_name)
+										var td11=$("<td>").html(value.Engine_Code)
+										var td12=$("<td>").html(value.Year_of_production)
+										var td7=$("<td>").html(value.product_id)
+										var tr=$("<tr class='text-c'>")
+//										td0.appendTo(tr)
+										td13.appendTo(tr)
+										td1.appendTo(tr)
+										td2.appendTo(tr)
+										td3.appendTo(tr)
+										td4.appendTo(tr)
+										td12.appendTo(tr)
+										td5.appendTo(tr)
+										td11.appendTo(tr)
+										td6.appendTo(tr)
+										td7.appendTo(tr)
+										$('.th').addClass("active")
+										if(show=='.tbody1'){
+											$('.th').removeClass("active")
+											var td8=$("<td>").html(a.toLocaleString())
+											var td9=$("<td>").html('<a style="text-decoration:none;color:#3dadf5;" onclick="pass(this)" href="javascript:;" title="审核">审核</a>')
+											var td10 = $("<td>").html('<a style="text-decoration:none;color:#e02a41;" class="ml-5 delthis" href="javascript:;" title="删除"><i class="Hui-iconfont">&#xe6e2;</i></a>');
+											td8.appendTo(tr)
+											td9.appendTo(tr)
+											td10.appendTo(tr)
+										}
+										tr.appendTo(show)
+									})	
+								}
+				        	});
+				        }
+				      })
+				},error:function(){
+					$(".warting").addClass('active')
+					swal("请求失败!", "", "error");
+				}
+				
+			});
+			}
+		/*单个删除*/
+		$(document).on('click','.delthis',function(){
+        if($('.current').text()==1||$('tbody tr').length>1){
+            var pageindex=$('.current').text();
+        } else{
+            var pageindex=$('.current').text()-1;
+        }
+			var postion=$(this).parents('tr').find('td').eq(0).text()
+		 swal({
+			title: "您确定要删除吗？", 
+			text: "您确定要删除这条数据？", 
+			type: "warning",
+			showCancelButton: true,
+			closeOnConfirm: false,
+			confirmButtonText: "是的，我要删除",
+			confirmButtonColor: "#ec6c62"
+			}, function() {
+				var mikeyarr=[{
+					'postion':postion
+				}]
+				$.ajax({
+					type:"post",
+					url:network+"/MattrioEcModel/updatematch/deleteproduct",
+					data:{
+						'postion':JSON.stringify(mikeyarr)
+					},
+					dataType:"json",
+					cache: false,
+					crossDomain: true == !(document.all),
+					success:function(data){
+						$('.tbody1').html('')
+						$('th').find('input').prop('checked',false)
+						swal("操作成功!", "已成功删除数据！", "success");
+						$(".tab").eq(0).addClass('this').siblings('.tab').removeClass('this')
+						tbody('/MattrioEcModel/original_oe/selectcar','.tbody1','.tbody2,.tbody3',pageindex)
+					},
+					error:function(data){
+						swal("OMG", "删除操作失败了!", "error");
+					}
+				})
+			});		
+		})
+		/*全部删除*/
+		function del(){
+			if($(".tbody1").html()==''||$(".tbody1").html().length==0){
+				swal("无可删除的数据!", "", "error");
+				return false;
+			}
+			swal({
+				title: "您确定要删除吗？", 
+				text: "您确定要全部删除数据？", 
+				type: "warning",
+				showCancelButton: true,
+				closeOnConfirm: false,
+				confirmButtonText: "是的，我要删除",
+				confirmButtonColor: "#ec6c62"
+				}, function() {
+					$.ajax({
+						type:"post",
+						url:network+"/MattrioEcModel/updatematch/deleteoriginal_oe_third",
+						data:{
+							'brand_id':username_id,
+						},
+						crossDomain: true == !(document.all),
+						success:function(data){
+							var pageindex=$('.current').text()
+							tbody('/MattrioEcModel/original_oe/selectcar','.tbody1','.tbody2,.tbody3',pageindex)
+							swal("操作成功!", "已成功删除数据！", "success");
+						},error:function(){
+							swal("OMG", "删除操作失败了!", "error");
+						}
+					});
+				});
+		}
+		/*单个审核通过*/
+			function pass(a){
+                if ($('.current').text()==1||$('tbody tr').length>1){
+                    var pageindex=$('.current').text();
+                } else{
+                    var pageindex=$('.current').text()-1;
+                }
+				var passarr=[];
+				var postion=$(a).parents("tr").children().eq(0).html()
+					passarr.push({
+						'postion':postion					
+					})	
+					swal({
+						title: "是否审核通过当前的数据？", 
+						text: "", 
+						type: "warning",
+						showCancelButton: true,
+						closeOnConfirm: false,
+						confirmButtonText: "是的，审核通过",
+						confirmButtonColor: "#ec6c62"
+						}, function() {
+							$.ajax({
+								type:"post",
+								url:network+"/MattrioEcModel/updatematch/insertlongmikeyoeproduct",
+								data:{
+									'postion':JSON.stringify(passarr),
+									'brand_id':username_id
+								},
+								dataType:"json",
+								cache: false,
+								crossDomain: true == !(document.all),
+								success:function(data){
+									$('th').find('input').prop('checked',false)
+									tbody('/MattrioEcModel/original_oe/selectcar','.tbody1','.tbody2,.tbody3',pageindex)
+									swal("操作成功!", "已审核通过！", "success");
+								},error:function(){
+									swal("OMG", "审核通过失败!", "error");
+								}
+							});
+						});
+			}
+			/*全部审核痛过*/
+			function passall(){
+				if($(".tbody1").html()==''||$(".tbody1").html().length==0){
+					swal("无可审核的数据!", "", "error");
+					return false;
+				}
+				swal({
+						title: "是否全部审核通过？", 
+						text: "", 
+						type: "warning",
+						showCancelButton: true,
+						closeOnConfirm: false,
+						confirmButtonText: "是的，审核通过",
+						confirmButtonColor: "#ec6c62"
+						}, function() {
+							$.ajax({
+								type:"post",
+								url:network+"/MattrioEcModel/updatematch/updateoriginal_oe_third",
+								data:{
+									'brand_id':username_id,
+								},
+								crossDomain: true == !(document.all),
+								success:function(data){
+									var pageindex=$('.current').text()
+									tbody('/MattrioEcModel/original_oe/selectcar','.tbody1','.tbody2,.tbody3',pageindex)	
+									swal("操作成功!", "已审核通过！", "success");
+								},error:function(){
+									swal("OMG", "审核通过失败!", "error");
+								}
+							});
+						});
+			}
+	</script>
+</html>

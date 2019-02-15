@@ -1,0 +1,272 @@
+<!--_meta 作为公共模版分离出去-->
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<link rel="Bookmark" href="/favicon.ico" >
+<!-- <link rel="Shortcut Icon" href="/favicon.ico" /> -->
+<!--[if lt IE 9]>
+<script type="text/javascript" src="static/html5shiv.js"></script>
+<script type="text/javascript" src="static/respond.min.js"></script>
+
+<![endif]-->
+<link rel="stylesheet" type="text/css" href="../../static/h-ui/css/H-ui.min.css" />
+<link rel="stylesheet" type="text/css" href="../../static/h-ui.admin/css/H-ui.admin.css" />
+<link rel="stylesheet" type="text/css" href="../../lib/Hui-iconfont/1.0.8/iconfont.css" />
+
+<link rel="stylesheet" type="text/css" href="../../static/h-ui.admin/skin/default/skin.css" id="skin" />
+<link rel="stylesheet" type="text/css" href="../../static/h-ui.admin/css/style.css" />
+<!--[if IE 6]>
+<script type="text/javascript" src="static/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script>DD_belatedPNG.fix('*');</script>
+<![endif]-->
+<!--/meta 作为公共模版分离出去-->
+
+<!-- <link href="static/webuploader/0.1.5/webuploader.css" rel="stylesheet" type="text/css" /> -->
+<style>
+	.revise{
+		width:100%;
+		background-color:#f5f5f5;
+		line-height: 39px;
+		padding:0px 20px;
+		border-bottom: 1px solid #e5e5e5;
+		font-size: 14px;
+		color:#333;
+	}
+	.revise span{
+		position: absolute;
+		top:0px;
+		right:10px;
+	}
+	.revise span:hover{
+		cursor:pointer;
+	}
+</style>
+</head>
+<body>
+<div class="revise">
+	修改页面
+	<span>×</span>
+</div>
+
+
+<div class="page-container" id="pag">
+
+</div>
+<div class="row cl" style="margin-top: 10px;margin-bottom: 20px;">
+	<div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">
+		<button onClick="article_save_submit();" class="btn btn-primary radius" type="submit"><i class="Hui-iconfont">&#xe632;</i> 保存修改</button>
+		<button onClick="layer_close();" class="btn btn-default radius" type="button">&nbsp;&nbsp;取消&nbsp;&nbsp;</button>
+	</div>
+</div>
+<!--_footer 作为公共模版分离出去-->
+<script type="text/javascript" src="../../lib/jquery/1.9.1/jquery.min.js"></script> 
+<script type="text/javascript" src="../../lib/layer/2.4/layer.js"></script>
+<script type="text/javascript" src="../../static/h-ui/js/H-ui.min.js"></script> 
+<script type="text/javascript" src="../../static/h-ui.admin/js/H-ui.admin.js"></script>
+<!--/_footer 作为公共模版分离出去-->
+
+<!--请在下方写此页面业务相关的脚本-->
+
+<script type="text/javascript">
+
+var network = localStorage.getItem("network");
+
+//获取通过url传的参数
+function getUrlParam(name) {
+    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+    var r = window.location.search.substr(1).match(reg);  //匹配目标参数
+    if (r != null) return decodeURI(r[2]); return null; //返回参数值
+}
+var postion = getUrlParam('?postion');
+
+// $("#postioninp").val(postion);
+
+var page_index = getUrlParam('?pageind')
+var arrcityurl = getUrlParam('?arrcity')
+var s3url = getUrlParam('?s3')
+var s4url = getUrlParam('?s4')
+var s1url = getUrlParam('?s1')
+
+$.ajax({
+	type:"post",
+	url:network+"/MattrioManager/CarManager/getCarInfo",
+	data:{
+		"id":postion
+	},
+	dataType:"json",
+	cache: false,
+	crossDomain: true == !(document.all),
+	success:function(data){
+		$("#pag").html(data.text);
+		$("#pag div:eq(0)").children("div").children("input").attr("disabled","disabled");
+		$("#pag div:eq(2)").children("div").children("input").attr("disabled","disabled");
+	},
+	error:function(data){
+		console.log(data)
+	}
+})
+
+
+
+
+
+
+
+
+function article_save_submit(){
+	if(confirm("是否修改")){
+		$.ajax({
+			type:"post",
+			url:network+"/MattrioManager/CarManager/updateCarInfo",
+			data:{
+				'postion' : $('#postion').val(),
+				'mikey' : $('#mikey').val(),
+				'Manufacture_CN' : $('#Manufacture_CN').val(),
+				'Manufactor' : $('#Manufactor').val(),
+				'CarBrand' : $('#CarBrand').val(),
+				'Vehicle_Series_Name_CN' : $('#Vehicle_Series_Name_CN').val(),
+				'Vehicle_Name_CN' : $('#Vehicle_Name_CN').val(),
+				'Name_of_sales' : $('#Name_of_sales').val(),
+				'Sales_version' : $('#Sales_version').val(),
+				'Vehicle_of_year' : $('#Vehicle_of_year').val(),
+				'ChassisNumber' : $('#ChassisNumber').val(),
+				'Emission_standards' : $('#Emission_standards').val(),
+				'Vehicle_body_type' : $('#Vehicle_body_type').val(),
+				'Vehicle_level' : $('#Vehicle_level').val(),
+				'Guide_price' : $('#Guide_price').val(),
+				'Launch_year' : $('#Launch_year').val(),
+				'Launch_month' : $('#Launch_month').val(),
+				'Year_of_production' : $('#Year_of_production').val(),
+				'EOP_Year' : $('#EOP_Year').val(),
+				'Production_status' : $('#Production_status').val(),
+				'Sales_status' : $('#Sales_status').val(),
+				'Country' : $('#Country').val(),
+				'Domestic_joint_venture_imported' : $('#Domestic_joint_venture_imported').val(),
+				'Engine_Code' : $('#Engine_Code').val(),
+				'Capacity_ml' : $('#Capacity_ml').val(),
+				'Capacity' : $('#Capacity').val(),
+				'Air_intake_form' : $('#Air_intake_form').val(),
+				'Fuel_Type' : $('#Fuel_Type').val(),
+				'Fuel_label' : $('#Fuel_label').val(),
+				'HP' : $('#HP').val(),
+				'KW' : $('#KW').val(),
+				'Maximum_power_speed' : $('#Maximum_power_speed').val(),
+				'Peak_torque' : $('#Peak_torque').val(),
+				'Maximum_torque_speed' : $('#Maximum_torque_speed').val(),
+				'Cylinder_arrangement' : $('#Cylinder_arrangement').val(),
+				'Number_of_cylinder' : $('#Number_of_cylinder').val(),
+				'Number_of_valves_per_cylinder' : $('#Number_of_valves_per_cylinder').val(),
+				'Compression_ratio' : $('#Compression_ratio').val(),
+				'Injection_type' : $('#Injection_type').val(),
+				'MiIT_integrated_fuel_consumption' : $('#MiIT_integrated_fuel_consumption').val(),
+				'City_Fuel_consumption' : $('#City_Fuel_consumption').val(),
+				'Suburban_district_Fuel_consumption' : $('#Suburban_district_Fuel_consumption').val(),
+				'Acceleration_time' : $('#Acceleration_time').val(),
+				'Top_speed' : $('#Top_speed').val(),
+				'Engine_technology' : $('#Engine_technology').val(),
+				'Three_yuan_catalysts' : $('#Three_yuan_catalysts').val(),
+				'Cooling_way' : $('#Cooling_way').val(),
+				'Cylinder_diameter' : $('#Cylinder_diameter').val(),
+				'stroke' : $('#stroke').val(),
+				'Engine_description' : $('#Engine_description').val(),
+				'Transmission_type' : $('#Transmission_type').val(),
+				'Transmission_description' : $('#Transmission_description').val(),
+				'Number_of_gear' : $('#Number_of_gear').val(),
+				'Front_brake_type' : $('#Front_brake_type').val(),
+				'After_brake_type' : $('#After_brake_type').val(),
+				'Front_suspension_type' : $('#Front_suspension_type').val(),
+				'After_suspension_type' : $('#After_suspension_type').val(),
+				'Steering_machine_form' : $('#Steering_machine_form').val(),
+				'Power_type' : $('#Power_type').val(),
+				'Minimum_ground_clearance' : $('#Minimum_ground_clearance').val(),
+				'Minimum_bending_radius' : $('#Minimum_bending_radius').val(),
+				'Departure_angle' : $('#Departure_angle').val(),
+				'Approach_angle' : $('#Approach_angle').val(),
+				'Engine_location' : $('#Engine_location').val(),
+				'Drive_type' : $('#Drive_type').val(),
+				'Drive_form' : $('#Drive_form').val(),
+				'Vehicle_body_type2' : $('#Vehicle_body_type2').val(),
+				'L' : $('#L').val(),
+				'W' : $('#W').val(),
+				'H' : $('#H').val(),
+				'Wheelbase' : $('#Wheelbase').val(),
+				'Front_gauge' : $('#Front_gauge').val(),
+				'Rear_track' : $('#Rear_track').val(),
+				'Curb_weight' : $('#Curb_weight').val(),
+				'Maximum_load' : $('#Maximum_load').val(),
+				'Fuel_tank_capacity' : $('#Fuel_tank_capacity').val(),
+				'Compartment_volume' : $('#Compartment_volume').val(),
+				'Vehicle_roof_type' : $('#Vehicle_roof_type').val(),
+				'Vehicle_hood_type' : $('#Vehicle_hood_type').val(),
+				'The_door_number' : $('#The_door_number').val(),
+				'Seating' : $('#Seating').val(),
+				'Front_tire_type' : $('#Front_tire_type').val(),
+				'After_tire_type' : $('#After_tire_type').val(),
+				'Front_wheel_hub_type' : $('#Front_wheel_hub_type').val(),
+				'After_wheel_hub_type' : $('#After_wheel_hub_type').val(),
+				'Wheel_hub_material' : $('#Wheel_hub_material').val(),
+				'Spare_tire_type' : $('#Spare_tire_type').val(),
+				'Power_sunroof' : $('#Power_sunroof').val(),
+				'Panoramic_sunroof' : $('#Panoramic_sunroof').val(),
+				'Xenon_headlamps' : $('#Xenon_headlamps').val(),
+				'Front_fog_lamps' : $('#Front_fog_lamps').val(),
+				'Rear_wiper' : $('#Rear_wiper').val(),
+				'Air_conditioner' : $('#Air_conditioner').val(),
+				'Automatic_air_conditioner' : $('#Automatic_air_conditioner').val(),
+				'Transmission_brand' : $('#Transmission_brand').val(),
+				'Wave_box_type' : $('#Wave_box_type').val(),
+				'Recommended_use_of_oil' : $('#Recommended_use_of_oil').val(),
+				'The_original_installation_amount' : $('#The_original_installation_amount').val(),
+				'Recommended_gravity_change' : $('#Recommended_gravity_change').val(),
+				'Machine_cycle_cleaning' : $('#Machine_cycle_cleaning').val(),
+				'car_icon' : $('#car_icon').val(),
+				'car_img' : $('#car_img').val()
+			},
+			dataType:"json",
+			cache: false,
+			crossDomain: true == !(document.all),
+			success:function(data){
+				if(data.msg == "修改成功"){
+					alert(data.msg);
+					window.location.href = "product-brand.html?pageind="+page_index+"&arrcity="+arrcityurl+"&s3="+s3url+"&s4="+s4url+"&s1="+s1url;
+				}else{
+					alert(data.msg);
+				}
+				
+			}
+		})
+	}
+}
+
+
+//取消
+function layer_close(){
+	window.location.href="javascript:history.back()";
+}
+
+$(".revise span").click(function(){
+	window.location.href="javascript:history.back()";
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

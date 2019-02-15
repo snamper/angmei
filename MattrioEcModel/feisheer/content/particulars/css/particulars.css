@@ -1,0 +1,109 @@
+html,body{
+	height: 100%;
+}
+.wrap{
+	background: #eee;
+	min-height: 100%;
+	overflow: hidden;
+}
+ul{
+	border-bottom: 1px solid #e7e7e7;
+	background: #fff;
+}
+.title{
+	background: #337AB7;;
+	color: #fff;
+	text-align: center;
+	padding: 13px 8px;
+	font-size: 18px;
+}
+.content{
+	width: 95%;
+	margin: 10px auto;
+}
+.list-two{
+    border-bottom: 1px solid #e7e7e7;
+    margin-left: 15px;
+    padding-right: 15px;
+    box-sizing: border-box;  
+}
+.list-two:last-child{
+    border-bottom: 0px;
+}
+.list-two span{
+	/*min-height: 40px;*/
+	display:flex;
+	justify-content:space-around;
+	flex-direction:column;
+	min-height: 40px;
+	color: #5f646e;
+}
+.list-two img{
+	float: right;
+	width: 50px;
+	margin: 5px 0;
+}
+.list-two .span1{
+	float: left;
+}
+.list-two .span2{
+	float: right;
+}
+.back_btn {
+    border-bottom: 2px solid #fff;
+    border-right: 2px solid #fff;
+    content: "";
+    height: 12px;
+    left: 14px;
+    position: absolute;
+    top: 19px;
+    -ms-transform: rotate(135deg);
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+    width: 12px;
+}
+.meng{
+	background: rgba(0,0,0,0.8);
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: none;
+	color: #fff;
+}
+.meng p{
+	margin: 0 0 5px 15px;
+	font-size: 18px;
+}
+.imgwrap{
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
+}
+.img{
+	padding: 5px;
+	background: #F0F0F0;
+	border-radius: 10px;
+}
+.img .image{
+	
+}
+.none{
+	position: absolute;
+	width: 30px;
+    height: 30px;
+    background: url(../../image/sprite.png) 2px 1px no-repeat;
+    cursor: pointer;
+    bottom: 3px;
+    right: 3px;
+    z-index: 1000;
+}
+.load{
+	width: 30px;
+	height: 30px;
+}
+.width{
+	width: 80%;
+}

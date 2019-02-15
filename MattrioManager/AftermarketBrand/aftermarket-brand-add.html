@@ -1,0 +1,460 @@
+﻿<!DOCTYPE HTML>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="renderer" content="webkit|ie-comp|ie-stand">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+		<meta http-equiv="Cache-Control" content="no-siteapp" />
+		<link rel="Bookmark" href="/favicon.ico">
+		<link rel="Shortcut Icon" href="/favicon.ico" />
+		<!--[if lt IE 9]>
+<script type="text/javascript" src="lib/html5shiv.js"></script>
+<script type="text/javascript" src="lib/respond.min.js"></script>
+<![endif]-->
+		<link rel="stylesheet" type="text/css" href="../static/h-ui/css/H-ui.min.css" />
+		<link rel="stylesheet" type="text/css" href="../static/h-ui.admin/css/H-ui.admin.css" />
+		<link rel="stylesheet" type="text/css" href="../lib/Hui-iconfont/1.0.8/iconfont.css" />
+		<link rel="stylesheet" type="text/css" href="../static/h-ui.admin/skin/default/skin.css" id="skin" />
+		<link rel="stylesheet" type="text/css" href="../static/h-ui.admin/css/style.css" />
+		<link rel="stylesheet" type="text/css" href="../css/index.css">
+		<!--[if IE 6]>
+<script type="text/javascript" src="lib/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script>DD_belatedPNG.fix('*');</script>
+<![endif]-->
+		<title>售后品牌管理</title>
+	</head>
+	<style type="text/css">
+		ul {
+			list-style-type: none;
+		}
+		
+		li {
+			display: inline-block;
+		}
+		
+		li {
+			margin: 10px 0;
+		}
+		
+		input.labelauty+label {
+			font: 12px "Microsoft Yahei";
+		}
+	</style>
+
+	<body>
+		<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 售后品牌管理 <span class="c-gray en">&gt;</span> 售后品牌关联
+			<a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新"><i class="Hui-iconfont">&#xe68f;</i></a>
+		</nav>
+		<div style="padding: 50px;">
+			<table class="table table-border table-bordered table-bg">
+				<thead>
+					<tr>
+						<th scope="col" colspan="7">车型选择</th>
+					</tr>
+					<tr class="text-c">
+						<th width="40">主机厂</th>
+						<th width="40">车型</th>
+						<th width="40">发动机</th>
+						<th width="40">排量</th>
+						<th width="40">进气形式</th>
+						<th width="40">年款</th>
+						<th width="40">操作</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td style="text-align: center;">
+							<div id="box" class="text-c">
+								<input type="text" name="arrcity" id="arrcity" placeholder="可搜索：主机厂" />
+								<div id='suggest' style="margin-top: 173px;margin-left: 50px;">
+								</div>
+							</div>
+						</td>
+						<td style="text-align: center;">
+							<div id="box2" onclick="getVehicleName();" style="text-align: center;">
+								<select style="width: 166px;" id="VehicleName" class="selects">
+									<option>不选择</option>
+								</select>
+							</div>
+						</td>
+						<td style="text-align: center;">
+							<div id="box3" onclick="getCarField('Engine_Code');" style="text-align: center;">
+								<select style="width: 166px;" id="Engine_Code" class="selects">
+									<option>不选择</option>
+								</select>
+							</div>
+						</td>
+						<td style="text-align: center;">
+							<div id="box4" onclick="getCarField('Capacity');" style="text-align: center;">
+								<select style="width: 166px;" id="Capacity" class="selects">
+									<option>不选择</option>
+								</select>
+							</div>
+						</td>
+						<td style="text-align: center;">
+							<div id="box5" onclick="getCarField('Air_intake_form');" style="text-align: center;">
+								<select style="width: 166px;" id="Air_intake_form" class="selects">
+									<option>不选择</option>
+								</select>
+							</div>
+						</td>
+						<td style="text-align: center;">
+							<div id="box6" onclick="getCarField('Vehicle_of_year');" style="text-align: center;">
+								<select style="width: 166px;" id="Vehicle_of_year" class="selects">
+									<option>不选择</option>
+								</select>
+							</div>
+						</td>
+						<td>
+							<button class="btn btn-primary radius" onclick="getAllParmers()"><i class="Hui-iconfont">&#xe604;</i> 添加</button>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<table class="table table-border table-bordered table-bg">
+				<tr>
+					<th scope="col" colspan="6">车型过滤列表</th>
+					<th scope="col" colspan="1" style="text-align: center;"> <button class="btn btn-success radius" id="query_product"><i class="Hui-iconfont">&#xe665;</i> 查询车型售后</button>
+					</th>
+				</tr>
+				<tr class="text-c">
+					<th width="40">主机厂</th>
+					<th width="40">车型</th>
+					<th width="40">发动机</th>
+					<th width="40">进气形式</th>
+					<th width="40">排量</th>
+					<th width="40">年款</th>
+					<th width="40">操作</th>
+				</tr>
+				<tbody id="car_table">
+				</tbody>
+			</table>
+		</div>
+		<div style="width: auto;border: dashed #1F1F1F;padding: 20px;margin-left: 50px;margin-right: 50px;">
+			<h5>选择分类</h5>
+			<div id="categorys" style="padding:10px; font-size:14px; ">
+			</div>
+			<hr />
+
+			<h5>售后品牌</h5>
+
+			<div id="brands" style="padding:10px; font-size:14px; ">
+			</div>
+			<hr />
+			<h5>选择的产品编号  <button class="btn btn-success radius" onclick="clearProducts()">清空</button>
+				<input type="text" value="" class="input-text" style="width: 150px;" placeholder="产品编号" id="addaddProductsID"/>
+				<select id="selectBrands">
+				</select>
+				<button class="btn btn-success radius" onclick="addProducts()">添加</button>
+			</h5>
+			<div id="products" style="padding:10px; font-size:14px; ">
+			</div>
+			<center>
+				<button class="btn btn-success radius" onclick="getProductids()"><i class="Hui-iconfont">&#xe665;</i>查询售后品牌</button>
+				<button class="btn btn-warning radius" onclick="matchingProduct()"><i class="Hui-iconfont">&#xe636;</i>匹配售后品牌</button>
+			</center>
+		</div>
+
+	</body>
+	<!--_footer 作为公共模版分离出去-->
+	<script type="text/javascript" src="../lib/jquery/1.9.1/jquery.min.js"></script>
+	<!--/_footer 作为公共模版分离出去-->
+	<script type="text/javascript" src="../js/aircity.js"></script>
+	<script type="text/javascript" src="../js/j.suggest.js"></script>
+	<script type="text/javascript" src="layer/layer.js"></script>
+	<script type="text/javascript">
+		var network = localStorage.getItem("network");
+		var name;
+		$(function() {
+			name= localStorage.getItem('user');
+			refreshProductList();
+		});
+
+		function refreshProductList() {
+			var liststr = localStorage.getItem('SelectProducts');
+			console.log(list)
+			if(liststr != null && liststr.length > 0) {
+				$('#products').html('');
+				liststr = liststr.substring(0, liststr.length - 1);
+				var list = liststr.split(',');
+				$.each(list, function(key, value) {
+					if($('#products').html().indexOf(value) == -1) {
+						$('#products').append("<input name='r' type='checkbox' value='" + value + "' /> <label>" + value.split('+')[0] + "</label> ");
+					}
+				});
+			}
+		}
+		var list = new Array();
+
+		function getAllParmers() {
+			var parmers = '';
+			parmers += $("#arrcity").val();
+			parmers += '&' + $("#VehicleName").val();
+			parmers += '&' + $("#Engine_Code").val();
+			parmers += '&' + $("#Capacity").val();
+			parmers += '&' + $("#Air_intake_form").val();
+			parmers += '&' + $("#Vehicle_of_year").val();
+			var find = 0;
+			if($("#arrcity").val() == '') {
+				layer.msg('主机厂不能为空');
+				find = 1;
+			}
+			for(var i = 0; i < list.length; i++) {
+				if(list[i] == parmers) {
+					layer.msg('不能选择重复的过滤条件');
+					find = 1;
+				}
+			}
+			if(find == 0) {
+				list.push(parmers);
+				$('#car_table').append("<tr class=\"text-c\" id='tr" + list.length + "'><td>" + $("#arrcity").val() + "</td><td>" + $("#VehicleName").val() + "</td><td>" + $("#Engine_Code").val() + "</td><td>" + $("#Capacity").val() + "</td><td>" + $("#Air_intake_form").val() + "</td><td>" + $("#Vehicle_of_year").val() + "</td><td><button class=\"btn btn-success\" onclick=\"deletePar(this)\">删除</button></td></tr>");
+				$('#box2').html('<select style=\'width: 166px;\' id=\'VehicleName\' class="selects"> <option>不选择</option> </select>');
+				$('#box3').html('<select style=\'width: 166px;\' id=\'Engine_Code\' class="selects"> <option>不选择</option> </select>');
+				$('#box4').html('<select style=\'width: 166px;\' id=\'Capacity\' class="selects"> <option>不选择</option> </select>');
+				$('#box5').html('<select style=\'width: 166px;\' id=\'Air_intake_form\' class="selects"> <option>不选择</option> </select>');
+				$('#box6').html('<select style=\'width: 166px;\' id=\'Vehicle_of_year\' class="selects"> <option>不选择</option> </select>');
+			}
+
+		}
+
+		function deletePar(context) {
+			$(context).closest("tr").remove();
+			list.splice($(context).index(), 1);
+		}
+		//获取主机厂
+		$.ajax({
+			type: "post",
+			url: network + "/MattrioManager/CarManager/getManufacture",
+			dataType: "json",
+			cache: false,
+			crossDomain: true == !(document.all),
+			success: function(data) {
+				//					console.log(data);
+				commoncitys.splice(0, commoncitys.length);
+				citys.splice(0, citys.length);
+				for(var i = 0; i < data.all.length; i++) {
+					commoncitys[i] = data.all[i];
+				}
+				for(var i = 0; i < data.all.length; i++) {
+					citys[i] = data.all[i];
+				}
+				$("#arrcity").suggest(citys, {
+					hot_list: commoncitys,
+					dataContainer: '#arrcity_3word',
+					attachObject: '#suggest'
+				});
+			},
+			error: function(data) {
+				// console.log(data)
+			}
+		})
+		var Manufacture;
+
+		function getVehicleName() {
+			var change = 1;
+			if($('#VehicleName option').size() == 1) {
+				$('#VehicleName').html("<option>不选择</option>");
+				if($("#arrcity").val() != '') {
+					change = 0;
+				}
+			} else if(Manufacture != $("#arrcity").val()) {
+				$('#box2').html('<select style=\'width: 166px;\' id=\'VehicleName\' class="selects"> <option>不选择</option> </select>');
+				change = 0;
+			}
+			if(change == 0) {
+				$.ajax({
+					type: "post",
+					url: network + "/MattrioManager/CarManager/getVehicleName",
+					data: {
+						"Manufacture": $("#arrcity").val()
+					},
+					dataType: "json",
+					cache: false,
+					crossDomain: true == !(document.all),
+					success: function(data) {
+						Manufacture = $("#arrcity").val();
+						$('#VehicleName').height($('#VehicleName').height() + 1);
+						$.each(data, function(key, value) {
+							$('#VehicleName').append("<option>" + value.Vehicle_Name_CN + "</option>");
+						});
+					},
+					error: function(data) {
+						//console.log(data);
+					}
+				})
+			}
+		}
+
+		function getCarField(carfield) {
+			var parmers = '';
+			parmers += $("#arrcity").val();
+			parmers += '&' + $("#VehicleName").val();
+			parmers += '&' + $("#Engine_Code").val();
+			parmers += '&' + $("#Capacity").val();
+			parmers += '&' + $("#Air_intake_form").val();
+			parmers += '&' + $("#Vehicle_of_year").val();
+			console.log($('#' + carfield).val());
+			if($('#' + carfield).val() == '不选择') {
+				$('#' + carfield).height($('#' + carfield).height() - 1);
+				$('#' + carfield).html('<option>不选择</option>');
+				$.ajax({
+					type: "post",
+					url: network + "/MattrioManager/CarManager/getCarField",
+					data: {
+						"parmers": parmers,
+						"parname": carfield
+					},
+					dataType: "json",
+					cache: false,
+					crossDomain: true == !(document.all),
+					success: function(data) {
+						//							console.log(data);
+						$('#' + carfield).height($('#' + carfield).height() + 1);
+						$.each(data.list, function(key, value) {
+							$('#' + carfield).append("<option>" + value.FieldValue + "</option>");
+						});
+					},
+				})
+			}
+		}
+
+		$('#query_product').on('click', function() {
+			if(list.length > 0) {
+				$.ajax({
+					type: "post",
+					url: network + "/MattrioManager/AftermarketBrandController/getCars",
+					data: {
+						"parmers": list.toString()
+					},
+					dataType: "json",
+					cache: false,
+					crossDomain: true == !(document.all),
+					success: function(data) {
+						localStorage.setItem(list.toString(), data.list);
+						layer.open({
+							type: 2,
+							title: '售后品牌列表',
+							maxmin: true,
+							shadeClose: true, //点击遮罩关闭层
+							area: ['900px', '600px'],
+							content: 'product-list.html?parmers=' + list.toString()
+						});
+					},
+				})
+			} else {
+				layer.msg('请选择过滤条件');
+			}
+		});
+		//售后品牌
+		$(function() {
+			$.ajax({
+				type: "post",
+				url: network + "/MattrioManager/AftermarketBrandController/getProductsCategory",
+				dataType: "json",
+				cache: false,
+				crossDomain: true == !(document.all),
+				success: function(data) {
+					$.each(data.list, function(key, value) {
+						$('#categorys').append("<input name='category'  type='radio' value='" + value.category_id + "' onclick=\"getProductBrands(\'" + value.category_id + "\')\" /> <label id='" + value.category_id + "'>" + value.category_name + "</label> ");
+					});
+				},
+			})
+		});
+
+		function getProductBrands(category_id) {
+			$.ajax({
+				type: "post",
+				url: network + "/MattrioManager/AftermarketBrandController/getProductsBrand",
+				dataType: "json",
+				data: {
+					"category_id": category_id
+				},
+				cache: false,
+				crossDomain: true == !(document.all),
+				success: function(data) {
+					$('#brands').html("");
+					$('#selectBrands').html("");
+					$.each(data.list, function(key, value) {
+						$('#brands').append("<input name='r' type='checkbox' value='" + value.brand_category_id + "' /> <label>" + value.brand_name + "</label> ");
+						$('#selectBrands').append('<option value="' + value.brand_category_id + '">' + value.brand_name + '</option>');
+					});
+				},
+			})
+		}
+
+		function getProductids() {
+			var checkedValues = new Array();
+			$('#brands :checkbox').each(function() {
+				if($(this).is(':checked')) {
+					checkedValues.push($(this).val());
+				}
+			});
+			layer.open({
+				type: 2,
+				title: '售后品牌产品列表',
+				maxmin: true,
+				shadeClose: true, //点击遮罩关闭层
+				area: ['900px', '600px'],
+				content: 'product-brand-list.html?parmers=' + checkedValues.toString(),
+				cancel: function(index, layero) {
+					if(confirm('确定要关闭么')) { //只有当点击confirm框的确定时，该层才会关闭
+						layer.close(index);
+						refreshProductList();
+					}
+					return false;
+				}
+			});
+		}
+
+		function clearProducts() {
+			localStorage.setItem('SelectProducts', '');
+			$('#products').html('');
+		}
+
+		function matchingProduct() {
+			var mikeys = localStorage.getItem(list.toString());
+			var checkedValues = new Array();
+			$('#products :checkbox').each(function() {
+				if($(this).is(':checked')) {
+					checkedValues.push($(this).val());
+				}
+			});
+			$.ajax({
+				type: "post",
+				url: network + "/MattrioManager/AftermarketBrandController/matchingProduct",
+				dataType: "json",
+				data: {
+					"parmers": list.toString(),
+					"username": name,
+					"products": checkedValues.toString()
+				},
+				cache: false,
+				crossDomain: true == !(document.all),
+				success: function(data) {
+					layer.msg(data.msg);
+				},
+				error: function(data) {
+					layer.msg('车型和产品不能为空');
+				}
+			})
+		}
+
+		function addProducts() {
+			var product = $('#addaddProductsID').val() + '+' + $('#selectBrands').val() + '+' + $('#selectBrands').find("option:selected").text() + $('#' + $('input[name="category"]:checked').val()).text();
+			var list = localStorage.getItem('SelectProducts');
+			if(list == null) {
+				list = "";
+				list += product + ',';
+				localStorage.setItem('SelectProducts', list);
+			} else {
+				list += product + ',';
+				localStorage.setItem('SelectProducts', list);
+			}
+			layer.msg('添加成功');
+			refreshProductList();
+		}
+	</script>
+
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<!--[if lt IE 9]>
+<script type="text/javascript" src="lib/html5shiv.js"></script>
+<script type="text/javascript" src="lib/respond.min.js"></script>
+<![endif]-->
+<link rel="stylesheet" type="text/css" href="static/h-ui/css/H-ui.min.css" />
+<link rel="stylesheet" type="text/css" href="static/h-ui.admin/css/H-ui.admin.css" />
+<link rel="stylesheet" type="text/css" href="lib/Hui-iconfont/1.0.8/iconfont.css" />
+<link rel="stylesheet" type="text/css" href="static/h-ui.admin/skin/default/skin.css" id="skin" />
+<link rel="stylesheet" type="text/css" href="static/h-ui.admin/css/style.css" />
+<!--[if IE 6]>
+<script type="text/javascript" src="lib/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script>DD_belatedPNG.fix('*');</script>
+<![endif]-->
+<title>添加管理员 - 管理员管理 - H-ui.admin v2.4</title>
+<meta name="keywords" content="51MACC网站后台后台管理系统">
+<meta name="description" content="51MACC网站后台后台管理系统">
+<style>
+	.row{
+		margin:10px 0px;
+	}
+	.contall p{
+		width:200px;
+		float: left;
+	}
+</style>
+</head>
+<body>
+<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 用户管理 <span class="c-gray en">&gt;</span> 用户添加 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+<article class="page-container">
+	<div class="row cl">
+		<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>管理员：</label>
+		<div class="formControls col-xs-8 col-sm-9">
+			<input type="text" class="input-text" value="" placeholder="用户名" id="adminName" name="adminName">
+		</div>
+	</div>
+	<div class="row cl">
+		<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>初始密码：</label>
+		<div class="formControls col-xs-8 col-sm-9">
+			<input type="password" class="input-text" autocomplete="off" value="" placeholder="密码" id="password" name="password">
+		</div>
+	</div>
+	<div class="row cl">
+		<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>确认密码：</label>
+		<div class="formControls col-xs-8 col-sm-9">
+			<input type="password" class="input-text" autocomplete="off"  placeholder="确认密码" id="password2" name="password2">
+		</div>
+	</div>
+
+	
+	<div class="row cl">
+		<label class="form-label col-xs-4 col-sm-3">权限：</label>
+		<div class="formControls col-xs-8 col-sm-9">
+			<div id="checkbox">
+		    	<p style="background: #F5FAFE;"><span class="check_span"><input type="checkbox" id="checkAll" /></span> 全选</p>
+		    	<div class="contall clearfix">
+			        <p><span class="check_span"><input type="checkbox" name="gay" /></span>mikey</p> 
+			        <p><span class="check_span"><input type="checkbox" name="gay" /></span>oe号码</p> 
+			        <p><span class="check_span"><input type="checkbox" name="gay" /></span> 选项3</p> 
+			        <p><span class="check_span"><input type="checkbox" name="gay" /></span> 选项4</p> 
+			        <p><span class="check_span"><input type="checkbox" name="gay" /></span> 选项5</p> 
+		        </div>    
+		    </div>
+		</div>
+	</div>
+	
+
+	<div class="row cl">
+		<div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-3">
+			<button type="submit" class="btn btn-success radius" id="admin-role-save" name="admin-role-save"><i class="icon-ok"></i> 确定</button>
+		</div>
+	</div>
+
+</article>
+
+<!--_footer 作为公共模版分离出去--> 
+<script type="text/javascript" src="lib/jquery/1.9.1/jquery.min.js"></script> 
+<script type="text/javascript" src="lib/layer/2.4/layer.js"></script>
+<script type="text/javascript" src="static/h-ui/js/H-ui.min.js"></script> 
+<script type="text/javascript" src="static/h-ui.admin/js/H-ui.admin.js"></script>
+<!--/_footer 作为公共模版分离出去-->
+
+<!--请在下方写此页面业务相关的脚本-->
+<script src="js/checkbox.min.js"></script>
+<script type="text/javascript">
+
+
+
+
+$(function(){
+	$("#checkbox").selectCheck();
+});
+
+
+$("#admin-role-save").click(function(){
+	var id_array=new Array();  
+	$('input[name="gay"]:checked').each(function(){
+	    id_array.push($(this).parent("span").parent("p").html().split("</span>")[1]);//向数组中添加元素  
+	});
+	console.log(id_array.join(","));
+	
+});
+
+
+
+
+</script> 
+<!--/请在上方写此页面业务相关的脚本-->
+</body>
+</html>

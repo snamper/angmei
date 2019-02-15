@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<style>
+		[v-cloak]{
+		  display: none;
+		}
+	</style>
+	<body>
+		<div id="app">
+			<span :title='message' v-if='show'>{{message}}</span>
+			<button @click='reverse'>逆转</button>
+			<div v-for='(item, index)  in todos'>
+              {{index}}-{{item.text}}
+			</div>
+			<div v-for='(item, key)  in object'>
+              {{key}}-{{item}}
+			</div>
+			<p v-cloak>{{inpvalue}}</p>
+			<p v-once>{{inpvalue}}</p>
+			<input type="text" name="" id="" value="" v-model='inpvalue'/>
+			<todo-item v-for='(item,index) in groceryList' :todo="item" :pro="index"  :key='item.id'></todo-item>
+			<input type="checkbox"  id="check1" value="vcheck1" v-model='value'/><label for="check1">check1</label>
+			<input type="checkbox"  id="check2" value="vcheck2" v-model='value'/><label for="check2">check2</label>
+			<input type="checkbox"  id="check3" value="vcheck3" v-model='value' /><label for="check3">check3</label>
+			<input type="radio" name="one" id="one" value="one" /><label for="one">one</label>
+			<input type="radio" name="one" id="two" value="two" /><label for="two">two</label>
+			<p>{{value}}</p>
+			<a :href="url">链接</a>		
+			<div v-backcolor="'red'">哈哈</div>
+			<author></author>
+			<p v-for="item in cont">{{item}}</p>
+			<iframe src="demo.html" width="" height=""></iframe>
+		</div>
+		<button onclick="cont()">
+			点击
+		</button>
+    <p class="p">60</p>
+	</body>
+	<!-- 开发环境版本，包含了用帮助的命令行警告 -->
+	<script src="js/jquery.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script type="text/javascript">
+        let num=60;
+        var timer = setInterval(fun,1000)
+        function fun(){
+            if(num==1){
+                clearInterval(timer)
+                $('.p').text('60')
+            }else{
+                num--
+                $('.p').text(num)
+            }
+        }
+        var todo=Vue.extend({
+            props: ['todo','pro'],
+            data: function () {
+                return {
+                    count: 0
+                }
+            },
+            template:'<p @click="click(todo)">{{count}}{{todo.text}}{{pro}}</p>',
+            methods:{
+                click(value){
+                    alert(value.text)
+                }
+            }
+        })
+	Vue.component('todo-item',todo)
+	Vue.directive('backcolor',{
+		bind:function(el,binding){
+			console.log('被绑定')
+			console.log(binding.value.color)
+            el.style.backgroundColor=binding.value
+		},
+		inserted:function(el,binding){
+			console.log('绑定到节点')
+			el.style.backgroundColor=binding.value
+		},
+		update:function(){
+			console.log('组建更新')
+		},
+		componentUpdate:function(){
+			console.log('组建更新完成')
+		},
+		unbind:function(){
+			console.log('解绑')
+		}
+	})
+	var author=Vue.extend({
+		template:"<p>作者是{{author}}</p>",
+		data:function(){
+			return{
+				author:'L'
+			}
+		}
+	})
+	new author().$mount('author')
+	function cont(){
+		console.log(app.cont[1])
+//		app.cont[1]='3'
+		Vue.set(app,'cont',['2','3','4'])
+//		Vue.set(app.cont,1,3)
+	}
+//	var todos= [
+//			    {text: '学习 JavaScript' },
+//			    { text: '学习 Vue' },
+//			    { text: '整个牛项目' }
+//			 ]
+	var app=new Vue({
+		el:'#app',
+		data:{
+			cont:['1','2','3'],
+			red:{
+				color:'red'
+			},
+			message:'页面加载于'+new Date(1530585359737).toLocaleString(),
+			show:true,
+			value:[],
+			todos: [
+			    {text: '学习 JavaScript' },
+			    { text: '学习 Vue' },
+			    { text: '整个牛项目' }
+			 ],
+			 object: {
+			      name: '菜鸟教程',
+			      url: 'http://www.runoob.com',
+			      slogan: '学的不仅是技术，更是梦想！'
+			    },
+			inpvalue:'Hello Vue！',
+			groceryList: [
+		      { id: 0, text: '蔬菜' },
+		      { id: 1, text: '奶酪' },
+		      { id: 2, text: '随便其它什么人吃的东西' }
+		    ],
+		    url:'https://www.baidu.com'
+		},
+		methods:{
+			reverse:function(){
+				this.message=this.message.split('').reverse().join('')
+				this.red.color='blue'
+			}
+		},
+	})
+
+	</script>
+</html>

@@ -1,0 +1,238 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<!--[if lt IE 9]>
+<script type="text/javascript" src="static/html5shiv.js"></script>
+<script type="text/javascript" src="static/respond.min.js"></script>
+<![endif]-->
+<link rel="stylesheet" type="text/css" href="../../static/h-ui/css/H-ui.min.css" />
+<link rel="stylesheet" type="text/css" href="../../static/h-ui.admin/css/H-ui.admin.css" />
+<link rel="stylesheet" type="text/css" href="../../lib/Hui-iconfont/1.0.8/iconfont.css" />
+<link rel="stylesheet" type="text/css" href="../../static/h-ui.admin/skin/default/skin.css" id="skin" />
+<link rel="stylesheet" type="text/css" href="../../static/h-ui.admin/css/style.css" />
+<link rel="stylesheet" type="text/css" href="../../css/zxf_page.css">
+<link rel="stylesheet" type="text/css" href="./css/modellibrary_brand.css">
+<link href="css/hsCheckData.css" rel="stylesheet" />
+<style>
+	#demo_id,#demo_mikey{
+		margin:0 auto;
+		width:90%;
+	}
+</style>
+<!--[if IE 6]>
+<script type="text/javascript" src="static/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script>DD_belatedPNG.fix('*');</script>
+<![endif]-->
+<title>万能车型库</title>
+
+</head>
+<body>
+<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 添加车型库 <span class="c-gray en">&gt;</span> 万能车型库 <a class="btn btn-danger radius r" style="line-height:1.6em;margin-top:3px;margin-left: 5px;" href="javascript:history.back();" title="返回" ><i class="Hui-iconfont">&#xe66b;</i></a><a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+
+<div class="page-container">
+	<!-- <div class="cl pd-5 bg-1 bk-gray mt-20"> <span class="l"><a class="btn btn-primary radius" onclick="picture_add()" href="javascript:;"><i class="Hui-iconfont">&#xe645;</i> 导入数据</a></span> </span> <span class="r">共有数据：<strong class="alltotal">0</strong> 条</span> </div> -->
+	<!-- <div class="cl pd-5 bg-1 bk-gray mt-20">
+	 		<form  enctype="multipart/form-data l" id="pageForm">
+	 			Excel上传:
+	 			<input id="file" type="file" size="45" name="file">
+	 		</form>
+	 		<button id="upload_btn" class="btn btn-secondary radius r" onclick="ajaxFileUpload()">上 传</button>
+	 	</div> -->
+	<br>
+
+	<div class="select_id">
+		<div id="demo_id">
+			<div id="idDuoXuan" style="width:100%;overflow: auto;">选择您需要的字段</div>
+			<p class='text-c f-12 c-error'>注：主机厂已默认选择</p>
+			<a href="javascript:;" class="btn btn-danger radius" id="del_id"><i class="Hui-iconfont">&#xe6e2;</i>清空</a>
+			<a href="javascript:;" class="btn btn-primary radius" id="btn_sure"><i class="Hui-iconfont">&#xe600;</i>确定</a>
+		</div>
+		<table class="table table-border table-bordered table-bg">
+			<caption>车型过滤——id</caption>
+			<tr class="text-c">
+				<th>主机厂</th>
+				<!-- <th>车型</th> -->
+				<th class="add_th">操作</th>
+			</tr>
+			<tbody id="id_table">
+				<tr>
+					<td style="text-align: center;">
+						<div id="box" class="text-c">
+							<input type="text" name="arrcity" id="arrcity" placeholder="请输入主机厂" />
+							<div id='suggest' style="margin-top:4px;margin-left: -1px;">
+							</div>
+						</div>
+					</td>
+					<td class="add_td">
+						<a href="javascript:;" class="btn btn-primary radius" id="add"><i class="Hui-iconfont">&#xe600;</i>查找</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div class="mt-20" style="width:100%;overflow: auto;">
+		<table class="table table-border table-bordered table-bg table-sort" style="width:100%;" id="tab_id">
+			<thead>
+				<tr class='text-c'>
+				</tr>
+			</thead>
+			<tbody>
+
+			</tbody>
+		</table>
+	</div>
+	<br>
+	<hr>
+	<br>
+	<div class="select_mikey">
+		<div id="demo_mikey">
+			<div id="mikeyDuoXuan" style="width:100%;overflow: auto;">选择您需要的字段</div>
+			<p class='text-c f-12 c-error'>注：主机厂已默认选择</p>
+			<a href="javascript:;" class="btn btn-danger radius" id="del_mikey"><i class="Hui-iconfont">&#xe6e2;</i>清空</a>
+			<a href="javascript:;" class="btn btn-primary radius" id="btn_mikey"><i class="Hui-iconfont">&#xe600;</i>确定</a>
+		</div>
+		<table class="table table-border table-bordered table-bg">
+			<caption>车型过滤——mikey</caption>
+			<!-- <a href="javascript:;" class="btn btn-danger radius" id="del_car"><i class="Hui-iconfont">&#xe6e2;</i>清空条件</a> -->
+			<thead>
+				<tr class="text-c">
+					<th>主机厂</th>
+					<th class="add_mikey_th">操作</th>
+				</tr>
+			</thead>
+			
+			<tbody id="car_table">
+				<tr>
+					<td>
+						<div id="box1" class="text-c">
+							<input type="text" name="city2" id="city2" placeholder="请输入主机厂"/>
+							<div id='suggest2' class="ac_results"  style="margin-top:4px;margin-left: -1px;">
+							</div>
+						</div>
+					</td>
+					<!-- <td>
+						<div class="select_div1 select_Vehicle_Name_CN">
+							<div>不选择</div>
+							<ul>
+								
+							</ul>
+						</div>
+					</td> -->
+					<td class="add_mikey_td"> 
+						<a href="javascript:;" class="btn btn-primary radius" id="add_mikey"><i class="Hui-iconfont">&#xe600;</i>查找</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<br>
+	<div class='car_mikey'>
+		<table class="table table-border table-bordered table-bg table-sort" style="width:100%;" id="tab_mikey">
+			<thead>
+				<tr class='text-c'>
+
+				</tr>
+			</thead>
+			<tbody>
+				
+			</tbody>
+		</table>
+	</div>
+
+	<a href="javascript:;" class="btn btn-primary radius" id="addCarname"><i class="Hui-iconfont">&#xe600;</i>添加</a>
+
+	<div class="mieky_id">
+		<table class="table table-border table-bordered table-bg table-sort">
+			<thead class='text-c'>
+				<th>id</th>
+				<th>mikey</th>
+				<th>选择</th>
+			</thead>
+			<tbody>
+				
+			</tbody>
+		</table>
+		<a href="javascript:;" class="btn btn-primary radius" id="addid_mikey"><i class="Hui-iconfont">&#xe600;</i>一键添加</a>
+	</div>
+	<div class="warting active" style="height:380px;text-align: center;line-height: 100px;font-size: 20px;">
+			正在加载中。。。。。。
+		</div>
+		<div class="wartno active" style="height:380px;text-align: center;line-height: 100px;font-size: 20px;">
+			没有查询到数据
+		</div>
+	<br>
+<div class="zxf_pagediv"></div>	
+</div>
+<!--_footer 作为公共模版分离出去-->
+<script type="text/javascript" src="../../lib/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="../../lib/layer/2.4/layer.js"></script>
+<script type="text/javascript" src="../../static/h-ui/js/H-ui.min.js"></script>
+<script type="text/javascript" src="../../static/h-ui.admin/js/H-ui.admin.js"></script>
+<!--/_footer 作为公共模版分离出去-->
+
+<!--请在下方写此页面业务相关的脚本-->
+<script type="text/javascript" src="../../js/aircity.js"></script>
+<script type="text/javascript" src="../../js/j.dimensions.js"></script>
+<script type="text/javascript" src="../../js/j.suggest.js"></script>
+<script type="text/javascript" src="../../js/zxf_page.js"></script>
+<script type="text/javascript" src="./js/modellibrary_brand.js"></script>
+<script src="js/cityData.js"></script>
+<script src="js/hsCheckData.js"></script>
+<script>
+	$(function(){
+		$("#arrcity").suggest(commoncitys,{hot_list:commoncitys,dataContainer:'#arrcity_3word', attachObject:'#suggest'});
+		$("#city2").suggest(citys,{hot_list:citys,attachObject:"#suggest2"});
+	});
+	$('#idDuoXuan').hsCheckData({
+        isShowCheckBox: true, //默认为false
+        minCheck: 1,//默认为0，不限最少选择个数
+        maxCheck: 90,//默认为0，不限最多选择个数
+        data: idData
+    });
+    $('#mikeyDuoXuan').hsCheckData({
+        isShowCheckBox: true, //默认为false
+        minCheck: 1,//默认为0，不限最少选择个数
+        maxCheck: 90,//默认为0，不限最多选择个数
+        data: mikeyData
+    });
+    $("#del_id").click(function(){
+    	$("#arrcity").val("");
+        $("#idDuoXuan").html("选择您需要的字段");
+        $("#idDuoXuan").removeAttr("data-id");
+        $(".select_rem").remove();
+        $("#tab_id thead tr").html("");
+        $("#tab_id tbody").html("");
+    })
+     $("#del_mikey").click(function(){
+     	$("#city2").val("");
+        $("#mikeyDuoXuan").html("选择您需要的字段");
+        $("#mikeyDuoXuan").removeAttr("data-id");
+        $("#tab_mikey thead tr").html("");
+        $("#tab_mikey tbody").html("");
+        $(".select_mieky").remove();
+    })
+	
+$(document).on("click",".inp_id",function(){
+	if($('.inp_id').is(':checked')){
+		$("input[name='new_gay']").attr("checked",true);
+	}else{
+		$("input[name='new_gay']").attr("checked",false);
+	}
+})
+$(document).on("click",".inp_mikey",function(){
+	if($('.inp_mikey').is(':checked')){
+		$("input[name='gay']").attr("checked",true);
+	}else{
+		$("input[name='gay']").attr("checked",false);
+	}
+})
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,409 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title id="pageTitle">MACC-保有量、上排量查询系统</title>
+    <meta name="renderer" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0 user-scalable=no"/>
+    <meta id="description" name="Description" content="查询"/>
+    <meta id="key" name="Keywords" content="查询"/>
+    <link type="text/css" rel="stylesheet" href="./css/common.css">
+    <link type="text/css" rel="stylesheet" href="./css/loading.css">
+    <script  src="./js/jquery.min.js"></script>
+    <style>
+      .sort_box{
+        overflow: hidden;
+        font-size: 16px;
+        background: #fafafa;
+        padding-top:15px;
+      }
+      .sort_list{
+          position: relative;
+		  line-height: 30px;
+		  padding: 10px;
+		  border-bottom: 1px solid #ddd;
+      }
+      .sort_list .num_name{
+          color: #000;
+      }
+      .num_name:hover{
+          cursor: pointer;
+      }
+      .sort_letter{
+      	height: 30px;
+	    line-height: 30px;
+	    padding-left: 20px;
+	    color: #787878;
+	    font-size: 14px;
+	    border-bottom: 1px solid #ddd;
+      }
+      .initials{
+          position: fixed;
+          top: 47px;
+          right: 0px;
+          height: 100%;
+          width: 15px;
+          padding-right: 10px;
+          text-align: center;
+          font-size: 12px;
+          z-index: 99;
+          background: rgba(145,145,145,0);
+      }
+      
+    </style>
+</head>
+<body class="colff">
+ 
+<div class="proli" style="border:none;">
+<!-- logo -->
+<div class="header">
+    <img src="./image/1.png" width="100%" class="headerimg">
+    <div id="tab" class="clearfix"> 
+    	<div class="install click">保有量查询</div>
+    	<div class="upcard">上牌量查询</div>	
+    </div>
+</div>
+    <div class="runpro runprccx" style="display:block;">
+        <!--车型查询-->
+        
+        <ul class="car">
+          <li class="carn">车型</li>
+          <li class="carm carm1">选择车型 ></li>
+        </ul>
+
+        <ul class="year">
+          <li class="yearn">年份</li>
+          <li class="yearm yearm1">选择年份 ></li>
+        </ul>
+
+        <ul class="province">
+          <li class="provincen">省份</li>
+          <li class="provincem provincem1">选择省份 ></li>
+        </ul>
+
+         <ul class="city city1">
+          <li class="cityn">地级市</li>
+          <li class="citym citym1">选择地级市 ></li>
+        </ul>
+
+        <ul class="button button1">
+
+          <button>查 询</button>
+        </ul>
+    </div>
+    <div class="yearheader" style="display: none;">
+        <div class="yearnav">
+          <div class="yeartmk">
+            <h3 class="">选择年份<span><img src="./image/fh.png"></span></h3>
+          </div>
+        </div>
+        <!-- 遍历年份 -->
+        <div>
+          <ul>
+          </ul>
+        </div>
+    </div>
+
+    <div class="provinceheader provinceheader1" style="display: none;">
+       <div class="yearnav">
+          <div class="yeartmk">
+            <h3 class="">选择省份<span><img src="./image/fh.png"></span></h3>
+          </div>
+        </div>
+        <!-- 遍历省份 -->
+        <div class="provincecar">
+            <ul>
+              <li><span class="provincecspan">甘肃省</span></li>
+              <li><span class="provincecspan">安徽省</span></li>
+              <li><span class="provincecspan">北京市</span></li>
+              <li><span class="provincecspan">福建省</span></li>
+              <li><span class="provincecspan">广东省</span></li>
+              <li><span class="provincecspan">广西壮族自治区</span></li>
+              <li><span class="provincecspan">贵州省</span></li>
+              <li><span class="provincecspan">海南省</span></li>
+              <li><span class="provincecspan">河北省</span></li>
+              <li><span class="provincecspan">河南省</span></li>
+              <li><span class="provincecspan">黑龙江省</span></li>
+              <li><span class="provincecspan">湖北省</span></li>
+              <li><span class="provincecspan">湖南省</span></li>
+              <li><span class="provincecspan">吉林省</span></li>
+              <li><span class="provincecspan">江苏省</span></li>
+              <li><span class="provincecspan">江西省</span></li>
+              <li><span class="provincecspan">辽宁省</span></li>
+              <li><span class="provincecspan">内蒙古自治区</span></li>
+              <li><span class="provincecspan">宁夏回族自治区</span></li>
+              <li><span class="provincecspan">青海省</span></li>
+              <li><span class="provincecspan">山东省</span></li>
+              <li><span class="provincecspan">山西省</span></li>
+              <li><span class="provincecspan">陕西省</span></li>
+              <li><span class="provincecspan">上海市</span></li>
+              <li><span class="provincecspan">四川省</span></li>
+              <li><span class="provincecspan">天津市</span></li>
+              <li><span class="provincecspan">西藏自治区</span></li>
+              <li><span class="provincecspan">新疆维吾尔自治区</span></li>
+              <li><span class="provincecspan">云南省</span></li>
+              <li><span class="provincecspan">浙江省</span></li>
+              <li><span class="provincecspan">重庆市</span></li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="cityheader" style="display: none;">
+      <div class="yearnav">
+          <div class="yeartmk">
+            <h3 class="">选择地级市<span><img src="./image/fh.png"></span></h3>
+          </div>
+        </div>
+        <!-- 地级市-->
+        <div>
+          <ul>
+          </ul>
+        </div>
+    </div>
+    
+    
+       
+    
+    
+    
+      
+    
+    
+    
+
+<!--上排量-->
+	<div class="runpro runprccx upcardwrap">
+        <!--车型查询-->
+        
+        <ul class="year">
+          <li class="yearn">年份</li>
+          <li class="yearm yearm2">选择年份 ></li>
+          <li class="yearmoth">选择月份 ></li>
+            <div class="yearyear" style="display: none;">
+              <p>2016</p>
+              <p>2017</p>
+            </div>
+            <div class="yearmouth yearmouth1" style="display: none;">
+              <p>1</p>
+              <p>2</p>
+              <p>3</p>
+              <p>4</p>
+              <p>5</p>
+              <p>6</p>
+              <p>7</p>
+              <p>8</p>
+              <p>9</p>
+              <p>10</p>
+              <p>11</p>
+              <p>12</p>
+            </div>
+            <div class="yearmouth yearmouth2" style="display: none;">
+              <p>1</p>
+              <p>2</p>
+              <p>3</p>
+              <p>4</p>
+              <p>5</p>
+              <p>6</p>
+              <p>7</p>
+              <p>8</p>
+              <p>9</p>
+              <p>10</p>
+              <p>11</p>
+              <p>12</p>
+            </div>
+        </ul>
+
+        <ul class="province">
+          <li class="provincen">省份</li>
+          <li class="provincem provincem2">选择省份 ></li>
+        </ul>
+
+         <ul class="city city2">
+          <li class="cityn">地级市</li>
+          <li class="citym citym2">选择地级市 ></li>
+        </ul>
+
+        <ul class="car">
+          <li class="carn">车型</li>
+          <li class="carm carm2">选择车型 ></li>
+        </ul>
+        <ul class="button button2">
+
+          <button>查 询</button>
+        </ul>
+    </div>
+    <div class="provinceheader provinceheader2" style="display: none;">
+       <div class="yearnav">
+          <div class="yeartmk">
+            <h3 class="">选择省份<span><img src="./image/fh.png"></span></h3>
+          </div>
+        </div>
+        <!-- 遍历省份 -->
+        <div class="provincecar">
+            <ul>
+              <li>上海市</li>
+              <li>云南省</li>
+              <li>内蒙古自治区</li>
+              <li>北京市</li>
+              <li>吉林省</li>
+              <li>四川省</li>
+              <li>天津市</li>
+              <li>宁夏回族自治区</li>
+              <li>安徽省</li>
+              <li>山东省</li>
+              <li>山西省</li>
+              <li>广东省</li>
+              <li>广西壮族自治区</li>
+              <li>新疆维吾尔自治区</li>
+              <li>江苏省</li>
+              <li>江西省</li>
+              <li>河北省</li>
+              <li>河南省</li>
+              <li>浙江省</li>
+              <li>海南省</li>
+              <li>湖北省</li>
+              <li>湖南省</li>
+              <li>甘肃省</li>
+              <li>福建省</li>
+              <li>西藏自治区</li>
+              <li>贵州省</li>
+              <li>辽宁省</li>
+              <li>重庆市</li>
+              <li>陕西省</li>
+              <li>青海省</li>
+              <li>黑龙江省</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="cityheader" style="display: none;">
+      <div class="yearnav">
+          <div class="yeartmk">
+            <h3 class="">选择地级市<span><img src="./image/fh.png"></span></h3>
+          </div>
+        </div>
+        <!-- 地级市-->
+        <div>
+          <ul>
+          </ul>
+        </div>
+    </div>
+    <div class="carheader" style="display: none;">
+        <div class="yearnav">
+          <div class="yeartmk">
+            <h3 class="">选择主机厂<span><img src="./image/fh.png"></span></h3>
+          </div>
+        </div>
+        <!-- 车-->
+        <div class="carfooter1">
+          <div class="sort_box">
+              
+            
+          </div>
+           <div class="initials">
+            <ul>
+              
+            </ul>
+          </div>
+        </div>
+
+    </div>
+      <div class="carfooter2" style="display: none;">
+        <div class="yearnav">
+          <div class="yeartmk">
+            <h3 class="">选择车系<span><img src="./image/fh.png"></span></h3>
+          </div>
+        </div>
+        <ul>
+          
+        </ul>
+      </div>
+      <div class="carfooter3" style="display: none;">
+        <div class="yearnav">
+          <div class="yeartmk">
+            <h3 class="">选择销售版本<span><img src="./image/fh.png"></span></h3>
+          </div>
+        </div>
+        <ul>
+          
+        </ul>
+      </div>
+      <div class="carfooter4" style="display: none;">
+        <div class="yearnav">
+          <div class="yeartmk">
+            <h3 class="">选择排量<span><img src="./image/fh.png"></span></h3>
+          </div>
+        </div>
+        <ul>
+          
+        </ul>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+<!--<div class="contbox"></div>
+  <div id="container">
+    
+  </div>
+    <table class="gridtable gridtable1">
+    <tr>
+        <th>车标</th>
+        <th>主机厂</th>
+        <th>车型</th>
+        <th>排量</th>
+        <th>年份</th>
+        <th id="car_byl_name1">市保有量</th>
+        <th id="car_byl_name2">省保有量</th>
+    </tr>
+        
+      <tr>
+        <td ><img  style="width: 40px;height: 40px;" id="car_icon"/></td>
+        <td id="car_Manufactur"></td>
+        <td id="car_VehicleNam"></td>
+        <td id="car_capacity"></td>
+        <td id="car_year"></td>
+        <td id="car_byl1"></td>
+        <td id="car_byl2"></td>
+      </tr>
+    </table>-->
+  <div id="loading" style="display: none;">
+    <p>
+      <img src="./image/timg.gif">
+    </p>
+  </div>
+
+<!-- <div class="footer">
+    <p>版权所有：昂美数据 &nbsp;&nbsp; 备案号：沪ICP备15027426号-2</p>
+    <p>地址：上海市闵行区沪光东路89号福克斯大厦2号楼103B &nbsp;&nbsp; 电话：021-5221 2966 &nbsp;&nbsp; 传真：021-5221 2911</p>
+</div> -->
+
+
+<!-- 代码部分end -->
+</body>
+
+<script src="./js/inquiry.js?v=20181114"></script>
+<script src="./js/pinyin.js"></script>
+<script src="./js/sort.js"></script>
+<!--<script src="https://cdn.hcharts.cn/highcharts/highcharts.js"></script>
+<script src="https://cdn.hcharts.cn/highstock/highstock.js"></script>
+<script src="https://cdn.hcharts.cn/highmaps/highmaps.js"></script>-->
+<script type="text/javascript">
+  $(".sort_box .sort_list .num_name").click(function(){
+    console.log($(this).html());
+})
+</script>
+</html>

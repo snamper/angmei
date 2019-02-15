@@ -1,0 +1,197 @@
+
+/*搜索框*/
+
+a:hover,a:focus{
+	color:#74777b;
+	text-decoration: none;
+}
+.contentcx{
+	position: absolute;
+	top: 30%;
+	left: 50%;
+	margin-left: -230px;
+	margin-top: -30px;
+}
+
+.contentcxvin,.contentcxyear,.contentcxgz,.contentcxmikey,.contentcxoe,.contentcxsh{
+	float: left;
+	width:70px;
+	font:15px "微软雅黑";
+	line-height: 30px;
+	color: #333;
+}
+
+.contentcxvin:hover,.contentcxyear:hover,.contentcxgz:hover,.contentcxmikey:hover,.contentcxoe:hover,.contentcxsh:hover{
+	cursor: pointer;
+}
+
+.wrapper {
+	height: 50px;
+	width: 500px;
+	box-shadow: 0 2px 2px rgba(0, 0, 0, .15);
+	display: none;
+	
+}
+.inputbox {
+	box-sizing: border-box;
+	width: 400px;
+	height: 100%;
+	font-size: 14px;
+	color:#000;
+	background-color: #FFFFFF;
+	border: 1px solid #5eb95e;
+	border-right: 0;
+	padding: 10px;
+	float: left;
+	display: block;
+}
+.inputbox:focus{
+	border: 2px solid #5eb95e;
+}
+.contentgz input:focus,.contentmikey input:focus,.contentoe input:focus,.contentsh input:focus{
+	border: 2px solid #5eb95e;
+	height:44px;
+	width:392px;
+}
+.buttom{
+	width:100px;
+	height:30px;
+	border:1px solid #5eb95e;
+	background-color: #5eb95e;
+	font:14px "微软雅黑";
+	color:#fff;
+	font-weight: 700;
+}
+.buttom:hover,.btnyear:hover,.mikeybtn:hover,.gzhbtn:hover,.oebtn:hover,.shcxbtn:hover{
+	cursor: pointer;
+	background:#5eb95e ;
+	border: 1px solid #5eb95e;
+}
+input:focus {
+	outline: none;
+}
+.contentbody{
+	width:654px;
+	margin:0 auto;
+	position: relative;
+}
+#box{width:166px;height:39px;text-align:left;overflow: hidden;padding:0;}
+#box input{width:166px;border:0;text-align: center;padding:0;}
+#suggest{width:180px;max-height:300px;overflow:auto;padding-left:5px;}
+.gray{color:gray;font-size: 13px;line-height: 22px;}
+.ac_results {background:#fff;border:1px solid #5eb95e;z-index:1000;display:none;position: absolute;top:32px !important;left:0px !important;}
+.ac_results ul{margin:0;padding:0;list-style:none;font-size:13px;}
+.ac_results li a{white-space: nowrap;text-decoration:none;display:block;color:#000;}
+.ac_results li{border:1px solid #fff;line-height: 22px;}
+.ac_results li a:hover {background:#5eb95e;color:#fff;}
+.ac_results li a span{float:right;display: none;}
+#arrcity{border:0;height:28px;font-size: 14px;margin-bottom: 4px;}
+.contentyear{height:30px;margin-top:30px;}
+#s1,#box,#s3,#s4{background:#fff;float: left;height: 30px;line-height:30px;border-top:1px solid #5eb95e;border-bottom:1px solid #5eb95e;border-left:1px solid #ccc;font-size: 14px;color:#999;}
+#box{border-left:1px solid #5eb95e;}
+#s3{width:142px;overflow: hidden;text-align: center;}
+#s4{width:140px;overflow: hidden;text-align: center;}
+#s1{width:100px;text-align: center;}
+		.contentyear button{
+			width:100px;
+			height:32px;
+			border:1px solid #5eb95e;
+			background-color: #5eb95e;
+			font:16px "微软雅黑";
+			color:#fff;
+
+		}
+		.conts1,.conts3,.conts4{
+			max-height:200px;
+			overflow: auto;
+			position: absolute;
+			top:32px;
+			border:1px solid #5eb95e;	
+			background: #fff;
+		}
+		.conts1{
+			left:451px;
+			width:150px;
+		}
+		.conts3{
+			left:166px;
+			width:150px;
+			overflow: auto;
+			z-index: 10;
+		}
+		.conts4{
+			left:310px;
+			width:170px;
+			max-width:270px;
+		}
+		.conts1 p,.conts3 p,.conts4 p{
+			padding-left: 5px;
+			line-height: 22px;
+			text-align: left;
+			margin:0;
+		}
+		.conts1 p:hover,.conts3 p:hover,.conts4 p:hover{
+			 background:#5eb95e;
+			 color:#fff;
+			 cursor: pointer;
+		}
+		.conts2{
+		    min-width:180px;
+		    max-height:200px;
+		    overflow: auto;
+		    position: absolute;
+		    top:50px;
+		    left:100px;
+		    border:1px solid #87A6D7;
+		}
+		.arr{
+			color:#000 !important;
+		}
+.contentmikey,.contentgz,.contentoe,.contentsh{
+	text-align: left;
+	/*display: none;*/
+}
+
+.contentmikey input,.contentgz input,.contentoe input,.contentsh input{
+	width:394px;
+	height:46px;
+	border: 1px solid #5eb95e;
+	font-size: 14px;
+	padding-left: 10px;
+	color:#000;
+}
+
+
+
+.contentmikey button,.contentgz button,.contentoe button,.contentsh button{
+	width:100px;
+	height:30px;
+	border:1px solid #5eb95e;
+	background-color: #5eb95e;
+	font:14px "微软雅黑";
+	color:#fff;
+	/*font-weight: 700;*/
+	vertical-align: middle;
+	position: absolute;
+}
+
+
+select{
+	width:150px;
+	height:31px;
+	border:1px solid #ccc;
+	font-size: 14px;
+}
+.selectname1 span{
+	display: none;
+}
+
+.active{
+	display: none;
+}
+#inpsubmit{
+	margin-bottom: 4px;
+}
+#btnsubmit{
+	margin-bottom: 4px;
+}

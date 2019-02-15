@@ -1,0 +1,285 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title id="pageTitle">索德斯查询系统</title>
+    <meta name="renderer" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0 user-scalable=no"/>
+    <meta name="Description" content="查询"/>
+    <meta name="Keywords" content="查询"/>
+    <link type="text/css" rel="stylesheet" href="./css/common.css?v=201801107">
+    <link type="text/css" rel="stylesheet" href="./css/loading.css">
+    <script  src="./js/jquery.min.js"></script>
+    <script src="./js/js.js"></script>
+    <style>
+      .sort_box{
+        overflow: hidden;
+      }
+      .sort_list{
+          position: relative;
+          height: 30px;
+          line-height: 30px;
+          /*border-bottom:1px solid #ddd;*/
+      }
+      .sort_list .num_name{
+          color: #000;
+          padding-left:10px;
+      }
+      .num_name:hover{
+          cursor: pointer;
+      }
+      .sort_letter{
+          height: 30px;
+          line-height: 30px;
+          padding-left: 20px;
+          color:#787878;
+          font-size: 14px;
+          border-bottom:1px solid #ddd;
+      }
+      .initials{
+          position: fixed;
+          top: 45px;
+          right: 0px;
+          height: 100%;
+          width: 15px;
+          padding-right: 10px;
+          text-align: center;
+          font-size: 12px;
+          z-index: 99;
+          background: rgba(145,145,145,0);
+      }
+    </style>
+</head>
+<body class="colff">
+ 
+<div class="proli" style="border:none;">
+<!-- logo -->
+<div class="header">
+    <a href="#" class="headerimg"><img src="./image/banner.jpg?v=20181015"></a>
+</div>
+
+    <!--搜索框-->
+    <div class=" runprcvin" style="padding-bottom:3px;">
+        <div >
+            <form  class="runprckint" style="margin:0;" id="findlike" >
+                <span class="runprckbtn">
+                    <a class="runprckclk search_mh" style="width:96%; margin:auto;border:1px solid #26213f;text-indent:2em; color:#999;" href="javascript:;" onclick="findlike()" >
+                        <i class="runprckintico icon_cx"  style="display:inline-block;margin-right:10px;vertical-align:-2px;margin-left:-10%;"></i>如“宝马”
+                    </a>
+                </span>
+            </form>
+        </div>
+    </div>
+	<!--选项卡-->
+	<div class="prolipros">
+        <div class="proliprad">
+            <ul class="prolisel">
+                <li class="prolclok li1">
+                    <span class="span1"><img src="./image/1off.png"></span>
+                    <span class="span2 active"><img src="./image/1on.png"></span>
+                    按车型查询
+                    <br>Search by Vehicle
+                </li>
+                <li class="li2">
+                    <span class="span1"><img src="./image/2on.png"></span>
+                    <span class="span2 active"><img src="./image/2off.png"></span>
+                    按VIN查询 <br>Search by VIN
+                </li>
+                <li class="li3">
+                    <span  class="span1"><img src="./image/3on.png"></span>
+                    <span class="span2 active"><img src="./image/3off.png"></span>
+                    OE/产品编码查询<br>Search Number
+                </li>
+            </ul>
+            <div class="cl"></div>        
+        </div>
+    </div>  
+    <div class="runpro runprccx" style="display:block;">
+        <!--车型查询-->
+         <ul class="genre">
+                <li class="genren">产品类型</li>
+                <li class="genrem">全部产品 ></li>
+         </ul>
+        <ul class="car">
+          <li class="carn">主机厂</li>
+          <li class="carm">选择主机厂 ></li>
+        </ul>
+        <ul class="dept">
+          <li class="deptn">车型</li>
+          <li class="deptm">选择车型 ></li>
+        </ul>
+        <ul class="year">
+          <li class="yearn">年份</li>
+          <li class="yearm">选择年份 ></li>
+        </ul>
+        <ul class="output">
+          <li class="outputn">排量</li>
+          <li class="outputm">选择排量 ></li>
+        </ul>
+        <ul class="button">
+          <button>查 询</button>
+        </ul>
+        <div class="pwrap">
+	        <p>地址：广州市嘉禾八一科技园</p>
+	        <p>联系电话：020-36310793</p>        	
+	    </div>
+    </div>
+    
+    <div class="genreheader" style="display:none;">
+            <div class="yearnav">
+                <div class="yeartmk">
+                    <h3 class="">选择类型<span><img src="./image/fh.png"></span></h3>
+                </div>
+            </div>
+            <!-- 遍历年份 -->
+            <div class="depgenre">
+                <ul>
+                </ul>
+            </div>
+        </div>
+    <div class="yearheader" style="display: none;">
+        <div class="yearnav">
+          <div class="yeartmk">
+            <h3 class="">选择年份<span><img src="./image/fh.png"></span></h3>
+          </div>
+        </div>
+        <!-- 遍历年份 -->
+        <div>
+          <ul>
+           
+          </ul>
+        </div>
+    </div>
+
+    <div class="carheader" style="display: none;">
+        <div class="yearnav">
+          <div class="yeartmk">
+            <h3 class="">选择主机厂<span><img src="./image/fh.png"></span></h3>
+          </div>
+        </div>
+        <!-- 遍历车型 -->
+        <div>
+          <div class="sort_box">
+            
+          </div>
+          <div class="initials">
+            <ul>
+              
+            </ul>
+          </div>
+        </div>
+    </div>
+  
+    <div class="deptheader" style="display: none;">
+       <div class="yearnav">
+          <div class="yeartmk">
+            <h3 class="">选择车系<span><img src="./image/fh.png"></span></h3>
+          </div>
+        </div>
+        <!-- 遍历车系 -->
+        <div class="deptcar">
+            <ul>
+              
+            </ul>
+        </div>
+    </div>
+    
+    <div class="outputheader" style="display: none;">
+      <div class="yearnav">
+          <div class="yeartmk">
+            <h3 class="">排量<span><img src="./image/fh.png"></span></h3>
+          </div>
+        </div>
+        <!-- 遍历排量 -->
+        <div>
+          <ul>
+          </ul>
+        </div>
+    </div>
+
+
+
+
+
+    <div class="runpro runprcvin">
+  		<!--VIN查询-->
+    	<div>
+        
+    		<form  class="runprckint" id="findvin" >
+    			<input class="runprckipt" name="vin" placeholder="请输入VIN号码" type="text">
+				<span class="runprckbtn">
+					<a class="runprckclk" href="javascript:;" onclick="vinsubmit()" >
+						<i class="runprckintico"></i>查询
+					</a>
+				</span>
+    		
+    		</form>
+    		
+    		
+    		<!--必须要登录才能查询-->
+        	<!--<div class="login_dis">
+        		<p style="text-align:center;line-height:2em;color:#999;">未登录不能使用VIN码查询<br/>请您先<a href="login.html" tppabs="http://test.shjieguan.com/ostdata/login.html">登录</a>或者<a href="regis.html" tppabs="http://test.shjieguan.com/ostdata/regis.html">注册</a></p>
+        	</div>-->
+       		
+        </div>
+        <!-- <div class="runprcom"><span class="runprcomti"></span></div> -->
+        <div class="pwrap">
+	        <p>地址：广州市嘉禾八一科技园</p>
+	        <p>联系电话：020-36310793</p>        	
+	    </div>
+    </div>
+    
+    <div class="runpro runprcoe">
+		  <!--OE号码查询-->
+    	<div>
+    		<form class="runprckint" id="findoe">
+    		<input class="runprckipt" id="oenum" name="oenum" placeholder="请输入OE/产品编码" type="text">
+    		<div class="listwrap">
+    			<p class="list"></p>
+    		</div>
+    		<span class="runprckbtn"><a class="runprckclk" href="javascript:;" onclick="OEsubmit()"><i class="runprckintico"></i>查询</a></span>
+    		</form>
+        	
+       </div>
+       <div class="pwrap">
+	        <p>地址：广州市嘉禾八一科技园</p>
+	        <p>联系电话：020-36310793</p>        	
+	    </div>
+    </div>
+    
+    <div class="cl"></div>
+</div>
+  <div id="loading" style="display: none;">
+    <p>
+      <img src="./image/timg.gif">
+    </p>
+  </div>
+
+<!-- <div class="footer">
+    <p>版权所有：昂美数据 &nbsp;&nbsp; 备案号：沪ICP备15027426号-2</p>
+    <p>电话：021-5221 2966 &nbsp;&nbsp; 传真：021-5221 2911</p>
+    <p>地址：上海市闵行区沪光东路89号福克斯大厦2号楼103B &nbsp;&nbsp; </p>
+</div> -->
+
+<!-- 代码部分end -->
+</body>
+
+<script src="./js/inquiry.js?v=201801227"></script>
+<script src="./js/pinyin.js"></script>
+<script src="./js/sort.js"></script>
+<script type="text/javascript">
+	$('html').css('font-size',$(window).width()/(320/65)+'px')
+    $(window).resize(function(){
+        var size;
+        $(window).width()/(320/65)>=100?size=100:size=$(window).width()/(320/65);
+        $('html').css('font-size',size+'px')
+    })
+</script>
+
+
+
+</html>

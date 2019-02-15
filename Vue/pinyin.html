@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div class="sort_box">
+			
+		</div>
+		<div class="initials">
+			<ul></ul>
+		</div>
+    <div style="width:200px;height:200px;background:pink;display:flex;align-items:center;">
+        <span>1</span>
+        <span>2</span>
+    </div>
+	</body>
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="pinyin/pinyin.js"></script>
+	<script type="text/javascript" src="pinyin/sort.js"></script>
+	<script type="text/javascript">
+			 $.ajax({
+		        type: "post",
+		        url:"http://ec.51macc.com/MattrioEcModel/SelectCarIntface/getManufacture",
+		        data: {
+		            "brand_id":'aohan'
+		        },
+		        success: function(data) {
+		        	$.each(data,function(key,value){
+						// console.log(value)
+						var div1 = $("<div class='num_name'>").html(value.Manufacture_CN);
+						var div2 = $("<div class='sort_list'>");
+						div1.appendTo(div2);
+						div2.appendTo(".sort_box");	
+					})
+					initials();
+		        },
+		        error: function(data) {
+		
+		        }
+		    })
+	</script>
+</html>

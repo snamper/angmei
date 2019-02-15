@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="renderer" content="webkit"/>
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	    <meta name="format-detection" content="telephone=no" />
+	    <meta name="apple-mobile-web-app-capable" content="yes" />
+	    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0 user-scalable=no"/>
+		<meta name="keywords" content="米鼠,燃油泵">
+		<meta name="robots" content="all">
+		<meta name="description" content="米鼠燃油泵">
+		<title>JINJiA</title>
+		<link rel="stylesheet" type="text/css" href="css/base.css?v=20181107"/>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="css/index.css?v=20181109"/>
+		<link rel="icon" href="./img/ico.ico" /> 
+	</head>
+	<style type="text/css">
+		[v-cloak]{
+            display:none;
+         }
+	</style>
+	<body>
+		<!--头部-->
+		<div class="header">
+			<div class="logowrap">
+				<img src="img/logo2.png"/>
+			</div>
+		</div>
+		<div class="bannerwrap"><img src="img/banner.jpg"/></div>
+		<!--主体部分-->
+		<div class="container contentwrap" id="app" @click="doc">
+			<div class="title">查询方案</div>
+			<div class="row content clearfix">
+				<div class="col-lg-3 col-md-6 ">
+					<div class="left">
+						<div class="lefttitle">
+							<div>编号查询</div>
+						</div>
+						<!--<div class="tab">
+							<span :class="{span:numtab}" @click="numinland">国内</span>
+							<span :class='{span:!numtab}' @click="numforeign">国外</span>
+						</div>-->
+						<div class="number" v-if="numtab">
+								<input type="text" name="" id="" value="" v-model='oe' placeholder="请输入编码" list="cp1" @focus="cpfocus"/>
+								<datalist id="cp1">
+								</datalist>
+								<!--<input type="text" name="" id="" value="" v-model='sh' placeholder="请输入售后编码" list="sh" @focus="shfocus"/>
+								<datalist id="sh">
+								</datalist>						-->
+						</div>
+						<!--<div class="number" v-if="!numtab" v-cloak>
+								<input type="text" name="" id="" value="" v-model='foe' placeholder="请输入编码" list="fcp" />
+								<datalist id="fcp">
+								</datalist>					
+						</div>-->
+						
+						<div class="btn1" @click='btn(numtab)'>搜索</div>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6 ">
+				<div class="center">
+					<div class="lefttitle">车型查询</div>
+					<div class="tab">
+							<span :class="{span:cartab}" @click="carinland">国内</span>
+							<span :class='{span:!cartab}' @click="carforeign">国外</span>
+					</div>
+					<div class="carwrap" v-show="cartab" >
+						<!--国内-->
+						<ul>
+							<li class="clearfix">
+								<div class="lileft">主机厂</div><div class="liright"><input type="text" class="carinp" placeholder="请选择主机厂" @input="oninput" @focus='inpfocus(1)' @click.stop='' v-model='inp'/></div>
+								<div class="box box1" v-cloak v-if='num==1'>
+                                    <div v-for='(item,index) in carlist' class="sort_list">
+										<p class="p num_name"  v-text='item.Manufacture_CN' @click.stop='carclick(item.Manufacture_CN,0,1)' :title="item.Manufacture_CN"></p>
+										<span v-text='item.szm' class="span"></span>
+										
+									</div>
+								</div>
+							</li>
+							<li class="clearfix">
+								<div class="lileft">车型</div><div :class="type!='请选择车型'?'liright color':'liright'" @click.stop='typeclick(2)' v-text='type'></div>
+								<div class="box box2" v-cloak v-if='num==2'>
+									<p class="p" v-for='(item,index) in typelist' v-text='item.Vehicle_Name_CN' @click.stop='carclick(item.Vehicle_Name_CN,0,2)' :title="item.Vehicle_Name_CN"></p>
+								</div>
+							</li>
+							<li class="clearfix">
+								<div class="lileft">年份</div><div :class="year!='请选择年份'?'liright color':'liright'" @click.stop='typeclick(3)' v-text='year'></div>
+								<div class="box box3" v-cloak v-if='num==3'>
+									<p class="p" v-for='(item,index) in yearlist' v-text='item.Year_of_production' @click.stop='carclick(item.Year_of_production,0,3)' :title="item.LaunchEOPYear"></p>
+								</div>
+							</li>
+							<li class="clearfix">
+								<div class="lileft">排量</div><div :class="output!='请选择排量'?'liright color':'liright'" @click.stop='typeclick(4)' v-text='output'></div>
+								<div class="box box4" v-cloak v-if='num==4'>
+									<p class="p" v-for='(item,index) in outputlist' v-text='item.Capacity' @click.stop='carclick(item.Capacity,0,4)' :title="item.Capacity" ></p>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="carwrap" v-cloak v-show="!cartab">
+						<!--国外-->
+						<ul>
+							<li>
+								<div class="lileft">主机厂</div><div class="liright"><input type="text" class="carinp" placeholder="请选择主机厂" @click.stop='foreign' @input="foninput" @focus='finpfocus(1)' v-model='finp'/></div>
+								<div class="box box1" v-if='fnum==1'>
+                                    <div v-for='(item,index) in fcarlist' class="sort_list">
+										<p class="p num_name"  v-text='item.Manufacture_EN' @click.stop='foreignclick(item.Manufacture_EN,1)' :title="item.Manufacture_EN"></p>
+										<span v-text='item.szm' class="span"></span>								
+									</div>
+								</div>
+							</li>
+							<li class="clearfix">
+								<div class="lileft">车型</div><div :class="ftype!='请选择车型'?'liright color':'liright'" @click.stop='ftypeclick(2)'  v-text='ftype'></div>
+								<div class="box box2" v-if='fnum==2'>
+									<p class="p" v-for='(item,index) in ftypelist' v-text='item.Vehicle_Name_EN' @click.stop='foreignclick(item.Vehicle_Name_EN,2)' :title="item.Vehicle_Name_EN"></p>
+								</div>
+							</li>
+							<li class="clearfix">
+								<div class="lileft">排量</div><div :class="foutput!='请选择排量'?'liright color':'liright'" @click.stop='ftypeclick(3)' v-text='foutput+" "+Engine_Code'></div>
+								<div class="box box3" v-if='fnum==3'>
+									<p class="p" v-for='(item,index) in foutputlist' v-text='item.Capacity+" "+item.Engine_Code' @click.stop='foreignclick(item.Capacity,3,item.Engine_Code)' :title="item.Engine_Code"></p>
+								</div>
+							</li>
+							<li class="clearfix">
+								<div class="lileft">年份</div><div :class="fyear!='请选择年份'?'liright color':'liright'" @click.stop='ftypeclick(4)' v-text='fyear'></div>
+								<div class="box box3" v-cloak v-if='fnum==4'>
+									<p class="p" v-for='(item,index) in fyearlist' v-text='item.Launch_year+" - "+item.EOP_Year' @click.stop='foreignclick(item.Launch_year,4,item.EOP_Year)' :title="item.LaunchEOPYear"></p>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="btn1" @click='car(cartab)'>搜索</div>
+				</div>
+				</div>
+				<div class="col-lg-6 col-md-12">
+					<div class="right">
+						<div class="rightul" @click="mengshow">
+							<div class="list">
+								<p>燃油泵系列</p>
+								<p class="p2">Fuel pump series</p>
+								<span></span>
+							</div>
+							<div class="list">
+								<p>油泵总成系列</p>
+								<p class="p2">Oil pump assembly</p>
+								<span></span>
+							</div>
+							<div class="list">
+								<p>尿素泵系列</p>
+								<p class="p2">Urea pump series</p>
+								<span></span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>	
+			<div class="title">关于锦佳</div>
+			<div class="row bottomrow">
+				<div class="col-md-6">
+					<div class="leftdiv"><img src="img/gyleft.jpg"/></div>
+				</div>
+				<div class="col-md-6 rightwrap">
+					<div class="rightdiv">
+						<div class="righttop">
+							<p class="p">关于锦佳</p>
+							<p>一家集设计、开发、生产、销售和售后服务为一体的现代化企业，专业从事汽车电喷系统的研发和生产。</p>
+						</div>
+						<div class="imgbottomdiv">
+							<img src="img/gyright.png"/>
+						</div>
+					</div>
+				</div>
+			</div>
+	
+			<div class="meng" @click.stop='menghide'>
+				<div class="left" @click.stop=''>
+					<span class="none" @click="menghide">×</span>
+						<div class="lefttitle">
+							<div>编号查询</div>
+						</div>
+						<!--<div class="tab">
+							<span :class="{span:numtab}" @click="numinland">国内</span>
+							<span :class='{span:!numtab}' @click="numforeign">国外</span>
+						</div>-->
+						<div class="number" v-if="numtab">
+							<input type="text"  value="" v-model='oe' placeholder="请输入编码" list="cp2" @focus="cpfocus"/>
+								<datalist id="cp2">
+								</datalist>
+								<!--<input type="text" name="" id="" value="" v-model='sh' placeholder="请输入售后编码" list="sh" @focus="shfocus"/>
+								<datalist id="sh">
+								</datalist>									-->
+						</div>
+						<!--<div class="number" v-if="!numtab" v-cloak>
+								<input type="text" name="" id="" value="" v-model='foe' placeholder="请输入编码" list="fcp" />
+								<datalist id="fcp">
+								</datalist>					
+						</div>-->
+						
+						<div class="btn1" @click.stop='btn(numtab)'>搜索</div>
+				</div>
+			</div>
+			
+			<div class="loadingmeng" v-if='loading'>
+				<div class="loading">
+					<span></span>
+					<span></span>
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+			</div>
+		</div>
+		
+		<!--底部-->
+		<div class="footer">
+			<div class="container footercenter">
+					<div class="fright clearfix">
+						<div class="row">
+							<div class="col-md-8">
+								<div class="lxwm">
+									<p><b>CONTACT US</b></p>
+									<p class="p1"><span class="span">联系我们</span></p>
+									<p class="p1 mp">地址：瑞安市东山经济开发区</p>
+									<p class="p1">企业邮箱：258626732@qq.com</p>
+									<p class="p1">电话：0577-3695788</p>
+									<p class="p1">传真：0577-3699955</p>
+								</div>
+							</div>
+							<div class="col-md-4">
+								<div class="qrcode">
+									<div><img src="img/qrcode.jpg"/></div>
+									<p>扫描关注公众号</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				<p class="p">版权所有  浙江锦佳汽车零部件有限公司</p>
+				<div class="gotop"><img src="img/top.png"/></div>
+			</div>
+		</div>
+		
+		
+	</body>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/vue.min.js"></script>
+	<script type="text/javascript" src="pinyin/pinyin.js"></script>
+	<script type="text/javascript" src="js/index.js?v=20181109"></script>
+	<script type="text/javascript">
+		/*添加历史搜索记录*/
+		function initDataList(id) {
+			if(localStorage.getItem(id)) {
+				var list = localStorage.getItem(id);
+				list = list.substring(0, list.length - 1);
+				var data = list.split(',');
+				if(data.length >= 10) {
+					for(var i = data.length - 1; i >= data.length - 9; i--) {
+						$('#' + id).append('<option>' + data[i] + '</option>');
+					}
+				} else {
+					for(var i = data.length - 1; i >= 0; i--) {
+						$('#' + id).append('<option>' + data[i] + '</option>');
+					}
+				}
+			}
+		}
+		$(function(){
+			initDataList('cp')
+			initDataList('sh')			
+		})
+
+	</script>
+</html>

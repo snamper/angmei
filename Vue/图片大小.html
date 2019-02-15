@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<img src="img/data_services_bg.jpg" id="oImg"/>
+        <button>点击</button>
+        <button>点击2</button>
+	</body>
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript">
+        function changeURLArg(url,arg,arg_val){
+            for(var i=0;i<arg.length;i++){
+                var pattern=arg[i].name+'=([^&]*)';
+                var replaceText=arg[i].name+'='+arg[i].value;
+                if(url.match(pattern)){
+                    var tmp='/('+ arg[i].name+'=)([^&]*)/gi';
+                    url=url.replace(eval(tmp),replaceText);
+                }else{
+                    if(url.match('[\?]')){
+                        url = url+'&'+replaceText;
+                    }else{
+                        url = url+'?'+replaceText;
+                    }
+                }
+            }
+            return url
+        }
+        document.getElementsByTagName('button')[0].onclick=function(){
+            history.replaceState(null,null,'?v=2015&g=125')
+        }
+        document.getElementsByTagName('button')[1].onclick=function(){
+            history.replaceState(null,null,changeURLArg(
+                window.location.href,
+                [
+                    { name:'v',value:2013},
+                    { name:'g',value:123},
+                    { name:'h',value:1333},
+                ]
+            ))
+        }
+		var img = document.getElementById("oImg")
+		getImageWidth(img.src)
+		　function getImageWidth(url,callback){
+			var img = new Image();
+			img.src = url;
+			if(img.complete){
+				console.log(img.complete)
+				console.log(img.width)
+			}else{
+				img.onload = function(){
+				console.log(img.width)
+//					callback(img.width, img.height);
+				}
+			}
+		}
+	</script>
+</html>

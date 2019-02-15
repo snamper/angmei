@@ -1,0 +1,130 @@
+﻿<!DOCTYPE HTML>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="renderer" content="webkit|ie-comp|ie-stand">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+		<meta http-equiv="Cache-Control" content="no-siteapp" />
+		<link rel="Bookmark" href="/favicon.ico">
+		<!-- <link rel="Shortcut Icon" href="/favicon.ico" /> -->
+		<!--[if lt IE 9]>
+			<script type="text/javascript" src="lib/html5shiv.js"></script>
+			<script type="text/javascript" src="lib/respond.min.js"></script>
+		<![endif]-->
+		<link rel="stylesheet" type="text/css" href="../static/h-ui/css/H-ui.min.css" />
+		<link rel="stylesheet" type="text/css" href="../static/h-ui.admin/css/H-ui.admin.css" />
+		<link rel="stylesheet" type="text/css" href="../lib/Hui-iconfont/1.0.8/iconfont.css" />
+		<link rel="stylesheet" type="text/css" href="../static/h-ui.admin/skin/default/skin.css" id="skin" />
+		<link rel="stylesheet" type="text/css" href="../static/h-ui.admin/css/style.css" />
+		<link rel="stylesheet" type="text/css" href="../css/index.css">
+		<!--[if IE 6]>
+			<script type="text/javascript" src="lib/DD_belatedPNG_0.0.8a-min.js" ></script>
+			<script>DD_belatedPNG.fix('*');</script>
+		<![endif]-->
+		<title>售后品牌管理</title>
+	</head>
+	<style type="text/css">
+		ul {
+			list-style-type: none;
+		}
+		
+		li {
+			display: inline-block;
+		}
+		
+		li {
+			margin: 10px 0;
+		}
+		
+		input.labelauty+label {
+			font: 12px "Microsoft Yahei";
+		}
+	</style>
+
+	<body>
+		<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 售后品牌管理 <span class="c-gray en">&gt;</span> 售后品牌匹配列表
+			<a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新"><i class="Hui-iconfont">&#xe68f;</i></a>
+		</nav>
+
+		<div style="padding: 50px;">
+			<table class="table table-border table-bordered table-bg" id="result">
+				<thead>
+					<tr class="text-c">
+						<th width="40">Mikey</th>
+						<th width="40">主机厂</th>
+						<th width="40">车型</th>
+						<th width="40">发动机</th>
+						<th width="40">排量</th>
+						<th width="40">进气形式</th>
+						<th width="40">年款</th>
+						<th width="40">产品编号</th>
+						<th width="40">分类名称</th>
+						<th width="40">提交用户</th>
+					</tr>
+				</thead>
+				<tbody id="tbody">
+
+				</tbody>
+			</table>
+			<button class="btn btn-danger radius" onclick="clearData()" style="margin: 5px;">清空当前用户数据</button>
+			<a href="http://192.168.1.112:8080/MattrioManager/AftermarketBrandListController/exportAftermarketBrandList" class="btn btn-success radius">导出全部数据</a>
+		</div>
+
+	</body>
+	<!--_footer 作为公共模版分离出去-->
+	<script type="text/javascript" src="../lib/jquery/1.9.1/jquery.min.js"></script>
+	<!--/_footer 作为公共模版分离出去-->
+	<script type="text/javascript" src="../js/aircity.js"></script>
+	<script type="text/javascript" src="../js/j.suggest.js"></script>
+	<script type="text/javascript" src="layer/layer.js"></script>
+	<script type="text/javascript" language="javascript" src="datatables/1.10.0/jquery.dataTables.min.js"></script>
+
+	<script type="text/javascript">
+		var network = localStorage.getItem("network");
+		layer.load(2);
+		initData();
+		var name;
+		function initData() {
+			name= localStorage.getItem('user');
+			$.ajax({
+				type: "post",
+				url: network + "/MattrioManager/AftermarketBrandListController/getAftermarketBrandList",
+				data: {
+					"username": name
+				},
+				dataType: "json",
+				cache: false,
+				crossDomain: true == !(document.all),
+				success: function(data) {
+					// console.log(data)
+					layer.closeAll('loading');
+					$.each(data.list, function(key, value) {
+						$('#tbody').append('<tr><td style="text-align: center;">' + value.mikey + '</td><td style="text-align: center;">' + value.Manufacture_CN + '</td><td style="text-align: center;">' + value.Vehicle_Name_CN + '</td><td style="text-align: center;">' + value.Engine_Code + '</td><td style="text-align: center;">' + value.Capacity + '</td><td style="text-align: center;">' + value.Air_intake_form + '</td><td style="text-align: center;">' + value.Vehicle_of_year + '</td><td style="text-align: center;">' + value.product_id + '</td><td style="text-align: center;">' + value.other + '</td><td style="text-align: center;">' + value.author + '</td></tr>');
+					});
+					$('#result').DataTable();
+				},
+			})
+		}
+
+		function clearData() {
+			$.ajax({
+				type: "post",
+				url: network + "/MattrioManager/AftermarketBrandListController/clearAftermarketBrandList",
+				data: {
+					"username": name
+				},
+				dataType: "json",
+				cache: false,
+				crossDomain: true == !(document.all),
+				success: function(data) {
+					alert(data.msg);
+					location.replace(location.href);
+				},
+			})
+
+		}
+	</script>
+
+</html>

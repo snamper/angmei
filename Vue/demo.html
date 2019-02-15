@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<div class="sort_box">
+				<div v-for='(item,index) in lists' class="sort_list">
+					<!--<div class="num_name" v-text='item.Manufacture_CN'></div>-->
+					<p class="num_name" v-text='item.Manufacture_CN'></p>
+					<p class="num_name" v-text='index'></p>
+				</div>
+			</div>
+		</div>
+		<div class="initials">
+				<ul></ul>
+		</div>
+		<div class="ak">haha</div>
+		<img src="img/data_services_bg.jpg"/>
+	</body>
+		<!-- 开发环境版本，包含了用帮助的命令行警告 -->
+	<script src="js/jquery.js"></script>
+	<script type="text/javascript" src="pinyin/pinyin.js"></script>
+	<script type="text/javascript" src="pinyin/sort.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script type="text/x-handlebars-template"></script>
+	<script type="text/javascript">
+		var list=''
+		$.ajax({
+			url:'http://ec.51macc.com/MattrioEcModel/SelectCarIntface/getManufacture',
+			type:'post',
+			async:false,
+			data:{
+				'brand_id': 'aohan'
+			},
+			success:function(data){
+				list=data
+			},
+			error:function(){
+				
+			}
+		})
+		var app=new Vue({
+			el:'#app',
+			data:{
+				lists:list
+			},
+            mounted:function(){
+			    initials();
+			}
+		})
+		var arr = [
+		    {"id":"1001","name":"值1","value":"111"},
+		    {"id":"1001","name":"值1","value":"11111"},
+		    {"id":"1002","name":"值2","value":"25462"},
+		    {"id":"1002","name":"值2","value":"23131"},
+		    {"id":"1002","name":"值2","value":"2315432"},
+		    {"id":"1003","name":"值3","value":"333333"}
+		];
+
+var map = {},
+    dest = [];
+for(var i = 0; i < arr.length; i++){
+    var ai = arr[i];
+    if(!map[ai.id]){
+        dest.push({
+            id: ai.id,
+            name: ai.name,
+            data: [ai]
+        });
+        map[ai.id] = ai;
+    }else{
+        for(var j = 0; j < dest.length; j++){
+            var dj = dest[j];
+            if(dj.id == ai.id){
+                dj.data.push(ai);
+                break;
+            }
+        }
+    }
+}
+
+var m = new Map([['Michael', 95], ['Bob', 75], ['Tracy', 85]]);
+m.get('Michael'); // 95
+console.log(m.get('Michael'))
+
+var quchongarr=[1,2,2,3,1,3,4,5,1,2]
+var len=quchongarr.length
+// for(var i=0;i<len;i++){
+// 	for(var j=i+1;j<len;j++){
+// 		if(quchongarr[i]==quchongarr[j]){
+// 			quchongarr.splice(j,1);
+// 			len--;
+// 			j--
+// 		}
+// 	}
+// }
+//         console.log(quchongarr)
+var newarr=[]
+for(var i=0;i<len;i++){
+	for(var j=i+1;j<len;j++){
+		if(quchongarr[i]==quchongarr[j]){
+			j=++i
+		}
+	}
+	newarr.push(quchongarr[i])
+}
+
+var set = new Set(quchongarr)
+let newArr = Array.from(set);
+        console.log(newarr)
+        console.log(set)
+        console.log(newArr)
+var A = {a:1,b:2,c:3,d:"hello world"};
+for(let k in A) {  
+//  console.log(k,A[k]);  
+} 
+//const s = new Set();
+//[2, 3, 5, 4, 5, 2, 2].forEach(x => console.log(x));
+var s=[{a:1},{b:2}]
+for(let i of s ) {
+    console.log(i); //2 3 5 4
+}
+var a=new Date()
+console.log(a.toLocaleString())
+	</script>
+</html>

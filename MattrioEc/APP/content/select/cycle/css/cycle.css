@@ -1,0 +1,156 @@
+.runtmksl{ 
+	position:fixed; 
+	top:0;
+	left:0;
+	width:100%; 
+	z-index: 10;
+}
+.runtmksltil{ 
+	height:44px; 
+	line-height:40px; 
+	background:#184fef ; 
+	color:#fff; 
+	text-align:center; 
+	font-weight:400; 
+	border-bottom:5px solid #FCD900;
+	margin:0;
+	font-size: 20px;
+}
+.runtmksltil span.runtasclor{
+	position:absolute; 
+	left:10px; 
+	color:#666;
+}
+.runtmksltil span.runtasclfh{ 
+	position:absolute; 
+	left:0px; 
+	color:#666; 
+	display:none;
+}
+
+.cont{
+	position:absolute;
+	top:55px;
+	left:0px;
+	width:100%;
+}
+.contenttop{
+	text-align: center;
+}
+.contenttop ul{
+	border-bottom: 1px solid #ccc;
+	height: 40px;
+	width:95%;
+	margin:0 auto;
+	text-align: left;
+}
+.contenttop li{
+	float: left;
+	font:16px "微软雅黑";
+	margin-top: 8px;
+}
+.contenttop .contentleft{
+	width:35%;
+	margin-left: 2%;
+	padding-left: 3%;
+	border-right:1px solid #ccc;
+}
+.contenttop .contentrightt,.contentrightb{
+	width:50%;
+	padding-left: 3%;
+}
+.contenttop button{
+	width:80%;
+	line-height: 40px;
+	border:0;
+	text-align: center;
+	background: #184fef;
+	color:#fff;
+	font-size:20px;
+	margin-top:20px;
+}
+.contentrightspan{
+	float: right;
+	color:#aaa;
+	font-size:14px;
+	line-height: 30px;
+}
+.contentbottom {
+	margin-top: 10px;
+	display: none;
+}
+.contentbottom table{
+	width:95%;
+	margin:0 auto;
+	margin-top: 15px;
+}
+.contentbottom th{
+	background: #eaeaea;
+	border:1px solid #ccc;
+	line-height: 35px;
+	padding-left: 3%;
+	font-size: 16px;
+}
+.contentbottom td{
+	border:1px solid #ccc;
+	background: #fafafa;
+	line-height: 30px;
+	padding-left: 2%;
+	font-size: 14px;
+}
+.contentbottomno{
+	text-align: center;
+	margin-top: 30px;
+	font-size: 16px;
+	display:none;
+}
+.contenttable{
+	margin-bottom: 20px;
+}
+.contenttable button{
+	background: #184fef;
+	color:#fff;
+	border:0;
+	width:30%;
+	line-height: 25px;
+}
+.contentbottomdiv{
+	padding-left: 3%;
+	line-height: 40px;
+	font-size: 16px;
+}
+.contentbottomdiv span{
+	margin-right: 10px;
+	float: right;
+	color:#c64848;
+}
+.price{
+	padding-left: 10px;
+	font-size: 16px;
+}
+.price span{
+	color:#184fef;
+}
+.contentyear,.contentmouth{
+	display: none;
+}
+.contentyear p,.contentmouth p{
+	height: 40px;
+	font:14px "微软雅黑";
+	padding-left: 10px;
+	border-bottom: 1px solid #ccc;
+}
+.contentyear p span,.contentmouth p span{
+	line-height: 40px;
+}
+.contentrightb{
+	position: relative;
+}
+.contentrightb span{
+	position: absolute;
+	top:5px;
+	right:0px;
+}
+.active{
+	display: none;
+}

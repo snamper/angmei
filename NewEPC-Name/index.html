@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>OE标准名待适配列表</title>
+    <link rel="stylesheet" href="css/base.css?v=20190124">
+    <link rel="stylesheet" href="css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="css/index.css?v=20190122">
+</head>
+<body>
+<div class="wrap">
+    <div class="titleWrap">
+        <span class="author"></span>
+        <div class="selectWrap">
+            <label for="brand">品牌：</label>
+            <select name="" id="brand">
+                <!--<option value="&#45;&#45;请选择&#45;&#45;" selected="selected">&#45;&#45;请选择&#45;&#45;</option>-->
+                <option value="本田">本田</option>
+                <option value="宝马">宝马</option>
+                <option value="奔驰">奔驰</option>
+                <option value="现代">现代</option>
+                <option value="丰田">丰田</option>
+                <option value="日产">日产</option>
+                <option value="荣威">荣威</option>
+                <option value="马自达">马自达</option>
+                <option value="海马">海马</option>
+                <option value="长城">长城</option>
+                <option value="大众">大众</option>
+                <option value="奥迪">奥迪</option>
+                <option value="斯柯达">斯柯达</option>
+                <option value="通用">通用</option>
+            </select>
+        </div>
+        <div>
+            <label for="inp" style="color:red">关键字：</label>
+            <input type="text" id="inp" placeholder="请输入EPC原厂名称或OE">
+        </div>
+        <button class="btn search">查询</button>
+        <button class="btn go">查看（已适配标准名列表页面）</button>
+    </div>
+    <div class="tableWrap">
+        <div class="flex">
+            <div>OE列表（共<span class="num"> </span>行记录）</div>
+            <div>
+                <label style="color:red">选择标准名(*)：</label>
+                <div class="normWrap">
+                    <input type="text" class="normName" placeholder="请输入并选择标准名称">
+                    <div class="nameList"></div>
+                    <img class="img" src="" alt="">
+                </div>
+                <button class="btn saveBtn">保存查询结果</button>
+            </div>
+        </div>
+        <table id="example" border="1" cellspacing="0" cellpadding="0">
+            <thead>
+                <tr>
+                    <th class="thcheck" width="30px"><input type="checkbox" id="checkAll" /></th>
+                    <!--<th width="60px">位置</th>-->
+                    <th width="70">品牌</th>
+                    <th>OE编码</th>
+                    <th>EPC产品名称</th>
+                    <th>备注</th>
+                    <th>关键字</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+</div>
+<div id="loading">
+    <p>
+        <img src="./image/timg.gif">
+    </p>
+</div>
+<div id="loading2">
+    <p style="margin-bottom: 5px;color: #d9534f;">正在插入中</p>
+    <div class="progress">
+        <div class="progress-bar progress-bar-danger progress-bar-striped active"><span><span class="arrNum">0</span>条</span></div>
+    </div>
+</div>
+<!--<div id="progress">-->
+    <!--<img src="image/loading2.gif" alt="加载中">-->
+    <!--<div class="result">-->
+        <!--<p><span>共：<b class="num1">0</b>条</span>，<span>已插入：<b class="num2">0</b>条</span>，<span>已存在：<b class="num3">0</b>条</span>，<span>插入失败：<b class="num4">0</b>条</span></p>-->
+        <!--<div>成功插入的位置为：<b class="succ">0</b></div>-->
+        <!--<div>录已经存在的位置为：<b class="succ2">0</b></div>-->
+        <!--<div>插入失败的位置为：<b class="erro">0</b></div>-->
+    <!--</div>-->
+    <!--<span class="close">×</span>-->
+<!--</div>-->
+
+</body>
+<script src="js/jquery.js"></script>
+<script src="js/jquery.dataTables.min.js"></script>
+<script src="js/index.js?v=20190122"></script>
+</html>

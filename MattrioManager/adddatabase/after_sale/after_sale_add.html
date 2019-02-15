@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<!--[if lt IE 9]>
+<script type="text/javascript" src="static/html5shiv.js"></script>
+<script type="text/javascript" src="static/respond.min.js"></script>
+<![endif]-->
+<link rel="stylesheet" type="text/css" href="../../static/h-ui/css/H-ui.min.css" />
+<link rel="stylesheet" type="text/css" href="../../static/h-ui.admin/css/H-ui.admin.css" />
+<link rel="stylesheet" type="text/css" href="../../lib/Hui-iconfont/1.0.8/iconfont.css" />
+<link rel="stylesheet" type="text/css" href="../../static/h-ui.admin/skin/default/skin.css" id="skin" />
+<link rel="stylesheet" type="text/css" href="../../static/h-ui.admin/css/style.css" />
+<link rel="stylesheet" type="text/css" href="../../css/zxf_page.css">
+<link rel="stylesheet" type="text/css" href="../../css/index.css">
+<link rel="stylesheet" type="text/css" href="../../css/loading.css">
+<!--[if IE 6]>
+<script type="text/javascript" src="static/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script>DD_belatedPNG.fix('*');</script>
+<![endif]-->
+<title>数据导入</title>
+</head>
+<style>
+	.contenta{
+		display: block;
+		width:150px;
+		height: 40px;
+		font-size: 20px;
+		line-height: 40px;
+		text-align: center;
+		color:#5a98de;
+		margin:30px 50px;
+	}
+	#pageForm{
+		font-size: 14px;
+		margin-left: 50px;
+	}
+	#pageForm input{
+
+	}
+	#upload_btn{
+		margin-left: 100px;
+	}
+	.cont{
+		border:3px dashed #ccc;
+		height:275px;
+	}
+	.cont p{
+		font-size: 20px;
+		font-weight: 700;
+	}
+	.percent,.percent_property{
+		width: 100%;
+		z-index: 100;
+		color:red;
+		font-size: 20px;
+		text-align: center;
+		line-height: 30px;
+		height:30px;
+	}
+</style>
+
+<body>
+<nav class="breadcrumb">
+	数据导入 
+	<a class="btn btn-danger radius r" style="line-height:1.6em;margin-top:3px;margin-left: 5px;" href="javascript:history.back();" title="返回" ><i class="Hui-iconfont">&#xe66b;</i></a>
+	<a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a>
+</nav>
+
+
+<p style="color:red;padding:10px;">注意：* 为了防止操作不当,请您在导入数据前先下载我们规定表格格式，然后将您的数据复制到规定表格中再导入！</p>
+
+	<div class="col-xs-offset-1 col-xs-5 pd-10 cont">
+		<p>上传产品</p>
+		<a class="contenta content_file"><i class="Hui-iconfont">&#xe640;</i>下载Excel格式</a>
+		<form  enctype="multipart/form-data" id="pageForm">
+			Excel上传:
+			<input id="excel_file" type="file" size="45" name="file">
+		</form>
+		<div class="text-c">
+			<button id="uploadbtn_file" class="btn btn-secondary radius mt-30">上 传</button>
+		</div>
+		<div class="percent">
+			
+		</div>
+	</div>
+
+	<div class="col-xs-5 pd-10 ml-10 cont">
+		<p>上传产品属性</p>
+		<a class="contenta content_property" onclick="downloadImage('../../images/logo.png')"><i class="Hui-iconfont">&#xe640;</i>下载Excel格式</a>
+		<form  enctype="multipart/form-data" id="pageForm">
+			Excel上传:
+			<input id="property" type="file" size="45" name="property">
+		</form>
+		<div class="text-c">
+			<button id="uploadbtn_property" class="btn btn-secondary radius mt-30">上 传</button>
+		</div>
+		<div class="percent_property">
+			
+		</div>
+	</div>
+
+	<!-- <div class="col-xs-offset-1 col-xs-5 pd-10 mt-10 cont">
+		<p>上传图片</p>
+		<a class="contenta content_img" onclick="downloadImage('../../images/logo.png')"><i class="Hui-iconfont">&#xe640;</i>下载图片格式</a>
+		<form  enctype="multipart/form-data" id="pageForm">
+			Excel上传:
+			<input id="img" type="file" size="45" name="img">
+		</form>
+		<div class="text-c">
+			<button id="uploadbtn_img" class="btn btn-secondary radius mt-30">上 传</button>
+		</div>
+	</div> -->
+	<div id="loading">
+		<img src="../../images/timg.gif">
+	</div>
+
+</body>
+
+<script src="../../js/jquery.min.js" type="text/javascript"></script>
+<script src="../../js/jquery.form.js" type="text/javascript"></script>
+<script src="../../js/execl.js" type="text/javascript"></script>
+<script type="text/javascript">
+
+	var network = localStorage.getItem("network");
+	$(".content_file").attr("href","../../excel/addBrands.xlsx");
+	$(".content_property").attr("href","../../excel/addBrands.xlsx");
+
+	function downloadImage(src) {
+		var $a = $("<a></a>").attr("href", src).attr("download", "meitu.png");
+		$a[0].click();
+	}
+
+	var str ;
+	var str_property;
+
+	$('#excel_file').change(function(e) {
+		$("#loading").show();
+        var files = e.target.files;
+        var fileReader = new FileReader();
+        fileReader.onload = function(ev) {
+            try {
+                var data = ev.target.result,
+                    workbook = XLSX.read(data, {
+                        type: 'binary'
+                    }), // 以二进制流方式读取得到整份excel表格对象
+                    persons = []; // 存储获取到的数据
+            } catch (e) {
+                alert('文件类型不正确');
+                return;
+            }
+            // 表格的表格范围，可用于判断表头是否数量是否正确
+            var fromTo = '';
+            // 遍历每张表读取
+            for (var sheet in workbook.Sheets) {
+                if (workbook.Sheets.hasOwnProperty(sheet)) {
+                    fromTo = workbook.Sheets[sheet]['!ref'];
+                    persons = persons.concat(XLSX.utils.sheet_to_json(workbook.Sheets[sheet]));
+                    break; // 如果取全部，就注释这行
+                }
+            }
+            $("#loading").hide();
+            $(".percent").html("0%");
+           str = persons;
+        };
+        // 以二进制方式打开文件
+        fileReader.readAsBinaryString(files[0]);
+    });
+    $("#uploadbtn_file").click(function(){
+        var newArray = new Array();
+        if(str.length <= 100){
+        	var products_json_array = JSON.stringify(str);
+			fn(products_json_array);
+        }else {
+        	var arr = [];
+    		$.each(str,function(k,v){
+            	newArray.push(v);
+            	if(newArray.length > 99){
+            		var products_json_array = JSON.stringify(newArray);
+					$.ajax({
+						type: "post",
+						url:  network+"/MattrioManager/BrandController/addProducts",
+						dataType: "json",
+						data:{
+							products_json_array:products_json_array
+						},
+						cache: false,
+						crossDomain: true == !(document.all),
+						success:function(data){
+							// console.log(data.msg);
+							var point = Math.floor(k/str.length * 100);
+							if(point == 100){
+								$(".percent").html("上传完成");
+							}else{
+								$(".percent").html(point+"%");
+							}
+						}
+					})
+					newArray.splice(0,newArray.length);
+            	}
+            	arr = newArray;
+            })
+            var products_json_array = JSON.stringify(arr);
+			fn(products_json_array);
+    	}
+    })
+
+	function fn(products_json_array){
+		$.ajax({
+			type: "post",
+			url:  network+"/MattrioManager/BrandController/addProducts",
+			dataType: "json",
+			data:{
+				products_json_array:products_json_array
+			},
+			cache: false,
+			crossDomain: true == !(document.all),
+			success:function(data){
+				// console.log(data.msg);
+				$(".percent").html("上传完成");
+			}
+		})
+	}
+
+	// 上传产品属性
+	$('#property').change(function(e) {
+		// $("#loading").show();
+        var files = e.target.files;
+        var fileReader = new FileReader();
+        fileReader.onload = function(ev) {
+            try {
+                var data = ev.target.result,
+                    workbook = XLSX.read(data, {
+                        type: 'binary'
+                    }), // 以二进制流方式读取得到整份excel表格对象
+                    persons = []; // 存储获取到的数据
+            } catch (e) {
+                alert('文件类型不正确');
+                return;
+            }
+            // 表格的表格范围，可用于判断表头是否数量是否正确
+            var fromTo = '';
+            // 遍历每张表读取
+            for (var sheet in workbook.Sheets) {
+                if (workbook.Sheets.hasOwnProperty(sheet)) {
+                    fromTo = workbook.Sheets[sheet]['!ref'];
+                    persons = persons.concat(XLSX.utils.sheet_to_json(workbook.Sheets[sheet]));
+                    break; // 如果取全部，就注释这行
+                }
+            }
+            $("#loading").hide();
+            $(".percent_property").html("0%");
+           str_property = persons;
+        };
+        // 以二进制方式打开文件
+        fileReader.readAsBinaryString(files[0]);
+    });
+
+	$("#uploadbtn_property").click(function(){
+        var newArray = new Array();
+        if(str_property.length <= 100){
+        	var products_json_array = JSON.stringify(str_property);
+			fnProperty(products_json_array);
+        }else {
+        	var arr = [];
+    		$.each(str_property,function(k,v){
+            	newArray.push(v);
+            	if(newArray.length > 99){
+            		var products_json_array = JSON.stringify(newArray);
+					$.ajax({
+						type: "post",
+						url:  network+"/MattrioManager/BrandController/addProductInfos",
+						dataType: "json",
+						data:{
+							products_json_array:products_json_array
+						},
+						cache: false,
+						crossDomain: true == !(document.all),
+						success:function(data){
+							// console.log(data.msg);
+							var point = Math.floor(k/str.length * 100);
+							if(point == 100){
+								$(".percent_property").html("上传完成");
+							}else{
+								$(".percent_property").html(point+"%");
+							}
+            				
+						}
+					})
+					newArray.splice(0,newArray.length);
+            	}
+            	arr = newArray;
+            })
+            var products_json_array = JSON.stringify(arr);
+			fnProperty(products_json_array)
+    	}
+    })
+	function fnProperty(products_json_array){
+		$.ajax({
+			type: "post",
+			url:  network+"/MattrioManager/BrandController/addProductInfos",
+			dataType: "json",
+			data:{
+				products_json_array:products_json_array
+			},
+			cache: false,
+			crossDomain: true == !(document.all),
+			success:function(data){
+				console.log(data);
+				$(".percent_property").html("上传完成");
+			}
+		})
+	}
+</script>
+
+</html>

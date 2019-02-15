@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<div>{{num}}</div>
+			<div>{{text}}</div>
+			<button type="button" @click='add'>点击</button>
+		</div>
+	</body>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script type="text/javascript">
+		Vue.mixin({
+			updated(){
+				console.log('我是全局的mixins')
+			}
+		})
+		var addMixins={
+			updated(){
+				console.log('数据发生变化，变化成'+this.num)
+			}
+		}
+		var app=new Vue({
+			el:'#app',
+			data:{
+				num:1,
+				text:'什么鬼'
+			},
+			methods:{
+				add(){
+					this.num+=1
+				}
+			},
+			mixins:[addMixins],
+			updated(){
+				console.log('我是原生的方法')
+			},
+            delimiters:['{{','}}'],
+            watch:{
+                num:function(newValue,oldValue){
+                    if(newValue>5){
+                        this.text='大于5的鬼'
+                    }
+                }
+            }
+		})
+		// app.$watch('num',function(newValue,oldValue){
+            // 	if(newValue>5){
+            // 		this.text='大于5的鬼'
+            // 	}
+		// })
+		var str='123456'
+        console.log(str.substr(-3, 3))
+    </script>
+</html>

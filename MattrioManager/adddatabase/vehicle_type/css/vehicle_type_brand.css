@@ -1,0 +1,22 @@
+.table td{
+	text-align: center;
+}
+select{
+	width:150px;
+	height:31px;
+	border:1px solid #ccc;
+	font-size: 14px;
+}
+.selectname1 span{
+	display: none;
+}
+
+.active{
+	display: none;
+}
+#inpsubmit{
+	margin-bottom: 4px;
+}
+#btnsubmit{
+	margin-bottom: 4px;
+}

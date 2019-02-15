@@ -1,0 +1,57 @@
+<div class="nav clearfix">
+			<div class="nav_left nleft wxcont">
+				<a href="/Mattrio/index.html">网站首页</a>&nbsp;&nbsp;
+				<a href="#" class="wxfa">关注微信
+					<img class="wxtop" src="/Mattrio/image/wx.jpg">
+				</a>
+
+			</div>
+			<div class="nav_right nright clearfix">
+				<div>
+					<a href="#" class="divname"><span></span></a>&nbsp;
+					<a href="#" class="divnum">日剩余次数(<span></span>)</a>&nbsp;
+					<a href="/Mattrio/content/about/in.html">免责条款</a>&nbsp;
+				</div>
+			</div>
+</div>
+<script type="text/javascript">
+    function getUrlParam(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+        var r = window.location.search.substr(1).match(reg); //匹配目标参数
+        if(r != null) return decodeURI(r[2]);
+        return null; //返回参数值
+    }
+    var demo3=getUrlParam('?demo3')
+    var username = $.cookie("username");
+	$(".nright .divname span").html(username);
+    if (!username&&demo3) {
+        $(".nright .divname span").html('demo3');
+    }
+	if (localStorage) {
+	    var network = localStorage.getItem("network");
+	} else {
+	    var network = $.cookie("network");
+	}
+	$.ajax({
+		type: "post",
+		url: network+"/Mattrio/InterfaceList/getUserFrequency",
+		cache: false,
+		data: {
+			"userid": userid
+		},
+		dataType: "json",
+		cache: false,
+		crossDomain: true == !(document.all),
+		success: function(data) {
+			 $.cookie("frequency", data.frequency[0].day_frequency, { expires: 7, path: '/' });
+			 $(".nright .divnum span").html($.cookie('frequency'));
+//			 if(data.frequency[0].day_frequency==0){
+//			 	alert("当天次数已用完!")
+//			 	window.location.href='/Mattrio/index.html'
+//			 }
+		},
+		error: function() {
+			
+		}
+	});
+</script>

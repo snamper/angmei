@@ -1,0 +1,418 @@
+html,body{
+	height: 100%;
+}
+html{
+	font-size: 100px;
+}
+body{
+	font-size:16px;	
+}
+.wrap{
+	min-height: 100%;
+	max-width:640px;
+	margin: 0 auto;
+	position: relative;
+	background: #f6f6f6;
+}
+.wrap_top{
+	height: 0.4rem;
+	background: #393939;
+}
+.select_box{
+	width: 90%;
+	margin: 0 auto;
+	position: relative;
+	overflow: hidden;
+}
+.select{
+	height: 0.8rem;
+	background: #fff;
+	margin: 0 auto;
+	border-radius: 5px;
+	margin-top:5px ;
+	-webkit-box-shadow: 1px 2px 8px #ccc;
+	box-shadow: 1px 2px 8px #ccc;
+	
+}
+.select .left,.select .right{
+	width: 50%;
+	float: left;
+	line-height: 0.8rem; 
+	text-align: center;
+	
+}
+.select .focus{
+	color: #4e6fa4;
+	border-bottom:2px solid #4e6fa4 ;
+	padding: 3px;
+}
+.select_border{
+	width: 90%;
+	background: #F4F4F4;
+	margin:  0 auto;
+	height: 7px;
+	padding-top: 5px;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	-webkit-box-shadow: 1px 2px 8px #ccc;
+	box-shadow: 1px 2px 8px #ccc;
+}
+.border{
+	height: 2px;
+	background:#1885F4;
+	background: -webkit-gradient(linear, right top, left top, from(#1885F4),to(#27D7EE));
+	background: -webkit-linear-gradient(right, #1885F4,#27D7EE);
+	background: -o-linear-gradient(right, #1885F4,#27D7EE);
+	background: linear-gradient(to left, #1885F4,#27D7EE);
+	border-radius: 0 0 4px 4px;
+}
+
+.wrap_vin,.wrap_car{
+	background: #f6f6f6;
+	padding: 0.8rem 0 130px;
+}
+.vin_top{
+	width: 95%;
+	margin:  0 auto;
+	margin-top: 10px;
+	padding-top: 10px;
+} 
+.logo,.vinma,.car_content{
+	float: left;
+}
+.vinma{
+	width: 75%;
+}
+.logo{
+	width: 22%;
+	padding-left: 3%;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.logo img{
+	width: 1.2rem;
+	height: 0.9rem;
+	max-height: 90px;
+	max-width: 120px;
+}
+.search{
+	margin: 0.2rem 0 0 0.1rem;
+	position: relative;
+	line-height: 34px;
+}
+.search .fdj{
+	max-width: 25px;
+	max-height: 25px;
+	position: absolute;
+	top: 50%;
+	margin-top: -12px;
+	left: 20px;
+}
+.search .vininput{
+	background: #e8e9eb;
+	width: 83%;
+	border-radius: 0.4rem 0 0 0.4rem;
+	float: left;
+	padding-left: 0.8rem;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	height: 34px;
+	
+}
+.search .vinbtn{
+	width: 22%;
+	border-radius:0.4rem;
+	background: #27bdef;
+	float: left;
+	margin-left: -5%;
+	color: #FFFDEF;
+	height: 34px;
+	cursor: pointer;	
+}
+.whatvin{
+	margin-top: 8px;
+}
+.whatvin .wvin{
+	float: right;
+	color: #83bdef;
+	cursor: pointer;
+}
+.vinshow{
+	width: 90%;
+	margin: 0.3rem auto 0;
+	padding-bottom:10px ;
+	background: #fefefe;
+	-webkit-box-shadow: 0px 0px 5px 1px #f1f1f1;
+	box-shadow: 0px 0px 5px 1px #f1f1f1;
+	border-radius: 2px;
+	background:#fff url(../image/carlamp.png) no-repeat ;
+	background-size: 3.4rem 2.35rem;
+	background-position: right top;
+	min-height: 150px;
+}
+.vinul li span:nth-child(2),.vinul2 li span:nth-child(2),.shou li span:nth-child(2){
+	color: #000;
+}
+.border_top{
+	background: #1885F4;
+    background: -webkit-gradient(linear, right top, left top, from(#1885F4),to(#27D7EE));
+    background: -webkit-linear-gradient(right, #1885F4,#27D7EE);
+    background: -o-linear-gradient(right, #1885F4,#27D7EE);
+    background: linear-gradient(to left, #1885F4,#27D7EE);
+    border-top: 1px dashed#f6f6f6 ;
+    height: 3px;
+}
+.vinresult{
+	width: 137px;
+	margin: 5px auto 10px;
+}
+.vinresult img{
+	width: 23px;
+	height: 6px;
+	vertical-align: middle;
+}
+.vinresult span{
+	color: #5BB0E6;
+	margin: 0 10px;
+	font-size: 14px;
+}
+.vinshow ul li{
+	line-height: 0.7rem;
+	background:rgba(240,240,240,0.6);
+	padding-left: 10px;
+	color: #698a9b;
+	margin: 0 10px 20px;
+}
+.error{
+	width: 90%;
+	margin: 10px auto 0;
+}
+.error .errorsp{
+	color: #46A8EC;
+	float: right;
+	cursor: pointer;
+}
+
+
+/*手工选车*/
+.wrap_car{
+	display: none;
+}
+.car{
+	width: 95%;
+	margin:  0 auto;
+	background: #fff;
+	border-radius: 5px;
+	margin-top: 10px;
+	padding: 10px ;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	position: relative;
+	box-sizing: border-box;
+}
+.car_sg {
+	border-bottom: 1px solid #CCCCCC;
+	padding: 10px 0;
+	
+}
+.car_sg .logo img{
+	margin: -10px 0 0 -10px;
+}
+.car_sg .search{
+	width: 75%;	
+}
+.car_sg .vininput{
+	cursor: pointer;
+}
+.car_inquire .chaxun{
+	line-height: 1rem;
+}
+.car_content{
+	width: 100%;
+	min-height: 30px;
+	position: relative;
+}
+.car_content .carnam{
+	color: #5d7d92;
+}
+.car_content p{
+	padding-left:10px;
+	line-height: 26px;
+}
+.carname{
+	margin: 10px 0 5px 0;
+	color: #5a8093;
+	font-size: 18px;
+}
+.carname_content{
+	font-size: 14px;
+}
+.carname_content{
+	color: #bfbfbf;
+}
+.selectcar{
+	position: absolute;
+	padding: 5px 10px;
+	border: 1px solid #60b6c7;
+	top: -16px;
+	right: 10px;
+	background: #fff;
+	border-radius: 2px;
+}
+.selectcar a{
+	color: #62b5c7;
+}
+
+
+.footer{
+	position: absolute;
+	bottom: 0;
+}
+.footer img{
+	width: 100%;
+}
+.footer_qrcode{
+	height: 100%;
+	width: 25%;
+	position: absolute;
+	background: #36bbcc;
+	color: #fff;
+	top: 0;
+	right: 0;
+	text-align: center;
+	cursor: pointer;
+}
+.footer_qrcode span{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -31px;
+	margin-left: -16px;
+	
+}
+
+/*二维码*/
+.meng,.vmeng,.errormeng{
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.3);
+	position: fixed;
+	left: 0;
+	top: 0;
+	z-index: 100;
+	display: none;
+}
+.qrcode,.vin{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-left:-2.5rem ;
+	margin-top:-2.5rem ;
+}
+.qrcode{
+	background: #fff;
+	padding: 0.5rem 0.35rem;
+	margin-left: -2.85rem;
+	margin-top: -3.9rem;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	border: 2px solid #27bdef;
+}
+.qrcode p{
+	color: #27bdef;
+	font-size: 20px;
+	text-align: center;
+	line-height: 30px;
+}
+.vin{
+	border: 2px solid #27bdef;
+	margin-left:-2.85rem ;
+	margin-top:-4rem ;
+	width: 5.7rem;
+	max-width: 630px;
+	height: 8rem;
+	max-height: 980px;
+}
+.vin img{
+	height: 8rem;
+	max-height: 980px;
+	
+}
+.qrcode img{
+	width: 5rem;
+	height: 5rem;
+}
+/*纠错*/
+.jiucuotable{
+	width: 100%;
+	margin-top: 10%;
+}
+.jiucuo{
+	width: 95%;
+    border: 1px solid #ccc;
+    background: #fff;
+    position: absolute;
+    top: 30%;
+    left: 2%;
+    position: relative;
+}
+.jiucuo th{
+	padding-left: 15px;
+    width: 35%;
+    text-align: left;
+    line-height: 24px;
+}
+.jiucuo td input{
+	width: 100%;
+	height: 24px;
+	border: 1px solid #ccc;
+	padding-left: 5px;
+}
+.jiucuo .p1{
+	padding:10px 0 10px 0;
+	text-align: center;
+	 
+}
+.jiucuo .p2{
+	text-align: center;
+	padding: 0 0 20px 0;
+}
+.jiucuo button{
+	color: #fff;
+    padding: 5px 10px;
+    border: 0;
+}
+.jiucuo .cancel{
+	background: #43CEE6;
+}
+.jiucuo .submit{
+	background: #4A87EE;
+}
+.jiucuo .turnoff{
+	position: absolute;
+	font-size: 20px;
+	color: #fff;
+	background: red;
+	width: 20px;
+	height: 20px;
+	text-align: center;
+	line-height: 20px;
+	top: 0;
+	right: 0;
+	cursor: pointer;
+}
+.car_sg .logo,.car_sg .search {
+	float: left;
+}
+.close{
+	position: absolute;
+	bottom: 1%;
+	width: 24%;
+	background: #27bdef;
+	border-radius: 20px;
+	color: #fff;
+	text-align: center;
+	left: 50%;
+	margin-left: -12%;
+	padding: 4px;
+}
