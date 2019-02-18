@@ -1,0 +1,32 @@
+
+ <!-- <template name="wxaSortPicker">
+    <scroll-view class="wxaSortPickerList"  scroll-y="true" style="height: {{wxaSortPickerData.view.scrollHeight}}px;" bindscrolltoupper="wxaSortPickerUpper" bindscrolltolower="wxaSortPickerLower" bindscroll="wxaSortPickerScroll" scroll-into-view="{{wxaSortPickerData.wxaSortPickertoView}}" scroll-with-animation="true">
+    <view class='meng' hidden='true'></view>
+        <block wx:for="{{wxaSortPickerData.textData}}" wx:for-item="item" wx:key="">
+            <view id="{{item.tag}}" class="wxaSortPickerTag">{{item.tag}}</view>
+            <view class='wxaSortPickerItem-box'>              
+              <template is="wxaSortPickerItem" data="{{item,dataType}}"/>
+            </view>
+        </block>
+    </scroll-view> -->
+    <!-- <template is="wxaSortPickerTemTags"/> -->
+<!-- </template>  -->
+
+<template name="wxaSortPickerItem">  
+  <block wx:if='{{dataType == "object"}}'>
+    <block wx:for="{{item.textArray}}" wx:for-item="child" wx:key="">
+        <view class="wxaSortPickerItem" data-text="{{child.name}}" data-value="{{child.name}}"  catchtap= "wxaSortPickerItemTap">
+         <!-- <image src='{{child.car_icon}}'></image>  -->
+         {{child.name}}       
+        </view>
+    </block>
+  </block>
+  <block wx:else>
+    <block wx:for="{{item.textArray}}" wx:for-item="child" wx:key="">
+        <view class="wxaSortPickerItem" data-text="{{child}}"  catchtap= "wxaSortPickerItemTap">
+          {{child}}       
+        </view>
+    </block>
+  </block>
+    
+</template>

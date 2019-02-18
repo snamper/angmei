@@ -1,0 +1,46 @@
+<!--pages/classify/classify.wxml-->
+<!--分类-->
+<!--首字母排序-->
+ <import src="../../utils/wxaSortPicker/wxaSortPicker.wxml"/>  
+ <!--公众号组件--> 
+<!-- <official-account></official-account> -->
+<!--搜索栏-->
+<view class='wrapTop'>
+   <view class='searchwrap'>
+      <!-- <view class='dian'></view> -->
+      <view class='vinwrap' bindtap='inpclick'>
+          <text>请输入17位车架号</text>
+          <image class='fdj' src='../image/fdj.png'></image>
+      </view>
+      <image class='saomiao' src='../image/saomiao.png' bindtap='ocr'></image>
+   </view>
+</view>
+<!--遍历车-->
+ <!-- <template is="wxaSortPicker" data="{{wxaSortPickerData,dataType}}" />  -->
+   <view class='wrap' >
+      <scroll-view class="wxaSortPickerList"  scroll-y="true" style="height: {{wxaSortPickerData.view.scrollHeight-114}}px;" bindscrolltoupper="wxaSortPickerUpper" bindscrolltolower="wxaSortPickerLower" bindscroll="wxaSortPickerScroll" scroll-into-view="{{wxaSortPickerData.wxaSortPickertoView}}" scroll-with-animation="true" bindtouchstart='rightstart'  bindtouchmove='rightmove' bindtouchend='rightend'>
+        <view class='meng' hidden='{{meng}}' bindtap='mengclick'></view>
+            <block wx:for="{{wxaSortPickerData.textData}}" wx:for-item="item" wx:key="">
+                <view id="{{item.tag}}" class="wxaSortPickerTag">{{item.tag}}</view>
+                <view class='wxaSortPickerItem-box'>              
+                  <template is="wxaSortPickerItem" data="{{item,dataType}}"/>
+                </view>
+            </block> 
+            <!-- height: {{wxaSortPickerData.view.scrollHeight}}px; -->
+        </scroll-view>
+    <scroll-view style="width:20px;" class="wxaSortPickerTemTags {{letterclick==1?'letterback':''}}" bindtap='letterclick' hidden='{{!meng}}'>
+            <block wx:for="{{[ 'B', 'F',  'R', 'X']}}" wx:for-item="item" wx:key="">
+                <view catchtap="wxaSortPickerTemTagTap" data-tag="{{item}}" class="wxaSortPickerTemTag">{{item}}</view>
+            </block>
+    </scroll-view>
+      <scroll-view class='right ' scroll-y="true" style="height: {{wxaSortPickerData.view.scrollHeight-114}}px; right:{{right}}px">
+            <block wx:for='{{cartype}}' wx:for-item="item" wx:key="">
+              <view class='cartype' data-text="{{item.Vehicle_Name_CN}}" bindtap='cartypeclick'>{{item.Vehicle_Name_CN}}</view>
+            </block>
+      </scroll-view>
+   </view>
+	 <tab  current="{{1}}"></tab>
+ <!--绑定手机号-->
+<view hidden='{{loginshow}}'>
+    <login></login>
+</view>

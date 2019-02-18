@@ -1,0 +1,110 @@
+/* pages/inde/lxwm/lxwm.wxss */
+.content{
+  background: #fff;
+  margin-top: 30rpx;
+  padding:40rpx 0 30rpx; 
+}
+.title{
+  text-align: center;
+  color: #777777;
+  line-height: 60rpx;
+}
+.title:first-child{
+  color: #df5c00;
+}
+.logoWrap{
+  text-align:center; 
+  margin: 120rpx 0 50rpx;
+}
+.logoWrap image{
+  width: 300rpx;
+}
+.imgWrap{
+  text-align: center;
+}
+.imgWrap image{
+  width: 600rpx;
+}
+.title2{
+  text-align:center; 
+  font-size: 50rpx;
+  letter-spacing:6rpx;
+}
+.text{
+  padding: 40rpx 60rpx;
+  font-size: 30rpx;
+  text-indent:2em;
+  letter-spacing:4rpx;
+  line-height: 44rpx;
+}
+.text2{
+  display: flex;
+  padding: 0 50rpx;
+   justify-content:space-between;
+}
+.text2 .left{
+    height: 350rpx;  
+    writing-mode: vertical-lr;  
+    writing-mode:tb-lr;
+    font-size: 64rpx;
+    color: #de7712;
+    font-weight: bold;
+    letter-spacing:20rpx;
+}
+.right{
+  display: flex;
+  flex-direction:column;
+   justify-content:center;
+}
+.qrcode{
+  width: 260rpx;
+  vertical-align:top;
+}
+.qrcodeTitle{
+  font-size: 26rpx;
+  text-align: center;
+}
+.list{
+  margin:0 30rpx;
+  font-size: 26rpx;
+  border-bottom: 2rpx solid #000;
+  margin-bottom: 20rpx;
+  line-height: 44rpx;
+}
+.list1{
+  border-width: 3rpx;
+}
+.list2{
+  border-width: 4rpx;
+}
+.list3{
+  border-width: 5rpx;
+}
+.list text{
+  color: #de7712;
+}
+.title3{
+  color: #bababa;
+  text-align: center;
+  font-size: 30rpx;
+}
+.trademark{
+  text-align: center;
+  margin-top: 150rpx;
+}
+.trademark image{
+  width: 420rpx;
+}
+.trademark:nth-child(4) image{
+  width: 750rpx;
+  vertical-align: top;
+}
+.text3{
+  display: flex;
+  padding: 0 20rpx;
+  margin-top: 30rpx;
+  justify-content: space-between;
+}
+.left2 image{
+  width: 420rpx;
+}

@@ -1,0 +1,104 @@
+/* pages/part/part.wxss */
+.searchwrap{
+  border: 1px solid #4A7BB7;
+  width:95%;
+  border-radius: 5px;
+  padding: 0;
+  margin-top: 15px;
+  height: 90rpx;
+}
+.searchwrap .left{
+  float: left;
+  color: #C9C9C9;
+  height: 100%;
+  padding-left: 40px;
+  line-height: 86rpx;
+  position: relative;
+}
+.searchwrap image{
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+}
+.searchwrap .right{
+  height: 100%;
+  background: #4A7BB7;
+  border-radius: 0 5px 5px 0;
+  color: #fff;
+  width: 20%;
+  text-align: center;
+  float: right;
+  line-height: 86rpx;
+}
+.carwrap{
+  margin-top: 20px;
+}
+.title {
+  text-align: center;
+  color: #666;
+  font-size: 16px;
+}
+.title icon{
+  vertical-align: middle;
+  margin-right: 5px;
+}
+.listbtn{
+  background: #F2F2F2;
+  width:95%;
+  margin: 20rpx auto 0;
+  padding: 10rpx;
+  text-align: center;
+  box-sizing: border-box;  
+  border-radius: 5px;
+  font-size: 16px;
+}
+.listbtn .listwrap{
+  height: 60rpx;
+  line-height: 60rpx;
+  width: 25%;
+  border-right: 2px solid #fff;
+  padding: 0 10rpx;
+  box-sizing: border-box;
+  float: left;
+  border-radius: 4px;
+}
+.listbtn .listwrap:last-child{
+  border-right: 0;
+}
+.listbtn  .listwrap .list{
+  color: #79797A;
+  border-radius: 3px;
+}
+.listbtn .bg .list{
+  background: #fff;
+  color: #4A7BB7;
+}
+button{
+  background: #4A7BB7;
+  color: #fff;
+  width: 85%;
+  border-radius: 50rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.imgwrap{
+  position: relative;
+  background: #fff;
+  height: calc(100vh - 180px);
+}
+.carwrap  .canvas{
+   width: 100%;
+   position: absolute;
+   top: 50%;
+   transform: translateY(-50%);
+}
+.canvas image{
+  width: 100%;
+}

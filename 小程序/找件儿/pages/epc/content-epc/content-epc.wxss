@@ -1,0 +1,60 @@
+/* pages/epc/content-epc/content-epc.wxss */
+page{
+  /* height: 100%; */
+  background: #fff;
+}
+.imgwrap image{
+  width: 100%;  
+}
+.title{
+  height: 80rpx;
+  line-height:80rpx;
+  background:#30333D;
+  color: #fff;
+}
+.title .left,.title .center,.title .right{
+  float: left;
+  font-size: 14px;
+}
+.title .left,.title .center,.list .listnum,.list .dcyl{
+  width: 20%;
+  text-align: center;
+  height: 100%;
+}
+.title .right,.list .listcontent{
+  width: 60%;
+  padding-left: 20px;
+  box-sizing: border-box;
+  height: 100%;
+}
+.list{
+   height: 100rpx;
+  line-height: 100rpx; 
+  border-bottom: 1px solid rgba(0,0,0,0.5);
+  margin:0 2.5%;
+}
+.list .listnum,.list .dcyl{
+  font-size: 16px;
+}
+.list .listnum,.list .dcyl,.list .listcontent{
+  float: left;
+}
+.list .listcontent{
+  padding-top: 10rpx;
+  line-height: 40rpx;
+  font-size: 14px;
+  position: relative;
+}
+.list .listcontent .oenum{
+  color: #1775E8;
+  font-size: 14px;
+}
+.oewrap{
+  height: calc(100vh - 256px);
+}
+progress{
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}

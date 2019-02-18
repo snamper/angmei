@@ -1,0 +1,59 @@
+<!--index.wxml-->
+<view class='wrap'>
+  <!-- 背景图片-->
+  <image class='bgimage' src='../image/bg.jpg'></image>
+  <!-- logo -->
+  <view class='logoimage'>
+      <image  src='../image/logo.png' mode='widthFix'></image>
+      <view>奔欧</view>
+  </view>
+  <view class='searchwrap'>
+    <view class='tabwrap clearfix'>
+        <view class='tablist {{num==0?"textcolor":""}}' bindtap='tabclick' data-num='0'>VIN查询</view>
+        <view class='tablist {{num==1?"textcolor":""}}' bindtap='tabclick' data-num='1' bindtap='car'>车型查询</view>
+        <view class='tablist {{num==2?"textcolor":""}}' bindtap='tabclick' data-num='2'>编码查询</view>
+    </view>
+    <swiper class='swiperone' current='{{num}}' bindchange='swiperchange'>
+      <swiper-item>
+         <view class='inputwrap  clearfix'>
+             <view class='ocrimgwrap' catchtap='ocrclick'><image mode='widthFix' src='../image/camera.png'></image></view>
+            <input class='vininput' placeholder='请输入VIN号码' bindinput='vininput'  value='{{vin}}'></input>
+            <view class='btn' bindtap='vinclick'>查询</view>
+        </view>
+      </swiper-item>
+      <swiper-item>
+      <view class='inputwrap carnamewrap clearfix' bindtap='car'>
+            <view class='click'>请选择车型</view>
+            <view class='btn'>查询</view>
+        </view>
+      </swiper-item>
+      <swiper-item>
+        <view class='inputwrap clearfix'>
+            <input placeholder='请输入奔欧/必能编码' bindinput='oeinput'  value='{{oe}}'></input>
+            <view class='btn' bindtap='oeclick'>查询</view>
+         </view>
+      </swiper-item>  
+    </swiper>
+  </view>
+  <!-- <view class='ocrwrap'>
+    <view class='ocrwraptwo' bindtap='ocrclick'>
+       <view class='ocr'>
+          <image src='../image/camera.png' mode='widthFix'></image>
+          <view class='text textcolor'>拍照识别VIN码</view>
+       </view>
+    </view>
+  </view> -->
+  <!--产品展示 -->
+
+<swiper class='swiperClass' autoplay  circular indicator-color="#fff" indicator-active-color="#f49641" interval="4000" duration="1000" previous-margin="40px" next-margin="50px"  bindchange="bindchange">
+    <block wx:for='{{imgurl}}' wx:for-item='item' wx:key='key'>
+      <swiper-item> 
+                <view class='list'>
+                  <view class='imagewrap'><image src='{{item}}' mode='widthFix'></image></view>
+                  <view class='title'>氧传感器</view>
+              </view>
+        </swiper-item>
+    </block>
+ </swiper>
+<!-- <view class='callwrap' bindtap='call'><text>联系方式：</text></view> -->
+</view>

@@ -1,0 +1,45 @@
+{
+  "pages": [   
+    "pages/inde/inde",
+    "pages/index/index",
+    "pages/car/car",
+    "pages/ocr/ocr",
+    "pages/list/list",
+    "pages/list/particulars/particulars",
+    "pages/inde/gywm/gywm",
+    "pages/inde/lxwm/lxwm",  
+    "pages/inde/jrwm/jrwm"
+  ],
+  "tabBar": {
+    "color": "#000",
+    "selectedColor": "#007e00",
+    "backgroundColor": "#FFF",
+    "borderStyle": "white",
+    "list": [
+      {
+        "selectedIconPath": "/pages/image/Home_1.png",
+        "iconPath": "/pages/image/home_2.png",
+        "pagePath": "pages/inde/inde",
+        "text": "首页"
+      },
+      {
+        "selectedIconPath": "/pages/image/Search_1.png",
+        "iconPath": "/pages/image/search_2.png",
+        "pagePath": "pages/index/index",
+        "text": "查询"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 8000,
+    "connectSocket": 20000,
+    "uploadFile": 20000,
+    "downloadFile": 20000
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "氧传感器查询系统",
+    "navigationBarTextStyle": "black"
+  }
+}

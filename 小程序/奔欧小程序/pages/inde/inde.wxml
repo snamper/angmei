@@ -1,0 +1,22 @@
+<!--pages/inde/inde.wxml-->
+<view><image src='../image/banner.jpg' mode='widthFix' class='banner'></image></view>
+<view class='tab'>
+    <view wx:for="{{tab}}" wx:for-item="item" wx:key="index" class='tabFlex' bindtap='tabClick'>
+        <image mode='widthFix' src='{{item.src}}' data-index="{{index}}"></image>
+    </view>
+</view>
+<view class='content'>
+    <view><image class='banner2' src='../image/banner2.jpg' mode='widthFix'></image></view>
+    <view class='introduce'>
+        <view>奔欧公司系汽车氧传感器专业的生产销售型公司，公司自2006年成立以来， 经过12年的市场检验，公司自行研发的氧传感器型号，覆盖目前市场99.9%车型，销售取得了12年的持续增长，母体公司掌握发明专利6个、实用新型专利25个，主要为一汽轿车、华晨鑫源、江淮汽车、依维柯、力帆汽车、吉利汽车、东风小康、北汽银翔、北汽福田等主机配套。</view>
+    </view>
+    <view class='productWrap'>
+        <image mode='widthFix' class='productimg'  src='../image/product.png'></image>
+        <view class='productBannerWrap'>
+            <view class='productBanner' wx:for="{{tabBanner}}" wx:for-item="item" wx:key="">
+                <image mode='widthFix' src='{{item.src}}'></image>
+                <view class='title'>{{item.title}}</view>
+            </view>
+        </view>
+    </view>
+</view>

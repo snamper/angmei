@@ -1,0 +1,12 @@
+<!--pages/classify/year/year.wxml-->
+<!--年份-->
+<scroll-view class='left' scroll-y="true" style='height:{{wheight}}px' >
+   <block wx:for="{{year}}" wx:for-item="item" wx:key="">
+      <view class='yearwrap {{num==index?"bg":""}}' data-text="{{item.year}}" data-index="{{index}}"  bindtap='yearclick'>{{item.year}}</view>
+   </block>
+</scroll-view>
+<scroll-view class='right' scroll-y="true" style='height:{{wheight}}px'>
+    <block wx:for="{{output}}" wx:for-item="item" wx:key="">
+        <view class='outputwrap' data-text="{{item.Name_of_sales}}" bindtap='outputclick'>{{item.Name_of_sales}}</view>
+    </block>
+</scroll-view>

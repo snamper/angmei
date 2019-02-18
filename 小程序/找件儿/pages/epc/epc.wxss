@@ -1,0 +1,41 @@
+/* pages/epc/epc.wxss */
+scroll-view.left{
+  width: 26%;
+  float: left;
+  background:#F2F2F2;
+}
+scroll-view.right{
+  width: 72%;
+  float: left;
+  background: #fff;
+  padding-left: 2%;
+}
+.categorys{
+  width: 100%;
+  min-height: 90rpx;
+  font-size: 14px;
+  color: #7D7E7F;
+  text-align: center;
+  display: flex;
+  /* align-items: center; */
+  flex-direction: column;
+  justify-content: space-around;
+  border-bottom: 1px solid #DEE0E4;
+}
+.bg{
+  background: #fff;
+}
+.right .list{
+  margin-bottom: 10px;
+}
+.list .title{
+  font-size: 14px;
+}
+.list .epcimg{
+  border: 1px solid #EEEFEF;
+  border-radius: 5rpx;
+  margin: 10px 10px 10px 0;
+}
+.list .epcimg image{
+  width: 100%;
+}

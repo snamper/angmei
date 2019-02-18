@@ -1,0 +1,14 @@
+/* pages/my/aboutus /aboutus .wxss */
+page{
+  height: 100%;
+  font-size: 14px;
+  color: #515359;
+}
+.qrcode{
+  height: 30%;
+}
+.content{
+  height: 70%;
+  background: #fff;
+  padding: 25rpx;
+}

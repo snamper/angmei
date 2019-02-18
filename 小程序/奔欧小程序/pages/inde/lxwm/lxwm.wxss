@@ -1,0 +1,41 @@
+/* pages/inde/jrwm/jrwm.wxss */
+.content{
+  padding: 20rpx 15rpx 0;
+}
+.phoneWrap{
+  background: #fff;
+  padding: 30rpx 20rpx 0;
+  box-shadow: 1px 1px 8px #ccc;
+  margin-bottom: 30rpx;
+}
+.h1{
+  color: #037c00;
+  font-weight: bold;
+  text-align: center;
+  font-size: 40rpx;
+}
+.h4{
+  font-size: 28rpx;
+  color: #8d8d8d;
+  text-align: center;
+  margin-top: 10rpx;
+  letter-spacing:5rpx;
+  margin-bottom: 60rpx;
+}
+.phoneList{
+  display: flex;
+  justify-content: space-between;
+  background: #f4f4f4;
+  font-size: 32rpx;
+  margin-top: 18rpx;
+  padding: 24rpx 30rpx;
+}
+.phone{
+  color: #6c6a6b;
+}
+.img{
+  width: 720rpx;
+  margin-left: -20rpx;
+  margin-top: 20rpx;
+  display: block;
+}

@@ -1,0 +1,76 @@
+<!--pages/car/car.wxml-->
+<view class='topwrap'>
+  <view class='tabwrap clearfix'>
+    <view class='{{num==0?"bg textcolor":""}}' bindtap='tabclick' data-num='0'>车型查询</view>
+    <view class='{{num==1?"bg textcolor":""}}' bindtap='tabclick' data-num='1'>VIN查询</view>
+    <view class='{{num==2?"bg textcolor":""}}' bindtap='tabclick' data-num='2'>编码查询</view>
+  </view>
+</view>
+<swiper class='swiperone' current='{{num}}' bindchange='swiperchange'>
+    <swiper-item>
+    <view class='inputwrap carnamewrap clearfix' wx:if='{{!scar}}'>
+            <input placeholder='进行模糊查询或点击车型' bindinput='vagueinput'  value='{{vague}}'></input>
+            <view class='btn' bindtap='vagueclick'>查询</view>
+         </view>
+        <view class='carnamewrap' wx:if='{{scar}}'>
+           <text wx:if='{{!scar}}'>请选择车型</text>
+           <view class='carwrap' style=" display: flex; height:100%;width:100%;" wx:if='{{scar}}'>
+                <view class='slist textcolor carwrap' wx:if='{{car}}' bindtap='carclick'>{{car}}
+                    <image src='../image/bottom.png'></image>
+                </view>
+                 <view class='slist textcolor cartypewrap' wx:if='{{cartype}}' bindtap='scartypeclick'>{{cartype}}
+                    <image src='../image/bottom.png'></image>
+                </view>
+                 <view class='slist textcolor yearwrap' wx:if='{{year}}' bindtap='syearclick'>{{year}}
+                    <image src='../image/bottom.png'></image>
+                </view>
+           </view>
+        </view>
+    </swiper-item>
+    <swiper-item>
+        <view class='inputwrap carnamewrap clearfix vinwrap'>
+            <view class='ocrimgwrap' catchtap='ocr'><image mode='widthFix' src='../image/camera.png'></image></view>
+            <input placeholder='请输入VIN号码' bindinput='vininput'  value='{{vin}}'></input>
+            <view class='btn' bindtap='vinclick'>查询</view>
+        </view>
+    </swiper-item>
+    <swiper-item>
+        <view class='inputwrap carnamewrap clearfix'>
+            <input placeholder='请输入奔欧/必能编码' bindinput='oeinput'  value='{{oe}}'></input>
+            <view class='btn' bindtap='oeclick'>查询</view>
+         </view>
+    </swiper-item>
+  </swiper>
+ <!--车-->
+<block wx:if='{{carshow}}'>
+    <import src="../../utils/wxaSortPicker/wxaSortPicker.wxml"/> 
+    <template is="wxaSortPicker" data="{{wxaSortPickerData,dataType,logolist}}"/>  
+</block>
+ <!--车型-->
+<scroll-view scroll-y class='wxaSortPickerItem-box' wx:if='{{cartypeshow}}' style='height: {{wxaSortPickerData.view.scrollHeight-106}}px' >
+    <block wx:for='{{cartypelist}}' wx:for-item='item' wx:key='key'>
+        <view class='wxaSortPickerItem' data-text='{{item.Vehicle_Name_CN}}' bindtap='cartypeclick'>{{item.Vehicle_Name_CN}}
+        </view>
+    </block>
+</scroll-view>  
+<!--年份-->
+<scroll-view scroll-y class='wxaSortPickerItem-box' wx:if='{{yearshow}}' style='height: {{wxaSortPickerData.view.scrollHeight-106}}px' >
+    <block wx:for='{{yearlist}}' wx:for-item='item' wx:key='key'>
+        <view class='wxaSortPickerItem' data-text='{{item.LaunchEOPYear}}' bindtap='yearclick'>{{item.LaunchEOPYear}}
+        </view>
+    </block>
+</scroll-view>  
+<!--排量-->
+<scroll-view scroll-y class='wxaSortPickerItem-box' wx:if='{{outputshow}}' style='height: {{wxaSortPickerData.view.scrollHeight-106}}px' >
+    <block wx:for='{{outputlist}}' wx:for-item='item' wx:key='key'>
+        <view class='wxaSortPickerItem' data-text='{{item.Capacity}}' bindtap='outputclick'>{{item.Capacity}}{{item.Air_intake_form}}
+        </view>
+    </block>
+</scroll-view> 
+<!--模糊查询-->
+<scroll-view scroll-y class='wxaSortPickerItem-box' wx:if='{{vagueshow}}' style='height: {{wxaSortPickerData.view.scrollHeight-106}}px' >
+    <block wx:for='{{vaguelist}}' wx:for-item='item' wx:key='key'>
+        <view class='wxaSortPickerItem' data-text='{{item.Vehicle_Name_CN}}' bindtap='mohuclick' data-car='{{item.Manufacture_CN}}' data-cartype='{{item.Vehicle_Name_CN}}' data-year='{{item.LaunchEOPYear}}' data-output='{{item.Capacity}}'>{{item.Manufacture_CN}} {{item.Vehicle_Name_CN}} {{item.LaunchEOPYear}} {{item.Air_intake_form}}
+        </view>
+    </block>
+</scroll-view>  

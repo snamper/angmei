@@ -1,0 +1,18 @@
+<!--pages/my/zhanghao/zhanghao.wxml-->
+<!--账号-->
+<view class='zhwrap'>
+   <view class='zhlist clearfix'>
+      <view class='left'>姓名</view>
+      <view class='right' ><input  placeholder='请填写您的姓名' placeholder-style='color:#B8B9BB;'></input></view>
+   </view>
+   <view class='zhlist clearfix'>
+      <view class='left'>电话</view>
+      <view class='right' ><input  type='number' placeholder='请填写您的电话' placeholder-style='color:#B8B9BB;'></input></view>
+   </view>
+   <view class='zhlist clearfix'>
+      <view class='left'>邮箱</view>
+      <view  class='right'><input placeholder='请填写您的邮箱' placeholder-style='color:#B8B9BB;'></input></view>
+   </view>
+</view>
+<!--保存-->
+<view class='save'>保存</view>

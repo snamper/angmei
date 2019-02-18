@@ -1,0 +1,74 @@
+/* pages/classify/classify.wxss */
+@import "../../utils/wxaSortPicker/wxaSortPicker.wxss";
+/*VIN搜索*/
+.searchwrap{
+  width: 90%;
+  border: 1px solid #4A7BB7;
+  border-radius: 5px;
+  box-shadow: 0 0 0 #fff;
+  position: relative;
+}
+.searchwrap image{
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.searchwrap .fdj{
+  left:10px;
+}
+.searchwrap .saomiao{
+  right: 15px;
+}
+.searchwrap text{
+  color: #e6e6e6;
+}
+.meng{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 100rpx;
+  left: 0;
+  background: rgba(0, 0, 0, 0.2)
+  
+}
+.right{
+  position: fixed;
+  width: 80%;
+  right: -80%;
+  top: 102rpx;
+  transition: all 0.5s;
+  z-index: 10;
+  background: #fff;
+}
+.left{
+  right: 0;
+}
+.right .cartype{
+  background: #fff;
+  min-height:88rpx;
+  line-height:88rpx;
+  border-bottom:1px solid #DEE4E4;
+  font-size:32rpx;
+  padding-left: 32rpx;
+
+}
+.letterwrap{
+  position: fixed;
+  right:10rpx;
+  top:20rpx;
+  font-size:16px;
+}
+.brandwrap image{
+  width:50px;
+  height: 50px;
+  vertical-align: middle;
+}
+.yearwrap{
+  background: #fff;
+  padding:0 32rpx;
+}
+.vinwrap{
+  margin-right: 40px;
+}

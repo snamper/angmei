@@ -1,0 +1,126 @@
+/* pages/index/particulars/particulars.wxss */
+.topwrap{
+  width: 95%;
+  margin: 20rpx auto;
+  background: #fff;
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+.topwrap .title{
+  text-align: center;
+  border-top: 1px solid #dadada;
+  padding: 10rpx 0;
+}
+.imgwrap{
+  margin: 0 auto;
+  width: 460rpx; 
+}
+.imgwrap image{
+  width: 460rpx;
+}
+.parameter,.carwrap{
+  width: 95%;
+  margin: 20rpx auto;
+  background: #fff;
+  padding: 20rpx;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+.parameter view{
+  line-height: 50rpx;
+}
+.parameter .title,.carwrap .title{
+  color: #1aaeee;
+  margin-bottom: 10rpx;
+}
+.parameter .title .border,.carwrap .title .border{
+  border-bottom: 1px solid #dadada;
+  width: 300rpx;
+  display: inline-block;
+  margin-left: 4rpx;
+}
+.cartype{
+  color: #696363;
+  padding: 14rpx 0;
+  border-bottom: 1px solid #f2f2f2;
+  padding-left:12rpx; 
+}
+/*纠错*/
+.error{
+  background: red;
+  color: #fff;
+  text-align: center;
+  float: right;
+  font-size: 14px;
+  padding: 0 8rpx;
+}
+.meng{
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,.3);
+  position: fixed;
+  top:0;
+  left:0;
+}
+.box{
+  width: 95%;
+  height: 45%;
+  border: 1px solid #ccc;
+  position: absolute;
+  top: 30%;
+  left: 2.5%;
+  background: #fafafa;
+  border-radius: 5px;
+  font-size: 16px;
+  padding-top: 20px;
+  box-sizing: border-box;
+}
+.boxlist{
+  height: 12%;
+  margin-top: 5px;
+}
+.boxlist .left,.boxlist .right{
+  float: left;
+  height: 100%;
+  display:flex;
+  justify-content:space-around;
+  flex-direction:column;
+}
+.boxlist .left{
+  width: 40%;
+  padding-left:20px;
+  box-sizing: border-box; 
+  font-weight: bold;
+}
+.boxlist .right{
+  width: 55%;
+}
+.boxlist .right input{
+  width: 100%;
+  height: 100%;
+  border: 1px solid #ccc;
+  padding-left: 5px;
+  box-sizing: border-box;
+}
+.btnwrap .left,.btnwrap .right{
+  float: left;
+  height: 15%;
+  width: 20%;
+  color: #fff;
+  padding: 5px;
+  text-align: center;
+  border-radius: 3px;
+  margin-left: 20%;
+  margin-top: 20px;
+}
+.btnwrap .left{
+  background: #43CEE6;
+}
+.btnwrap .right{
+  background: #4A87EE;
+}
+.name{
+  width: 160rpx;
+  display: inline-block;
+  text-align-last: justify;
+}

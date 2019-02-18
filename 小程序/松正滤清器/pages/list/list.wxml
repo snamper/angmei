@@ -1,0 +1,17 @@
+<!--pages/list/list.wxml-->
+<!-- bindtap='listclick' -->
+<block wx:for='{{datalist}}' wx:for-item="item" wx:key="index">
+  <view class='list clearfix' data-id='{{index}}' bindtap='listclick'>
+     <view class='left'>
+        <image mode='widthFix' src='{{item.img}}' binderror='imgerror' data-index='{{index}}'></image>
+     </view>
+     <view class='right'>
+        <view class='title'>{{item.category_name}}</view>
+        <view>产品编码: {{item.product_id}}</view>
+        <view>车型: {{item.Manufacture_CN}} {{item.Vehicle_Name_CN}} {{ietm.Capacity}}</view>
+        <view>年款: {{item.Year_of_production}}</view>
+        <view>排量: {{item.Capacity}}</view>
+        <view>发动机型号: {{item.Engine_Code}}</view>
+     </view>
+  </view>
+</block>

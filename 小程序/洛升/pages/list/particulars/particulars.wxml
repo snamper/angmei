@@ -1,0 +1,44 @@
+<!--pages/index/particulars/particulars.wxml-->
+<view class='topwrap'>
+    <view class='imgwrap'>
+      <image src='{{particular.img}}' binderror='imgerror' mode='widthFix'></image>
+    </view>
+    <view class='title'>{{particular.category_name}}</view>
+</view>
+<view class='parameter'>
+    <view class='title'><text class='textcolor'>产品参数</text><text class='border'></text><view class='error' bindtap='show'>纠错</view></view>
+    <view>产品类型：{{particular.category_name}}</view>
+    <view>产品编码：{{particular.product_id}}</view>
+    <view>OE编码：{{particular.oenumber}}</view>
+</view>
+<view class='carwrap'>
+    <view class='title'><text class='textcolor'>适用车型</text><text class='border'></text></view>
+    <block wx:for='{{cartypelist}}' wx:for-item='item' wx:key=''>
+        <view class='cartype'>{{item.Manufacture_CN}} {{item.Vehicle_Name_CN}} {{item.Year_of_production}} {{item.Capacity}} {{item.Air_intake_form}}</view>
+    </block>
+</view>
+<!--纠错-->
+<view class='meng' wx:if='{{meng}}'>
+   <view class='box'>
+      <view class='boxlist clearfix'>
+         <view class='left'>产品编码：</view>
+         <view class='right'>{{bm}}</view>
+      </view>
+      <view class='boxlist clearfix'>
+         <view class='left'>您认为的编码：</view>
+         <view class='right'><input placeholder='您认为的编码' bindinput='bm' value='{{bminput}}'></input></view>
+      </view>
+      <view class='boxlist clearfix'>
+         <view class='left'>您的电话号码：</view>
+         <view class='right'><input  placeholder='您的电话号码' bindinput='phone' value='{{phoneinp}}'></input></view>
+      </view>
+      <view class='boxlist clearfix'>
+         <view class='left'>您的姓名：</view>
+         <view class='right'><input placeholder='您的姓名' bindinput='name' value='{{nameinp}}'></input></view>
+      </view>
+      <view class='btnwrap clearfix'>
+         <view class='left' bindtap='qxclick'>取消</view>
+         <view class='right' bindtap='tjclick'>提交</view>
+      </view>
+   </view>
+</view>

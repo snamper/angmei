@@ -1,0 +1,37 @@
+<!--pages/inde/lxwm/lxwm.wxml-->
+<view class='content'>
+   <view class='title'>奔欧传感器学院    查询APP</view>
+   <view class='title'>覆盖市场99.9% 车型</view>
+   <view class='title'>奔欧&必能品牌全国招商正式启动</view>
+   <view class='logoWrap'><image mode='widthFix' src='../../image/biglogo.jpg'></image></view>
+   <view class='imgWrap'><image src='../../image/jrwm0.jpg' mode='widthFix'></image></view>
+   <view class='title2' style='font-width:normal;'>查询系统 / 扫描关注</view>
+   <view class='text'>奔欧学院氧传感器查询系统，是杭州奔欧氧传感器公司打造的app氧传感器智能查询系统。奔欧学院氧传感器查询系统具有自主下单和三种查询功能，按车型查询，按VIN查询，奔欧必能产品编号查询，各大主要城市优质的战略伙伴及直营店，可以通过三种功能系统快速查询匹配对应必能、奔欧产品型号，完成订单购买。</view>
+   <view class='text2'>
+      <view class='left'>极速查询 品类齐全 加盟扶持 品牌运作</view>
+      <view class='right'>
+          <image class='qrcode' src='../../image/qrcode.jpg' mode='widthFix'></image>
+          <view class='qrcodeTitle'>更多详情请关注APP</view>
+      </view> 
+   </view>
+    <view class='list'><text>1.提供专业的技术培训，</text>包括产品的基础知识、产品的分类、车型适配性等。</view>
+    <view class='list list1'><text>2. 公司设立专业部门，</text>有专业服务人员，随时可咨询产品等问题。</view>
+    <view class='list list2'><text>3.提供门店招牌制作、</text>宣传页、门店展示架等提升形象。</view>
+    <view class='list list3'><text>4.互联网线上解决一些产品的技术问题，</text>通过互联网做足宣传工作，细分市场，我们不单只推广我们的产品，我们也要把经销商纳入我们的推广范畴，提高经销商在汽配行业的知名度，有助于经销商健康快速的成长。</view>
+</view>
+<view class='content'>
+  <view class>
+    <view class='title3'>加盟品牌</view>
+    <view class='trademark'><image mode='widthFix' src='../../image/jrwm1.jpg'></image></view>
+    <view class='trademark'><image mode='widthFix' src='../../image/jrwm2.jpg'></image></view>
+    <view class='trademark'><image mode='widthFix' src='../../image/jrwm3.jpg'></image></view>
+  </view>
+  <view class='text3'>
+    <view class='left2'><image src='../../image/jrwm4.jpg' mode='widthFix'></image></view>
+    <view class='right'>
+          <image class='qrcode' src='../../image/qrcode.jpg' mode='widthFix'></image>
+          <view class='qrcodeTitle'>更多详情请关注APP</view>
+      </view> 
+    
+  </view>
+</view>

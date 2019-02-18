@@ -1,0 +1,42 @@
+/* pages/my/zhanghao/zhanghao.wxss */
+.zhwrap{
+  width: 95%;
+  margin: 0 auto;
+  border-radius:10rpx;
+  box-shadow: 1px 1px 8px #ccc;
+  box-sizing: border-box;
+  padding: 20rpx;
+  margin-top: 20rpx;
+  background: #fff;
+}
+.zhlist{
+  padding: 15rpx 0;
+}
+.zhlist .left{
+  width: 15%;
+  line-height: 26px;
+  text-align: center;
+}
+.zhlist .right{
+  line-height: 26px;
+  background: #F7F7F7;
+  width: 70%;
+  padding-left: 5%;
+  margin-left: 5%;
+}
+.zhlist .left,.zhlist .right{
+  float: left;
+  font-size: 14px;
+}
+.save{
+  width: 60%;
+  background: #38A7DA;
+  color: #fff;
+  position: fixed;
+  bottom: 10%;
+  left:50%;
+  margin-left: -30%;
+  text-align: center;
+  padding: 20rpx 0;
+  border-radius: 10rpx;
+}

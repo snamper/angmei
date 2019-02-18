@@ -1,0 +1,19 @@
+<!--pages/login/login.wxml-->
+<!--登陆-->
+<view class='bgwrap' hidden='{{loginshow}}'>
+   <image src='../image/loginbg.jpg' class='bg' ></image>
+   <view class='wrap boxshadow' >
+   <image class='signup' src='../image/signup.png'></image>
+      <view class='title'>请绑定<text class='col'>手机号</text></view>
+      <view class='namewrap'>
+          <view class='name col'>·· 手机号</view>
+          <view class='nameinp'><input type='number' maxlength='11' placeholder='请输入您的手机号' bindinput='phone' value='{{phone}}' adjust-position></input><image src='../image/yonghu.png'></image></view>
+      </view>
+      <view class='namewrap'>
+          <view class='name col'>·· 验证码</view>
+          <view class='nameinp'><input type='number'  class='yzm' placeholder='请输入验证码' maxlength='6' value='{{yzm}}' bindinput='yzm'></input><view class='dxyzm {{nondx=="true"?"ybg":""}}'   bindtap='dxyzm'>{{dxyzm}}</view></view>
+      </view>
+      <view class='btn' bindtap='btn'><image src='../image/denglu.png'></image><text> 绑定手机号</text></view>
+    </view>
+</view>
+

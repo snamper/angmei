@@ -1,0 +1,181 @@
+/* pages/part/peijianlist/peijianlist.wxss */
+.all{
+  color: #4A7BB7;
+  margin: 0 auto;
+  padding: 16px 0 16px 8px;
+  background: #fff;
+  box-shadow: 1px 1px 8px solid #ccc;
+  position: relative;
+}
+.fxwrap{
+  position: absolute;
+  text-align: center;
+  width: 60px; 
+  font-size: 14px;
+  right: 20px;
+  top: 16rpx;
+  bottom:0;
+}
+.fxwrap image{
+  width: 28px;
+  height: 28px;
+  margin-left: 16px;
+  display: block;
+}
+.bottom{
+  position: fixed;
+  width: 100%;
+  height: 100rpx;
+  background: #fff;
+  bottom: 0;
+  box-shadow: 1px 1px 8px #ccc;
+}
+.bottom .left,.bottom .right{
+  float: left;
+  height: 100%;
+}
+.bottom .left{
+  width: 70%;
+}
+.bottom .left .push{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 50px;
+  color: #329BDE;
+}
+.bottom .left .push text{
+  border-radius:50%; 
+  border: 1px solid #ccc;
+  color: #ccc;
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  text-align: center;
+  line-height: 18px;
+  margin-right: 5px;
+}
+.bottom .left .push text{
+  border-radius:50%; 
+}
+.bottom .right{
+  width: 30%;
+  text-align: center;
+  color:#fff;
+  line-height: 100rpx;
+  background: #329BDE;
+}
+/*列表*/
+.list{
+  width: 93%;
+  min-height: 100px;
+  position: relative;
+  margin-top: 14px;
+}
+.list image{
+  width: 160rpx;
+  height: 160rpx;
+  margin: 10px;
+}
+.list .left,.list .right{
+  float: left;
+  height: 100%;
+}
+.list .right{
+  display:flex;
+  /* align-items:center; */
+  justify-content:space-around;
+  flex-direction:column;
+  min-height: 100px;
+  box-sizing: border-box;
+  width: calc(100% - 200rpx);
+  position: relative;
+}
+.list .right .arrows{
+  width: 30rpx;
+  height: 30rpx;
+  border-top:2px solid #333;
+   border-right:2px solid #333;
+   position: absolute;
+   right: 50rpx;
+   top:50%;
+   transform: translateY(-50%),rotateZ(90deg);
+}
+.list .name{
+  color: #6785AD;
+  font-size: 16px
+}
+.list .oe{
+  color: #B3B5BB;
+  font-size: 14px;
+}
+.list .moneywrap{
+  color: #605D5D;
+  font-size: 14px;
+}
+.list .car{
+  color: #fff;
+  background: #F0A42D;
+  padding: 3px 5px;
+  position: absolute;
+  /* top: 50%;
+  transform: translateY(-50%); */
+  right: 5px;
+  font-size: 14px;
+  border-radius: 3px;
+  bottom: 5px;
+  
+}
+.list .check{
+  position: absolute;
+  top: -9px;
+  left:-8px;
+  transform: translateY(-50%);
+  transform:scale(.9);
+}
+.mengwrap{
+  width:100%;
+  height:100%;
+  position:fixed;
+  top:0;
+  left:0;
+}
+.meng{
+    width:100%;
+    height:100%;
+    position: absolute;
+    left:0;
+    top: 0;
+   background:rgba(0, 0, 0, 0.2);
+}
+.datawrap{
+  background: #fff;
+  height: 50%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: -50%;
+  transition: all 0.3s;
+}
+.datawrap .top{
+  height: #ebebeb;
+  font-size: 16px;
+  background: #ebebeb;
+  padding: 14rpx 0;
+}
+.datawrap .top .no{
+  float: left;
+  color: #3a62d1;
+  background: #e1e1e1;
+  padding: 14rpx 30rpx;
+  border-radius: 40rpx;
+  margin-left: 20rpx;
+}
+.datawrap .top .yes{
+  color: #e3890f;
+  float: right;
+  background: #e1e1e1;
+  padding: 14rpx 30rpx;
+  border-radius: 40rpx;
+  margin-right: 20rpx;
+}

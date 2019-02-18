@@ -1,0 +1,25 @@
+<!--pages/part/part.wxml-->
+<!--配件查询-->
+ <!-- <view class='searchwrap' bindtap='search'>
+    <view class='left'>请输入配件名称（可多选）<image src='../image/fdj.png'></image> </view>
+    <view class='right'>确定</view>
+</view>  -->
+<view class='carwrap'>
+   <view class='title'>
+      <icon type="info" size="18" color='#E85858'/>请在汽车受损区域画圈选择配件
+   </view>
+   <view class='listbtn clearfix'>
+     <view class='listwrap {{num==0?"bg":""}}' bindtap='listclick' data-num='0' data-src='../image/q.jpg'><view class='list'>正面</view></view>
+     <view class='listwrap {{num==1?"bg":""}}' bindtap='listclick' data-num='1' data-src='../image/z.jpg'><view class='list'>左侧</view></view>
+     <view class='listwrap {{num==2?"bg":""}}' bindtap='listclick' data-num='2' data-src='../image/y.jpg'><view class='list'>右侧</view></view>
+     <view class='listwrap {{num==3?"bg":""}}' bindtap='listclick' data-num='3' data-src='../image/h.jpg'><view class='list'>后面</view></view>
+   </view>
+   <view class='imgwrap' >
+       <view class='canvas'>
+          <image src='{{imgsrc}}' mode="widthFix"></image>
+        <canvas canvas-id="myCanvas" class="myCanvas" disable-scroll="false" bindtouchstart="touchStart" bindtouchmove="touchMove" bindtouchend="touchEnd" style='width:100%;height:100%; position:absolute; top:0;left:0;'>
+</canvas> 
+       </view>
+   </view>
+</view>
+<button class='btn' bindtap='btn'>下一步</button>

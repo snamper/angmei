@@ -1,0 +1,72 @@
+/* pages/classify/selectpj/selectpj.wxss */
+page{
+  height: 100%
+}
+.searchwrap{
+  width: 90%;
+}
+/*车型*/
+.car{
+  margin-top: 20rpx;
+}
+.car .left,.car .right{
+  float: left;
+}
+.car .right{
+  font-size: 14px;
+  padding: 20rpx 0;
+}
+.caryear{
+  color: #B3B5B7;
+  font-size: 12px;
+}
+/*配件*/
+.parts{
+  background: #3494ED;
+  margin-top: 20rpx;
+  color: #F1f1f1;
+  font-size: 14px;
+}
+.parts .list{
+  width: 33%;
+  float: left;
+  text-align: center;
+  height: 70rpx;
+  font-weight: bold;
+}
+.parts .list .name{
+  width: 50%;
+  height: 70%;
+  margin: 10rpx auto 0;
+}
+/*配件总类列表*/
+swiper{
+   min-height: calc(100% - 330rpx);
+}
+scroll-view{
+   height:100%;
+}
+.pjwrap{
+  background: #fff;
+  padding: 0 30rpx;
+  box-shadow: 1px 1px 8px #ccc;
+}
+.pjwrap .pjlist{
+  border-bottom: 1px solid #F2F2F2;
+  font-size: 16px;
+  color: #41464B;
+  line-height: 88rpx;
+  padding-left: 10rpx;
+}
+.pjwrap .pjlist:last-child{
+  border-bottom: 0px;
+}
+/*border*/
+.border .name{
+  border-bottom: 1px solid #fff;
+  color: #fff;
+}
+/*list点击时的颜色*/
+.pjwrap .blue{
+  color: #3494ED;
+}

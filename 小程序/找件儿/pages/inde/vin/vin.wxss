@@ -1,0 +1,20 @@
+/* pages/inde/vin/vin.wxss */
+.vinwrap{
+  padding: 5px 20px;
+  line-height: 70rpx;
+  margin-top: 40rpx;
+  font-size: 22px;
+  text-align: center;
+  border:1px solid #4A7BB7;
+
+}
+.vinwrap input{
+  height: 70rpx;
+}
+button{
+  color:#fff;
+  background:#236EBA;
+  width: 95%;
+  margin-top: 40rpx;
+  border-radius: 30px;
+}

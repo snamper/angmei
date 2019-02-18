@@ -1,0 +1,11 @@
+<!--pages/inde/gywm/gywm.wxml-->
+<image class='banner'  mode='widthFix' src='../../image/gywmBanner1.jpg'></image>
+<view class='content'>
+    <view class='gsjs'>
+        <view class='h1'>公司介绍</view>
+        <view class='h4'>氧传感器主机配套供应商</view>
+        <view class='text1'>奔欧公司系汽车氧传感器专业的生产销售型公司，公司自2006年成立以来， 经过12年的市场检验，公司自行研发的氧传感器型号，覆盖目前市场99.9%车型，销售取得了12年的持续增长，母体公司掌握发明专利6个、实用新型专利25个，主要为一汽轿车、华晨鑫源、江淮汽车、依维柯、力帆汽车、吉利汽车、东风小康、北汽银翔、北汽福田等主机配套。</view>
+        <view class='text1'>奔欧公司专注维修市场主打“必能、奔欧”两大核心品牌，拥有完善的售后服务体系，比肩国际几大品牌，有更好的价格优势及服务，两大核心品牌服务于不同的渠道，让市场更加合理细分，各大主要城市都有优质的战略合作伙伴及直营店；未来我们立志成为汽车氧传感器国际一线品牌。</view>
+    </view>
+    <image class='banner2'  mode='widthFix' src='../../image/gywmBanner2.jpg'></image>
+</view>

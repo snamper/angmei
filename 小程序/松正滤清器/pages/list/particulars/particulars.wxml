@@ -1,0 +1,52 @@
+<!--pages/index/particulars/particulars.wxml-->
+<view class='topwrap'>
+    <view class='imgwrap'>
+      <image src='{{particular.img}}' mode='widthFix'></image>
+    </view>
+    <view class='title'>{{particular.category_name}}</view>
+</view>
+<view class='parameter'>
+    <view class='title'><text>产品参数</text><text class='border'></text><view class='error' bindtap='show'>纠错</view></view>
+    <view><view class='name'>产品类型</view>：{{particular.category_name}}</view>
+    <view><view class='name'>产品编码</view>：{{particular.product_id}}</view>
+    <view><view class='name'>主机厂</view>：{{cartypelist.car_info[0].Manufacture_CN}}</view>
+    <view><view class='name'>车型</view>：{{cartypelist.car_info[0].Vehicle_body_type}}</view>
+    <view><view class='name'>底盘号</view>：{{cartypelist.car_info[0].ChassisNumber}}</view>
+    <view><view class='name'>排量</view>：{{cartypelist.car_info[0].Capacity}}</view>
+    <view><view class='name'>输出功率</view>：{{cartypelist.car_info[0].HP}}</view>
+    <view><view class='name'>发动机号</view>：{{cartypelist.car_info[0].Engine_Code}}</view>
+    <view><view class='name'>燃油方式</view>：{{cartypelist.car_info[0].Injection_type}}</view>
+    <view><view class='name'>驱动方式</view>：{{cartypelist.car_info[0].Drive_type}}</view>
+    <view><view class='name'>生产日期</view>：{{cartypelist.car_info[0].EOP_Year}}</view>
+</view>
+<view class='carwrap'>
+    <view class='title'><text>适用车型</text><text class='border'></text></view>
+    <block wx:for='{{cartypelist.list}}' wx:for-item='item' wx:key=''>
+        <view class='cartype'>{{item.Manufacture_CN}} {{item.Vehicle_Name_CN}} {{item.Year_of_production}} {{item.Capacity}} {{item.Air_intake_form}}</view>
+    </block>
+</view>
+
+<view class='meng' wx:if='{{meng}}'>
+   <view class='box'>
+      <view class='boxlist clearfix'>
+         <view class='left '>产品编码：</view>
+         <view class='right'>{{bm}}</view>
+      </view>
+      <view class='boxlist clearfix'>
+         <view class='left'>您认为的编码：</view>
+         <view class='right'><input placeholder='您认为的编码' bindinput='bm' value='{{bminput}}'></input></view>
+      </view>
+      <view class='boxlist clearfix'>
+         <view class='left'>您的电话号码：</view>
+         <view class='right'><input  placeholder='您的电话号码' bindinput='phone' value='{{phoneinp}}'></input></view>
+      </view>
+      <view class='boxlist clearfix'>
+         <view class='left'>您的姓名：</view>
+         <view class='right'><input placeholder='您的姓名' bindinput='name' value='{{nameinp}}'></input></view>
+      </view>
+      <view class='btnwrap clearfix'>
+         <view class='left' bindtap='qxclick'>取消</view>
+         <view class='right' bindtap='tjclick'>提交</view>
+      </view>
+   </view>
+</view>

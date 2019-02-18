@@ -1,0 +1,4 @@
+<!--pages/nodata/nodata.wxml-->
+<view class='img'><image src='../image/nodata.png'></image></view>
+<view class='text'>抱歉 ! 没有您想要查找的数据......</view>
+<view class='btn' bindtap='navigateBack'>返回上一页</view>

@@ -1,0 +1,55 @@
+/* pages/classify/selectpj/peijianlist/peijianlist.wxss */
+.searchwrap{
+  width: 80%;
+  margin: 0 0 0 100rpx;
+}
+.pjlist{
+  margin-top: 20rpx; 
+  padding: 20rpx 0;
+  font-size:16px;
+  position: relative;
+  height: 200rpx;
+}
+.pjlist .left,.pjlist .right{
+  float: left;
+}
+.pjlist .right{
+  width: 70%;
+}
+.pjlist .right .peijian .name{
+  color: #60676E;
+}
+.pjlist .righ .peijian .money{
+  float: right;
+}
+.pjlist .right .pinpai{
+  color: #B4B5B7;
+  font-size: 12px;
+}
+.jiajian{
+  color: #fff;
+  position: absolute;
+  bottom: 20rpx;
+  right: 30rpx;
+}
+.jiajian view{
+  width: 50rpx;
+  height: 50rpx;
+  float: left;
+  text-align: center;
+  line-height: 50rpx;
+  border-radius: 50%;
+  margin-left: 10rpx;
+  background: #B5B5B5;
+  color: #fff;
+}
+.jiajian .subtract{
+  background: #c2e0fa;
+}
+.jiajian .number{
+  background: #f6f6f6;
+  color: #939292;
+}
+.jiajian .add{
+  background: #38a8da;
+}

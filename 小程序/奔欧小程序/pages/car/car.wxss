@@ -1,0 +1,94 @@
+/* pages/car/car.wxss */
+@import "../../utils/wxaSortPicker/wxaSortPicker.wxss";
+@import "../index/index.wxss";
+page{
+  background: #fff;
+  border-top:1px solid #ececec;
+}
+.topwrap{
+  width: 95%;
+  margin: 15rpx auto 0;
+}
+.tabwrap view{
+  float: left;
+   color: #7c7c7c;
+   font-size: 16px;
+   width: 25%;
+  text-align: center;
+  padding: 12rpx 0;
+  margin-right: 2.6%; 
+}
+.tabwrap view:last-child{
+  margin-right:0; 
+}
+.carnamewrap{
+  height: 80rpx;
+  line-height: 80rpx;
+  padding-left:20rpx; 
+  border-radius: 8rpx;
+  font-size: 16px;
+}
+.carnamewrap text{
+  color: #8e8e8e;
+}
+.inputwrap{
+  margin-top: 0px;
+  position: relative;
+}
+.inputwrap .ocrimgwrap{
+  width: 50rpx;
+  height: 100%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 10rpx;
+}
+.vinwrap input{
+  padding-left: 60rpx;
+}
+.inputwrap image{
+  width: 50rpx;
+  margin-top: 18rpx;
+}
+.tabwrap .bg{
+  background: #f5f5f5;
+}
+/*顶部*/
+.slist{
+  background:#f5f5f5;
+  display: inline-block;
+  height: 60rpx;
+  line-height: 60rpx;
+  margin-top: 10rpx;
+  padding-right: 40rpx;
+  position: relative;
+  margin-right: 20rpx;
+
+}
+.slist image{
+  position: absolute;
+  right: 2px;
+  top:50%;
+  transform: translateY(-50%);
+  width: 14px;
+  height: 12px;
+  white-space: nowrap; 
+ text-overflow: ellipsis; 
+  overflow: hidden;
+}
+.carwrap view{
+  padding-left: 8rpx;
+  white-space: nowrap; 
+  text-overflow: ellipsis; 
+  overflow:hidden;
+  box-sizing: border-box;
+}
+.carwrap{
+  width: 30%;
+}
+.cartypewrap{
+  width: 30%
+}
+.yearwrap{
+  width: 40%;
+}

@@ -1,0 +1,119 @@
+/* pages/login/login.wxss */
+page{
+  width: 100%;
+  height: 100%;
+}
+.bgwrap{
+  width: 100%;
+  height:100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+.bg{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+.wrap{
+  position: fixed;
+  bottom: 0;
+  left:50%;
+  height: 75%;
+  width: 95%;
+  background: #FDFDFD;
+  transform: translateX(-50%);
+}
+.wrap .signup{
+  position: absolute;
+  width: 80%;
+  height: 18%;
+  top: 20PX;
+  left: 0;
+}
+.title{
+  font-size: 16px;
+  text-align: right;
+  margin: 30rpx 30rpx 0 0;
+  position: relative;
+}
+.col{
+  color: #1D73F2;
+}
+.namewrap{
+  font-size: 16px;
+  padding:0 10px 0 20px;
+  box-sizing: border-box;
+  margin-top: 80rpx;
+  position: relative;
+}
+.name{
+  width: 30%;
+  border-bottom: 1px dashed #CBCBCB;
+  height: 30px;
+  line-height: 30px;
+}
+.nameinp{
+  font-size: 18px;
+  border-bottom: 1px solid #CBCBCB;
+  height: 35px;
+  line-height: 35px;
+  margin-top: 5px;
+  margin-left: -10px;
+  padding-left: 10px;
+  position: relative;
+}
+.nameinp image{
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: -15px;
+  right: 10px;
+}
+.nameinp input{
+  width: 100%;
+  height: 100%;
+}
+.nameinp .yzm{
+  width: 60%;
+}
+.btn{
+  width: 60%;
+  height: 50px;
+  color: #fff;
+  text-align: center;
+  line-height: 50px;
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  margin-left: -30%;
+}
+.btn image{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+.btn text{
+  position: relative;
+}
+.dxyzm{
+  position: absolute;
+  color: #fff;
+  text-align: center;
+  background: #1D73F2;
+  font-size: 14px;
+  width: 40%;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 15px;
+  top: -15px;
+  right: 0;
+  z-index: 100;
+}
+.nameinp .ybg{
+  background: #CBCBCB;
+}

@@ -1,0 +1,65 @@
+/* pages/epc/content-epc/oe/oe.wxss */
+page{
+  padding-bottom: 30px;
+}
+.imgwrap image{
+  width: 100%;  
+  height: 210px;
+}
+.title{
+  height:80rpx;
+  line-height:80rpx;
+  background:#30333D;
+  color:#fff;
+  font-size: 14px;
+  padding-left: 20px;
+}
+.title .fxlb{
+  float: right;
+  padding-right: 20px;
+}
+.list{
+  height:100rpx;
+  border-bottom:1px solid rgba(0,0,0,0.5);
+  margin:0 2.5%;
+}
+.list .left,.list .right{
+  float: left;
+  font-size: 14px;
+   padding-left: 10px; 
+  box-sizing: border-box;
+}
+.list .left{
+  width: 35%;
+  color: #333131;
+  line-height:100rpx;
+}
+.list .right{
+  width: 65%;
+  height: 100rpx;
+  color: #1775E8;
+  display:flex;
+  /* align-items:center; */
+  justify-content:space-around;
+  flex-direction:column;
+  position: relative;
+}
+.list .money{
+  color:#D75E5E;
+}
+progress{
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+/*查询*/
+button{
+  background:#4A7BB7;
+  color:#fff;
+  width:85%;
+  border-radius:50rpx;
+  height:80rpx;
+  line-height:80rpx;
+  margin-top: 20%;
+}

@@ -1,0 +1,16 @@
+<!--pages/my/opinion/opinion.wxml-->
+<!--意见反馈-->
+<view class='wrap boxshadow'>
+   <textarea placeholder='请输入您的留言信息' placeholder-style='color:#C7C7C7;' value='{{textarea}}' bindinput='textarea'></textarea>
+</view>
+<view class='phont boxshadow clearfix'>
+   <view class='left'>姓名:</view> 
+   <view  class='right'>
+      <input value='{{name}}' bindinput='input'></input>
+   </view>
+</view>
+<view class='phont boxshadow'>
+   <view> <text>手机号:</text> {{phone}}</view>
+</view>
+<!-- <view class=''>提交</view> -->
+<button bindtap='btn'>提交</button>

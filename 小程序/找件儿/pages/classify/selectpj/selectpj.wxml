@@ -1,0 +1,58 @@
+<!--pages/classify/selectpj/selectpj.wxml-->
+<!--选择配件-->
+<!--搜索栏-->
+<view class='wrapTop'>
+   <view class='searchwrap'>
+       <view class='dian'></view>
+       <input placeholder='搜索商品' placeholder-style='color:#e6e6e6;'/>
+   </view>
+</view>
+<!--车型内容-->
+<view class='car boxshadow clearfix'>
+   <view class='left'></view>
+   <view class='right'>
+      <view class='carname'>{{carname}}</view>
+      <view class='caryear' >{{caryear}}年款{{cartype}}{{caroutput}}</view>
+   </view>
+</view>
+<!--配件-->
+<view class='parts clearfix'>
+    <view class='list {{num==0?"border":""}}' data-index="0" bindtap='pjclick'>
+       <view class='name'>配件总类</view>
+    </view>
+    <view class='list {{num==1?"border":""}}' data-index="1" bindtap='pjclick'>
+       <view class='name'>配件品类</view>
+    </view>
+    <view class='list {{num==2?"border":""}}' data-index="2" bindtap='pjclick'>
+       <view class='name'>选择配件</view>
+    </view>
+</view>
+<!--配件总类列表-->
+<swiper circular="true" current='{{num}}'  bindchange='bindchange' duration='300'>
+    <swiper-item>
+        <view class='pjwrap'>
+            <block wx:for='{{pjzl}}' wx:for-item="item" wx:key="">
+                <view class='pjlist {{pjzlnum==item.categoryid?"blue":""}}' bindtap='zllistclick' data-text="{{item.categoryid}}">{{item.name}}</view>
+            </block>
+        </view>
+    </swiper-item>
+    <swiper-item>
+       <scroll-view  scroll-y="true">
+             <view class='pjwrap'>
+                <block wx:for='{{pjpl}}' wx:for-item="item" wx:key="">
+                    <view class='pjlist {{pjplnum==item.category_id?"blue":""}}' bindtap='pllistclick' data-text="{{item.category_id}}">{{item.category_name}}</view>
+                </block>
+            </view>
+       </scroll-view>
+    </swiper-item>
+    <swiper-item>
+       <scroll-view  scroll-y="true">
+             <view class='pjwrap'>
+                <block wx:for='{{xzpj}}' wx:for-item="item" wx:key="">
+                    <view class='pjlist' bindtap='' data-text="{{item.category_id}}">{{item.category_name}}</view>
+                </block>
+            </view>
+       </scroll-view>
+    
+    </swiper-item>
+</swiper> 

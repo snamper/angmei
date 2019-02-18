@@ -1,0 +1,52 @@
+
+.wxaSortPickerTemTags{
+  position: fixed; 
+  top: 50%;
+  right: 20rpx;
+  transform: translateY(-50%);
+  color: #3D5A89;
+}
+.wxaSortPickerTemTag{
+  text-align: center;
+   padding: 2rpx; 
+  font-size: 32rpx;
+  line-height: 160rpx;
+  height: 160rpx;
+}
+.wxaSortPickerFixedTag{
+  position: fixed;
+  width: 100%;
+}
+
+.wxaSortPickerTag{
+  font-size: 32rpx;
+  font-weight: bold;
+  height: 60rpx;
+  line-height: 60rpx;
+  padding: 0 32rpx;
+  background: #f2f2f2;
+}
+
+.wxaSortPickerItem-box{
+  background-color: #fff;
+  padding: 0 32rpx;
+}
+
+.wxaSortPickerItem{
+  height: 88rpx;
+  line-height: 88rpx;
+  border-bottom: 1px solid #DEE4E4;
+  font-size: 32rpx;
+}
+.wxaSortPickerItem image{
+  width: 90rpx;
+  height: 90rpx;
+  vertical-align: middle;
+}
+
+.wxaSortPickerItem:last-child{
+  border-bottom: none;
+}
+.letterback{
+  background: #ccc;
+}

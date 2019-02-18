@@ -1,0 +1,11 @@
+<!--pages/component/tab.wxml-->
+<view class="tabwrap clearfix">
+   <block wx:for='{{list}}' wx:for-item='item' wx:key=''> 
+	 <navigator class="tab" openType="reLaunch" url="{{item.pagePath}}" data-index="{{index}}" hover-class='none'>
+          <image hidden="{{current==index}}" src='{{item.iconPath}}'></image>          
+		      <image hidden="{{current!=index}}" src='{{item.selectedIconPath}}'></image>
+          <view>{{item.text}}</view>  
+     </navigator>
+   </block>
+   
+</view>

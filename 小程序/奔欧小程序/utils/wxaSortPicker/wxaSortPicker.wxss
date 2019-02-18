@@ -1,0 +1,71 @@
+.wxaSortPickerTemTags{
+  position: fixed;
+  top: 16%;
+  right: 10rpx;
+  color: #3f5c7e;
+}
+.wxaSortPickerTemTag{
+  text-align: center;
+  padding: 2rpx;
+  font-size: 32rpx;
+  line-height: 42rpx;
+}
+.wxaSortPickerFixedTag{
+  position: fixed;
+  width: 100%;
+}
+.wxaSortPickerTag{
+  background-color: #f6f6f6;
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #33363b;
+  height: 60rpx;
+  line-height: 60rpx;
+  padding: 0 32rpx;
+}
+.wxaSortPickerItem-box{
+  background-color: #fff;
+  padding: 0 32rpx;
+  box-sizing: border-box;
+}
+.wxaSortPickerItem{
+  /* height: 88rpx;
+  line-height: 88rpx; */
+  padding: 28rpx 0;
+  border-bottom: 1px solid #e2e2e2;
+  color: #444;
+  font-size: 32rpx;
+}
+/*车logo*/
+.logowrap{
+  /* float: left; */
+  display:inline-block;
+  margin: 15rpx 0  0 50rpx;
+}
+.logowrap image{
+  width:100rpx;
+  height:100rpx;
+}
+.carlogo .wxaSortPickerTag{
+  padding: 20rpx 32rpx;
+}
+.carlogo scroll-view{
+  width: 80%;
+  margin-left: calc((20% - 50rpx) / 2);
+}
+.arrows image,.arrows2 image{
+  width: 40rpx;
+}
+.carlogo{
+  position: relative;
+}
+.arrows{
+  position: absolute;
+  left:8rpx;
+  bottom: 34rpx;
+}
+.arrows2{
+  position: absolute;
+  right:58rpx;
+  bottom: 34rpx;
+}

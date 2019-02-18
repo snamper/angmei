@@ -1,0 +1,25 @@
+<!--pages/classify/selectpj/peijianlist/peijianlist.wxml-->
+<!--配件列表-->
+<view class='wrapTop'>
+   <view class='ocr'>
+      <image src='../../../image/xiaoocr.png'></image>
+   </view>
+   <view class='searchwrap'>
+   <view class='dian'></view>
+       <input placeholder='搜索商品' placeholder-style='color:#e6e6e6;' />
+   </view>
+</view>
+<!--配件-->
+<view class='pjlist boxshadow clearfix'>
+    <view class='left'></view>
+    <view class='right'>
+       <view class='peijian'><text class='name'>机油</text><text class='money'>￥100</text></view>
+       <view class='pinpai'>品牌什么的</view>
+       <view class='dotted'><text class='dott'>.</text>..............................................<text class='dott'>.</text></view>
+        <view class='jiajian clearfix'>
+              <view class='subtract'>-</view>
+              <view class='number'>1</view>
+              <view class='add' bindtap='addclick'>+</view>
+         </view>
+    </view>
+</view>

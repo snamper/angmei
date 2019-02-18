@@ -1,0 +1,54 @@
+
+<template name="wxaSortPicker">
+    <scroll-view class="wxaSortPickerList" scroll-y="true" style="height: {{wxaSortPickerData.view.scrollHeight-106}}px;" bindscrolltoupper="wxaSortPickerUpper" bindscrolltolower="wxaSortPickerLower" bindscroll="wxaSortPickerScroll" scroll-into-view="{{wxaSortPickerData.wxaSortPickertoView}}" scroll-with-animation='true'> 
+      <!--车logo-->
+        <view id='RE' class='carlogo'>
+            <view class='wxaSortPickerTag'>热门车型</view>
+            <view class='arrows'><image src='../../pages/image/left.png' mode='widthFix'></image></view>
+            <view class='arrows2'><image src='../../pages/image/right.png' mode='widthFix'></image></view>
+            <scroll-view scroll-x="true" style="white-space: nowrap; display: flex; height:140rpx; position:relative;">
+                <block wx:for='{{logolist}}' wx:for-item='item' wx:key='key'>
+                      <view class='logowrap'  catchtap='wxaSortPickerItemTap'>
+                          <image data-text='{{item.name}}' src='http://mattrio-car-img.oss-cn-shanghai.aliyuncs.com/car_icon/{{item.src}}'></image>
+                      </view>
+                </block>
+            </scroll-view>
+        </view>   
+        <block wx:for="{{wxaSortPickerData.textData}}" wx:for-item="item" wx:key="">
+            <view id="{{item.tag}}" class="wxaSortPickerTag">{{item.tag}}</view>
+            <view class='wxaSortPickerItem-box'>    
+               <!--引入内容栏-->          
+              <template is="wxaSortPickerItem" data="{{item,dataType}}"/>
+            </view>
+        </block>
+    </scroll-view>
+    <!--引入右侧字母栏-->
+    <template is="wxaSortPickerTemTags"/>
+</template>
+
+<!--内容栏-->
+<template name="wxaSortPickerItem">  
+  <block wx:if='{{dataType == "object"}}'>
+    <block wx:for="{{item.textArray}}" wx:for-item="item" wx:key="">
+        <view class="wxaSortPickerItem" data-text="{{item.Manufacture_CN}}"  catchtap= "wxaSortPickerItemTap">
+          {{item.Manufacture_CN}}       
+        </view>
+    </block>
+  </block>
+  <block wx:else>
+    <block wx:for="{{item.textArray}}" wx:for-item="child" wx:key="">
+        <view class="wxaSortPickerItem" data-text="{{child}}"  catchtap= "wxaSortPickerItemTap">
+          {{child}}       
+        </view>
+    </block>
+  </block> 
+</template>
+<!--右侧字母栏-->
+<template name="wxaSortPickerTemTags">
+    <scroll-view style="width:50rpx;height: {{wxaSortPickerData.view.scrollHeight}}px;" class="wxaSortPickerTemTags">
+        <view bindtap="wxaSortPickerTemTagTap" data-tag="RE" class="wxaSortPickerTemTag">热</view>
+        <block wx:for="{{['A', 'B', 'C', 'D', 'F', 'G', 'H', 'J', 'K', 'L', 'M', 'N', 'O', 'Q', 'R', 'S', 'T', 'W', 'X', 'Y', 'Z']}}" wx:for-item="item" wx:key="">
+            <view bindtap="wxaSortPickerTemTagTap" data-tag="{{item}}" class="wxaSortPickerTemTag">{{item}}</view>
+        </block>
+    </scroll-view>
+</template>

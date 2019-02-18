@@ -1,0 +1,17 @@
+<!--pages/list/list.wxml-->
+<!-- bindtap='listclick' -->
+<block wx:for='{{datalist}}' wx:for-item="item" wx:key="index">
+  <view class='list clearfix' data-id='{{index}}'>
+     <view class='left'>
+        <image mode='widthFix' src='{{item.img}}' binderror='imgerror' data-index='{{index}}'></image>
+     </view>
+     <view class='right'>
+        <view class='title'>{{item.category_name}}</view>
+        <view>奔欧编码: {{item.product_id}}</view>
+        <view>车型: {{item.Manufacture_CN}} {{item.Vehicle_Name_CN}} {{ietm.Capacity}}</view>
+        <view>年款: {{item.LaunchEOPYear}}</view>
+        <view>必能编码: {{item.oenumber}}</view>
+        <view>发动机型号: {{item.Engine_Code}}</view>
+     </view>
+  </view>
+</block>

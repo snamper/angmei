@@ -1,0 +1,64 @@
+<!--index.wxml-->
+<view class='wrap'>
+  <!-- 背景图片-->
+  <image class='bgimage' src='../image/bg.jpg'></image>
+  <!-- logo -->
+  <image class='logoimage' src='../image/logo.png' mode='widthFix'></image>
+  <view class='searchwrap'>
+    <view class='tabwrap clearfix'>
+        <view class='tablist {{num==0?"textcolor":""}}' bindtap='tabclick' data-num='0'>车型查询</view>
+        <view class='tablist {{num==1?"textcolor":""}}' bindtap='tabclick' data-num='1'>VIN查询</view>
+        <view class='tablist {{num==2?"textcolor":""}}' bindtap='tabclick' data-num='2'>编码查询</view>
+    </view>
+    <swiper class='swiperone' current='{{num}}' bindchange='swiperchange'>
+      <swiper-item>
+        <view class='inputwrap carnamewrap clearfix' bindtap='car'>
+            <view class='click'>请选择车型</view>
+            <view class='btn'>查询</view>
+        </view>
+      </swiper-item>
+      <swiper-item>
+        <view class='inputwrap carnamewrap clearfix'>
+            <view><input placeholder='请输入VIN号码' bindinput='vininput' placeholder-style='color:#fff;'  value='{{vin}}'></input></view>
+            <view class='btn' bindtap='vinclick'>查询</view>
+        </view>
+      </swiper-item>
+      <swiper-item>
+        <view class='inputwrap carnamewrap clearfix'>
+            <view> <input placeholder='请输入OE/产品编码' bindinput='oeinput' placeholder-style='color:#fff;'  value='{{oe}}'></input></view>
+            <view class='btn' bindtap='oeclick'>查询</view>
+         </view>
+      </swiper-item>  
+    </swiper>
+  </view>
+  <view class='ocrwrap'>
+    <view class='ocrwraptwo' bindtap='ocrclick'>
+       <view class='ocr'>
+          <image src='../image/camera.png' mode='widthFix'></image>
+          <view class='text textcolor'>VIN识别</view>
+       </view>
+    </view>
+  </view>
+  <!--产品展示 -->
+  <!-- <swiper class='swiperClass' autoplay circular  indicator-color="#fff" indicator-active-color="#0e2a7e" interval="4000" duration="1000" previous-margin="50px" next-margin="50px">
+      <swiper-item> 
+            <view class='list'>
+                <view class='imagewrap'><image></image></view>
+                <view class='title'></view>
+            </view>
+      </swiper-item>
+      <swiper-item> 
+            <view class='list'>
+                <view class='imagewrap'><image></image></view>
+                <view class='title'></view>
+            </view>
+      </swiper-item>
+      <swiper-item> 
+            <view class='list'>
+                <view class='imagewrap'><image></image></view>
+                <view class='title'></view>
+            </view>
+      </swiper-item>
+  </swiper> -->
+  <!-- <view class='callwrap' bindtap='call'><text>联系方式：</text></view> -->
+</view>

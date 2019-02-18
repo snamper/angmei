@@ -1,0 +1,178 @@
+/**app.wxss**/
+page{
+  background: #fafafa;
+}
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+} 
+.clearfix:after {
+  content: " ";
+  display: block;
+  height: 0;
+  clear: both;
+  overflow: hidden;
+}
+/*搜索栏*/
+.wrapTop{
+  padding: 20rpx 0;
+  background: #fff;
+  position: relative;
+}
+.wrapTop .ocr image{ 
+  width: 60%;
+  height: 60%;
+  display: block;
+  margin: 20%;
+}
+.searchwrap{
+   width:70%;
+   margin: 0 auto;
+   height: 60rpx;
+   background: #fff;
+   box-shadow: 1px 1px 8px #ccc;
+   border-radius:30rpx; 
+   padding-left:60rpx; 
+   box-sizing: border-box;
+   font-size: 16px;
+   line-height: 60rpx;
+   position: relative;
+}
+.searchwrap input{
+  width: 100%;
+  height: 100%;
+  font-size: 14px;
+  float: left;
+}
+.searchwrap .dian{
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  border: 2px solid #3EB4EA;
+  border-radius: 50%;
+  top: 50%;
+  margin-top: -2.5px;
+  left: 5%;
+  box-shadow: 1px 1px 6px #3494ED;
+}
+.searchwrap .yuyin image{
+  position: absolute;
+  width: 40px;
+  height: 20px;
+  top: 50%;
+  margin-top: -10px;
+  right: 5%;
+}
+/*购物车*/
+.shopping-trolley{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius:50%;
+  position: fixed;
+  bottom: 20rpx;
+  right: 20rpx;
+  background-size:100%; 
+}
+.shopping-trolley image{
+  width: 100%;
+  height: 100%;
+}
+/*箭头*/
+.arrows{
+   width: 15rpx;
+  height: 15rpx;
+  position: absolute;
+  right: 40rpx;
+  top: 50%;
+   margin-top:-7.5rpx;  
+  transform: rotateZ(45deg);
+  border-right: 1px solid #B8B9BB;
+  border-top: 1px solid #B8B9BB;
+}
+.boxshadow{
+  width: 95%;
+  margin: 0 auto;
+  border-radius: 10rpx;
+  box-shadow: 1px 1px 8px #ccc;
+  box-sizing: border-box;
+  background: #fff;
+}
+/*钱*/
+.money{
+  color: #D75E5E;
+}
+/*虚线*/
+.dotted{
+  margin-top: -10rpx;
+  color: #E1E1E1;
+  font-size: 12px;
+  margin-bottom: 10rpx;
+}
+.dotted .dott{
+  color: #696969;
+}
+
+
+/*图片显示*/
+.imgshow{
+  width: 100%;
+  height: 100vh;
+  background: rgba(0,0,0,0.6);
+  position: fixed;
+  top:0;
+  left:0;
+  color: #FFF;
+  font-size: 16px;
+}
+.imgshow>image{
+  width: 100%;
+  position: absolute;
+  top:50%;
+  transform: translateY(-50%);
+}
+.preserve,.cancel,.progress{
+  width: 38px;
+  height: 37px;
+}
+.preserve image,.cancel image,.progress image{
+  width: 100%;
+  height: 100%;
+}
+.bcenter{
+  position: absolute;
+  bottom: 30px;
+  box-sizing: border-box;
+  width: 38px;
+  text-align: center;
+  left: calc(25% - 19px);
+}
+.bleft{
+  position: absolute;
+  bottom: 30px;
+  box-sizing: border-box;
+  width: 38px;
+  text-align: center;
+  left: calc(50% - 19px);
+}
+.bright{
+  position: absolute;
+  bottom: 30px;
+  right:calc(25% - 17px);
+  width: 38px;
+  box-sizing: border-box;
+  text-align: center;
+}
+/*授权登陆按钮*/
+.btnn{
+  width:40%;
+  font-size:16px;
+  /* background:rgba(253, 253, 253, 0.1); */
+  border:1px solid #fff;
+  /* color:#fff; */
+  margin-top: 20px;
+}

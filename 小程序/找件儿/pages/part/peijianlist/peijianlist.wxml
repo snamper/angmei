@@ -1,0 +1,62 @@
+<!--pages/part/peijianlist/peijianlist.wxml-->
+<view class='all'>
+   <checkbox class='allcheck' value="" checked="{{allcheck}}" bindtap='all'/>全选
+   <view class='fxwrap' bindtap='fxlb'><image src='../../image/fxlb.png'></image>分享列表</view>
+</view>
+<scroll-view scroll-y='true' style='height:calc(100vh - 120px);margin-top:4px;padding-bottom:10px;'>
+    <block wx:for='{{pjlist}}' wx:for-item="item" wx:key="">
+    <!--判断for如果为存在的话说明是归类的-->
+       <view class='list clearfix boxshadow' wx:if='{{item.for}}'> 
+            <!-- <checkbox class='check' value="" checked="{{item.checked}}" data-index='{{index}}' bindtap='Malllistcheck'/> -->
+            <view class='left' ><image src='{{item.src}}' binderror='error' data-src='../../image/logo.png' data-index='{{index}}'></image></view>
+            <view class='right'  bindtap='datalistclick' data-num='{{index}}'>
+                <view class='name'>{{item.category_name}}</view>
+                <view class='moneywrap' wx:if='{{!item.checked}}'>已选  <text class='money'>{{item.Mnum}}</text>  件</view>
+                <view class='moneywrap' wx:else><text class='money'>已全选</text></view>
+                <!-- <view class='oe'>OE：{{item.oe_number}}</view>
+                <view class='moneywrap'>4S店价格：<text class='money'>{{item.price}}</text></view>
+                <view class='car' bindtap='carclick' data-index='{{index}}' data-oe='{{item.oe_number}}'>支持车型</view> -->
+                <view class='arrows'></view>
+            </view>
+       </view>
+       <!--判断for如果为不存在的话说明是单个的-->
+       <view class='list clearfix boxshadow' wx:else data-index='{{index}}' bindtap='listcheck'>
+          <checkbox class='check' value="" checked="{{item.checked}}" />
+          <view class='left'><image src='{{item.src}}' binderror='error' data-src='../../image/logo.png' data-index='{{index}}'></image></view>
+          <view class='right'>
+              <view class='name'>{{item.category_name}}</view>
+              <view class='oe'>OE：{{item.oe_number}}</view>
+              <view class='moneywrap'>4S店价格：<text class='money'>{{item.price}}</text></view>
+              <view class='car' catchtap='carclick' data-index='{{index}}' data-oe='{{item.oe_number}}'>支持车型</view>
+          </view>
+       </view>
+    </block>
+</scroll-view>
+<view class='bottom'>
+     <view class='left'></view> 
+    <view class='right' bindtap='confirm'>确定</view>
+</view>
+<!--点击出现该配件的所有-->
+<view class='mengwrap' wx:if='{{mengshow}}'>
+    <view class='meng' catchtap='yesclick'></view>
+    <view class='datawrap' style='bottom:{{bottom}}'>
+        <view class='top clearfix' catchtap=''>
+            <view class='no' catchtap='noclick'>取消</view>
+            <view class='yes' catchtap='yesclick'>确定</view>
+        </view>
+        <scroll-view scroll-y class='datascroll' style='height:calc(100% - 100rpx);padding-bottom:14px;'>
+            <block wx:for='{{datalist}}' wx:for-item='item' wx:key=''> 
+                 <view class='list clearfix boxshadow' bindtap='Mlistcheck' data-index='{{index}}'>
+                    <checkbox class='check' value="" checked="{{item.checked}}"/>
+                    <view class='left'><image src='{{item.src}}' binderror='Merror' data-src='../../image/logo.png' data-index='{{index}}'></image></view>
+                    <view class='right'>
+                        <view class='name'>{{item.category_name}}</view>
+                        <view class='oe'>OE：{{item.oe_number}}</view>
+                        <view class='moneywrap'>4S店价格：<text class='money'>{{item.price}}</text></view>
+                        <view class='car' catchtap='carclick' data-index='{{index}}' data-oe='{{item.oe_number}}'>支持车型</view>
+                    </view>
+                </view>
+            </block>
+        </scroll-view>
+    </view>
+</view>

@@ -1,0 +1,170 @@
+<!--pages/particulars/particulars.wxml-->
+<!--车型详情-->
+<view class='titlewrap clearfix'>
+   <view class='logo'>
+      <image src='{{logoimg}}' ></image>
+   </view>
+   <view class='title'>
+      <view>{{car}} {{cartype}} {{output}}</view>
+      <view class='vin'>车架号：{{vin}}</view>
+   </view>
+</view>
+<view class='content boxshadow'>
+    <view class='carimg'>
+        <view class='tab' bindtap='tab'>切换车型</view>
+        <image src='{{carimg}}' binderror='imgerror'></image>
+    </view>
+    <view class='list clearfix mikey '>
+        <view class='left'>Mi-key</view>
+        <view class='right'>{{mikey}}</view>
+    </view>
+    <view class='list clearfix mikey '>
+        <view class='left'>主机厂</view>
+        <view class='right'>{{Manufacture_CN}}</view>
+    </view>
+    <view class='list clearfix mikey '>
+        <view class='left'>车系</view>
+        <view class='right'>{{Vehicle_Name_CN}}</view>
+    </view>
+    <view class='list clearfix mikey '>
+        <view class='left'>车型</view>
+        <view class='right'>{{Vehicle_Series_Name_CN}}</view>
+    </view>
+    <view class='list clearfix mikey '>
+        <view class='left'>销售名称</view>
+        <view class='right'>{{Name_of_sales}}</view>
+    </view>
+    <view class='list clearfix mikey '>
+        <view class='left'>销售版本</view>
+        <view class='right'>{{Sales_version}}</view>
+    </view>
+     <view class='list clearfix mikey '>
+        <view class='left'>年款</view>
+        <view class='right'>{{year}}</view>
+    </view>
+    <view class='list clearfix mikey '>
+        <view class='left'>排放标准</view>
+        <view class='right'>{{Emission_standards}}</view>
+    </view>
+    <view class='list clearfix mikey '>
+        <view class='left'>车型类型</view>
+        <view class='right'>{{Vehicle_body_type}}</view>
+    </view>
+    <view class='list clearfix mikey '>
+        <view class='left'>车辆级别</view>
+        <view class='right'>{{Vehicle_level}}</view>
+    </view>
+     <view class='list clearfix mikey '>
+        <view class='left'>指导价格（万元）</view>
+        <view class='right'>{{Guide_price}}</view>
+    </view>
+     <view class='list clearfix mikey '>
+        <view class='left'>上市年份</view>
+        <view class='right'>{{upyear}}</view>
+    </view>
+    <view class='list clearfix mikey '>
+        <view class='left'>上是月份</view>
+        <view class='right'>{{Launch_month}}</view>
+    </view>
+    <view class='list clearfix mikey '>
+        <view class='left'>生产年份</view>
+        <view class='right'>{{Launch_year}}</view>
+    </view>
+    <view class='list clearfix mikey '>
+        <view class='left'>停产年份</view>
+        <view class='right'>{{EOP_Year}}</view>
+    </view>
+    <view class='list clearfix mikey '>
+        <view class='left'>生产状态</view>
+        <view class='right'>{{Production_status}}</view>
+    </view>
+    <view class='list clearfix mikey '>
+        <view class='left'>销售状态</view>
+        <view class='right'>{{Sales_status}}</view>
+    </view>
+    <view class='list clearfix mikey '>
+        <view class='left'>国别</view>
+        <view class='right'>{{Country}}</view>
+    </view>
+    <view class='list clearfix mikey '>
+        <view class='left'>国产合资进口</view>
+        <view class='right'>{{Domestic_joint_venture_imported}}</view>
+    </view>
+    <view class='list clearfix mikey '>
+        <view class='left'>发动机型号</view>
+        <view class='right'>{{Engine_Code}}</view>
+    </view>
+    <view class='list clearfix mikey '>
+        <view class='left'>气缸容积</view>
+        <view class='right'>{{Capacity_ml}}</view>
+    </view>
+    <view class='list clearfix mikey '>
+        <view class='left'>排量（升）</view>
+        <view class='right'>{{Capacity}}</view>
+    </view>
+    <view class='list clearfix mikey '>
+        <view class='left'>进气形式</view>
+        <view class='right'>{{Air_intake_form}}</view>
+    </view>
+     <view class='list clearfix mikey '>
+        <view class='left'>燃油类型</view>
+        <view class='right'>{{rylx}}</view>
+    </view>
+    <view class='list clearfix mikey '>
+        <view class='left'>燃油标号</view>
+        <view class='right'>{{Fuel_label}}</view>
+    </view>
+    <view class='list clearfix mikey '>
+        <view class='left'>最大马力（Ps）</view>
+        <view class='right'>{{HP}}</view>
+    </view>
+    <view class='list clearfix mikey '>
+        <view class='left'>最大功率（KW）</view>
+        <view class='right'>{{KW}}</view>
+    </view>
+     <view class='list clearfix mikey '>
+        <view class='left'>最大功率转速（rpm）</view>
+        <view class='right'>{{Maximum_power_speed}}</view>
+    </view>
+     <view class='list clearfix mikey '>
+        <view class='left'>最大转矩（N·m）</view>
+        <view class='right'>{{Peak_torque}}</view>
+    </view>
+     <view class='list clearfix mikey '>
+        <view class='left'>最大转矩转速（rpm）</view>
+        <view class='right'>{{Maximum_torque_speed}}</view>
+    </view>
+     <view class='list clearfix mikey '>
+        <view class='left'>气缸排列形式</view>
+        <view class='right'>{{Cylinder_arrangement}}</view>
+    </view>
+    <view class='list clearfix mikey '>
+        <view class='left'>气缸数（个）</view>
+        <view class='right'>{{Number_of_cylinder}}</view>
+    </view>
+    <view class='list clearfix mikey '>
+        <view class='left'>每缸气门数（个）</view>
+        <view class='right'>{{Number_of_valves_per_cylinder}}</view>
+    </view>
+    <view class='list clearfix mikey '>
+        <view class='left'>压缩比</view>
+        <view class='right'>{{Compression_ratio}}</view>
+    </view>
+    <view class='list clearfix mikey '>
+        <view class='left'>供油方式</view>
+        <view class='right'>{{Injection_type}}</view>
+    </view>
+    <view class='list clearfix mikey '>
+        <view class='left'>工信部综合油耗（L）</view>
+        <view class='right'>{{MiIT_integrated_fuel_consumption}}</view>
+    </view>
+    <!-- </view> -->
+    <view class='btnwrap clearfix'>
+       <view  class='lbtn' bindtap='epcclick'>EPC结构图</view>
+       <view  class='rbtn' bindtap='partclick'>3D配件查询</view>
+       <view class='inp clearfix' bindtap='pjclick'>
+          <view class='left'>搜索您需要的配件信息<image src='../image/fdj.png'></image> </view>
+          <view class='right'>提交</view>
+       </view>
+    </view>
+</view>

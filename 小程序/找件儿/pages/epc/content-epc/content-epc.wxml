@@ -1,0 +1,45 @@
+<!--pages/epc/content-epc/content-epc.wxml-->
+<view class='imgwrap' bindtap='imgclick'>
+    <image src='{{imgsrc}}' mode='widthFix'></image>
+</view>
+<view class='title clearfix'>
+   <view class='left'>编号 -</view>
+   <view class='center'>单车用量 -</view>
+   <view class='right'>- 名称/OE -</view>
+</view>
+<scroll-view class='oewrap' scroll-y="true">
+    <block wx:for='{{oelist}}' wx:for-item="item" wx:key="">
+        <view class='list clearfix' bindtap='oelist' data-title='{{item.oe_name}}' data-oe='{{item.oenumber}}' data-location='{{item.location}}'>
+          <view class='listnum'>{{index+1}}</view>
+          <view class='dcyl'>{{item.number}}</view>
+          <view class='listcontent'>
+              <view class='oename'>{{item.oe_name}}</view>
+              <view class='oenum'>{{item.oenumber}}</view>
+              <view class='arrows'></view> 
+          </view>
+        </view>
+    </block>
+</scroll-view>
+<!--图片保存-->
+<view class='imgshow' wx:if='{{imgshow}}'>
+    <image src='{{imgsrc}}' mode='widthFix'></image>
+    <view class='bcenter' bindtap='progress'>
+        <view class='progress'>
+           <image src='../../image/yulan.png'></image>
+        </view>
+        <view>预览</view>        
+    </view>
+    <view class='bleft' bindtap='preserve'>
+        <view class='preserve'>
+           <image src='../../image/save.png'></image>           
+        </view>
+        <view>保存</view>
+    </view>
+    <view class='bright' bindtap='cancel'>
+        <view class='cancel' >
+           <image src='../../image/qx.png'></image>
+        </view>
+        <view>取消</view>        
+    </view>
+    <progress percent="{{progress}}" activeColor='#329BDE'/>
+</view>

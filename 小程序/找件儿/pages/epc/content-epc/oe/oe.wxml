@@ -1,0 +1,61 @@
+<!--pages/epc/content-epc/oe/oe.wxml-->
+<view class='imgwrap' bindtap='imgclick'>
+    <image src='{{imgsrc}}' mode='widthFix'></image>
+</view>
+<view class='title clearfix'>
+   - {{title}} -
+   <view class='fxlb' bindtap='fxlb'>点击查看分享列表</view>
+</view>
+<block wx:for='{{oelist}}' wx:for-item="item" wx:key="">
+    <view class='list clearfix'>
+       <view class='left'>OE编码</view>
+       <view class='right'><text>{{item.oe_numbers}}</text></view>
+    </view>
+    <view class='list clearfix'>
+       <view class='left'>4S店参考价格</view>
+       <view class='right money'><text>￥{{item.system_market_price}}</text></view>
+    </view>
+</block>
+<view class='list clearfix'>
+       <view class='left'>位置</view>
+       <view class='right'><text>{{location}}</text></view>
+    </view>
+  <view class='list clearfix'>
+       <view class='left'>适用车型</view>
+       <view class='right car' bindtap='cartype'><text>点击查看适用车型</text><view class='arrows'></view> </view>
+   </view>
+
+   
+   <scroll-view scroll-y="true" >
+      <block wx:for='{{carlist}}' wx:for-item="item" wx:key="">
+          <view class='carlist' wx:if='{{carwrap}}'>
+                  <view class='carlist'>{{item.Manufacture_CN}} {{item.Vehicle_of_year}} {{item.Name_of_sales}}</view>
+                  <!-- {{item.Manufacture_CN}} {{item.Vehicle_of_year}} {{item.Name_of_sales}} -->
+          </view>
+      </block>
+   </scroll-view>
+   <button bindtap='tjmyfx'>添加到分享列表</button>
+
+<!--图片保存-->
+<view class='imgshow' wx:if='{{imgshow}}'>
+    <image src='{{imgsrc}}' mode='widthFix'></image>
+    <view class='bcenter' bindtap='progress'>
+        <view class='progress'>
+           <image src='../../../image/yulan.png'></image>
+        </view>
+        <view>预览</view>        
+    </view>
+    <view class='bleft' bindtap='preserve'>
+        <view class='preserve'>
+           <image src='../../../image/save.png'></image>           
+        </view>
+        <view>保存</view>
+    </view>
+    <view class='bright' bindtap='cancel'>
+        <view class='cancel' >
+           <image src='../../../image/qx.png'></image>
+        </view>
+        <view>取消</view>        
+    </view>
+     <progress percent="{{progress}}" activeColor='#329BDE'/>
+</view>

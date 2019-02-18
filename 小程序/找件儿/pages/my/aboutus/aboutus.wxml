@@ -1,0 +1,9 @@
+<!--pages/my/aboutus /aboutus .wxml-->
+<!--关于我们-->
+<view class='qrcode'>
+    
+</view>
+<view class='content'>
+  找件儿: 查询您想要的汽车数据，最新OCR识别技术，快速定位到你想要的配件。
+</view>
+

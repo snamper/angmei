@@ -1,0 +1,255 @@
+/* pages/part/search1/search.wxss */
+page{
+  height: 100%;
+  overflow: hidden;
+}
+.inpwrap{
+  width: 90%;
+  margin:10px auto 10px;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 16px;
+  position: relative;
+}
+.inpwrap input{
+  width: 75%;
+  float: left;
+  border-radius: 4px 0 0 4px;
+  height: 100%;
+  border: 1px solid #4A7BB7;
+  border-right: 0;
+  box-sizing: border-box;
+  padding-left: 30px;
+}
+.inpwrap .btn{
+  width: 25%;
+  float: left;
+  color: #fff;
+  background: #4A7BB7;
+  text-align: center;
+  border-radius:0 4px 4px 0;  
+}
+.wrap{
+  height: calc(100% - 110px);
+}
+.left,.right{
+  float: left;
+}
+.left{
+  width: 28%;
+  text-align: center;
+  background: #F3F3F3;
+  font-size: 16px;
+  color: #767272;
+  height: 100%;
+}
+.left .bg{
+  background: #fff;
+}
+.right{
+  width: 70%;
+  height: 100%;
+  margin-left: 2%;
+  box-shadow: 1px 1px 8px #ccc;
+}
+.left .list{
+  height: 90rpx;
+  display:flex;
+  align-items:center;
+  justify-content:space-around;
+  flex-direction:column;
+}
+.right scroll-view{
+  background: #fff;
+}
+.right .titlewrap{
+  background: #DEDEDF;
+  height: 100rpx;
+  position: relative;
+}
+.titlewrap .title{
+  color: #767272;
+  text-align: center;
+  border-radius: 20px;
+  padding: 5px 10px;
+  background: #FFF;
+  font-size: 14px;
+  position: absolute;
+  border: 1px solid #8A8A8C;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 5px;
+}
+.titlewrap .back{
+  background: #fff;
+  position: absolute;
+  color: #3D90F5;
+  font-size: 14px;
+  padding: 5px 10px;
+  right: 5px;
+  transform: translateY(-50%);
+  top: 50%;
+}
+.pllist{
+  height: 90rpx;
+  display:flex;
+  justify-content:space-around;
+  flex-direction:column;
+  font-size: 16px;
+  color: #767272;
+  background: #FAFAFA;
+  margin-top: 5px;
+  padding-left: 50rpx;
+  box-sizing: border-box;
+  position: relative;
+}
+.pllist .push{
+  width: 25px;
+  height: 25px;
+  text-align: center;
+  line-height: 25px;
+  color: #fff;
+  font-size: 18px;
+  background: #F0A42D;
+  position: absolute;
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+  right:15px;   
+}
+/*xia*/
+.bottom{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  box-shadow: 1px 1px 8px #ccc;
+  box-sizing: border-box;
+  z-index: 100;
+}
+.bottom .bl,.bottom .br{
+  float: left;
+}
+.bottom .bl{
+  width: 70%;
+  background: #FFF;
+  height: 100%;
+  box-sizing: border-box;
+}
+.bottom .br{
+  width: 30%;
+  background: #329BDE;
+  text-align: center;
+  color: #fff;
+  height: 100%;
+}
+.blist{
+  width:36px;
+  height: 36px;
+  position: absolute; 
+  top: 50%;
+  transform: translateY(-50%);
+  left: 20%;
+}
+.blist image{
+  width: 100%;
+  height: 100%;
+}
+.listnum{
+  width: 20px;
+  height: 20px; 
+  text-align: center;
+  line-height: 20px;
+  position: absolute;
+  border-radius:50%;
+  color: #fff;
+  background: #D72C2C; 
+  top: -8px;
+  right: -8px;
+  font-size: 14px;
+}
+.yxlistwrap{
+  width: 100%;
+  position: fixed;
+  bottom:-600rpx;
+  /* transform: translateY(200%); */
+  z-index: 99;
+  transition: all 0.3s;
+}
+.yxlistwrap .yxtop{
+  width: 100%;
+  background: #EBEBEC;
+  height:80rpx;
+  line-height: 40rpx;
+  padding: 20rpx 40rpx;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+.yxlistwrap .yx{
+  float: left;
+  border-left: 2px solid #329BDE;
+  color: #4F4F52;
+  padding-left: 10px;
+  box-sizing: border-box;
+}
+.yxlistwrap .qk{
+  float: right;
+  color: #858586;
+}
+.yxlistwrap .yxbottom{
+  background: #fff;
+}
+.yxlistwrap .yxbottom scroll-view{
+  padding: 10px 20px 40px;
+  box-sizing: border-box;
+}
+.yxlistwrap .yxbottom .yxlist{
+  background: #FAFAFA;
+  position: relative;
+  margin-bottom:7px; 
+  height: 80rpx;
+   display:flex;
+  justify-content:space-around;
+  flex-direction:column;
+  color: #767272;
+  font-size: 16px;
+  padding-left: 20px;
+  box-sizing: border-box;
+}
+.yxlist .delete{
+   width: 20px;
+   height: 25px;
+   position: absolute;
+   top: 50%;
+   transform: translateY(-50%);
+   right: 20px;
+}
+.yxlist .delete image{
+   width: 100%;
+   height: 100%;
+}
+.pllist .pushbg{
+  background: #ccc;
+}
+.meng{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  top: 0;
+  left: 0;
+}
+
+.show{
+   bottom:100rpx;
+}
+.inpwrap image{
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+}

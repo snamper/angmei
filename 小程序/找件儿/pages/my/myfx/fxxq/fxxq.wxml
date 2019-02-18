@@ -1,0 +1,28 @@
+<!--pages/my/myfx/fxxq/fxxq.wxml-->
+<!--分享详情-->
+ <block wx:for="{{name}}" wx:for-item="item" wx:key=""> 
+   <view class='boxshadow'>
+      <view class='titlewrap'>
+          <view class='title'>车型名称：<text class='titletext'>{{item}}</text></view>
+          <view class='vin'>VIN：</view>
+      </view>
+       <view class='top clearfix'>
+            <view class='numwrap'>编号</view>
+            <view class='pjlbwrap'>配件类别</view>
+            <view class='oewrap'>OE号</view>
+            <view class='moneywrap'>4S店价格</view>
+        </view>
+      <block wx:for="{{arrr[index]}}" wx:for-item="ite" wx:key=""> 
+        <view class='bottom clearfix'>
+           <view class='num'>{{index+1}}</view>
+           <view class='pjlb'>{{ite.category_name}}</view>
+           <view class='oe'>{{ite.oe_number}}</view>
+           <view class='money'>￥{{ite.price}}</view>
+        </view>
+      </block>
+   </view>
+</block>
+<!-- <canvas style="width: 100vw; height: 100%;" canvas-id="myCanvas" class='canvas'></canvas> -->
+<button open-type='share' class='btn'>分享</button>
+
+

@@ -1,0 +1,25 @@
+<!--pages/wx-cropper/index.wxml-->
+<canvas canvas-id="myCanvas" style="position:absolute;border: 1px solid red; width:100vw;height:calc(100vh - 200rpx);top:-9999px;left:-9999px;"></canvas>
+<view class="page-body">
+  <view class="page-body-wrapper">
+       <camera flash="auto" binderror='error'> 
+        <cover-view class='covwrap'> 
+            <cover-view class='left'></cover-view>
+            <cover-view class='center'>
+               <cover-view class='top'></cover-view>
+               <cover-view class='center-c'></cover-view>
+               <cover-view class='bottom'></cover-view>
+            </cover-view>
+            <cover-view class='right'></cover-view>
+         </cover-view> 
+       </camera>      
+    <view class="btn-area"> 
+      <view bindtap="takePhoto" class='btn'><image class='zx' src='../image/camera.png'></image></view>
+      <view bindtap='xiangce' class='photo'>
+          <image class='xc' src='../image/photo.png'  mode='widthFix'></image>
+          <view>相册</view>
+      </view>
+      <view bindtap='shouquan' class='shouquan' wx:if='{{show}}'>授权使用</view>
+    </view>
+  </view>
+</view>

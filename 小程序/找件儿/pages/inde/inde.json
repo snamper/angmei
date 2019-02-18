@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "找件儿",
+  "usingComponents": {
+    "tab": "../component/tab",
+    "login": "../login/login"
+  }
+}

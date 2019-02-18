@@ -1,0 +1,153 @@
+/* pages/particulars/particulars.wxss */
+.titlewrap{
+  box-shadow:1px 1px 8px #ccc;
+  background: #fff;
+}
+.titlewrap image{
+  width: 90rpx;
+  height: 90rpx;
+}
+.titlewrap .logo{
+  padding: 12.5px 0;
+  margin-left: 10px;
+}
+.titlewrap .logo,.titlewrap .title{
+  float: left;
+}
+.titlewrap .title{
+  font-size: 16px;
+  color: #4C505C;
+  padding-top: 20rpx;
+  margin-left: 15px;
+  width: calc(100% - 75px);
+}
+.titlewrap .title .vin{
+  color: #98989A;
+  font-size: 14px;
+  line-height: 40rpx;
+}
+.content{
+  margin-bottom: 150px;
+}
+.carimg{
+  width: 95%;
+  margin: 0 auto;
+  margin-top: 2.5%;
+  height: 245px;
+  position: relative;
+}
+.carimg image{
+  width: 100%;
+}
+.list{
+  width: 95%;
+  margin: 6px auto 0;
+  background: #FBFBFB;
+  border-radius: 5rpx;
+}
+.list view{
+  float: left;
+  height: 80rpx;
+  font-size: 16px;
+  padding-left: 8px;  
+  box-sizing: border-box;
+}
+.list .left{
+  width: 45%;
+  border-right: 1px dashed #ccc;
+  height: 80rpx;
+display:flex;
+justify-content:space-around;
+flex-direction:column;
+  color: #4E4F51;
+  box-sizing: border-box;
+
+}
+.list .right{
+  color: #8D8E92;
+  font-size: 14px;   
+  line-height: 80rpx;
+  width: 55%;
+  display:flex;
+justify-content:space-around;
+flex-direction:column;
+box-sizing: border-box;
+}
+/*按钮*/
+.btnwrap{
+  left: 0;
+  padding-bottom: 30rpx;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  height: 250rpx;
+}
+.btnwrap>.lbtn,.btnwrap>.rbtn{
+  width: 30%;
+  color: #fff;
+  float: left;
+  border-radius: 30px;
+  height: 75rpx;
+  line-height: 75rpx;
+  text-align: center;
+  font-size: 14px;
+  position: absolute; 
+  top: 10px;
+}
+.btnwrap .lbtn{
+  background: #1CA3C5;
+  left: 8%;
+}
+.btnwrap .rbtn{
+  background: #1CA3C5;
+  right: 8%;
+}
+.btnwrap .inp{
+  position: absolute;
+  bottom: 20px;
+  width: 90%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.btnwrap .inp view{
+  float: left;
+  font-size: 14px;
+  text-align: center;
+  height: 90rpx;
+  line-height: 90rpx;
+  box-sizing: border-box;
+}
+.btnwrap .inp .left{
+  width: 70%;
+  background: #FFF;
+  color: #D6D6D6;
+  border: 1px solid #184FEF;
+  border-radius: 4px 0 0 4px;
+  position: relative;
+}
+.btnwrap .inp .right{
+  width: 30%;
+  color: #FFF;
+  background: #184FEF;
+  border-radius:0 4px 4px 0;  
+}
+.tab{
+  position: absolute;
+  background:#236EBA;
+  color: #FFF;
+  font-size:16px;
+  border-radius: 3px;
+  padding: 5px 10px;
+  right: 0;
+  top:5px;
+}
+.inp .left image{
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+}
+

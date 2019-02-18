@@ -1,0 +1,28 @@
+<!--pages/inde/inde.wxml-->
+<!--首页-->
+<!--ocr-->
+<view class='bgwrap' >
+<image class='bg' src='../image/ocrbg.jpg'></image>
+   <view class='ocr1'>
+      <view class='ocr2'>
+          <view class='ocr3' bindtap='ocr'>
+             <image src='../image/ocr.png'></image>
+             <view class='text'>拍照识别VIN码</view>
+          </view>
+      </view>
+    </view>
+    <button class='btn' bindtap='classify'>手动输入VIN</button>
+    <!--语音识别-->
+    <!-- <button class='btn' catchtouchstart="streamRecord" catchtouchend="endStreamRecord">录音</button>
+    <button>{{translateText}}</button> -->
+    <!--购物车-->
+    <!-- <view class='shopping-trolley' bindtap='gwcclick'>
+        <image src='../image/gwc.png'></image>
+    </view> -->
+    <button  class='btnn' wx:if="{{nickNameshow}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">授权登录</button>
+    <view wx:else>请升级微信版本</view>
+</view>
+<!--底部tab栏-->
+<tab  current="{{0}}"></tab>
+<!--绑定手机号-->
+<login loginshow='{{loginshow}}'></login>

@@ -1,0 +1,12 @@
+<!--pages/inde/jrwm/jrwm.wxml-->
+<view class='content'>
+    <view class='phoneWrap'>
+        <view class='h1'>联系方式</view>
+        <view class='h4'>氧传感器主机配套供应商</view>
+        <view class='phoneList' wx:for='{{phoneStr}}' wx:for-item="item" wx:key="">
+            <view>{{item.name}}</view>
+            <view class='phone' bindtap='callPhone' data-phone='{{item.phone}}'>{{item.phone}}</view>
+        </view>
+        <image class='img' mode='widthFix' src='../../image/brbottom.png'></image>
+    </view>
+</view>

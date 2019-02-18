@@ -1,0 +1,15 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/car/car",
+    "pages/ocr/ocr",
+    "pages/list/list",
+    "pages/list/particulars/particulars"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "中国·洛升查询系统",
+    "navigationBarTextStyle": "black"
+  }
+}

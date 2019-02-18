@@ -1,0 +1,14 @@
+<!--pages/epc/epc.wxml-->
+<scroll-view class='left' scroll-y="true" style='height:{{wheight}}px' >
+   <block wx:for='{{categorys1}}' wx:for-item="item" wx:key="">
+       <view class='categorys {{num==index?"bg":""}}' data-text="{{item.category_id1}}" data-index="{{index}}"  bindtap='leftclick'><text>{{item.category_name1}}</text></view>
+   </block>
+</scroll-view>
+<scroll-view  class='right' scroll-y="true" style='height:{{wheight}}px'>
+     <block wx:for='{{categorys2}}' wx:for-item="item" wx:key="">
+         <view class='list' bindtap='listclick' data-id='{{item.category_id2}}' data-src='{{item.img}}' data-title='{{item.category_name2}}'>
+             <view class='title'>{{item.category_name2}}</view>
+             <view class='epcimg'><image src='{{item.img}}' mode='widthFix'></image></view>
+         </view>
+     </block>
+</scroll-view>

@@ -1,0 +1,92 @@
+/* pages/wx-cropper/index.wxss */
+.covwrap{
+  width: 100%;
+  height: 100%;
+  display:flex;
+  flex-direction:row;
+  flex-wrap:nowrap;
+  justify-content:center;
+}
+.left,.right{
+  width:295rpx;
+  height:100%;
+  background-color:#000;
+  opacity:0.5;
+}
+.center{
+  width:160rpx;
+  height:100%;
+}
+.center-c{
+  width: 100%;
+  height: 80%;
+}
+.top,.bottom{
+  width: 100%;
+  height: 10%;
+  background-color:#000;
+  opacity:0.5;
+}
+.top{
+  top:0;
+}
+.bottom{
+   bottom: 0; 
+}
+camera{
+  width: 100%;
+  height: calc(100vh - 200rpx);
+  position: relative;
+}
+.btn-area{
+  width: 100%;
+  height: 200rpx;
+  background: #000;
+  color: #fff;
+  position: relative;
+}
+.btn-area .zx{
+  width: 80rpx;
+  height: 80rpx;
+}
+.btn-area .btn{
+  text-align: center;
+  font-size: 22px;
+  position: absolute;
+  left:50%;
+  top:50%;
+  transform: translate(-50%,-50%);
+  background: #fff;
+  border-radius: 50%;
+  height: 130rpx;
+  padding: 25rpx;
+  box-sizing: border-box;
+}
+.photo{
+  position: absolute;
+  left:0;
+  top: 0;
+  width: 200rpx;
+  height: 100%;
+  transform:rotateZ(90deg);
+}
+.photo view{
+  font-size: 16px;
+  height: 20px;
+  text-align: center;
+  width: 100%;
+  margin-top: 50%;
+}
+.photo image{
+  width: 80rpx;
+  position: absolute;
+  top: 30rpx;
+  left: 50%;
+  margin-left: -40rpx;
+}
+.shouquan{
+  position: absolute;
+  top:50%;
+  transform: translateY(-50%);
+  right: 20px;
+}

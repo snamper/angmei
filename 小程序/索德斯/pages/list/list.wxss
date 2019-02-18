@@ -1,0 +1,32 @@
+/* pages/list/list.wxss */
+.list{
+  width: 95%;
+  margin: 20rpx auto 0;
+  border-radius: 10rpx;
+  box-shadow: 1px 1px 8px #ccc;
+  padding: 16rpx;
+  box-sizing: border-box;
+  background: #FFF;
+  position: relative;
+}
+.list .left{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.list .left image{
+  width: 210rpx;
+}
+.list .right{
+  font-size: 14px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-around;
+   margin-left: 240rpx;
+}
+.list .right .title{
+  font-size: 18px;
+}
+.list:last-child{
+  margin-bottom: 20rpx;
+}

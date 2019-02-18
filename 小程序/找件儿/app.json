@@ -1,0 +1,41 @@
+{
+  "pages": [
+    "pages/inde/inde",
+    "pages/classify/classify",
+    "pages/my/my",
+    "pages/my/aboutus/aboutus",
+    "pages/my/zhanghao/zhanghao",
+    "pages/my/opinion/opinion",
+    "pages/classify/selectpj/selectpj",
+    "pages/classify/selectpj/peijianlist/peijianlist",
+    "pages/classify/year/year",
+    "pages/inde/vin/vin",
+    "pages/particulars/particulars",
+    "pages/ocr/ocr",
+    "pages/epc/epc",
+    "pages/epc/content-epc/content-epc",
+    "pages/epc/content-epc/oe/oe",
+    "pages/network/none",
+    "pages/nodata/nodata",
+    "pages/part/part",
+    "pages/part/search/search",
+    "pages/epc/content-epc/oe/cartype/cartype",
+    "pages/login/login",
+    "pages/part/peijianlist/peijianlist",
+    "pages/my/myfx/myfx",
+    "pages/my/myfx/fxxq/fxxq",
+		"pages/component/tab"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#329BDE",
+    "navigationBarTitleText": "找件儿",
+    "navigationBarTextStyle": "white"
+  },
+  "plugins": {
+    "WechatSI": {
+      "version": "0.2.2",
+      "provider": "wx069ba97219f66d99"
+    }
+  }
+}

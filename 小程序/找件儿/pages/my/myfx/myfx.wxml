@@ -1,0 +1,21 @@
+<!--pages/my/myfx/myfx.wxml-->
+<!-- 分享列表-->
+   <scroll-view scroll-y='true' style='height:calc(100vh - 100rpx);'>
+      <block wx:for="{{fxlist}}" wx:for-item="item" wx:key="">
+         <view class='listwrap boxshadow' bindtouchstart='start' bindtouchmove='move' bindtouchend='end' data-index='{{index}}'>
+            <view class='list' style='left:{{item.left}}px;'>
+                <view class='name'>{{item.category_name}}</view>
+                <view class='oe'>OE号：{{item.oe_number}}</view>
+                <view class='money'>￥{{item.price}}</view>
+            </view>
+            <view class='delete' bindtap='delete' data-index='{{index}}'><image src='../../image/delete.png'></image></view>
+         </view>  
+      </block>
+   </scroll-view>
+<view class='bottom clearfix'>
+    <view class='left'>
+        <view class='tj' bindtap='back'><text>+</text>添加</view>
+        <view class='qk' bindtap='qkclick'><text>+</text>清空</view>
+    </view>
+    <view class='right' bindtap='fxxq'>确定</view>
+</view>

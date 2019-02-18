@@ -1,0 +1,56 @@
+<!--pages/part/search1/search.wxml-->
+<view class='inpwrap clearfix'>
+   <input placeholder='请输入配件名称' placeholder-style='color:#C9C9C9;' bindinput='input' value='{{inpvalue}}'></input>
+   <image src='../../image/fdj.png'></image>
+   <view class='btn' bindtap='qdpush'>确定</view>
+</view>
+<view class='wrap clearfix'>
+   <view class='left'>
+        <view class='list {{num==1?"bg":""}}' data-num='1' bindtap='rmlist'>热门列表</view>
+        <block wx:for='{{pjzllist}}'  wx:for-item="item" wx:key="">
+            <view class='list {{num==item.category_id?"bg":""}}' bindtap='llist' data-id='{{item.category_id}}' data-text='{{item.category_name}}'>{{item.category_name}}</view>
+        </block>
+    </view>
+    <view class='right'>
+       <view class='titlewrap' wx:if='{{titleshow}}'>
+          <view class='title'>{{title}}</view>
+          <view class='back' bindtap='back' wx:if='{{backshow}}'>返回上一级</view>
+       </view>
+       <scroll-view style='height:100%;' scroll-y='true'>
+          <block wx:for='{{rmlb}}'  wx:for-item="item" wx:key="" wx:if='{{rmlbshow}}'>
+             <view class='pllist' data-id='{{item.category_id}}'>{{item.category_name}} <view class='push {{item.bg==index?"pushbg":""}}' bindtap='pushr' data-text='{{item.category_name}}' data-index='{{index}}'>+</view></view>
+          </block>
+          <block wx:for='{{pjpllist}}'  wx:for-item="item" wx:key="" wx:if='{{pjpl}}'>
+              <view class='pllist' data-id='{{item.category_id}}' bindtap='plclick' data-text='{{item.category_name}}'>{{item.category_name}} </view>
+          </block>
+          <block wx:for='{{xzpjlist}}'  wx:for-item="item" wx:key="" wx:if='{{xzpj}}'>
+              <view class='pllist' data-id='{{item.category_id}}'>{{item.category_name}} <view class='push {{item.bg==index?"pushbg":""}}' bindtap='pushp' data-text='{{item.category_name}}' data-index='{{index}}'>+</view></view>
+          </block>
+       </scroll-view> 
+    </view>
+</view> 
+<view class='bottom clearfix'>
+   <view class='bl'>
+      <view class='blist' bindtap='yxlistclick'>
+            <image src='../../image/list.png'></image>
+            <view class='listnum'>{{listnum}}</view>
+      </view>
+   </view>
+   <view class='br' bindtap='chaxun'>查询</view>
+</view>
+<view class='yxlistwrap {{yxshow==true?"show":""}}'>
+   <view class='yxtop clearfix'> 
+      <view class='yx'>已选择配件</view> <view class='qk' bindtap='qkclick'>清空</view>
+   </view>
+   <view class='yxbottom' >
+          <scroll-view style='height:600rpx;' scroll-y='true'>
+             <block wx:for='{{yxlist}}' wx:for-item="item" wx:key="">
+                <view class='yxlist'>{{item.category_name}}
+                      <view class='delete' bindtap='delete' data-index='{{index}}'><image src='../../image/delete.png'></image></view>
+                </view>
+              </block>
+             
+          </scroll-view>
+      </view>
+</view>
+<view class='meng' wx:if='{{mengshow}}' bindtap='mengclick'></view>

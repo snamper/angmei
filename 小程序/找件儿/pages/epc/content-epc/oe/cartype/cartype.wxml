@@ -1,0 +1,16 @@
+<!--pages/epc/content-epc/oe/cartype/cartype.wxml-->
+<!--适用车型-->
+<view class='searchwrap'>
+   <image src='../../../../image/fdj.png'></image>
+   <input class='inp' placeholder='请输入要查询的适用车型' bindinput='input' placeholder-style='color:#C9C9C9;' value='{{inp}}'></input>
+   <view class='btn' bindtap='btn'>确定</view>
+</view>
+<scroll-view scroll-y="true" class='cartype' scroll-into-view='{{one}}'scroll-with-animation='true' >
+   <block  wx:for='{{cartypelist}}' wx:for-item="item" wx:key="" wx:if="{{!show}}">
+       <view id='{{index}}' class='carlist {{item.num==index?"col":""}}' >{{item.Manufacture_CN}} {{item.Vehicle_of_year}} {{item.Name_of_sales}}</view>
+   </block>
+   <block  wx:for='{{arr}}' wx:for-item="item" wx:key="" wx:if="{{show}}">
+       <view id='{{A+index}}' class='carlist {{item.num==index?"col":""}}' >{{item.Manufacture_CN}} {{item.Vehicle_of_year}} {{item.Name_of_sales}}</view>
+   </block>
+</scroll-view>
+

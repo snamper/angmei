@@ -1,0 +1,60 @@
+/* pages/epc/content-epc/oe/cartype/cartype.wxss */
+.searchwrap{
+  border:1px solid #4A7BB7;
+  width:95%;
+  border-radius:5px;
+  padding:0;
+  margin-top:10px;
+  height:80rpx;
+  position: relative;
+}
+.searchwrap .inp,.searchwrap .btn{
+  float: left;
+}
+.searchwrap .inp{
+  width: 80%;
+  padding-left: 40px;
+  border-radius: 5px 0 0 5px;
+  box-sizing: border-box;
+}
+.searchwrap image{
+  width:20px;
+  height:20px;
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  left: 10px;
+}
+.searchwrap .btn{
+  height:78rpx;
+  background:#4A7BB7;
+  border-radius:0 5px 5px 0;
+  color:#fff;
+  width:20%;
+  text-align:center;
+  line-height:76rpx;
+}
+scroll-view{
+  height: calc(100vh - 120rpx);
+  margin-top: 10px;
+}
+.carlist{
+  font-size: 16px;
+  color: #333131;
+  border-bottom:1px solid #EAEAEA;
+  margin:0 2.5%;
+  background: #fff;
+  min-height: 80rpx;
+  box-sizing: border-box;
+  display:flex;
+  justify-content:space-around;
+  flex-direction:column;
+  padding-left: 10px;
+}
+.col{
+  color:#1775E8;
+}
+.carlist text{
+  float: left;
+  width:5px; 
+}
