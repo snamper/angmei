@@ -337,6 +337,20 @@ nav{
 .tooltip{
 	top: -8px !important;
 }
+#qrcode{
+    width: 30px;
+    height: 30px;
+    transform-origin: 50% 100%;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    -ms-transition: all .3s;
+    -o-transition: all .3s;
+    transition: all .3s;
+}
+#qrcode:hover{
+    transform: scale(6,6);
+}
+
 /*尾部*/
 footer{
 	background: #69a6dc;

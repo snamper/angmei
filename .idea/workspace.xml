@@ -5,7 +5,14 @@
     <bookmark url="file://$PROJECT_DIR$/MattrioEcModel/luosheng/admin/js/product-query.js" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f1e4b6d8-1758-44c8-a28f-73a503a0d70e" name="Default Changelist" comment="" />
+    <list default="true" id="f1e4b6d8-1758-44c8-a28f-73a503a0d70e" name="Default Changelist" comment="修改">
+      <change beforePath="$PROJECT_DIR$/AdminLTE-3/dist/img/AdminLTELogo.png" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE-3/dist/img/AdminLTELogo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminLTE-3/dist/js/adminlte.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE-3/dist/js/adminlte.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminLTE-3/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE-3/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminLTE-3/index2.html" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE-3/index2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminLTE-3/index3.html" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE-3/index3.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminLTE-3/starter.html" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE-3/starter.html" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -55,7 +62,7 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CSS" value="150" />
-          <entry key="HTML" value="1084" />
+          <entry key="HTML" value="1085" />
           <entry key="Image" value="23" />
           <entry key="JSHint" value="1" />
           <entry key="JSON" value="9" />
@@ -79,12 +86,36 @@
           <entry key="HTML" value="28940" />
           <entry key="JSON" value="6" />
           <entry key="JavaScript" value="35603" />
+          <entry key="PLAIN_TEXT" value="3" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/AdminLTE-3/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="342">
+              <caret line="19" column="79" lean-forward="true" selection-start-line="19" selection-start-column="79" selection-end-line="19" selection-end-column="79" />
+              <folding>
+                <element signature="n#style#0;n#aside#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#a#0;n#aside#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#sup#0;n#h3#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#section#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#section#0;n#div#1;n#div#0;n#section#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#div#0;n#section#0;n#div#1;n#div#0;n#section#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="e#33988#33995#1" expanded="true" />
+                <element signature="e#34326#34333#1" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#section#1;n#div#1;n#div#0;n#section#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#1;n#div#1;n#section#1;n#div#1;n#div#0;n#section#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#1;n#div#2;n#section#1;n#div#1;n#div#0;n#section#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="e#45198#45204#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -99,7 +130,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>fileBtn</find>
       <find>value.oe_name</find>
       <find>wxRedirect</find>
       <find>addBtn</find>
@@ -129,9 +159,9 @@
       <find>page-container</find>
       <find>时间</find>
       <find>微信</find>
+      <find>sidebar</find>
     </findStrings>
     <replaceStrings>
-      <replace>+'&amp;fi=1'</replace>
       <replace>encodeURI</replace>
       <replace>make_year</replace>
       <replace>&amp;type=12&amp;fi=1&amp;years='+year+'&amp;vin='+vin</replace>
@@ -161,6 +191,7 @@
       <replace />
       <replace>localStorage.getItem(&quot;networkaohan&quot;)</replace>
       <replace>localStorage.getItem(&quot;networkmodel&quot;)</replace>
+      <replace>昂美数据决策系统</replace>
     </replaceStrings>
     <dirStrings>
       <dir>C:\Users\admin\Desktop\angmei\Mattrio2</dir>
@@ -175,11 +206,15 @@
       <dir>C:\Users\admin\Desktop\angmei\MattrioManager</dir>
     </dirStrings>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Mattrio2/content/maintain/oecont/js/oecont.js" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/demo3-1/js/index.js" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/entrance/index.html" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/MattrioEcModel/songzheng/admin/js/product-brand.js" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/AdminLTE-3/dist/js/adminlte.js" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/MattrioEcModel/songzheng/admin/matching/matching.html" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Mattrio2/bwm_epc/content/contentepc/js/contentepc.js" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/MattrioEcModel/songzheng/admin/matching/js/matching.js" root0="SKIP_HIGHLIGHTING" />
@@ -278,7 +313,7 @@
       <path value="$PROJECT_DIR$/AdminLTE-3/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="245" />
     <option name="y" value="10" />
     <option name="width" value="980" />
@@ -317,7 +352,7 @@
             <path>
               <item name="angmei" type="b2602c69:ProjectViewProjectNode" />
               <item name="angmei" type="462c0819:PsiDirectoryNode" />
-              <item name="AdminLTE" type="462c0819:PsiDirectoryNode" />
+              <item name="AdminLTE-3" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -538,7 +573,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="972824000" />
+    <option name="totallyTimeSpent" value="973078000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -551,10 +586,12 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Structure" order="0" side_tool="true" weight="0.24966975" />
       <window_info id="Favorites" order="1" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="2" visible="true" weight="0.15918098" />
+      <window_info content_ui="combo" id="Project" order="2" visible="true" weight="0.15918098" />
+      <window_info anchor="bottom" id="Messages" weight="0.32907802" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.3611898" />
@@ -563,7 +600,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32719547" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32907802" />
       <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49933422" weight="0.3286119" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.501321" side_tool="true" weight="0.509915" />
       <window_info anchor="bottom" id="缩略图" order="11" weight="0.815864" />
@@ -598,6 +635,10 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="修改" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改" />
+  </component>
   <component name="XPathView.XPathProjectComponent">
     <history />
     <find-history />
@@ -612,13 +653,6 @@
     <select />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/MattrioEcModel/peiao/admin/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="49" column="34" selection-start-line="49" selection-start-column="34" selection-end-line="49" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/MattrioEcModel/shengdi/admin/login.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="18">
@@ -872,6 +906,26 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4307">
           <caret line="327" column="90" selection-start-line="327" selection-start-column="88" selection-end-line="327" selection-end-column="90" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AdminLTE-3/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="19" column="79" lean-forward="true" selection-start-line="19" selection-start-column="79" selection-end-line="19" selection-end-column="79" />
+          <folding>
+            <element signature="n#style#0;n#aside#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#a#0;n#aside#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#sup#0;n#h3#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#section#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#section#0;n#div#1;n#div#0;n#section#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#div#0;n#section#0;n#div#1;n#div#0;n#section#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#33988#33995#1" expanded="true" />
+            <element signature="e#34326#34333#1" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#section#1;n#div#1;n#div#0;n#section#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#1;n#section#1;n#div#1;n#div#0;n#section#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#2;n#section#1;n#div#1;n#div#0;n#section#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#45198#45204#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

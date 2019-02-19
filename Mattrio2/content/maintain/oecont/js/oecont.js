@@ -676,12 +676,14 @@ $("#image").click(function() {
 				fnMazida($(".td3").html(), "马自达", userid);
 				$(document).on("click", ".cont_img img", function() {
 					var epc_cont = epc_img.list[$(this).parents("a").parents("p").index()];
+                    localStorage.setItem('ToyotaParameters',epc_img.parameterobj)
 					$(this).parents("a").attr("href", "../../../mazida_epc/content_mazida_epc/content_mazida_epc.html?parameters="+epc_img.parameterobj+"&e="+epc_cont.category_id3+"&imgsrc=http://mazda-epc.oss-cn-hangzhou.aliyuncs.com/images/" + epc_cont.img + ".jpg"+"&localtion="+epc_cont.location+"&choice=0");
 				})	
 			}else if(car_name.indexOf("丰田") >= 0){
 				fnFentian($(".td3").html(), "丰田", userid);
 				$(document).on("click", ".cont_img img", function() {
 					var epc_cont = epc_img.list[$(this).parents("a").parents("p").index()];
+                    localStorage.setItem('ToyotaParameters',epc_img.parameterobj)
 					$(this).parents("a").attr("href", "../../../fengtian_epc/content_fengtian_epc/content_fengtian_epc.html?parameters="+epc_img.parameterobj+"&e="+epc_cont.category_id2+"&imgsrc=" + epc_cont.img + "&localtion="+epc_cont.location+"&choice=0");
 				})	
 			}else if(car_name.indexOf("海马") >= 0||car_name.indexOf("长城") >= 0){
@@ -689,12 +691,14 @@ $("#image").click(function() {
 					fnFentian($(".td3").html(), "海马", userid);
 					$(document).on("click", ".cont_img img", function() {
 						var epc_cont = epc_img.list[$(this).parents("a").parents("p").index()];
+                        localStorage.setItem('ToyotaParameters',epc_img.parameterobj)
 						$(this).parents("a").attr("href", "../../../haima_epc/content_haima_epc/content_haima_epc.html?parameters="+epc_cont.parameters+"&e="+epc_cont.category_id2+"&imgsrc=" + epc_cont.img + "&localtion="+epc_cont.location+"&choice=0");
 					})	
 				}else if(car_name.indexOf("长城") >= 0){
 					fnFentian($(".td3").html(), "长城", userid);
 					$(document).on("click", ".cont_img img", function() {
 						var epc_cont = epc_img.list[$(this).parents("a").parents("p").index()];
+                        localStorage.setItem('ToyotaParameters',epc_img.parameterobj)
 						$(this).parents("a").attr("href", "../../../haima_epc/content_haima_epc/content_haima_epc.html?parameters="+epc_cont.parameters+"&e="+epc_cont.category_id2+"&imgsrc=" + epc_cont.img + "&localtion="+epc_cont.location+"&choice=0"+"&type=11");
 					})	
 				}
