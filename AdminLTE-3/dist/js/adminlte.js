@@ -444,18 +444,23 @@ var PushMenu = function ($) {
    * Data API
    * ====================================================
    */
-
-  $(document).on('click', Selector.TOGGLE_BUTTON, function (event) {
-    event.preventDefault();
-
-    var button = event.currentTarget;
-
-    if ($(button).data('widget') !== 'pushmenu') {
-      button = $(button).closest(Selector.TOGGLE_BUTTON);
+  /*左侧菜单栏得显示隐藏*/
+    var menushow=JSON.parse(localStorage.getItem('menushow'))?1:0;
+    if (JSON.parse(localStorage.getItem('menushow'))){
+        PushMenu._jQueryInterface.call($('[data-widget="pushmenu"]'), 'toggle');
     }
 
-    PushMenu._jQueryInterface.call($(button), 'toggle');
-  });
+    $(document).on('click', Selector.TOGGLE_BUTTON, function (event) {
+        event.preventDefault();
+        menushow = !menushow
+        localStorage.setItem('menushow',menushow)
+        var button = event.currentTarget;
+
+        if ($(button).data('widget') !== 'pushmenu') {
+          button = $(button).closest(Selector.TOGGLE_BUTTON);
+        }
+        PushMenu._jQueryInterface.call($(button), 'toggle');
+    });
 
   /**
    * jQuery API
