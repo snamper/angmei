@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="content-type" content="text/html;charset=utf-8">
@@ -8,9 +8,9 @@
     <meta name="robots" content="all">
     <!--<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">-->
     <title>Macc数据决策系统</title>
-    <link rel="icon" href="../image/logohead.jpg">
-    <link rel="stylesheet" href="../css/reset.css">
-    <link rel="stylesheet" href="../css/loading.css">
+    <link rel="icon" href="./image/logohead.jpg">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/loading.css">
 </head>
 <style>
     html,body{
@@ -120,21 +120,17 @@
     </div>
     <div id="loading">
         <p>
-            <img src="../image/timg.gif">
+            <img src="./img/timg.gif">
         </p>
     </div>
 
 </body>
-<script type="text/javascript" src="../js/jquery.js"></script>
-<script type="text/javascript" src="../js/jquery.cookie.js"></script>
+<script type="text/javascript" src="./js/jquery.js"></script>
+<script type="text/javascript" src="./js/jquery.cookie.js"></script>
 <script type="text/javascript">
-    var network;
-    if(localStorage) {
-        network = localStorage.getItem("network");
-    } else {
-        network = $.cookie("network");
-    }
-    var userid = $.cookie("user_id");
+    /*
+    * Mattrio数据决策系统中转页面
+    * */
     //获取通过url传的参数
     function getUrlParam(name) {
         var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
@@ -142,8 +138,8 @@
         if (r != null) return decodeURI(r[2]); return null; //返回参数值
     }
     if (getUrlParam('login')){
-        $('.fr_username').val(sessionStorage.getItem('fr_username'))
-        $('.fr_password').val(sessionStorage.getItem('fr_password'))
+        $('.fr_username').val(getUrlParam('fr_username'))
+        $('.fr_password').val(getUrlParam('fr_password'))
         loginAjax($('.fr_username').val(),$('.fr_password').val())
     }
     $('.check').click(function () {
@@ -155,11 +151,6 @@
         $('.check').addClass('box')
     }
     $('.btn').click(function(){
-        if (userid == undefined || userid == "undefined" || userid ==null || userid == "null") {
-            $.cookie("username", null, { path: '/' });
-            window.location.href = "../login/login.html";
-            return false;
-        }
         if($('.fr_username').val()==''){
             alert('请输入用户名')
             return false;

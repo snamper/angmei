@@ -695,6 +695,7 @@
 				}
 			}
 		}
+        localStorage.setItem('fr_username',1)
 		//进入数据分析系统
 		$(".nav_bi p").click(function(){
 			var userid = $.cookie("user_id");
@@ -714,14 +715,12 @@
 				crossDomain: true == !(document.all),
 				success: function(data) {
                     if(data.list.length == 0 || data.list == []){
-                        window.location.href = "analysis/index.html";
+                        window.location.href = "http://ec.51macc.com:88/analysis/index.html";
                         return false;
                     }
                     var fr_username = data.list[0].fr_username;
                     var fr_password = data.list[0].fr_password;
-                    window.location.href='analysis/index.html?login=true'
-                    sessionStorage.setItem('fr_username',fr_username)
-                    sessionStorage.setItem('fr_password',fr_password)
+                    window.location.href='http://ec.51macc.com:88/analysis/index.html?login=true&fr_username='+fr_username+'&fr_password='+fr_password
 				},
 				error: function() {
 					alert("登录失败"); // 登录失败（超时或服务器其他错误）
