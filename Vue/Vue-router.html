@@ -16,8 +16,15 @@
         <router-link to="/content">content</router-link>
         <router-link to="/footer">footer</router-link>
         <router-view></router-view>
+        <lkds></lkds>
     </div>
+
+
+
 </body>
+<script type="x-template" id="tem">
+    <div>template模板</div>
+</script>
 <script>
     var router=new VueRouter({
         routes:[
@@ -39,12 +46,29 @@
                     template:'<div>footer</div>'
                 }
             },
-
         ]
     })
+    var lkds=Vue.extend({
+        template:'#tem'
+    })
+    // var lkds={
+    //     template:'#tem'
+    // }
+
     var app=new Vue({
         el:'#app',
-        router
+        router,
+        data:{
+            sex:[],
+            time:20190220,
+            style:{
+                color:'red',
+                fontSize:'20px'
+            }
+        },
+        components:{
+            lkds:lkds
+        }
     })
 
 </script>

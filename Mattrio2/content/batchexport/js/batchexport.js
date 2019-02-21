@@ -234,59 +234,34 @@ $('.tab ').click(function(){
 		$(".nonetable").show().siblings('table').hide()
 	}
 })
-//$(document).on("click",".oecont span",function(){
-//	window.open("../../content/maintain/oecont/oecont.html?oenumber="+$(this).html());
-//})
-//$(document).on("click",".socont span",function(){	
-//	window.open("../../content/aftermarket/afterdsf/afterdsf.html?product_id="+$(this).html());
-//})
 /*导出*/
+/*https://github.com/ecscstatsconsulting/js-excel-generator*/
 $(".export").click(function(){	
 	if(index==0){
 		alert('请在获取数据后导出')
 		return false
 	}
     if($('#oetable').is(':visible')){
-        $('#oetable').table2excel({
-            exclude: ".noExl",
-            name: "Excel Document Name",
-            filename: 'OE信息',
-            fileext: ".xls",
-            exclude_img: true,
-            exclude_links: true,
-            exclude_inputs: true
-        });
-        // $('.tab').tableExport({ type: "multisheetxls", worksheetName: ["oetable", "oecartable", "shtable","nonetable"] });
+        new ExcelGen({
+            "src_id": "oetable",
+            "show_header": true
+        }).generate('OE信息.xlsx');
+
     }else if($('#oecartable').is(':visible')){
-        $('#oecartable').table2excel({
-            exclude: ".noExl",
-            name: "Excel Document Name",
-            filename: 'OE适配车型',
-            fileext: ".xls",
-            exclude_img: true,
-            exclude_links: true,
-            exclude_inputs: true
-        });
+        new ExcelGen({
+            "src_id": "oecartable",
+            "show_header": true
+        }).generate('OE适配车型.xlsx');
     }else if($('#shtable').is(':visible')){
-        $('#shtable').table2excel({
-            exclude: ".noExl",
-            name: "Excel Document Name",
-            filename: '售后品牌',
-            fileext: ".xls",
-            exclude_img: true,
-            exclude_links: true,
-            exclude_inputs: true
-        });
+        new ExcelGen({
+            "src_id": "shtable",
+            "show_header": true
+        }).generate("售后品牌.xlsx");
     }else if($('#nonetable').is(':visible')){
-        $('#nonetable').table2excel({
-            exclude: ".noExl",
-            name: "Excel Document Name",
-            filename: '无结果',
-            fileext: ".xls",
-            exclude_img: true,
-            exclude_links: true,
-            exclude_inputs: true
-        });
+        new ExcelGen({
+            "src_id": "nonetable",
+            "show_header": true
+        }).generate("无结果.xlsx");
     }
 })
 

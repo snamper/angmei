@@ -402,15 +402,10 @@ function addTr(text,value,vin){
 /*end*/
 
 $('.export').click(function(){
-    $('.table').table2excel({
-        exclude: ".noExl",
-        name: "Excel Document Name",
-        filename: 'VIN',
-        fileext: ".xls",
-        exclude_img: true,
-        exclude_links: true,
-        exclude_inputs: true
-    });
+    new ExcelGen({
+        "src_id": "table",
+        "show_header": true
+    }).generate("VIN.xlsx");
 })
 $('.backTop').click(function () {
     $('html ,body').animate({scrollTop: 0}, 500);

@@ -1,16 +1,21 @@
 
-http://192.168.125.117:8080
-http://www.51macc.com:8080 
+https://192.168.125.117:88/api
+https://www.51macc.com/api
 
 808c1a13-8cb9-1035-9ce5-6abd7619172b
 
-macc 昂美官网
+macc 昂美官网  http://www.mattrio.com/
 Mattrio旧版本51macc网站
-Mattrio2最新版本51macc网站
-MattrioEc 昂美自己的电子目录
-MattrioEcModel 客户的电子目录
+Mattrio2最新版本51macc网站 https://www.51macc.com/
+MattrioEc 昂美自己的电子目录 
+MattrioEcModel 客户的电子目录{
+     http://ec.51macc.com:88/JINJIA/index.html   电子目录
+     http://ec.51macc.com:88/JINJIA/admin/index.html  电子目录后台
+}
+
 MattrioManager昂美后台管理系统
-Apaas 昂裕官网
+Apaas 昂裕官网 
+entrance  https://www.51macc.com/entrance   别名工具导航页
 
 奥迪，大众,MINIepc     content/detail_epc
 奔驰,SMARTepc     benchi_epc

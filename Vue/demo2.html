@@ -7,14 +7,81 @@
 <script src="https://cdn.staticfile.org/vue/2.4.2/vue.min.js"></script>
 <script src="https://cdn.staticfile.org/vue-resource/1.5.1/vue-resource.min.js"></script>
 <style>
-
+    tbody  {
+        display: block;
+        overflow-y: scroll;
+        height: 100px;
+    }
+    table thead,tbody tr {
+        display: table;
+        width: 100%;
+        table-layout: fixed;
+    }
 </style>
 <body>
-    <!--<ul>-->
-        <!--<li>1</li>-->
-        <!--<li>2</li>-->
-        <!--<li>3</li>-->
-    <!--</ul>-->
+    <table border="1">
+        <thead>
+            <tr>
+                <th width="50px">A</th>
+                <th>B</th>
+                <th>C</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+            </tr><tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+            </tr><tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+            </tr><tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+            </tr><tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+            </tr><tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+            </tr><tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+            </tr><tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+            </tr><tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+            </tr>
+
+
+
+
+
+
+
+
+
+        </tbody>
+
+    </table>
 <div id="app">
     <button @click="post()">获取</button>
 </div>

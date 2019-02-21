@@ -69,7 +69,7 @@ var addtr=(data)=>{
         } else {
             var td5=$('<td class="remark">').html('')
         }
-        var td6=$('<td>').html(value.oe_number)
+        var td6=$('<td title="'+value.oe_number+'">').html('<a href="https://www.51macc.com/content/maintain/oecont/oecont.html?demo3=true&oenumber='+value.oe_number+'" target="_blank" title="点击跳转查看该OE更多信息">'+value.oe_number+'</a>')
         if(value.author){
             var td7=$('<td>').html(value.author)
         }else{
