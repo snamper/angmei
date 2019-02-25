@@ -23,33 +23,118 @@
 		<link rel="stylesheet" type="text/css" href="css/upload-matching.css?v=20190125"/>
 		<link rel="stylesheet" type="text/css" href="css/loading.css"/>
 	</head>
+    <style type="text/css">
+        html,body{
+            background: #f7f7f7;
+        }
+        .active {
+            display: none;
+        }
+        .wrap{
+            background: #fff;
+            padding: 5px 25px 30px 25px;
+            padding-bottom: 30px;
+            background: #fff;
+            box-sizing: border-box;
+        }
+        .this{
+            background: #45b3fe;
+            color: #fff;
+        }
+        .r{
+            line-height: 30px;
+        }
+        .table td{
+            text-align: center;
+        }
+        .tbody2{
+            display: none;
+        }
+        .delthis:hover{
+            color: #74777b;
+        }
+        .pass{
+            background: #3889c1;
+            color: #fff;
+        }
+        .bg-1{
+            background: #f8f8f8;
+            border: 0px;
+        }
+        .alltotal{
+            color: #c92327;
+        }
+        .table-bg thead th{
+            background: #efefef;
+        }
+        .table-bordered th{
+            border-left: 0;
+        }
+        .table-bordered th:first-child{
+            border-left: 1px solid #ddd;
+        }
+        /*a:hover,a:focus{
+            color: #fff;
+        }*/
+        .mt-20{
+            margin-top: 10px;
+        }
+        .progress, .progress-bar, .sr-only{
+            height: 14px;
+            width: 500px;
+            line-height: 14px;
+        }
+        .sr-only{
+            width: 0;
+            color: #fff;
+            text-align: center;
+            font-size: 12px;
+        }
+        .progress{
+            position: fixed;
+            top: 50%;
+            margin-top: -7px;
+            left: 50%;
+            margin-left: -250px;
+            background: #ccc;
+            box-shadow: 1px 1px 8px #ccc;
+        }
+    </style>
 	<body>
 		<div class="wrap">
 			<div class="tabwrap">
 				<button class="btn radius tab">未匹配列表</button>
-				<button class="btn radius">已匹配列表</button>
+                <button class="btn radius">未审核列表</button>
+                <button class="btn radius">已匹配列表</button>
 				<a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新"><i class="Hui-iconfont"></i></a>
 			</div>
 			<div class="importwrap">
 				<button title="Excel导入格式：表头请严格按照右侧所给的" class="btn radius import">导入</button>
 				<!--<button title="手动输入产品编码" class="btn radius fillin">手动输入</button>-->
-				<span style="margin-left:10px;">表格格式产品编码表头: <span style="color: #c92327;">产品编号(必须有)</span> 、分类ID表头:<span style="color: #c92327;">分类ID(可以没有)</span> 、OE号码表头:<span style="color: #c92327;">OE号码(可以没有)</span> 。如：<img class="img" src="images/numlist.jpg" alt="表格格式" title="点击查看表格格式" /></span>
+				<span style="margin-left:10px;">表格格式产品编码表头: <span style="color: #c92327;">产品编码</span>(必须有) 、分类ID表头:<span style="color: #c92327;">分类ID</span>(可以没有) 、OE号码表头:<span style="color: #c92327;">OE号码</span>(可以没有) 。<a href="./格式.xlsx" download="格式" title="点击下载格式">格式下载</a></span>
 			</div>
 			<input type="file"onchange="xlsx(this)" id="xlsxinput" accept=" application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" />
 			<div class="inpwrap">
 				<input type="text" name="" id="inpsubmit" placeholder="请输入产品编码" style="width:268px" class="input-text">
-                <button name="" id="btnsubmit" class="btn btn-success" type="submit"><i class="Hui-iconfont"></i> 搜索</button>
-                <input type="text" name="" id="OEnumber" placeholder="添加产品编码时绑定OE号码" style="width:268px" class="input-text">
+                <button id="btnsubmit" class="btn btn-success" type="submit"><i class="Hui-iconfont"></i> 搜索</button>
+                <input type="text" id="OEnumber" placeholder="添加产品编码时绑定OE号码" style="width:268px" class="input-text">
                 <button name="" id="addBtn" class="btn btn-success" type="submit" title="添加时输入OE即可绑定OE编码"><i class="Hui-iconfont Hui-iconfont-gengduo4"></i> 添加</button>
 			</div>
 			<div class="cl pd-5 bg-1 bk-gray mt-20"> 
-				<span class="l mr-10"><a href="javascript:;" onclick="delall()" class="btn btn-danger radius"><i class="Hui-iconfont"></i> 批量删除</a></span>
-				<span class="l"><a href="javascript:;" onclick="delalls()" class="btn btn-danger radius"><i class="Hui-iconfont"></i> 全部删除</a></span>
+				<span class="matchingl">
+                    <span class="l mr-10"><a href="javascript:;" onclick="delall()" class="btn btn-danger radius"><i class="Hui-iconfont"></i> 批量删除</a></span>
+				    <span class="l"><a href="javascript:;" onclick="delalls()" class="btn btn-danger radius"><i class="Hui-iconfont"></i> 全部删除</a></span>
+                </span>
+                <span class="auditl" style="display: none">
+                    <span class="l mr-10"><a href="javascript:;" onclick="passall()" class="btn  radius pass">全部审核通过</a></span>
+				<span class="l"><a href="javascript:;" onclick="del()" class="btn btn-danger radius"><i class="Hui-iconfont"></i> 全部删除</a></span>
+                </span>
+
 				<span class="r">共有数据[&nbsp;&nbsp;<strong class="alltotal" style="color: #c92327;">0</strong>&nbsp;&nbsp;]条</span> 
 			</div>
 			<div class="mt-20">
 				<table class="table table-border table-bordered table-bg table-sort">
-					<thead>
+					<thead class="thead1">
 						<tr class="text-c">
 							<th class="thinp"><input type="checkbox" name="" value=""></th>
 							<th>产品编码</th>
@@ -58,8 +143,26 @@
 							<th colspan="2">操作</th>
 						</tr>
 					</thead>
+                    <thead class="thead2 active">
+                        <tr class="text-c">
+                            <!--<th class="th"><input type="checkbox" name="" value="">全选</th>-->
+                            <th>ID</th>
+                            <th>Mikey</th>
+                            <th>主机厂</th>
+                            <th>车型</th>
+                            <th>销售名称</th>
+                            <th>年份</th>
+                            <th>底盘号</th>
+                            <th>发动机</th>
+                            <th>产品名称</th>
+                            <th>产品编号</th>
+                            <th class="th active">时间</th>
+                            <th class="th th2 active" colspan="2">操作</th>
+                        </tr>
+                    </thead>
 					<tbody id="tbody"></tbody>
-					<tbody id="tbody2" class="active"></tbody>
+                    <tbody id="tbody2" class="active"></tbody>
+                    <tbody id="tbody3" class="tbody1 active"></tbody>
 				</table>
 				<div class="warting" style="height:300px;text-align: center;line-height: 100px;font-size: 20px;">
 					正在加载中。。。。。。
@@ -76,6 +179,11 @@
 		<div id="loading">
 			<img src="images/timg.gif"/>
 		</div>
+        <div class="progress radius" style="display: none">
+            <div class="progress-bar">
+                <span class="sr-only"></span>
+            </div>
+        </div>
 		<div class="fmeng">
 			<div class="tabwrap">
 				<table class="table table-border table-bordered table-bg table-sort">
@@ -101,6 +209,6 @@
 	<script type="text/javascript" src="js/xlsx.full.js"></script>
 	<script type="text/javascript" src="js/zxf_page.js"></script>
 	<script type="text/javascript" src="js/sweetalert.min.js"></script>
-	<script type="text/javascript" src="js/excel.js?v=20190125"></script>
-	<script type="text/javascript" src="js/upload-matching.js?v=20190125"></script>
+	<script type="text/javascript" src="js/excel.js?v=20190226"></script>
+	<script type="text/javascript" src="js/upload-matching.js?v=20190226"></script>
 </html>

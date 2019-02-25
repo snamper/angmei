@@ -4,6 +4,7 @@ var id=getUrlParam('id')
 var one=decodeURIComponent(getUrlParam('one'))
 var two=decodeURIComponent(getUrlParam('two'))
 var category_id=getUrlParam('cid')
+var oenumber=getUrlParam('oe')
 $(".toptitle").html(id+"<span class='arrow'></span>"+one+"<span class='arrow'></span>"+two+'<button class="back" onclick="btnBack()">返回</button>')
 sessionStorage.setItem('match',[])
 sessionStorage.setItem('matchoe',[])
@@ -507,7 +508,7 @@ $('.match').click(function(){
 				oemk.push({
 					'mikey':value.mikey,
 					'category_id':category_id,
-					'oenumber':'',
+					'oenumber':oenumber,
 					'product_id':id,
 					'img':'',
 					'brand_id':username_id

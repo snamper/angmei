@@ -137,23 +137,9 @@ $('.textarea1').on('change',function(){
     stop=false;
     $('.stopImg').show();
     $('.stopAction').hide();
-    vinarr=$('.textarea1').val().replace(/[\n，]/g,',').split(',');
+    vinarr=$('.textarea1').val().replace(/\n|\s+|，/g,',').split(',');
     $('.textarea1').val('');
-    var length=vinarr.length;
-    for(var i = 0; i < length; i++) {
-        if(vinarr[i]==''){
-            vinarr.splice(i,1)
-            length--;
-            i--;
-        }
-        for(var j = i + 1; j < length; j++) {
-            if(vinarr[i] == vinarr[j]) { //通过id属性进行匹配；
-                vinarr.splice(j, 1); //去除重复的对象；
-                length--;
-                j--;
-            }
-        }
-    }
+    vinarr = vinarr.filter((x, index,self)=>(self.indexOf(x) === index) && (x!=''))
     $.each(vinarr,function(key,value){
         $(".textarea1").val(function(n,c){
             return c + value+',';
@@ -166,23 +152,9 @@ $('.textarea2').on('change',function(){
     stop=false;
 	$('.stopImg').show();
 	$('.stopAction').hide();
-	textarr=$('.textarea2').val().replace(/[\n，]/g,',').split(',');
+	textarr=$('.textarea2').val().replace(/\n|\s+|，/g,',').split(',');
     $('.textarea2').val('');
-    var length=textarr.length;
-    for(var i = 0; i < length; i++) {
-        if(textarr[i]==''){
-            textarr.splice(i,1)
-            length--;
-            i--;
-        }
-        for(var j = i + 1; j < length; j++) {
-            if(textarr[i] == textarr[j]) { //通过id属性进行匹配；
-                textarr.splice(j, 1); //去除重复的对象；
-                length--;
-                j--;
-            }
-        }
-    }
+    textarr = textarr.filter((x, index,self)=>(self.indexOf(x) === index) && (x!=''))
     $.each(textarr,function(key,value){
         $(".textarea2").val(function(n,c){
             return c + value+',';

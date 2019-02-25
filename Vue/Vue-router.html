@@ -16,15 +16,9 @@
         <router-link to="/content">content</router-link>
         <router-link to="/footer">footer</router-link>
         <router-view></router-view>
-        <lkds></lkds>
     </div>
 
-
-
 </body>
-<script type="x-template" id="tem">
-    <div>template模板</div>
-</script>
 <script>
     var router=new VueRouter({
         routes:[
@@ -45,31 +39,22 @@
                 component:{
                     template:'<div>footer</div>'
                 }
-            },
+            }
         ]
     })
-    var lkds=Vue.extend({
-        template:'#tem'
-    })
-    // var lkds={
-    //     template:'#tem'
-    // }
-
+    var Lcom={
+        template:'#haha'
+    }
     var app=new Vue({
         el:'#app',
         router,
         data:{
-            sex:[],
-            time:20190220,
-            style:{
-                color:'red',
-                fontSize:'20px'
-            }
-        },
-        components:{
-            lkds:lkds
-        }
-    })
 
+        }
+
+    })
+    var a=1;
+    var b=2;
+    console.log(`${a}-${b}`)
 </script>
 </html>

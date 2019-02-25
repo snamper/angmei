@@ -141,23 +141,9 @@ $('textarea').on('change',function(){
 	$(".progress-value").text('0%')
 	$(".stopimg").show()
 	$(".actionimg").hide()	
-	textarr=$('textarea').val().replace(/\n|\s+/g,',').split(',')
+	textarr=$('textarea').val().replace(/\n|\s+|，/g,',').split(',')
 	$('textarea').val('')
-	var length=textarr.length;
-    for(var i = 0; i < length; i++) {
-        if(textarr[i]==''){
-            textarr.splice(i,1)
-            length--;
-            i--;
-        }
-        for(var j = i + 1; j < length; j++) {
-            if(textarr[i] == textarr[j]) { //通过id属性进行匹配；
-                textarr.splice(j, 1); //去除重复的对象；
-                length--;
-                j--;
-            }
-        }
-    }
+    textarr = textarr.filter((x, index,self)=>(self.indexOf(x) === index) && (x!=''))
 	$.each(textarr,function(key,value){
 			$("textarea").val(function(n,c){
 				 return c + value+',';

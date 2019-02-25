@@ -30,7 +30,7 @@ $.ajax({
 		var num=data.suncount
 			var pieall = {
 				title: {
-					text: '产品覆盖率',
+					text: '车型覆盖率',
 					subtext: '',
 					x: 'center',
 					subtextStyle:{
