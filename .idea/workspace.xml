@@ -6,21 +6,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f1e4b6d8-1758-44c8-a28f-73a503a0d70e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/MattrioEcModel/peiao/admin/格式.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Apaas/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Apaas/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Mattrio2/content/batchexport/js/batchexport.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mattrio2/content/batchexport/js/batchexport.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MattrioEcModel/peiao/admin/images/numlist.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/MattrioEcModel/peiao/admin/images/numlist.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MattrioEcModel/peiao/admin/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/MattrioEcModel/peiao/admin/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mattrio2/content/detail_epc/contentepc/contentepc.html" beforeDir="false" afterPath="$PROJECT_DIR$/Mattrio2/content/detail_epc/contentepc/contentepc.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mattrio2/content/detail_epc/detail_epc.html" beforeDir="false" afterPath="$PROJECT_DIR$/Mattrio2/content/detail_epc/detail_epc.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mattrio2/content/detail_epc/js/detail_epc.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mattrio2/content/detail_epc/js/detail_epc.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mattrio2/fengtian_epc/content_fengtian_epc/content_fengtian_epc.html" beforeDir="false" afterPath="$PROJECT_DIR$/Mattrio2/fengtian_epc/content_fengtian_epc/content_fengtian_epc.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mattrio2/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Mattrio2/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MattrioEcModel/peiao/admin/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/MattrioEcModel/peiao/admin/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MattrioEcModel/peiao/admin/js/excel.js" beforeDir="false" afterPath="$PROJECT_DIR$/MattrioEcModel/peiao/admin/js/excel.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MattrioEcModel/peiao/admin/js/upload-matching.js" beforeDir="false" afterPath="$PROJECT_DIR$/MattrioEcModel/peiao/admin/js/upload-matching.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MattrioEcModel/peiao/admin/js/welcome.js" beforeDir="false" afterPath="$PROJECT_DIR$/MattrioEcModel/peiao/admin/js/welcome.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MattrioEcModel/peiao/admin/matching/js/matching.js" beforeDir="false" afterPath="$PROJECT_DIR$/MattrioEcModel/peiao/admin/matching/js/matching.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MattrioEcModel/peiao/admin/matching/matching.html" beforeDir="false" afterPath="$PROJECT_DIR$/MattrioEcModel/peiao/admin/matching/matching.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MattrioEcModel/peiao/admin/upload-matching.html" beforeDir="false" afterPath="$PROJECT_DIR$/MattrioEcModel/peiao/admin/upload-matching.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MattrioEcModel/peiao/admin/welcome.html" beforeDir="false" afterPath="$PROJECT_DIR$/MattrioEcModel/peiao/admin/welcome.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Vue/Vue-router.html" beforeDir="false" afterPath="$PROJECT_DIR$/Vue/Vue-router.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo3-1/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/demo3-1/js/index.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -38,7 +34,7 @@
     <session id="-2104836435">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="99" />
+          <entry key="project.closed" value="100" />
           <entry key="project.open.time.0" value="2" />
           <entry key="project.open.time.1" value="4" />
           <entry key="project.open.time.10" value="19" />
@@ -49,10 +45,10 @@
           <entry key="project.open.time.40" value="1" />
           <entry key="project.open.time.5" value="1" />
           <entry key="project.open.time.6" value="1" />
-          <entry key="project.open.time.7" value="10" />
+          <entry key="project.open.time.7" value="11" />
           <entry key="project.open.time.8" value="25" />
           <entry key="project.open.time.9" value="24" />
-          <entry key="project.opened" value="106" />
+          <entry key="project.opened" value="107" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -70,12 +66,12 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CSS" value="153" />
-          <entry key="HTML" value="1156" />
-          <entry key="Image" value="23" />
+          <entry key="CSS" value="158" />
+          <entry key="HTML" value="1171" />
+          <entry key="Image" value="27" />
           <entry key="JSHint" value="1" />
           <entry key="JSON" value="11" />
-          <entry key="JavaScript" value="966" />
+          <entry key="JavaScript" value="974" />
           <entry key="PLAIN_TEXT" value="11" />
           <entry key="RNG Compact" value="1" />
           <entry key="RegExp" value="1" />
@@ -92,18 +88,63 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CSS" value="8588" />
-          <entry key="HTML" value="32418" />
+          <entry key="CSS" value="8589" />
+          <entry key="HTML" value="34236" />
           <entry key="JSON" value="122" />
-          <entry key="JavaScript" value="38210" />
-          <entry key="PLAIN_TEXT" value="30" />
+          <entry key="JavaScript" value="38417" />
+          <entry key="PLAIN_TEXT" value="38" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts" />
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Vue/Vue-router.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="252">
+              <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Vue/demo.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-378" />
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Mattrio2/css/index.css">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Mattrio2/css/reset.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-437">
+              <caret line="48" column="49" lean-forward="true" selection-start-line="48" selection-start-column="49" selection-end-line="48" selection-end-column="49" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MattrioEcModel/kuoli/findlike.html">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/MattrioEcModel/kuoli/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="486">
+              <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -118,7 +159,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Mattrio/EpcCategoryInterface/queryNowEpcOe</find>
       <find>exam</find>
       <find>generate</find>
       <find>src_id</find>
@@ -135,7 +175,6 @@
       <find>未</find>
       <find>l</find>
       <find>.tbody1</find>
-      <find>MattrioEcModel/original_oe/selectcarno</find>
       <find>fun</find>
       <find>/MattrioEcModel/original_oe/insertbindingoe</find>
       <find>matching</find>
@@ -148,6 +187,8 @@
       <find>zxf</find>
       <find>wb.Sheets[wb.SheetNames[0]]</find>
       <find>progress</find>
+      <find>MattrioEcModel/original_oe/selectcarno</find>
+      <find>暂无数据</find>
     </findStrings>
     <replaceStrings>
       <replace>make_year</replace>
@@ -231,11 +272,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/MattrioEcModel/supai/js/js.js" />
-        <option value="$PROJECT_DIR$/Vue/demo.html" />
-        <option value="$PROJECT_DIR$/webpack sample project/app/Greeter.js" />
-        <option value="$PROJECT_DIR$/webpack sample project/app/main.js" />
-        <option value="$PROJECT_DIR$/webpack sample project/public/index.html" />
         <option value="$PROJECT_DIR$/commercialCar/js/index.js" />
         <option value="$PROJECT_DIR$/commercialCar/index.html" />
         <option value="$PROJECT_DIR$/MattrioManager/lib/My97DatePicker/4.8/calendar.js" />
@@ -267,21 +303,26 @@
         <option value="$PROJECT_DIR$/Mattrio2/content/batchexport/js/excel-gen.js" />
         <option value="$PROJECT_DIR$/demo3-1/index.html" />
         <option value="$PROJECT_DIR$/demo3-1/js/jszip.js" />
-        <option value="$PROJECT_DIR$/Mattrio2/index.html" />
         <option value="$PROJECT_DIR$/MattrioEcModel/analysis/index.html" />
         <option value="$PROJECT_DIR$/Apaas/index.html" />
         <option value="$PROJECT_DIR$/Mattrio2/content/batchexport/js/batchexport.js" />
         <option value="$PROJECT_DIR$/demo3-1/js/index.js" />
-        <option value="$PROJECT_DIR$/Vue/Vue-router.html" />
         <option value="$PROJECT_DIR$/MattrioEcModel/peiao/admin/matching/js/11.js" />
         <option value="$PROJECT_DIR$/MattrioEcModel/peiao/admin/matching/js/matching.js" />
         <option value="$PROJECT_DIR$/MattrioEcModel/peiao/admin/matching/matching.html" />
         <option value="$PROJECT_DIR$/MattrioEcModel/peiao/admin/index.html" />
-        <option value="$PROJECT_DIR$/MattrioEcModel/peiao/admin/js/upload-matching.js" />
         <option value="$PROJECT_DIR$/MattrioEcModel/peiao/admin/js/welcome.js" />
         <option value="$PROJECT_DIR$/MattrioEcModel/peiao/admin/welcome.html" />
+        <option value="$PROJECT_DIR$/Mattrio2/index.html" />
+        <option value="$PROJECT_DIR$/Mattrio2/content/detail_epc/contentepc/contentepc.html" />
+        <option value="$PROJECT_DIR$/Mattrio2/fengtian_epc/content_fengtian_epc/content_fengtian_epc.html" />
+        <option value="$PROJECT_DIR$/MattrioEcModel/peiao/admin/js/upload-matching.js" />
         <option value="$PROJECT_DIR$/MattrioEcModel/peiao/admin/upload-matching.html" />
+        <option value="$PROJECT_DIR$/MattrioEcModel/peiao/admin/css/style.css" />
         <option value="$PROJECT_DIR$/MattrioEcModel/peiao/admin/js/excel.js" />
+        <option value="$PROJECT_DIR$/Mattrio2/content/detail_epc/js/detail_epc.js" />
+        <option value="$PROJECT_DIR$/Mattrio2/content/detail_epc/detail_epc.html" />
+        <option value="$PROJECT_DIR$/Vue/Vue-router.html" />
       </list>
     </option>
   </component>
@@ -306,7 +347,7 @@
       <path value="$PROJECT_DIR$/webpack/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="245" />
     <option name="y" value="10" />
     <option name="width" value="980" />
@@ -345,25 +386,18 @@
             <path>
               <item name="angmei" type="b2602c69:ProjectViewProjectNode" />
               <item name="angmei" type="462c0819:PsiDirectoryNode" />
-              <item name="Mattrio2" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="angmei" type="b2602c69:ProjectViewProjectNode" />
-              <item name="angmei" type="462c0819:PsiDirectoryNode" />
               <item name="MattrioEcModel" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="angmei" type="b2602c69:ProjectViewProjectNode" />
               <item name="angmei" type="462c0819:PsiDirectoryNode" />
               <item name="MattrioEcModel" type="462c0819:PsiDirectoryNode" />
-              <item name="peiao" type="462c0819:PsiDirectoryNode" />
+              <item name="kuoli" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="angmei" type="b2602c69:ProjectViewProjectNode" />
               <item name="angmei" type="462c0819:PsiDirectoryNode" />
-              <item name="MattrioEcModel" type="462c0819:PsiDirectoryNode" />
-              <item name="peiao" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="Vue" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -394,19 +428,19 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.textmate.bundles" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.tools" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\admin\Desktop\angmei\EPC-Name" />
+      <recent name="C:\Users\admin\Desktop\angmei\MattrioManager" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\admin\Desktop\angmei\MattrioEcModel\peiao\admin" />
       <recent name="C:\Users\admin\Desktop\angmei\MattrioEcModel\peiao\admin\images" />
       <recent name="C:\Users\admin\Desktop\angmei\MattrioEcModel\analysis\img" />
       <recent name="C:\Users\admin\Desktop\angmei\MattrioEcModel\analysis\css" />
       <recent name="C:\Users\admin\Desktop\angmei\MattrioEcModel\analysis\js" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\admin\Desktop\angmei\EPC-Name" />
-      <recent name="C:\Users\admin\Desktop\angmei\MattrioManager" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -421,7 +455,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.demo2.html">
+  <component name="RunManager" selected="JavaScript Debug.index.html">
     <configuration name="Vue-router.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/angmei/Vue/Vue-router.html">
       <method v="2" />
     </configuration>
@@ -585,7 +619,8 @@
       <workItem from="1550713631360" duration="17353000" />
       <workItem from="1550740981844" duration="1268000" />
       <workItem from="1550799187713" duration="7691000" />
-      <workItem from="1551058312841" duration="20555000" />
+      <workItem from="1551058312841" duration="21472000" />
+      <workItem from="1551143231921" duration="17924000" />
     </task>
     <task id="LOCAL-00001" summary="修改">
       <created>1550546377570</created>
@@ -622,11 +657,18 @@
       <option name="project" value="LOCAL" />
       <updated>1550732421894</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="电子目录后台更新">
+      <created>1551087362976</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1551087362976</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1049984000" />
+    <option name="totallyTimeSpent" value="1068825000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -638,11 +680,12 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="7" />
+    <editor active="true" />
     <layout>
       <window_info id="Structure" order="0" side_tool="true" weight="0.24966975" />
       <window_info id="Favorites" order="1" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="2" visible="true" weight="0.26023778" />
+      <window_info active="true" content_ui="combo" id="Project" order="2" visible="true" weight="0.12747689" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32765958" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.3602837" />
@@ -717,7 +760,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="修改" />
     <MESSAGE value="电子目录网址添加数据决策系统中转页面" />
-    <option name="LAST_COMMIT_MESSAGE" value="电子目录网址添加数据决策系统中转页面" />
+    <MESSAGE value="电子目录后台更新" />
+    <option name="LAST_COMMIT_MESSAGE" value="电子目录后台更新" />
   </component>
   <component name="XPathView.XPathProjectComponent">
     <history />
@@ -733,98 +777,6 @@
     <select />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/NewEPC-Name/index.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/201605111555/index.html" />
-    <entry file="file://$PROJECT_DIR$/js-excel-generator-master/demo.htm" />
-    <entry file="file://$PROJECT_DIR$/Mattrio2/content/batchexport/js/jquery.table2excel.js" />
-    <entry file="file://$PROJECT_DIR$/Vue/demo.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="619">
-          <caret line="126" column="31" selection-start-line="126" selection-start-column="31" selection-end-line="126" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Mattrio2/content/batchexport/js/FileSaver.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="337">
-          <caret line="113" column="88" lean-forward="true" selection-start-line="113" selection-start-column="88" selection-end-line="113" selection-end-column="88" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/exportExcel/excel.html" />
-    <entry file="file://$PROJECT_DIR$/Mattrio2/content/batchexport/js/Excel.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/excel/scripts/demo.page.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="8" column="3" lean-forward="true" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/excel/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4806">
-          <caret line="615" column="36" lean-forward="true" selection-start-line="615" selection-start-column="36" selection-end-line="615" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/excel/scripts/excel-gen.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="403">
-          <caret line="377" column="36" selection-start-line="377" selection-start-column="36" selection-end-line="377" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/demo3-1/js/excel-gen.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="349">
-          <caret line="370" column="37" selection-end-line="385" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Mattrio2/content/batchexport/js/excel-gen.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="619">
-          <caret line="385" column="2" selection-start-line="385" selection-start-column="2" selection-end-line="385" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/demo3-1/js/excel.js" />
-    <entry file="file://$PROJECT_DIR$/demo3-1/js/jszip.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="515">
-          <caret line="11621" column="19" lean-forward="true" selection-start-line="11621" selection-start-column="19" selection-end-line="11621" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Mattrio2/analysis/index.html" />
-    <entry file="file://$PROJECT_DIR$/Mattrio2/js/frequency.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="20" column="51" lean-forward="true" selection-start-line="20" selection-start-column="51" selection-end-line="20" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MattrioEcModel/analysis/js/jquery.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MattrioEcModel/analysis/js/jquery.cookie.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="63" column="21" selection-start-line="63" selection-start-column="21" selection-end-line="63" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MattrioEcModel/analysis/css/loading.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="11" column="17" lean-forward="true" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Mattrio/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="461">
@@ -881,13 +833,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/demo3-1/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="983">
-          <caret line="156" column="25" lean-forward="true" selection-start-line="156" selection-start-column="25" selection-end-line="156" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/demo3/js/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-4033" />
@@ -915,13 +860,6 @@
         <state relative-caret-position="-1458" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Vue/Vue-router.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="55" column="4" selection-start-line="55" selection-start-column="4" selection-end-line="57" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/MattrioEcModel/peiao/admin/product-add.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="363">
@@ -936,33 +874,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MattrioEcModel/peiao/admin/matching/js/11.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="251" column="42" selection-start-line="251" selection-start-column="35" selection-end-line="251" selection-end-column="42" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/MattrioEcModel/peiao/admin/matching/js/11.js" />
     <entry file="file://$PROJECT_DIR$/MattrioEcModel/peiao/admin/js/xlsx.full.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-594">
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/demo3-1/js/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="470">
-          <caret line="156" column="4" lean-forward="true" selection-start-line="156" selection-start-column="4" selection-end-line="156" selection-end-column="85" />
         </state>
       </provider>
     </entry>
@@ -977,12 +895,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="28">
           <caret line="478" column="29" lean-forward="true" selection-start-line="478" selection-start-column="29" selection-end-line="478" selection-end-column="29" />
-          <folding>
-            <element signature="n#style#0;n#a#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -990,39 +902,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="610">
           <caret line="140" column="18" lean-forward="true" selection-start-line="140" selection-start-column="18" selection-end-line="140" selection-end-column="18" />
-          <folding>
-            <element signature="n#style#0;n#a#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MattrioEcModel/peiao/admin/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1008">
-          <caret line="61" column="9" selection-start-line="61" selection-start-column="9" selection-end-line="61" selection-end-column="9" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/MattrioEcModel/peiao/admin/css/loading.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Mattrio2/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="10629">
-          <caret line="694" column="17" lean-forward="true" selection-start-line="694" selection-start-column="17" selection-end-line="694" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/MattrioEcModel/peiao/admin/js/welcome.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="32" column="29" selection-start-line="32" selection-start-column="29" selection-end-line="32" selection-end-column="29" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1033,37 +922,180 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MattrioEcModel/peiao/admin/js/upload-matching.js">
+    <entry file="file://$PROJECT_DIR$/Mattrio2/content/detail_epc/contentepc/contentepc.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="142" column="10" selection-start-line="142" selection-start-column="10" selection-end-line="142" selection-end-column="10" />
-          <folding>
-            <element signature="n#style#0;n#a#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="137">
+          <caret line="136" selection-start-line="136" selection-end-line="136" selection-end-column="10" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MattrioEcModel/peiao/admin/js/excel.js">
+    <entry file="file://$PROJECT_DIR$/Mattrio2/fengtian_epc/content_fengtian_epc/content_fengtian_epc.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="46" column="22" selection-start-line="46" selection-start-column="22" selection-end-line="46" selection-end-column="22" />
+        <state relative-caret-position="378">
+          <caret line="140" column="63" lean-forward="true" selection-start-line="140" selection-start-column="63" selection-end-line="140" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Mattrio2/fengtian_epc/content_fengtian_epc/js/content_fengtian_epc.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1080">
+          <caret line="210" column="17" lean-forward="true" selection-start-line="210" selection-start-column="17" selection-end-line="210" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo3-1/js/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2756">
+          <caret line="340" column="13" lean-forward="true" selection-start-line="337" selection-start-column="12" selection-end-line="340" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MattrioEcModel/peiao/admin/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="70" column="17" lean-forward="true" selection-start-line="70" selection-start-column="17" selection-end-line="70" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MattrioEcModel/peiao/admin/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="42" column="1" selection-start-line="42" selection-start-column="1" selection-end-line="42" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/MattrioEcModel/peiao/admin/upload-matching.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-78">
-          <caret line="181" column="36" selection-start-line="181" selection-start-column="36" selection-end-line="181" selection-end-column="58" />
+        <state relative-caret-position="349">
+          <caret line="200" column="29" lean-forward="true" selection-start-line="200" selection-start-column="29" selection-end-line="200" selection-end-column="29" />
           <folding>
             <element signature="n#style#0;n#span#1;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#4;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#div#4;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MattrioEcModel/peiao/admin/js/upload-matching.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="307">
+          <caret line="78" column="40" lean-forward="true" selection-start-line="78" selection-start-column="40" selection-end-line="78" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MattrioEcModel/peiao/admin/js/excel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="58" column="20" lean-forward="true" selection-start-line="58" selection-start-column="20" selection-end-line="58" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MattrioEcModel/JINJIA/js/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="15" column="31" lean-forward="true" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo3-1/js/xlsx.full.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-658627">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo3-1/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2042">
+          <caret line="156" column="25" lean-forward="true" selection-start-line="156" selection-start-column="25" selection-end-line="156" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Mattrio2/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2754">
+          <caret line="685" column="58" lean-forward="true" selection-start-line="685" selection-start-column="58" selection-end-line="685" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Mattrio2/content/detail_epc/detail_epc.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="389">
+          <caret line="84" column="46" selection-start-line="84" selection-start-column="46" selection-end-line="84" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Mattrio2/content/detail_epc/js/detail_epc.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="82" column="21" lean-forward="true" selection-start-line="82" selection-start-column="21" selection-end-line="82" selection-end-column="21" />
+          <folding>
+            <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vue/img/zoomFullScreen.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vue/img/select-arr-default.gif">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vue/img/pop-tips-info-arr.gif">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vue/img/data_services_bg.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Mattrio2/css/suggest.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="27" column="22" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Mattrio2/content/about/in.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1566" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vue/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1188" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vue/Vue-router.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vue/demo.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-378" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Mattrio2/css/index.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Mattrio2/css/reset.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-437">
+          <caret line="48" column="49" lean-forward="true" selection-start-line="48" selection-start-column="49" selection-end-line="48" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MattrioEcModel/kuoli/findlike.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MattrioEcModel/kuoli/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
         </state>
       </provider>
     </entry>

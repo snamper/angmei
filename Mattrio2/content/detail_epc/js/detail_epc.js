@@ -53,7 +53,7 @@ $.ajax({
         }
         if(data.length == 0){
             $("#loading").hide();
-            alert("如需获取完整信息，请联系昂美数据，电话021-52212966");
+            alert("暂无数据");
             window.location.href = "javascript:history.back();";
             return false;
         }
@@ -79,6 +79,7 @@ function demo(type){
 			"type":type
 		},
 		dataType:"json",
+
 		cache: false,
 		crossDomain: true == !(document.all),
 		success:function(data){
@@ -104,6 +105,11 @@ function demo(type){
 			if(car.indexOf('EPC')>0){
                 year=data.year;
                 car_model_code=data.kat;
+                if(!data.kat){
+                    alert('暂无数据')
+                    window.location.href='../../index.html'
+                    return false;
+                }
                 localStorage.setItem('yearvin',data.year+","+vin)
             }else{
                 year=data.car_info[0].Year_of_production;

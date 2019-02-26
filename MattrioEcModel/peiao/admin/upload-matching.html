@@ -27,9 +27,6 @@
         html,body{
             background: #f7f7f7;
         }
-        .active {
-            display: none;
-        }
         .wrap{
             background: #fff;
             padding: 5px 25px 30px 25px;
@@ -111,7 +108,7 @@
 			<div class="importwrap">
 				<button title="Excel导入格式：表头请严格按照右侧所给的" class="btn radius import">导入</button>
 				<!--<button title="手动输入产品编码" class="btn radius fillin">手动输入</button>-->
-				<span style="margin-left:10px;">表格格式产品编码表头: <span style="color: #c92327;">产品编码</span>(必须有) 、分类ID表头:<span style="color: #c92327;">分类ID</span>(可以没有) 、OE号码表头:<span style="color: #c92327;">OE号码</span>(可以没有) 。<a href="./格式.xlsx" download="格式" title="点击下载格式">格式下载</a></span>
+				<span style="margin-left:10px;">表格格式产品编码表头:产品编码(必须有) 、分类ID表头:分类ID(可以没有) 、OE号码表头:OE号码(可以没有) 。如：<img class="img" src="images/numlist.jpg" alt="表格格式" title="点击查看表格格式"><a href="./格式.xlsx" download="格式" title="点击下载格式">格式下载</a></span>
 			</div>
 			<input type="file"onchange="xlsx(this)" id="xlsxinput" accept=" application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" />
 			<div class="inpwrap">
@@ -210,5 +207,5 @@
 	<script type="text/javascript" src="js/zxf_page.js"></script>
 	<script type="text/javascript" src="js/sweetalert.min.js"></script>
 	<script type="text/javascript" src="js/excel.js?v=20190226"></script>
-	<script type="text/javascript" src="js/upload-matching.js?v=20190226"></script>
+	<script type="text/javascript" src="js/upload-matching.js?v=20190227"></script>
 </html>

@@ -38,6 +38,9 @@ body{
    background: url(../images/bbb.jpg)no-repeat;
    background-size: cover;
 }
+tr:hover{
+    background: #f1f1f1;
+}
 .login-form{
 	padding:0px ;
 }

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
     <meta charset="UTF-8">
     <title>Vue 路由</title>
@@ -7,54 +7,11 @@
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="https://cdn.bootcss.com/vue-router/3.0.1/vue-router.js"></script>
 <script src="https://cdn.staticfile.org/vue-resource/1.5.1/vue-resource.min.js"></script>
-<style>
 
-</style>
 <body>
-    <div id="app">
-        <router-link :to="{name:'header',params:{id:'5'},query:{name:6}}">header</router-link>
-        <router-link to="/content">content</router-link>
-        <router-link to="/footer">footer</router-link>
-        <router-view></router-view>
-    </div>
 
 </body>
 <script>
-    var router=new VueRouter({
-        routes:[
-            {
-                path:'/header/:id?name',
-                name:'header',
-                component:{
-                    template:'<div>header</div>'
-                }
-            },
-            {
-                path:'/content',
-                component:{
-                    template:'<div>content</div>'
-                }
-            },{
-                path:'/footer',
-                component:{
-                    template:'<div>footer</div>'
-                }
-            }
-        ]
-    })
-    var Lcom={
-        template:'#haha'
-    }
-    var app=new Vue({
-        el:'#app',
-        router,
-        data:{
 
-        }
-
-    })
-    var a=1;
-    var b=2;
-    console.log(`${a}-${b}`)
 </script>
 </html>

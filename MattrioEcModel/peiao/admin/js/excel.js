@@ -48,9 +48,9 @@ function xlsx(obj) {
             return false;
         }
         var exceli = JSON.stringify(excel[0])
-		if(Sheets.A1==undefined||Sheets.A1=='undefined'||Sheets.A1.w!='产品编码'){
-			if(Sheets.B1==undefined||Sheets.B1=='undefined'||Sheets.B1.w!='产品编码'){
-				if(Sheets.C1==undefined||Sheets.C1=='undefined'||Sheets.C1.w!='产品编码'){
+        if(typeof (Sheets.A1)=='undefined'||Sheets.A1.w!='产品编码'){
+			if(typeof (Sheets.B1)=='undefined'||Sheets.B1.w!='产品编码'){
+				if(typeof (Sheets.C1=='undefined')||Sheets.C1.w!='产品编码'){
 					swal("导入格式有误!", "表头请严格按照所给出的格式来", "error");
 					return false;
 				}

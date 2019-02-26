@@ -13,6 +13,7 @@ var pages=getUrlParam('pages')
 if(!pages){
     pages=1
 }
+var req;
 $(".import").click(function() {
 	$("#xlsxinput").click();
 });
@@ -76,7 +77,6 @@ function fun(tbodys,tbodyh,url,pages){
 	$(tbodys).removeClass('active');
 	$(".wartno").addClass('active');
 	$('.warting').removeClass('active');
-    var req;
     if(req !=null) req.abort();
     req =$.ajax({
 		type:"post",
@@ -85,6 +85,7 @@ function fun(tbodys,tbodyh,url,pages){
 			'brand_id':username_id,
 			'pageindex':pages
 		},
+        timeout:15000,
 		crossDomain: true == !(document.all),
 		success:function(data){
 			$('#loading').hide();
@@ -117,21 +118,28 @@ function fun(tbodys,tbodyh,url,pages){
 								'brand_id':username_id,
 								'pageindex':pageindex
 							},
+                            timeout:15000,
 							crossDomain: true == !(document.all),
 							success:function(data){	
 								$('.warting').addClass('active');
 								$.each(data.list,function(key,value){
 									list(value,tbodys);
 								});
-							},error:function(){
-								swal("请求失败!", "", "error");
-							}
+							},error:function(XMLHttpRequest, textStatus){
+                                if (textStatus == 'timeout') {
+                                    swal("请求超时!", "", "error");
+                                    return false;
+                                }
+                            }
 				     	});
 				      }
 				})
-		},error:function(){
-			swal("请求失败!", "", "error");
-		}
+		},error:function(XMLHttpRequest, textStatus){
+            if (textStatus == 'timeout') {
+                swal("请求超时!", "", "error");
+                return false;
+            }
+        }
 		
 	});
 }
@@ -464,7 +472,6 @@ function tbody(url,show,hide,page){
     $(show).html('')
     $(".wartno").addClass('active')
     $(".warting").removeClass('active')
-    var req;
     if(req !=null) req.abort();
     req = $.ajax({
         type:"post",
@@ -473,6 +480,7 @@ function tbody(url,show,hide,page){
             'brand_id':username_id,
             'pageindex':page
         },
+        timeout:15000,
         cache: false,
         crossDomain: true == !(document.all),
         success:function(data){
@@ -483,7 +491,7 @@ function tbody(url,show,hide,page){
                 $(".wartno").removeClass('active')
                 return false;
             }
-            $(show).show()
+            $(show).removeClass('active')
             $(".wartno").addClass('active')
             $.each(data.list,function(key,value){
                 var a=new Date(value.time.time)
@@ -540,6 +548,7 @@ function tbody(url,show,hide,page){
                             'brand_id':username_id,
                             'pageindex':pageindex
                         },
+                        timeout:15000,
                         cache: false,
                         crossDomain: true == !(document.all),
                         success:function(dat){
@@ -584,13 +593,22 @@ function tbody(url,show,hide,page){
                                 }
                                 tr.appendTo(show)
                             })
+                        },error:function(XMLHttpRequest, textStatus){
+                            $(".warting").addClass('active')
+                            if (textStatus == 'timeout') {
+                                swal("请求超时!", "", "error");
+                                return false;
+                            }
                         }
                     });
                 }
             })
-        },error:function(){
+        },error:function(XMLHttpRequest, textStatus){
             $(".warting").addClass('active')
-            swal("请求失败!", "", "error");
+            if (textStatus == 'timeout') {
+                swal("请求超时!", "", "error");
+                return false;
+            }
         }
 
     });
