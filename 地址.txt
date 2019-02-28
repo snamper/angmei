@@ -14,7 +14,7 @@ MattrioEcModel 客户的电子目录{
 }
 
 MattrioManager昂美后台管理系统
-Apaas 昂裕官网 
+Apaas 昂裕官网  http://www.51macc.cn
 entrance  https://www.51macc.com/entrance   别名工具导航页
 
 奥迪，大众,MINIepc     content/detail_epc
@@ -33,10 +33,6 @@ entrance  https://www.51macc.com/entrance   别名工具导航页
 
 oe_name   原厂名称
 oe_name2  标准名称 
-
-
-http://ec.51macc.com:88/JINJIA/index.html   电子目录
-http://ec.51macc.com:88/JINJIA/admin/index.html  电子目录后台
 
 
 

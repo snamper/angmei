@@ -60,19 +60,19 @@ li{
 }
 .li1 .right{
 	padding-left: 180px;
-	/*line-height: 150px;*/
+	line-height: 150px;
 }
 .listimg .img1{
-	width:130px;
-	height: 66.8px;
+	width:66.8px;
+	height: 130px;
 }	
 .listimg .img3{
-	width:170px;
-	height: 84px;
+	width:20px;
+	height:130px;
 }	
 .listimg .img2{
-	width:34.2px;
-	height: 112.2px;
+	width:20px;
+	height:130px;
 }	
 .listtle{
 	line-height: 30px;

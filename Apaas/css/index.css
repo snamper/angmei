@@ -1,6 +1,10 @@
 p{
 	margin-bottom: 0;
 }
+button{
+    background: #fff;
+    outline:none!important;
+}
 .BMap_Marker img{
 	width: 36px;
 	height:auto ;
@@ -13,38 +17,58 @@ a{
 	font-family: PingFangSC-Semibold, sans-serif;
 }
 nav{
-	 background: #0247ac;	     
+	 background: #096a8d;
 	 box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4)
 }
 .nav-link{
 	width: 80px;
-	border-bottom: 2px solid #0247ac;
 	float: right;
+}
+.navbar{
+    padding-left: 5rem;
+    padding-right: 5rem;
+}
+.navbar-dark .navbar-nav .nav-link{
+    color: #fff;
+}
+.navbar-brand{
+    margin-right: 0;
 }
 .container-fluid{
 	overflow: hidden;
 }
-#section4{
-	overflow: visible;
-}
 .nav-link.active{
 	border-bottom: 2px solid #faad13;
 }
+.navbar-toggler{
+    float: right;
+}
 .logo{
 	width:auto;
-	height:46px;
-	margin-left: 20px;
+	height:40px;
+	margin-left: 10px;
+}
+.navbar-brand{
+    padding: 0;
 }
 .logoText{
 	font-size: 14px;
 	margin-left: 10px;
-	width: 120px;
+	width: 110px;
+    display: none;
 }
 .logoText p{
     text-align-last: justify;
 }
+.vinspan{
+    display: none;
+}
+.vin{
+    width: 190px;
+    margin:6px 0 0 14px;
+}
 .banner{
-	margin-top: 56px;
+	margin-top: 20px;
 	position: relative;
 }
 .bannerText{
@@ -74,70 +98,61 @@ nav{
 	width: auto;
 	height: 50px;
 }
+
 /*公司介绍*/
 .list1{
 	padding-top:35px;
-	background:url(../img/car.png) no-repeat #fff right bottom;
-	padding-bottom: 120px;
-	/*overflow: hidden;*/
+}
+.listFlex{
+    display: flex;
+    padding: 0 55px;
+}
+.hidep{
+    display: none;
+}
+.bulb{
+    width: auto;
+    height: 310px;
 }
 .sectionContent{
-	padding-left: 15px;
-	color: #565656;
+	padding-top: 35px;
+    padding-right: 75px ;
 	font-size: 14px;
-}
-.pTitle{
-	color: #1c8bf7;
-	font-weight: bold;
-	padding-top: 10px;
-	font-size: 18px;
-}
-.pTitle .box1{
-	background: #78a2ca;
-	width: 6px;
-	height: 6px;
-	display: inline-block;
-	margin-bottom: 3px;
-	margin-left: 3px;
-}
-.pTitle .box2{
-	background: #417cbe;
-	width: 10px;
-	height: 10px;
-	display: inline-block;
-	margin-bottom: 1px;
-	margin-left: 3px;
-}
-.pTitle .box3{
-	background: #1862cd;
-	width: 14px;
-	height: 14px;
-	display: inline-block;
-	margin-left: 3px;
 }
 .sectionContent p{
 	line-height: 24px;
 	margin-top: 10px;	
 	letter-spacing:2px;
 }
-/*公司项目*/
+.btnDetails{
+    border: 1px solid #87b9f6;
+    background: #fff;
+    padding: 4px 30px;
+    border-radius: 20px;
+    float: right;
+    margin-top: 15px;
+    cursor: pointer;
+}
+.btnDetails:hover{
+    color: #fff;
+    background: #87b9f6;
+}
+/*服务项目*/
 .list2{
 	padding-top: 25px;
-	padding-bottom: 60px;
 }
 .list2 .sectionContent{
 	padding-left: 0;
 	margin: 0 15px;
-	margin-top: 20px;
 }
 .section2List{
 	padding-top: 25px;	
 	text-align: center;
 	font-size: 14px;
 	padding-bottom:15px;
-	-webkit-transition: all 0.5s;-o-transition: all 0.5s;transition: all 0.5s;
 	top: 0;
 	border-radius: 5px;
+    cursor: pointer;
 }
 .section2List .border{
 	width: 140px;
@@ -145,8 +160,7 @@ nav{
 	margin: 0 auto;
 	display: flex;
 	align-items: center;
-	justify-content: center;	
-	-webkit-transition: all 0.5s;-o-transition: all 0.5s;transition: all 0.5s;
+	justify-content: center;
 }
 .section2List .img{
 	height: 60px;
@@ -163,6 +177,7 @@ nav{
 	line-height: 24px;
 	width: 85%;
 	color: #a9a9a9;
+    display: none;
 }
 .section2List:nth-child(1) .line,.section2List:nth-child(2) .line{
 	padding-left: 36%;
@@ -178,24 +193,17 @@ nav{
 	margin-left: -18px;
 	margin-right: 7px;
 }
-.section2List:hover{
-	box-shadow: 1px 3px 8px #ccc;
-	-webkit-transition: all 0.5s;-o-transition: all 0.5s;transition: all 0.5s;
-	color: #000;
-	cursor: pointer;
-	position: relative;
-	top: -10px;
-}
-.section2List:hover .line{
-	color: #565656;
-}
-.section2List:hover .border{
-	box-shadow: 8px 0 8px #007bff ;	
-	-webkit-transition: all 0.5s;-o-transition: all 0.5s;transition: all 0.5s;
-}
-/*产品展示*/
+/*独特优势*/
 .list3{
-	padding: 0;
+    padding: 0;
+    background:url("../img/bg.jpg") no-repeat ;
+    -webkit-background-size: 100% 100%;
+    background-size: 100% 100%;
+    padding-bottom: 30px;
+}
+.list3 .sectionTitle{
+    margin-left: 15px;
+    margin-top: 15px;
 }
 .carousel-item img{
 	width: 50%;	
@@ -203,67 +211,51 @@ nav{
 	margin: 0 auto;
 	display: block;
 }
-.bgTop{
-	padding-top: 25px;
-	padding-left: 15px;
-	background: #1c59b4;
-	overflow: hidden;
-}
-.list3 h4{
-	color: #f7b00a;
-	margin-top: 50px;
-	text-align: center;
-}
-.list3 .p{
-	padding: 0 40px;
-	text-align: center;
-	color: #fff;
-	margin-top: 15px;
-	margin-bottom: 150px;
-}
 .carousel-control-prev-icon,.carousel-control-next-icon{
 	background-image:none ;
 }
-.product img{
-	width: 100%;
-	height: auto;
+.s3Flex{
+    display: flex;
+    margin-top: 30px;
 }
-.product .productImg{
-	border: 1px solid #fff;	
-	border: 1px solid #ffc107;	
+.flexLeft{
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around;
 }
-#demo{
-	margin: 0 80px;
-	margin-top: -100px;
+.flexLeft button{
+    color: #508bb7;
+    border-radius: 0 12px 12px 0;
+    line-height: 55px;
+    width: 110px;
+    cursor: pointer;
 }
-.section3Product{
-	margin: 30px 80px 60px;
+.flexLeft .fbtn{
+    background: #508bb7;
+    color: #fff;
 }
-.section3Product .product{
-	text-align: center;
-	padding-bottom: 10px;
+.flexRight{
+    border-radius: 8px;
+    overflow: hidden;
+    margin-left: 15%;
 }
-.list3 .text{
-	text-align: right;
-	color: #3c3c3c;
-	padding-right: 20px;
+.flexRight img{
+    width: 95%;
+    height: auto;
 }
 .section3Content{
 	padding: 0 30px;
-	margin-bottom: 15px;
+	margin-bottom: 25px;
 }
 .section3Content h5{
 	color: #147bfc;
 	position: relative;
 }
 .section3Content p{
-	color: #838383;
+	color: #1a0f09;
 	font-size: 14px;
 	margin-top: 10px;
 	letter-spacing:2px;
-}
-.section3Content:hover p{
-	color: #000;
 }
 .Taiwan img{
 	width: 50%;	
@@ -280,16 +272,112 @@ nav{
 	-webkit-animation-delay: 0.2s !important;
 	animation-delay: 0.2s !important;	
 }
-/*公司动态*/
+/*产品展示*/
 #section3{
 	position: relative;
 	z-index: 100;
-	margin-bottom: -160px;
+	/*margin-bottom: -160px;*/
 }
 .list4{
 	padding-top: 25px;
-	box-shadow: 0px 2px 3px #ccc;
 }
+.list4 .text{
+    text-align: right;
+    color: #3c3c3c;
+    padding-right: 20px;
+}
+/*经营品牌*/
+.list5 .sectionTitle{
+    width: 230px;
+    height: auto;
+    padding-bottom: 30px;
+    margin-top: 15px;
+}
+.list5 .wrap{
+    background: #f9f8f6;
+    padding: 10px 0;
+    position: relative;
+    height: 95px;
+    margin: 0 -15px;
+}
+.banWrap{
+    width: 84%;
+    margin-left: 7%;
+    overflow: hidden;
+}
+/*无缝滚动CSS*/
+.simply-scroll {
+    height: 75px;
+}
+.simply-scroll-container {
+    position: relative;
+}
+.simply-scroll-clip{
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+/*end*/
+.banWrap ul{
+    display: flex;
+    margin-bottom: 0;
+}
+.banWrap ul li{
+    padding: 0 5px;
+}
+.banWrap ul li img{
+    width: auto;
+    height: 75px;
+}
+.banner2wrap{
+    margin: 0 -15px;
+}
+
+/*招聘信息*/
+#section6{
+    position: relative;
+    margin-bottom: -60px;
+    z-index: 100;
+}
+.list6{
+    background: #fff url(../img/bg2.png) no-repeat right bottom/auto 160px;
+}
+.list6 .sectionTitle{
+    margin-top: 25px;
+}
+.jobtitle{
+    border-bottom: 1px solid #caddec;
+    display: flex;
+    padding: 0 70px;
+    justify-content: space-between;
+    font-size: 20px;
+    margin-top: 35px;
+}
+.jobtitle button{
+    height: 45px;
+    font-size: 18px;
+    padding: 0 30px;
+    cursor: pointer;
+}
+.jobtitle .jobBtn{
+    background: #508bb7;
+    color: #fff;
+}
+.jobtext{
+    height: 220px;
+    padding: 15px 0 0 70px;
+    color: #1a0f09;
+    line-height: 30px;
+    letter-spacing: 2px;
+}
+.jobtext ul{
+    display: none;
+}
+.jobtext ul:first-child{
+    display: block;
+}
+
+
 /*地图*/
 .mapWrap{
 	position: relative;
@@ -353,7 +441,7 @@ nav{
 
 /*尾部*/
 footer{
-	background: #69a6dc;
+	background: #80b3c8;
 	color: #fff;
 	text-align: center;
 	font-size: 14px;

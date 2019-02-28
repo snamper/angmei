@@ -228,26 +228,41 @@ $(".export").click(function(){
 		return false
 	}
     if($('#oetable').is(':visible')){
-        new ExcelGen({
-            "src_id": "oetable",
-            "show_header": true
-        }).generate('OE信息.xlsx');
-
+        $("#oecartable").table2excel({
+            exclude: ".noExl",
+            name: "Excel Document Name",
+            filename: "OE信息",
+            exclude_img: true,
+            exclude_links: true,
+            exclude_inputs: true
+        });
     }else if($('#oecartable').is(':visible')){
-        new ExcelGen({
-            "src_id": "oecartable",
-            "show_header": true
-        }).generate('OE适配车型.xlsx');
+        $("#oecartable").table2excel({
+            exclude: ".noExl",
+            name: "Excel Document Name",
+            filename: "OE适配车型",
+            exclude_img: true,
+            exclude_links: true,
+            exclude_inputs: true
+        });
     }else if($('#shtable').is(':visible')){
-        new ExcelGen({
-            "src_id": "shtable",
-            "show_header": true
-        }).generate("售后品牌.xlsx");
+        $("#oecartable").table2excel({
+            exclude: ".noExl",
+            name: "Excel Document Name",
+            filename: "售后品牌",
+            exclude_img: true,
+            exclude_links: true,
+            exclude_inputs: true
+        });
     }else if($('#nonetable').is(':visible')){
-        new ExcelGen({
-            "src_id": "nonetable",
-            "show_header": true
-        }).generate("无结果.xlsx");
+        $("#oecartable").table2excel({
+            exclude: ".noExl",
+            name: "Excel Document Name",
+            filename: "无结果",
+            exclude_img: true,
+            exclude_links: true,
+            exclude_inputs: true
+        });
     }
 })
 

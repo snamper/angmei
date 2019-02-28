@@ -35,15 +35,12 @@ Page({
         src: 'fute.jpg'
       }
     ],
+    show:0,
     car: '',/*主机厂 */
-    carshow: true,/*主机厂显示与否 */
     cartype: '',/*车型 */
     cartypelist: '',/*车型列表 */
-    cartypeshow: false,/*车型显示与否 */
     year: '',/*年份 */
-    yearshow: false,/*年份显示与否 */
     yearlist: '',/*年份列表显示与否 */
-    outputshow: false,/*排量显示与否 */
     outputlist: '',/*排量列表 */
     fenlei: '',/*分类 */
     fenleilist: '',
@@ -92,16 +89,19 @@ Page({
       function (ev) {
         /*隐藏 loading 提示框 */
         wx.hideLoading()
+        if (ev.data.list == [] || ev.data.list.length == 0) {
+          base.showToast('暂无数据', 'none', 1e3)
+          return false;
+        }
         that.setData({
+          show:4,
           vaguelist: ev.data.list,
-          vagueshow: true,
-          carshow: false,
           fenleishow: true
         })
       }
     )
   },
-  mohuclick(e) {
+  vaguelistclick(e) {
     let that = this;
     /*显示 loading 提示框 */
     wx.showLoading({
@@ -187,10 +187,9 @@ Page({
         /*隐藏 loading 提示框 */
         wx.hideLoading()
         that.setData({
+          show: 1,
           scar: true,
           car: e.target.dataset.text,
-          carshow: false,
-          cartypeshow: true,
           cartypelist: ev.data,
           num: 0
         })
@@ -215,9 +214,8 @@ Page({
         /*隐藏 loading 提示框 */
         wx.hideLoading()
         that.setData({
+          show: 2,
           cartype: e.target.dataset.text,
-          cartypeshow: false,
-          yearshow: true,
           yearlist: ev.data,
           num: 0
         })
@@ -242,9 +240,8 @@ Page({
         /*隐藏 loading 提示框 */
         wx.hideLoading()
         that.setData({
+          show: 3,
           year: e.target.dataset.text,
-          yearshow: false,
-          outputshow: true,
           outputlist: ev.data,
           num: 0
         })
@@ -285,8 +282,7 @@ Page({
   syearclick(e) {
     let that = this;
     that.setData({
-      yearshow: true,
-      outputshow: false,
+      show: 2,
       year: false
     })
   },
@@ -294,8 +290,7 @@ Page({
   scartypeclick(e) {
     let that = this;
     that.setData({
-      cartypeshow: true,
-      yearshow: false,
+      show: 1,
       cartype: false,
       year: false
     })
@@ -304,13 +299,11 @@ Page({
   carclick(e) {
     let that = this;
     that.setData({
-      carshow: true,
-      cartypeshow: false,
+      show: 0,
       car: false,
       cartype: false,
       year: false,
       scar: false,
-      outputshow: false
     })
   },
   /**
@@ -318,36 +311,21 @@ Page({
    */
   onLoad: function (options) {
     let that = this;
+    /*显示消息提示框 */
+    wx.showLoading({
+      title: '加载中',
+    })
     if (options.vin != undefined && options.vin != 'undefined') {
       that.setData({
         num: 1,
         vin: options.vin
       })
     }
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-    let that = this;
-    /*显示消息提示框 */
-    wx.showLoading({
-      title: '加载中',
-    })
     base.request('/MattrioEcModel/SelectCarIntface/getBrandCategory', 'POST',
       {
         "brand_id": username_id
       },
       function (e) {
-        // console.log(e.data.list)
         e.data.list.forEach(function (item, index) {
           that.data.fenlei += "\'" + item.category_id + "\'" + ",";
         })
@@ -355,13 +333,11 @@ Page({
         that.setData({
           fenlei: that.data.fenlei.substring(0, that.data.fenlei.length - 1),
           fenleilist: e.data.list,
-          carshow: true,
-          cartypeshow: false,
+          show: 0,
           car: false,
           cartype: false,
           year: false,
           scar: false,
-          outputshow: false,
           flindex: 999,
           fenleishow: false
         })
@@ -377,6 +353,29 @@ Page({
         wxaSortPicker.init(e.data, that);
       }
     )
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+    let that = this;
+    that.setData({
+      show: 0,
+      car: false,
+      cartype: false,
+      year: false,
+      scar: false,
+      flindex: 999,
+      fenleishow: false
+    })
   },
 
   /**

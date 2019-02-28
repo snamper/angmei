@@ -137,7 +137,7 @@ $('.textarea1').on('change',function(){
     stop=false;
     $('.stopImg').show();
     $('.stopAction').hide();
-    vinarr=$('.textarea1').val().replace(/\n|\s+|，/g,',').split(',');
+    vinarr=$('.textarea1').val().replace(/\n|，/g,',').split(',');
     $('.textarea1').val('');
     vinarr = vinarr.filter((x, index,self)=>(self.indexOf(x) === index) && (x!=''))
     $.each(vinarr,function(key,value){
@@ -152,7 +152,7 @@ $('.textarea2').on('change',function(){
     stop=false;
 	$('.stopImg').show();
 	$('.stopAction').hide();
-	textarr=$('.textarea2').val().replace(/\n|\s+|，/g,',').split(',');
+	textarr=$('.textarea2').val().replace(/\n|，/g,',').split(',');
     $('.textarea2').val('');
     textarr = textarr.filter((x, index,self)=>(self.indexOf(x) === index) && (x!=''))
     $.each(textarr,function(key,value){
@@ -374,10 +374,14 @@ function addTr(text,value,vin){
 /*end*/
 
 $('.export').click(function(){
-    new ExcelGen({
-        "src_id": "table",
-        "show_header": true
-    }).generate("VIN.xlsx");
+    $("#table").table2excel({
+        exclude: ".noExl",
+        name: "Excel Document Name",
+        filename: "VIN",
+        exclude_img: true,
+        exclude_links: true,
+        exclude_inputs: true
+    });
 })
 $('.backTop').click(function () {
     $('html ,body').animate({scrollTop: 0}, 500);

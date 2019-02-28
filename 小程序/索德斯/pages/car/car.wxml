@@ -49,35 +49,35 @@
     </block>
  </view>
  <!--车-->
-<block wx:if='{{carshow}}'>
+<block wx:if='{{show==0}}'>
     <import src="../../utils/wxaSortPicker/wxaSortPicker.wxml"/> 
     <template is="wxaSortPicker" data="{{wxaSortPickerData,dataType,logolist}}"/>  
 </block>
  <!--车型-->
-<scroll-view scroll-y class='wxaSortPickerItem-box' wx:if='{{cartypeshow}}' style='height: {{wxaSortPickerData.view.scrollHeight-206}}px' >
+<scroll-view scroll-y class='wxaSortPickerItem-box' wx:if='{{show==1}}' style='height: {{wxaSortPickerData.view.scrollHeight-206}}px' >
     <block wx:for='{{cartypelist}}' wx:for-item='item' wx:key='key'>
         <view class='wxaSortPickerItem' data-text='{{item.Vehicle_Name_CN}}' bindtap='cartypeclick'>{{item.Vehicle_Name_CN}}
         </view>
     </block>
 </scroll-view>  
 <!--年份-->
-<scroll-view scroll-y class='wxaSortPickerItem-box' wx:if='{{yearshow}}' style='height: {{wxaSortPickerData.view.scrollHeight-206}}px' >
+<scroll-view scroll-y class='wxaSortPickerItem-box' wx:if='{{show==2}}' style='height: {{wxaSortPickerData.view.scrollHeight-206}}px' >
     <block wx:for='{{yearlist}}' wx:for-item='item' wx:key='key'>
         <view class='wxaSortPickerItem' data-text='{{item.Year_of_production}}' bindtap='yearclick'>{{item.Year_of_production}}
         </view>
     </block>
 </scroll-view>  
 <!--排量-->
-<scroll-view scroll-y class='wxaSortPickerItem-box' wx:if='{{outputshow}}' style='height: {{wxaSortPickerData.view.scrollHeight-206}}px' >
+<scroll-view scroll-y class='wxaSortPickerItem-box' wx:if='{{show==3}}' style='height: {{wxaSortPickerData.view.scrollHeight-206}}px' >
     <block wx:for='{{outputlist}}' wx:for-item='item' wx:key='key'>
         <view class='wxaSortPickerItem' data-text='{{item.Capacity}}' bindtap='outputclick'>{{item.Capacity}}{{item.Air_intake_form}}
         </view>
     </block>
 </scroll-view> 
 <!--模糊查询-->
-<scroll-view scroll-y class='wxaSortPickerItem-box' wx:if='{{vagueshow}}' style='height: {{wxaSortPickerData.view.scrollHeight-206}}px' >
+<scroll-view scroll-y class='wxaSortPickerItem-box' wx:if='{{show==4}}' style='height: {{wxaSortPickerData.view.scrollHeight-206}}px' >
     <block wx:for='{{vaguelist}}' wx:for-item='item' wx:key='key'>
-        <view class='wxaSortPickerItem' data-text='{{item.Vehicle_Name_CN}}' bindtap='mohuclick' data-car='{{item.Manufacture_CN}}' data-cartype='{{item.Vehicle_Name_CN}}' data-year='{{item.Year_of_production}}' data-output='{{item.Capacity}}'>{{item.Manufacture_CN}} {{item.Vehicle_Name_CN}} {{item.Year_of_production}} {{item.Air_intake_form}}
+        <view class='wxaSortPickerItem' data-text='{{item.Vehicle_Name_CN}}' bindtap='vaguelistclick' data-car='{{item.Manufacture_CN}}' data-cartype='{{item.Vehicle_Name_CN}}' data-year='{{item.Year_of_production}}' data-output='{{item.Capacity}}'>{{item.Manufacture_CN}} {{item.Vehicle_Name_CN}} {{item.Year_of_production}} {{item.Air_intake_form}}
         </view>
     </block>
 </scroll-view>  

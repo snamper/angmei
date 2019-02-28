@@ -1,0 +1,37 @@
+/**app.wxss**/
+page{
+  background: #f8f8f8;
+  width: 100%;
+  height: 100%;
+}
+.clearfix:after {
+  content: " ";
+  display: block;
+  height: 0;
+  clear: both;
+  overflow: hidden;
+}
+.banner{
+  width: 750rpx;
+}
+
+/*首页tab背景颜色*/
+.tabwrap .tablist{
+  background: rgba(0, 0, 0, .2);
+}
+/*首页tab选中背景颜色*/
+.tabwrap  .textcolor{
+  background:#FFF;
+}
+/*按钮及首页商品展示下半部分背景颜色*/
+.inputwrap .btn,.list>.title{
+  background: #409de2;
+}
+/*字体颜色*/
+.tabwrap .textcolor,.textcolor{
+  color: #409de2;
+}
+/*边框颜色*/
+.carnamewrap{
+  border: 1px solid #409de2;
+}

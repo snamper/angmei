@@ -8,7 +8,7 @@ $(".runtasclor").click(function(){
 
 })
 
-var network = localStorage.getItem("networkmodel");
+var network = localStorage.getItem("network");
 var username_id = localStorage.getItem("username_id"); 
 var particulars = JSON.parse(localStorage.particulars);
 //获取通过url传的参数
@@ -26,19 +26,27 @@ if(brand == null){
 	var Darr=[];
 	$.each(particulars.list,function(key,value){
 		if(value.category_name.substr(0,1)=='H'){
-			Harr.push(value)
+			Harr.push({
+				content:value,
+				index:key
+			})
 		}else if(value.category_name.substr(0,1)=='S'){
-			Sarr.push(value)
+			Sarr.push({
+					content:value,
+					index:key
+				})
 		}else if(value.category_name.substr(0,1)=='D'){
-			Darr.push(value)
+			Darr.push({
+				content:value,
+				index:key
+			})
 		}
 	})
-
 	if(Harr.length>0){
 			var $li = $("<li class='li1'>");
 			var $a = $("<a href='#' class='clearfix'>");
 			var $p1 = $("<p class='listimg'>");	
-			var $img = $("<img class='img1' src='../../image/H.png'\>");
+			var $img = $("<img class='img1' src='../../image/D.jpg'\>");
 			$img.appendTo($p1);
 			var $p = $("<p class='listtle right'>").html("米其林混合式雨刮器");
 			$p1.appendTo($a);
@@ -50,7 +58,7 @@ if(brand == null){
 			var $li = $("<li class='li1'>");
 			var $a = $("<a href='#' class='clearfix'>");
 			var $p1 = $("<p class='listimg'>");	
-			var $img = $("<img class='img2' src='../../image/S.png'\>");
+			var $img = $("<img class='img2' src='../../image/H.jpg'\>");
 			$img.appendTo($p1);
 			var $p = $("<p class='listtle right''>").html("米其林S2混合式雨刮器");
 			$p1.appendTo($a);
@@ -62,7 +70,7 @@ if(brand == null){
 			var $li = $("<li class='li1'>");
 			var $a = $("<a href='#' class='clearfix'>");
 			var $p1 = $("<p class='listimg' >");	
-			var $img = $("<img class='img3' src='../../image/D.png'\>");
+			var $img = $("<img class='img3' src='../../image/S.jpg'\>");
 			$img.appendTo($p1);
 			var $p = $("<p class='listtle right''>").html("后风挡雨刮片");
 			$p1.appendTo($a);
@@ -71,7 +79,7 @@ if(brand == null){
 			$li.appendTo($(".content .ul1"));
 	}
 }else{
-	var $li = $("<li class='li2'>");
+	var $li = $("<li class='li2' id='0'>");
 	var $a = $("<a href='#'>");
 	var $p1 = $("<p class='listimg'>");		
 	var $img = $("<img src='"+network+"/MattrioEcModel/upload/img/sp/"+particulars.list[0].img+"' onerror=\"javascript:this.src='../../image/blank.jpg'\">");
@@ -103,8 +111,7 @@ $(".li1").click(function(){
 	$(".ul2").html("")
 	$(".ul2").show()
 	if($(this).find(".listtle").text()=="米其林混合式雨刮器"){
-		fun(Harr)
-		
+		fun(Harr)	
 	}else if($(this).find(".listtle").text()=="米其林S2混合式雨刮器"){
 		fun(Sarr)
 	}else if($(this).find(".listtle").text()=="后风挡雨刮片"){
@@ -112,26 +119,26 @@ $(".li1").click(function(){
 	}
 })
 $(document).on("click",".li2",function(){
-	 window.location.href="../oeinfo/oeinfo.html?id="+$(this).index()+"&mikey="+particulars.list[$(this).index()].mikey;
+	 window.location.href="../oeinfo/oeinfo.html?id="+$(this).attr('id')+"&mikey="+particulars.list[$(this).index()].mikey;
 })
    
 
 function fun(arr){
 	$.each(arr,function(key,value){
-			var $li = $("<li class='li2'>");
+			var $li = $("<li class='li2' id="+value.index+">");
 			var $a = $("<a href='#'>");
 			var $p1 = $("<p class='listimg'>");		
-			var $img = $("<img src='"+network+"/MattrioEcModel/upload/img/sp/"+value.img+"' onerror=\"javascript:this.src='../../image/blank.jpg'\">");
+			var $img = $("<img src='"+network+"/MattrioEcModel/upload/img/sp/"+value.content.img+"' onerror=\"javascript:this.src='../../image/blank.jpg'\">");
 			$img.appendTo($p1);
-			var $p = $("<p class='listtle'>").html(value.category_name.substring(1));
-			if(value.product_id){
-				var $p3 = $("<p class='listtle_p'>").html(value.product_id);
+			var $p = $("<p class='listtle'>").html(value.content.category_name.substring(1));
+			if(value.content.product_id){
+				var $p3 = $("<p class='listtle_p'>").html(value.content.product_id);
 			}else{
 				var $p3 = $("<p class='listtle_p'>").html("暂无编号");
 			}
-			var $p4 = $("<p class='listtex'>").html("车型："+value.Manufacture_CN+" "+value.Vehicle_Name_CN);
-			var $p5 = $("<p class='listtex'>").html("OE："+value.oenumber);
-			var $p6 = $("<p class='listtex'>").html("排量："+value.Capacity);
+			var $p4 = $("<p class='listtex'>").html("车型："+value.content.Manufacture_CN+" "+value.content.Vehicle_Name_CN);
+			var $p5 = $("<p class='listtex'>").html("OE："+value.content.oenumber);
+			var $p6 = $("<p class='listtex'>").html("排量："+value.content.Capacity);
 			$p1.appendTo($a);
 			$p.appendTo($a);
 			$p3.appendTo($a);
