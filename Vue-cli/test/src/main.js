@@ -3,6 +3,11 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import axios from 'axios'
+import Qs from 'qs'
+
+Vue.prototype.axios = axios
+Vue.prototype.Qs = Qs
 
 
 
@@ -16,3 +21,4 @@ new Vue({
   components: { App },
   template:'<App/>'
 })
+axios.defaults.baseURL = 'https://ec.51macc.com';

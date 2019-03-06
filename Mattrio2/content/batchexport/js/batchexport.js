@@ -154,14 +154,17 @@ $('textarea').on('change',function(){
 
 //获取数据
 $('.getdata').click(function(){
-	if($(".progress-value").text()!='0%'){
-		if($(".progress-value").text()=='100.00%'){
-			alert('已获取完可导出')
-		}else{
-			alert('正在获取')
-		}
-		return false;
-	 }
+	// if($(".progress-value").text()!='0%'){
+	// 	if($(".progress-value").text()=='100.00%'){
+	// 		alert('已获取完可导出')
+	// 	}else{
+	// 		alert('正在获取')
+	// 	}
+	// 	return false;
+	//  }
+	$(".progress-bar").css('width','0')
+	$(".progress-value").text('0%')
+	$('tbody').html('')
 	index=0;
 	$(".progress-bar-striped").addClass('active')	
 	if(textarr!=[]&&textarr.length>0){
@@ -207,7 +210,7 @@ $('.stop').click(function(){
 	}
 })
 //切换表格
-$('.tab ').click(function(){
+$('div.tab ').click(function(){
 	$('.tab').removeClass('tabbg')
 	$(this).addClass('tabbg')
 	if($(this).text()=='OE信息'){
@@ -228,7 +231,7 @@ $(".export").click(function(){
 		return false
 	}
     if($('#oetable').is(':visible')){
-        $("#oecartable").table2excel({
+        $("#oetable").table2excel({
             exclude: ".noExl",
             name: "Excel Document Name",
             filename: "OE信息",
@@ -246,7 +249,7 @@ $(".export").click(function(){
             exclude_inputs: true
         });
     }else if($('#shtable').is(':visible')){
-        $("#oecartable").table2excel({
+        $("#shtable").table2excel({
             exclude: ".noExl",
             name: "Excel Document Name",
             filename: "售后品牌",
@@ -255,7 +258,7 @@ $(".export").click(function(){
             exclude_inputs: true
         });
     }else if($('#nonetable').is(':visible')){
-        $("#oecartable").table2excel({
+        $("#nonetable").table2excel({
             exclude: ".noExl",
             name: "Excel Document Name",
             filename: "无结果",

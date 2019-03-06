@@ -1,7 +1,7 @@
 <template>
     <div>
         home
-        <p>{{$route.params.id}}</p>
+        <p @click='click'>{{$route.params.id}}</p>
         <router-link to="/home/5/son1">son1</router-link>
         <router-link to="/home/5/son2">son2</router-link>
         <router-view></router-view>
@@ -10,7 +10,18 @@
 
 <script>
 export default {
-  name:'Home'
+  name:'Home',
+  methods:{
+    click(){
+      this.axios.post('/MattrioEcModel/SelectLongCarIntface/getManufacture',this.Qs.stringify({brand_id:'luosheng'}))
+      .then(function (response) {
+          console.log(response);
+      })
+      .catch(function (error) {
+          console.log(error);
+      });
+    }
+  }
 }
 </script>
 
