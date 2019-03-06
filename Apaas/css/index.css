@@ -71,6 +71,12 @@ nav{
 	margin-top: 20px;
 	position: relative;
 }
+.banner img{
+	display: none;
+}
+.banner img:first-child{
+	display: block;
+}
 .bannerText{
 	position: absolute;
 	top: 20%;
@@ -86,7 +92,7 @@ nav{
 	animation-delay: 0.2s !important;
 }
 #section1{
-	margin-top: -9%;
+	margin-top: -14%;
 	z-index:1000;
 	position: relative;
 }
@@ -107,9 +113,6 @@ nav{
     display: flex;
     padding: 0 55px;
 }
-.hidep{
-    display: none;
-}
 .bulb{
     width: auto;
     height: 310px;
@@ -124,15 +127,6 @@ nav{
 	margin-top: 10px;	
 	letter-spacing:2px;
 }
-.btnDetails{
-    border: 1px solid #87b9f6;
-    background: #fff;
-    padding: 4px 30px;
-    border-radius: 20px;
-    float: right;
-    margin-top: 15px;
-    cursor: pointer;
-}
 .btnDetails:hover{
     color: #fff;
     background: #87b9f6;
@@ -140,9 +134,11 @@ nav{
 /*服务项目*/
 .list2{
 	padding-top: 25px;
+	padding-bottom: 15px;
 }
 .list2 .sectionContent{
 	padding-left: 0;
+	padding-right:0;
 	margin: 0 15px;
 }
 .section2List{
@@ -152,7 +148,12 @@ nav{
 	padding-bottom:15px;
 	top: 0;
 	border-radius: 5px;
-    cursor: pointer;
+	cursor: pointer;
+	transition: .4s ease;
+}
+.section2List:hover{
+	box-shadow: 1px 1px 8px #ccc;
+	transform: translateY(-15px);
 }
 .section2List .border{
 	width: 140px;
@@ -177,10 +178,9 @@ nav{
 	line-height: 24px;
 	width: 85%;
 	color: #a9a9a9;
-    display: none;
 }
 .section2List:nth-child(1) .line,.section2List:nth-child(2) .line{
-	padding-left: 36%;
+	padding-left: 33%;
 }
 .section2List:nth-child(3) .line,.section2List:nth-child(4) .line{
 	padding-left: 15%;
@@ -329,7 +329,7 @@ nav{
     width: auto;
     height: 75px;
 }
-.banner2wrap{
+.list5-banner{
     margin: 0 -15px;
 }
 

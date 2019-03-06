@@ -43,7 +43,8 @@
 	line-height: 256px;
 }
 .contentimg img{
-	width:256px;
+	width:auto;
+    height: 210px;
 	vertical-align: middle;
 }
 .contentdiv{

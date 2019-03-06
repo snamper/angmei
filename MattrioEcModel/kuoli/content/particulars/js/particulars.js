@@ -81,8 +81,8 @@ if(brand == null){
 }else{
 	var $li = $("<li class='li2' id='0'>");
 	var $a = $("<a href='#'>");
-	var $p1 = $("<p class='listimg'>");		
-	var $img = $("<img src='"+network+"/MattrioEcModel/upload/img/sp/"+particulars.list[0].img+"' onerror=\"javascript:this.src='../../image/blank.jpg'\">");
+	var $p1 = $("<p class='listimg'>");
+	var $img = $("<img src='http://mattrioec-img.oss-cn-shanghai.aliyuncs.com/kuoli/"+particulars.list[0].product_id+".jpg' onerror=\"javascript:this.src='../../image/blank.jpg'\">");
 	$img.appendTo($p1);
 	var $p = $("<p class='listtle'>").html(particulars.list[0].category_name);
 	if(particulars.list[0].product_id){
@@ -128,7 +128,7 @@ function fun(arr){
 			var $li = $("<li class='li2' id="+value.index+">");
 			var $a = $("<a href='#'>");
 			var $p1 = $("<p class='listimg'>");		
-			var $img = $("<img src='"+network+"/MattrioEcModel/upload/img/sp/"+value.content.img+"' onerror=\"javascript:this.src='../../image/blank.jpg'\">");
+			var $img = $("<img src='http://mattrioec-img.oss-cn-shanghai.aliyuncs.com/kuoli/"+particulars.list[0].product_id+".jpg' onerror=\"javascript:this.src='../../image/blank.jpg'\">");
 			$img.appendTo($p1);
 			var $p = $("<p class='listtle'>").html(value.content.category_name.substring(1));
 			if(value.content.product_id){

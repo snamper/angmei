@@ -30,7 +30,7 @@ $.each(particulars.list,function(key,value){
 	var $li = $("<li>");
 	var $a = $("<a href='#'>");
 	var $p1 = $("<p class='listimg'>");		
-	var $img = $("<img src='"+network+"/MattrioEcModel/upload/img/sp/"+value.img+"' onerror=\"javascript:this.src='../../image/blank.jpg'\">");
+	var $img = $("<img src='http://mattrioec-img.oss-cn-shanghai.aliyuncs.com/kuoli/"+value.product_id+".jpg' onerror=\"javascript:this.src='../../image/blank.jpg'\">");
 	$img.appendTo($p1);
 	var $p = $("<p class='listtle'>").html(value.category_name);
 	var $p2 = $("<p class='listtle'>").html(value.category);

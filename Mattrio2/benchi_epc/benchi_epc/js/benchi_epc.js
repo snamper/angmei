@@ -251,7 +251,7 @@ $("#searchtwo").click(function(){
 				div1.appendTo(".row");
 				var div = $("<div class='eachdiv' title='"+value.category_id2+":"+value.category_name2+"'>").html(value.category_id2+":"+value.category_name2);	
 				div.appendTo(".content_left");
-                value.category_id2+=','+value.img.split('benz_img/')[1].split('.jpg?x-oss')[0];
+                value.category_id2+=','+value.img.split('benzimg/')[1].split('.jpg?x-oss')[0];
 			});
 			$(".eachdiv").click(function(){
 				$(this).css("border",'1px solid red').siblings("div").css("border",'1px solid #ccc');
@@ -261,7 +261,7 @@ $("#searchtwo").click(function(){
 				div1.appendTo(".row");
 				var index=$(this).index();
 				var GROUPNUM = data.categorys2[index].category_id1;
-				var SUBGRP = data.categorys2[index].category_id2+","+data.categorys2[index].img.split(".jpg")[0].split("benz_img/")[1];
+				var SUBGRP = data.categorys2[index].category_id2+","+data.categorys2[index].img.split(".jpg")[0].split("benzimg/")[1];
 				var img = data.categorys2[index].img.split("?")[0];
 				var name2 = data.categorys2[index].category_name2;
 				$(".epc_a").click(function(){
@@ -270,7 +270,8 @@ $("#searchtwo").click(function(){
 					} else {
 						$.JSONCookie("cont", data.categorys2, {path: '/'});
 					}
-					$(this).attr("href","../content_benchi_epc/content_benchi_epc.html?a="+CATNUM+"&b="+GROUPNUM+"&c="+SUBGRP+","+img+"&d="+img+"&oe="+$("#search").val()+"&epcnum="+index+"&i="+name2+"&no=-1"+"&Vehicle_Name_CN="+Vehicle_Name_CN+"&vin="+vin+'&f='+category_id1.split('-')[0]);
+
+					$(this).attr("href","../content_benchi_epc/content_benchi_epc.html?a="+CATNUM+"&b="+GROUPNUM.split('-')[1]+"&c="+SUBGRP+","+img+"&d="+img+"&oe="+$("#search").val()+"&epcnum="+index+"&i="+name2+"&no=-1"+"&Vehicle_Name_CN="+Vehicle_Name_CN+"&vin="+vin+'&f='+data.categorys2[index].category_id1.split('-')[0]);
 				});
 			})
 			$(".epc_a").click(function(){
@@ -279,7 +280,7 @@ $("#searchtwo").click(function(){
 				} else {
 					$.JSONCookie("cont", data.categorys2, {path: '/'});
 				}
-				$(this).attr("href","../content_benchi_epc/content_benchi_epc.html?a="+CATNUM+"&b="+data.categorys2[$(this).parents().index()].category_id1.split('-')[1]+"&c="+data.categorys2[$(this).parents().index()].category_id2+","+data.categorys2[$(this).parents().index()].img.split(".jpg")[0].split("benz_img/")[1]+"&d="+data.categorys2[$(this).parents().index()].img.split("?")[0]+"&oe="+"&epcnum="+$(this).parents(".contentname").index()+"&h="+$(".searchtwo").val()+"&i="+data.categorys2[$(this).parents().index()].category_name2+"&no=-1"+"&Vehicle_Name_CN="+Vehicle_Name_CN+"&vin="+vin+'&f='+category_id1.split('-')[0]);
+				$(this).attr("href","../content_benchi_epc/content_benchi_epc.html?a="+CATNUM+"&b="+data.categorys2[$(this).parents().index()].category_id1.split('-')[1]+"&c="+data.categorys2[$(this).parents().index()].category_id2+","+data.categorys2[$(this).parents().index()].img.split(".jpg")[0].split("benz_img/")[1]+"&d="+data.categorys2[$(this).parents().index()].img.split("?")[0]+"&oe="+"&epcnum="+$(this).parents(".contentname").index()+"&h="+$(".searchtwo").val()+"&i="+data.categorys2[$(this).parents().index()].category_name2+"&no=-1"+"&Vehicle_Name_CN="+Vehicle_Name_CN+"&vin="+vin+'&f='+data.categorys2[$(this).parents().index()].category_id1.split('-')[0]);
 			});
 		}
 	})

@@ -12,7 +12,7 @@ var particulars = JSON.parse(localStorage.particulars);
 var id = getUrlParam('?id');
 var mikey = getUrlParam('?mikey');
 
-$("<img src='"+network+"/MattrioEcModel/upload/img/sp/"+particulars.list[id].img+"' onerror=\"javascript:this.src='../../image/blank.jpg'\">").appendTo($(".contentimg"));
+$("<img src='http://mattrioec-img.oss-cn-shanghai.aliyuncs.com/kuoli/"+particulars.list[id].product_id+".jpg' onerror=\"javascript:this.src='../../image/blank.jpg'\">").appendTo($(".contentimg"));
 $(".contentdiv").html(particulars.list[id].category_name);
 $(".proct").html("");
 

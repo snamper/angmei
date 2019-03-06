@@ -221,6 +221,25 @@ function getEpcInfo2(url,userid,car_model_code,brand,make_year,module_pic_num,ye
                 bNum=='-'?bNum='0':''
                 return parseInt(aNum.replace(/[A-Za-z]|\-|\(|\)/g,''))-parseInt(bNum.replace(/[A-Za-z]|\-|\(|\)/g,''));
             }
+            var arr1=[],arr2=[];
+            for(value of data.list){
+                if(value.location){
+                    arr1.push(value)
+                }else{
+                    arr2.push(value)
+                }
+            }
+            for(let i=0;i<arr1.length;i++){
+                for(let j=0;j<arr2.length;j++){
+                    if(arr2[j].oe_number.indexOf(arr1[i].oe_number)>0){
+                        i++
+                        arr1.splice(i,0,arr2[j])
+                        arr2.splice(j,1)
+                        j--
+                    }
+                }
+            }
+            arr1.concat(arr2)
             var formerlist='';
             if(guolv){
                 $.each(data.list,function (key,value) {
@@ -235,7 +254,7 @@ function getEpcInfo2(url,userid,car_model_code,brand,make_year,module_pic_num,ye
             var trHeight=0;
             $('.cont .box').remove()
             $('.tbody tr').removeClass('tr')
-            $.each(data.list,function(key,value){
+            $.each(arr1,function(key,value){
                 var td=$('<td>').html('<p><span class=\'check_span\'><input type=\'checkbox\' name=\'gay\'></span></p>')
                 var td1=$('<td>').html(value.location)
                 if (value.oe_number) {

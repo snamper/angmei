@@ -45,20 +45,18 @@ $('.navbar-nav li a').bind('click', function(event) {
 
 /*业务逻辑
 * */
+var index=1;
 $('.vin').click(function(){
     window.open('https://www.51macc.com')
 })
-$('.btnDetails').click(function(){
-    $(this).hide()
-    $('.hidep').slideDown(200)
-})
-$('.section2List').hover(function(){
-    $(this).find('.border').hide()
-    $(this).find('.line').fadeIn(200)
-},function(){
-    $(this).find('.line').hide()
-    $(this).find('.border').fadeIn(200)
-})
+setInterval(function(){
+	$('.banner img').hide()
+	$('.banner img').eq(index).fadeIn(100)
+	index++
+	if(index>=3){
+		index=0;
+	}
+},4000)
 /*独特优势*/
 $('.flexLeft button').hover(function(){
     $('.flexLeft button').removeClass('fbtn')
@@ -72,32 +70,4 @@ $('.jobtitle button').hover(function(){
     $(".jobtext").find('ul').hide()
     $(".jobtext").find('ul').eq($(this).index()).show()
 })
-// $(window).scroll(function() {
-// 	var topOfWindow = $(window).scrollTop();
-// 	var wHeight=$(window).height()
-// 	var imagePos2 = $('#section2').offset().top;
-// 	var dHeight2=$('#section2').outerHeight()
-// 	if (topOfWindow+wHeight>imagePos2&&topOfWindow<imagePos2+dHeight2) {
-// 		$('#section2').find('.section2List:eq(0),.section2List:eq(2)').addClass("animated fadeInDown");
-// 		$('#section2').find('.section2List:eq(1),.section2List:eq(3)').addClass("animated fadeInUp");
-// 	}
-//     var imagePos3=$('.section3Content').offset().top;
-//     var dHeight3=$('.section3Content').outerHeight()
-//     if (topOfWindow+wHeight>imagePos3&&topOfWindow<imagePos3+dHeight3) {
-// 		$('.Taiwan, .shengpai').addClass("animated jackInTheBox");
-// 		$('.TaiwanRight, .shengpaiRight').addClass("animated bounceInRight");
-// 	}
-// 	if(topOfWindow>='2400'){
-// 		$(".Top").show(500)
-// 	}else{
-// 		$(".Top").hide(500)
-// 	}
-// });
-$("img").on('dragstart',function(){
-	return false;
-})
-var arr=[
-    {
-
-    }
-]
+$("img").on('dragstart',function(){return false;})

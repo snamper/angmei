@@ -20,6 +20,8 @@ $(".contbox").hide();
 var carall = getUrlParam('?carall');
 var tab=getUrlParam('?tab');
 var type=getUrlParam('?type');
+
+
 if(type==1){
 	$(".runpro").show()
 	$(".upcardwrap").hide()
@@ -35,7 +37,11 @@ if(type==1){
 	$(".upcard").addClass("click").siblings().removeClass("click")
 	history.replaceState(null, null, "?type=2");
 }
-
+$(document).click(function(e){
+	alert('页面维护中,如若需要请联系：021-5221-2966。')
+	return false;
+})
+/*
 if(tab!="null"&tab!=null){
 	if(tab=="A"){
 		$(".runpro").show()
@@ -190,9 +196,7 @@ $(".button1 button").click(function(){
 		return false;
 	}
 	$("#loading").show();
-	/*$("#container").show();
-	$(".gridtable1").show();
-	$(".contbox").show();*/
+	
 	$.ajax({
 		type: "post",
 		url: network+"/BaoYouLiangIntface/getInstallationBase",
@@ -271,7 +275,7 @@ $(".button1 button").click(function(){
 
 });
 	
-/*点击切换*/
+//点击切换
 $(".install").click(function(){
 	$(".runpro").show()
 	$(".upcardwrap").hide()
@@ -293,7 +297,7 @@ $(".upcard").click(function(){
 
 
 
-/*上排量*/
+//上排量
 $(".gridtable").hide();
 
 
@@ -666,3 +670,4 @@ $(".button2 button").click(function(){
 	})
 
 });
+*/

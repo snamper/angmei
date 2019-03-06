@@ -4,43 +4,33 @@
     <meta charset="UTF-8">
     <title>Vue 路由</title>
 </head>
+<script src="js/jquery.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-<!--<script src="https://cdn.bootcss.com/vue-router/3.0.1/vue-router.js"></script>-->
+<link href="https://cdn.jsdelivr.net/npm/animate.css@3.5.1" rel="stylesheet" type="text/css">
+<script src="https://cdn.bootcss.com/vue-router/3.0.1/vue-router.js"></script>
+<!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"> -->
 <!--<script src="https://cdn.staticfile.org/vue-resource/1.5.1/vue-resource.min.js"></script>-->
 <style>
-    .v-enter,.v-leave-to{
-        opacity: 0;
-        -webkit-transform: translateX(80px);
-        -moz-transform: translateX(80px);
-        -ms-transform: translateX(80px);
-        -o-transform: translateX(80px);
-        transform: translateX(80px);
+    .active{
+        color: red;
     }
-    .v-enter-active,.v-leave-active{
-        -webkit-transition: .4s ease;
-        -moz-transition: .4s ease;
-        -ms-transition: .4s ease;
-        -o-transition: .4s ease;
-        transition: .4s ease;
-    }
-    
 </style>
 <body>
     <div id="app">
-        <button @click="show=!show">点击</button>
-        <transition>
-            <div v-if="show">haha</div>
-        </transition>
 
     </div>
-    
+    <template id="haha">
+        <div>
+            1111
+        </div>
+    </template>
 </body>
 <script>
+
     var app=new Vue({
         el:'#app',
-        data:{
-            show:true
-        }
+        template:"#haha"
+
     })
 </script>
 </html>

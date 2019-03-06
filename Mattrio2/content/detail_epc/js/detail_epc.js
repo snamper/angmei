@@ -261,7 +261,7 @@ $("#btn").click(function(){
 				} else {
 					$.JSONCookie("cont", data.categorys2, {path: '/'});
 				}
-				$(this).attr("href","./contentepc/contentepc.html?car_model_code="+car_model_code+"&make_year="+data.categorys2[$(this).parents().index()].category_id1+"&module="+data.categorys2[$(this).parents().index()].category_id2+"&image="+data.categorys2[$(this).parents().index()].img.split("?")[0]+'&type='+type+'&fi=1&years='+year+'&vin='+vin+'&epcnum='+$(this).parents("div").index()+'&oecode='+$.trim($("#search").val()))
+				$(this).attr("href","./contentepc/contentepc.html?car_model_code="+car_model_code+"&make_year="+data.categorys2[$(this).parents().index()].category_id2.split(',')[0]+"&module="+data.categorys2[$(this).parents().index()].category_id2.split(',')[1]+"&image="+data.categorys2[$(this).parents().index()].img.split("?")[0]+'&type='+type+'&fi=1&years='+year+'&vin='+vin+'&epcnum='+$(this).parents("div").index()+'&oecode='+$.trim($("#search").val()))
 			});
 		}
 	})
@@ -318,7 +318,7 @@ $("#searchtwo").click(function(){
 					} else {
 						$.JSONCookie("cont", data.categorys2, {path: '/'});
 					}
-                    $(this).attr("href","./contentepc/contentepc.html?car_model_code="+car_model_code+"&make_year="+data.categorys2[index].category_id1+"&module="+data.categorys2[index].category_id2+"&image="+data.categorys2[index].img.split("?")[0]+'&type='+type+'&fi=1&years='+year+'&vin='+vin+'&epcnum='+index+"&name1="+name1+"&name2="+data.categorys2[index].category_name2)
+                    $(this).attr("href","./contentepc/contentepc.html?car_model_code="+car_model_code+"&make_year="+data.categorys2[index].category_id2.split(',')[0]+"&module="+data.categorys2[index].category_id2.split(',')[1]+"&image="+data.categorys2[index].img.split("?")[0]+'&type='+type+'&fi=1&years='+year+'&vin='+vin+'&epcnum='+index+"&name1="+name1+"&name2="+data.categorys2[index].category_name2)
 				});
 			})
 			$(".epc_a").click(function(){
@@ -327,7 +327,7 @@ $("#searchtwo").click(function(){
 				} else {
 					$.JSONCookie("cont", data.categorys2, {path: '/'});
 				}
-                $(this).attr("href","./contentepc/contentepc.html?car_model_code="+car_model_code+"&make_year="+data.categorys2[$(this).parents().index()].category_id1+"&module="+data.categorys2[$(this).parents().index()].category_id2+"&image="+data.categorys2[$(this).parents().index()].img.split("?")[0]+'&type='+type+'&fi=1&years='+year+'&vin='+vin+'&epcnum='+$(this).parents("div").index()+"&name1="+name1+"&name2="+data.categorys2[$(this).parents().index()].category_name2)
+                $(this).attr("href","./contentepc/contentepc.html?car_model_code="+car_model_code+"&make_year="+data.categorys2[$(this).parents().index()].category_id2.split(',')[0]+"&module="+data.categorys2[$(this).parents().index()].category_id2.split(',')[1]+"&image="+data.categorys2[$(this).parents().index()].img.split("?")[0]+'&type='+type+'&fi=1&years='+year+'&vin='+vin+'&epcnum='+$(this).parents("div").index()+"&name1="+name1+"&name2="+data.categorys2[$(this).parents().index()].category_name2)
 			});
 		}
 	})

@@ -55,7 +55,8 @@ li{
 .listimg img{
 	margin-top: 10px;
 	margin-left: 5px;
-	width:130px;
+    height: 130px;
+    width: auto;
 	vertical-align: middle;
 }
 .li1 .right{
@@ -63,7 +64,7 @@ li{
 	line-height: 150px;
 }
 .listimg .img1{
-	width:66.8px;
+    width: auto;
 	height: 130px;
 }	
 .listimg .img3{
@@ -71,7 +72,7 @@ li{
 	height:130px;
 }	
 .listimg .img2{
-	width:20px;
+	width:auto;
 	height:130px;
 }	
 .listtle{

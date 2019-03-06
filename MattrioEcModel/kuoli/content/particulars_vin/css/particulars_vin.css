@@ -67,7 +67,8 @@ li{
 .listimg img{
 	margin-top: 10px;
 	margin-left: 5px;
-	width:130px;
+    width: auto;
+    height: 130px;
 	vertical-align: middle;
 }
 .listtle{
