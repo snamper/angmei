@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<title>SpringBootWebSocket</title>
+<link rel="shortcut icon" href="img/favicon.ico" />
+<script type="text/javascript" src="js/jquery.js"></script>
+</head>
+
+<body>
+
+</body>
+
+<script type="text/javascript">
+	var wsurl = "ws://localhost:800/myWebsocket"; //WebSocket服务器地址
+	var sockurl = "ws:////localhost:800/myWebsocket/sockjs"; //基本没用
+
+	var websocket;//声明一个WebSocket客户端
+	//检测浏览器兼容性
+	if ('WebSocket' in window) { //chrome firefox
+		console.log(window);
+		websocket = new WebSocket(wsurl);//当前所有浏览器全部都支持
+		console.log("当前所有浏览器全部都支持 WebSocket in window =>" + websocket);
+	} else if ('MozWebSocket' in window) {
+		websocket = new MozWebSocket(wsurl);//基本没用
+		console.log("基本没用 MozWebSocket in window =>" + websocket);
+	} else {
+		websocket = new SockJS(sockurl);//基本没用
+		console.log("基本没用 else new SockJS=>" + websocket);
+	}
+
+	//**************************************************************** 成功连接服务器 *****************************************	
+	websocket.onopen = function(event) {
+		console.log("WebSocket:成功连接服务器 ");
+	};
+
+	//**************************************************************** 接收服务器消息 *****************************************
+	websocket.onmessage = function(event) {
+		console.log("wesocket接收服务器数据event=>" + event);
+		console.log("123123wesocket接收服务器数据event.data=>" + event.data);
+		websocket.send("太丑了,不想爱那个离你!");
+		var mage=JSON.parse(event.data);//event.data是JSON格式字符串,转为JS对象
+		console.log("wesocket接收服务器data=>"+mage);
+	};
+
+	//**************************************************************** 服务器发生异常错误 *****************************************
+	websocket.onerror = function(event) {
+		console.log("WebSocket:服务器发生异常错误 ");
+		console.log(event);
+	};
+
+	//**************************************************************** 服务器关闭 *****************************************
+	websocket.onclose = function(event) {
+		console.log("WebSocket:已关闭");
+		console.log(event);
+	};
+	
+</script>

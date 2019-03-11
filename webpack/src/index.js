@@ -1,6 +1,7 @@
 let str = require('./a.js')
 const axios = require('axios');
 const Qs = require('qs');
+console.log(str);
 // axios.defaults.timeout = 6000;
 axios.defaults.baseURL = 'https://ec.51macc.com';
 /*单个请求 */
@@ -28,7 +29,14 @@ axios.defaults.baseURL = 'https://ec.51macc.com';
     document.getElementById('btn').onclick=()=>{
         var formData = new FormData();
         formData.append("file",document.getElementById("fil").files[0]);
-        axios.post('https://www.51macc.com/api/Mattrio/OcrInterface/OcrVin',formData)
+        axios.post('https://www.51macc.com/api/Mattrio/OcrInterface/OcrVin',formData,
+        {
+            onUploadProgress: function (progressEvent) {
+                // 对原生进度事件的处理
+                console.log(progressEvent);
+              },
+        }
+        )
          .then(function (response) {
             console.log(response);
         })

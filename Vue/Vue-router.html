@@ -10,26 +10,29 @@
 <script src="https://cdn.bootcss.com/vue-router/3.0.1/vue-router.js"></script>
 <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"> -->
 <!--<script src="https://cdn.staticfile.org/vue-resource/1.5.1/vue-resource.min.js"></script>-->
-<style>
-    .active{
-        color: red;
-    }
-</style>
+
 <body>
     <div id="app">
-
+        <router-view></router-view>
     </div>
-    <template id="haha">
-        <div>
-            1111
-        </div>
-    </template>
 </body>
 <script>
-
+    var Home ={
+        template:`<div>home</div>`
+    } 
+    var Mine ={
+        template:`<div>mine</div>`
+    } 
+    var router=new VueRouter({
+        routes:[
+            { path: '/', component: Home },
+            { path: '/home', component: Home },
+            { path: '/mine', component: Mine }
+        ]
+    })
     var app=new Vue({
         el:'#app',
-        template:"#haha"
+        router,
 
     })
 </script>

@@ -167,6 +167,7 @@ $('.getdata').click(function(){
 	$('tbody').html('')
 	index=0;
 	$(".progress-bar-striped").addClass('active')	
+	console.log(textarr)
 	if(textarr!=[]&&textarr.length>0){
 		searchoe(textarr,oearr,shouhuoarr,textarr.length)
 	}else{
@@ -268,7 +269,7 @@ $(".export").click(function(){
         });
     }
 })
-
+var arrerror=[{'category_name': "请求失败",'parent_name': "请求失败",'system_market_price': "请求失败"}];
 /*用编码获取对应的OE信息或者是售后编码信息 并归类*/
 function searchoe(numarr,oearr,shouhuoarr,len){
     // if($('#oecartable tbody tr').length>3000){
@@ -337,8 +338,7 @@ function searchoe(numarr,oearr,shouhuoarr,len){
 						}
 					},
 					error: function(data) {
-						$("#loading").hide()
-						alert("请求失败")
+						numjieguo(shouhuoarr,numarr,numarr[index], '售后编码', arrerror, len)
 					}
 				})						 
 			} else {
@@ -346,7 +346,7 @@ function searchoe(numarr,oearr,shouhuoarr,len){
 			}
 		},
 		error: function(data) {
-			alert("请求失败")
+			numjieguo(oearr,numarr,numarr[index], 'OE编码', arrerror, len)
 		}
 	})
 }
@@ -399,10 +399,15 @@ function numjieguo(arr,numarr,num,name,data,len){
                     })
                 },
                 error: function() {
-
+					var tr=$("<tr>")
+					var td1=$("<td class='oecont'>").html("<span>"+num.replace(/^0/g,'0 ')+"</sapn>");
+					var td2=$("<td>").html("请求失败");
+					td1.appendTo(tr)
+					td2.appendTo(tr)
+					tr.appendTo('.oecartable tbody')
                 }
             });
-        }
+		}
 			$.each(data,function(kay,value){
 				var tr=$("<tr>")
 				var td1=$("<td class='oecont'>").html("<span>"+num.replace(/^0/g,'0 ')+"</sapn>");
@@ -416,9 +421,9 @@ function numjieguo(arr,numarr,num,name,data,len){
 				tr.appendTo('.oetable tbody')
 			})	
 	}else if(name=='售后编码'){
-		if(data[0].parent_name=='第三方'){
+		if(data[0].parent_name=='第三方'||data[0].category_name=='请求失败'){
 			var tr=$("<tr>")
-			var td1=$("<td class='socont'>").html("<span>"+data[0].oe_numbers+"</sapn>");
+			var td1=$("<td class='socont'>").html("<span>"+num.replace(/^0/g,'0 ')+"</sapn>");
 			var td2=$("<td>").html(data[0].category_name)
 			var td3=$("<td>").html('')
 			var td4=$("<td>").html('')
@@ -433,7 +438,7 @@ function numjieguo(arr,numarr,num,name,data,len){
 			$.each(data,function(kay,value){
 				if(value.product_id==num){
 					var tr=$("<tr>")
-					var td1=$("<td class='socont'>").html("<span>"+num+"</sapn>");
+					var td1=$("<td class='socont'>").html("<span>"+num.replace(/^0/g,'0 ')+"</sapn>");
 					var td2=$("<td>").html(value.category_name)
 					var td3=$("<td>").html("<img src=http://mattrio-car-img.oss-cn-shanghai.aliyuncs.com/category/"+value.img +" />")
 					var td4=$("<td>").html('<img src='+value.brand_img+'>')

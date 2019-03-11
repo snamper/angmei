@@ -67,6 +67,9 @@ function demo(){
 				window.location.href="javascript:history.back();";
 				return false;
 			}
+			data.categorys1.sort((a,b)=>{
+				return a.category_id1.localeCompare(b.category_id1)
+			})
 			$.each(data.categorys1,function(key,value){
 				var p = $("<p class='contentp' title='"+value.category_id1+":"+value.category_name1+"'>").html(value.category_id1+":"+value.category_name1);
 				var ul = $("<ul class='contentul'>");

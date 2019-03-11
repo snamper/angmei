@@ -795,9 +795,9 @@ function searchoe(num){
 							addDataList('oedatalist',oenum.replace(/\s|-/g, ""));
 							$("#loading").hide()
 							if(data.list[0].parent_name=="第三方"){
-								window.location.href ="./content/maintain/oedsf/oedsf.html?oenumber=" + data.list[0].oe_numbers;						
+								window.location.href ="./content/maintain/oedsf/oedsf.html?oenumber=" + $.trim($("#oehao").val());						
 							}else{
-								window.location.href ="./content/maintain/oecont/oecont.html?oenumber=" + data.list[0].oe_numbers;							
+								window.location.href ="./content/maintain/oecont/oecont.html?oenumber=" + $.trim($("#oehao").val());							
 							}
 						}
 					},

@@ -135,11 +135,7 @@ $("#next").click(function(){
 	}
     $(".name2").html(cont[num].category_name2);
 	$("#viewer2 img").attr("src",cont[num].img.split("?")[0]);
-    if(cont[num].category_id1){
-        module_pic_num = cont[num].category_id1+','+cont[num].category_id2;
-    }else{
-        module_pic_num = cont[num].category_id2;
-    }
+    module_pic_num = cont[num].category_id2;
     imgSrc = cont[num].img.split("?")[0];
     disable=true;
     make_year = module_pic_num.split(',')[0]
@@ -164,11 +160,7 @@ $("#topone").click(function(){
 	}
 	$(".name2").html(cont[num].category_name2);
 	$("#viewer2 img").attr("src",cont[num].img.split("?")[0]);
-    if(cont[num].category_id1){
-        module_pic_num = cont[num].category_id1+','+cont[num].category_id2;
-    }else{
-        module_pic_num = cont[num].category_id2;
-    }
+    module_pic_num = cont[num].category_id2;
     imgSrc = cont[num].img.split("?")[0];
     disable=true;
     make_year = module_pic_num.split(',')[0]
